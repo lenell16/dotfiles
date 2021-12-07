@@ -29,6 +29,7 @@
       micro
       miller
       mongodb
+      ngrok
       nixpkgs-fmt
       nodejs
       openconnect
