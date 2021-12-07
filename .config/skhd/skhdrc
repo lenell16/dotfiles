@@ -1,105 +1,135 @@
+:: default : echo "default"
 
+# # floating
+:: floating @ : echo "floating"
 
-# focus window
-alt - x : yabai -m window --focus recent
-alt - h : yabai -m window --focus west
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east
-alt - z : yabai -m window --focus stack.prev
-alt - c : yabai -m window --focus stack.next
+hyper - f ; floating
 
-# swap window
-shift + alt - x : yabai -m window --swap recent
-shift + alt - h : yabai -m window --swap west
-shift + alt - j : yabai -m window --swap south
-shift + alt - k : yabai -m window --swap north
-shift + alt - l : yabai -m window --swap east
-
-# move window
-shift + cmd - h : yabai -m window --warp west
-shift + cmd - j : yabai -m window --warp south
-shift + cmd - k : yabai -m window --warp north
-shift + cmd - l : yabai -m window --warp east
-
-# make floating window fill screen
-shift + alt - up     : yabai -m window --grid 1:1:0:0:1:1
+# # make floating window fill screen
+floating < f     : yabai -m window --grid 1:1:0:0:1:1
 
 # make floating window fill left-half of screen
-shift + alt - left   : yabai -m window --grid 1:2:0:0:1:1
+floating < l   : yabai -m window --grid 1:2:0:0:1:1
 
 # make floating window fill right-half of screen
-shift + alt - right  : yabai -m window --grid 1:2:1:0:1:1
+floating < r  : yabai -m window --grid 1:2:1:0:1:1
+
+# move floating window
+floating < n : yabai -m window --move rel:-40:0
+floating < e : yabai -m window --move rel:0:40
+floating < o : yabai -m window --move rel:0:-40
+floating < i : yabai -m window --move rel:40:0
+
+:: thing @ : echo "thing"
+
+hyper - s ; thing
 
 # create desktop, move window and follow focus - uses jq for parsing json (brew install jq)
-hyper - n : yabai -m space --create && \
+thing < shift - space : yabai -m space --create && \
                   set index (yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index') && \
                   yabai -m window --space $index && \
                   yabai -m space --focus $index
 
 # create desktop and follow focus - uses jq for parsing json (brew install jq)
-meh - n : yabai -m space --create && \
+thing < space  : yabai -m space --create && \
                 set index (yabai -m query --spaces --display | jq 'map(select(."is-native-fullscreen" == false))[-1].index') && \
                 yabai -m space --focus $index
 
-# move window
-shift + ctrl - a : yabai -m window --move rel:-40:0
-shift + ctrl - s : yabai -m window --move rel:0:40
-shift + ctrl - w : yabai -m window --move rel:0:-40
-shift + ctrl - d : yabai -m window --move rel:40:0
+thing < w : yabai -m space --destroy
 
-# increase window size
-shift + alt - a : yabai -m window --resize left:-40:0
-shift + alt - s : yabai -m window --resize bottom:0:40
-shift + alt - w : yabai -m window --resize top:0:-40
-shift + alt - d : yabai -m window --resize right:40:0
+thing < n : yabai -m space --focus prev || skhd -k "ctrl + alt + cmd - z"
+thing < i : yabai -m space --focus next || skhd -k "ctrl + alt + cmd - c"
+thing < 1 : yabai -m space --focus  1 || skhd -k "ctrl + alt + cmd - 1"
+thing < 2 : yabai -m space --focus  2 || skhd -k "ctrl + alt + cmd - 2"
+thing < 3 : yabai -m space --focus  3 || skhd -k "ctrl + alt + cmd - 3"
+thing < 4 : yabai -m space --focus  4 || skhd -k "ctrl + alt + cmd - 4"
+thing < 5 : yabai -m space --focus  5 || skhd -k "ctrl + alt + cmd - 5"
+thing < 6 : yabai -m space --focus  6 || skhd -k "ctrl + alt + cmd - 6"
+thing < 7 : yabai -m space --focus  7 || skhd -k "ctrl + alt + cmd - 7"
+thing < 8 : yabai -m space --focus  8 || skhd -k "ctrl + alt + cmd - 8"
+thing < 9 : yabai -m space --focus  9 || skhd -k "ctrl + alt + cmd - 9"
+thing < 0 : yabai -m space --focus 10 || skhd -k "ctrl + alt + cmd - 0"
 
-# decrease window size
-shift + cmd - a : yabai -m window --resize left:40:0
-shift + cmd - s : yabai -m window --resize bottom:0:-40
-shift + cmd - w : yabai -m window --resize top:0:40
-shift + cmd - d : yabai -m window --resize right:-40:0
+thing < shift - n : yabai -m window --space prev && yabai -m space --focus prev
+thing < shift - i : yabai -m window --space next && yabai -m space --focus next
+thing < shift - 1 : yabai -m window --space  1; yabai -m space --focus 1
+thing < shift - 2 : yabai -m window --space  2; yabai -m space --focus 2
+thing < shift - 3 : yabai -m window --space  3; yabai -m space --focus 3
+thing < shift - 4 : yabai -m window --space  4; yabai -m space --focus 4
+thing < shift - 5 : yabai -m window --space  5; yabai -m space --focus 5
+thing < shift - 6 : yabai -m window --space  6; yabai -m space --focus 6
+thing < shift - 7 : yabai -m window --space  7; yabai -m space --focus 7
+thing < shift - 8 : yabai -m window --space  8; yabai -m space --focus 8
+thing < shift - 9 : yabai -m window --space  9; yabai -m space --focus 9
+thing < shift - 0 : yabai -m window --space  10; yabai -m space --focus 10
 
-# set insertion point in focused container
-ctrl + alt - h : yabai -m window --insert west
-ctrl + alt - j : yabai -m window --insert south
-ctrl + alt - k : yabai -m window --insert north
-ctrl + alt - l : yabai -m window --insert east
-ctrl + alt - i : yabai -m window --insert stack
+thing < s : yabai -m window --toggle sticky
 
-# destroy desktop
-cmd + alt - w : yabai -m space --destroy
+:: monitor @ : echo "monitor"
 
-# rotate tree
-alt - r : yabai -m space --rotate 90
+hyper - m ; monitor
 
-# mirror tree y-axis
-alt - y : yabai -m space --mirror y-axis
+monitor < o  : yabai -m display --focus 1
+monitor < e  : yabai -m display --focus 2
 
-# mirror tree x-axis
-alt - x : yabai -m space --mirror x-axis
+monitor < shift - o  : yabai -m window --display 1 && yabai -m display --focus 1
+monitor < shift - e  : yabai -m window --display 2 && yabai -m display --focus 2
 
-# toggle window parent zoom
-alt - d : yabai -m window --toggle zoom-parent
+monitor, thing, floating < hyper - q ; default
 
-# toggle window fullscreen zoom
-alt - f : yabai -m window --toggle zoom-fullscreen
+# # # focus window
+# # alt - x : yabai -m window --focus recent
+# shift + ctrl + alt - h : yabai -m window --focus west
+# shift + ctrl + alt - j : yabai -m window --focus south
+# shift + ctrl + alt - k : yabai -m window --focus north
+# shift + ctrl + alt - l : yabai -m window --focus east
+# alt - z : yabai -m window --focus stack.prev
+# alt - c : yabai -m window --focus stack.next
 
-# toggle window native fullscreen
-shift + alt - f : yabai -m window --toggle native-fullscreen
+# # swap window
+# shift + alt - x : yabai -m window --swap recent
+# shift + alt - h : yabai -m window --swap west
+# shift + alt - j : yabai -m window --swap south
+# shift + alt - k : yabai -m window --swap north
+# shift + alt - l : yabai -m window --swap east
 
-# toggle window split type
-alt - e : yabai -m window --toggle split
+# # move window
+# shift + cmd - h : yabai -m window --warp west
+# shift + cmd - j : yabai -m window --warp south
+# shift + cmd - k : yabai -m window --warp north
+# shift + cmd - l : yabai -m window --warp east
 
-# toggle sticky (show on all spaces)
-alt - s : yabai -m window --toggle sticky
+# # set insertion point in focused container
+# ctrl + alt - h : yabai -m window --insert west
+# ctrl + alt - j : yabai -m window --insert south
+# ctrl + alt - k : yabai -m window --insert north
+# ctrl + alt - l : yabai -m window --insert east
+# ctrl + alt - i : yabai -m window --insert stack
 
-# toggle topmost (keep above other windows)
-alt - o : yabai -m window --toggle topmost
+# # rotate tree
+# alt - r : yabai -m space --rotate 90
 
-# toggle picture-in-picture
-alt - p : yabai -m window --toggle border && \
-          yabai -m window --toggle pip
+# # mirror tree y-axis
+# alt - y : yabai -m space --mirror y-axis
 
-# Quickly restart the yabai launch agent
-ctrl + alt + cmd - r : launchctl kickstart -k "gui/${UID}/homebrew.mxcl.yabai"
+# # mirror tree x-axis
+# alt - x : yabai -m space --mirror x-axis
+
+# # toggle window fullscreen zoom
+# alt - f : yabai -m window --toggle zoom-fullscreen
+
+# # toggle window native fullscreen
+# shift + alt - f : yabai -m window --toggle native-fullscreen
+
+# # toggle window split type
+# alt - e : yabai -m window --toggle split
+
+# # toggle topmost (keep above other windows)
+# alt - o : yabai -m window --toggle topmost
+
+# # toggle picture-in-picture
+# alt - p : yabai -m window --toggle border && \
+#           yabai -m window --toggle pip
+
+# # Quickly restart the yabai launch agent
+# ctrl + alt + cmd - r : launchctl kickstart -k "gui/$UID/homebrew.mxcl.yabai"
