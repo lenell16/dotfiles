@@ -22,6 +22,7 @@
       ffmpeg
       fx
       gitflow
+      gh
       google-cloud-sdk
       httpie
       kubectx
@@ -29,9 +30,11 @@
       micro
       miller
       mongodb
+      neovim-unwrapped
       ngrok
       nixpkgs-fmt
       nodejs
+      nodePackages.pnpm
       openconnect
       overmind
       procs
@@ -79,16 +82,6 @@
       userEmail = "lenell16@gmail.com";
     };
 
-    # need to add host.yml file for autha
-    gh = {
-      enable = true;
-      settings = {
-        git_protocol = "ssh";
-        prompt = "enabled";
-      };
-      enableGitCredentialHelper = true;
-    };
-
     go.enable = true;
 
     jq.enable = true;
@@ -96,10 +89,6 @@
     lazygit.enable = true;
 
     mpv.enable = true;
-
-    neovim = {
-      enable = true;
-    };
 
     nnn.enable = true;
 
