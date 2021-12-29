@@ -39,7 +39,20 @@ return packer.startup(function(use)
 	use "tpope/vim-endwise"
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	use 'shaunsingh/nord.nvim'
-  -- Automatically set up your configuration after cloning packer.nvim
+	use 'numToStr/Comment.nvim'
+	use {
+		'nvim-lualine/lualine.nvim',
+		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+	}
+	use {
+		'akinsho/bufferline.nvim',
+		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+	}
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = {'kyazdani42/nvim-web-devicons', opt = true}
+	}
+	-- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then
     require("packer").sync()
