@@ -46,6 +46,8 @@ return packer.startup(function(use)
 	use 'norcalli/nvim-colorizer.lua'
 	use 'glepnir/dashboard-nvim'
 	use 'lewis6991/gitsigns.nvim'
+	use 'nvim-telescope/telescope.nvim'
+	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
 	-- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

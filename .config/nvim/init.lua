@@ -5,5 +5,7 @@ require "user.lualine"
 require "user.bufferline"
 require "user.nvim-colorizer"
 require "user.gitsigns"
+require "user.telescope"
+require "user.dashboard"
 
 vim.cmd[[colorscheme nord]]
