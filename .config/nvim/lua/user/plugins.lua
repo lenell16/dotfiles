@@ -43,7 +43,6 @@ return packer.startup(function(use)
 	use 'kyazdani42/nvim-web-devicons'
 	use 'nvim-lualine/lualine.nvim'
 	use 'akinsho/bufferline.nvim'
-	use 'kyazdani42/nvim-tree.lua'
 	use 'norcalli/nvim-colorizer.lua'
 	use 'glepnir/dashboard-nvim'
 	use 'lewis6991/gitsigns.nvim'

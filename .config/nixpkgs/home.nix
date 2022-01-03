@@ -30,8 +30,8 @@
       micro
       miller
       mongodb
-      neovim-unwrapped
       ngrok
+      neovim
       nixpkgs-fmt
       nodejs
       nodePackages.pnpm
