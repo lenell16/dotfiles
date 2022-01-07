@@ -55,9 +55,10 @@
     casks = [
       # "4k-stogram"
       # "alfred"
-      # "altserver"
+      "altserver"
       # "amethyst"
-      # "appzapper"
+      "appzapper"
+			# "arc" (not in brew)
       # "brave-browser"
       # "contexts"
       # "daisydisk"
@@ -67,25 +68,33 @@
       "expressvpn"
       "fantastical"
       # "firecamp"
+			# firefoo (not in brew)
       # "firefox"
       # "firefox-developer-edition"
       # "fork"
       # "framer-x"
+			# FruityUi (not in brew)
       # "gitfox"
       "gitkraken"
       # "goneovim"
       "google-chrome"
       # "google-chrome-canary"
       "hazel"
+			# hide my bar (not in brew)
+			# httpie ui (not in brew)
       "iina"
       # "insomnia"
       # "insomnia-designer"
+			# "instabro" (not in brew)
       # "itch"
       "iterm2"
       # "java"
       # "kap"
       # "kindle"
+			# "scriptkit" (not in brew)
+			# "lens"
       # "loopback"
+			# "mailspring"
       # "marta"
       # "notion"
       # "nova"
@@ -98,8 +107,10 @@
       "postman"
       # "prisma-studio"
       # "protopie"
+			# "quetbrowser"
       # "raindropio"
       "raycast"
+			# "replay" (not in brew)
       # "robo-3t"
       # "runjs"
       # "screens"
@@ -116,8 +127,11 @@
       # "the-unarchiver"
       "transmission"
       # "transmit"
+			# "vimac" (not in brew)
+			# "visly" (not in brew)
       # "vlc"
       # "vmware-horizon-client"
+			# warp" (not in brew)
       # "webstorm"
       # "wormhole"
       "zoom"
