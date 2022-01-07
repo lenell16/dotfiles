@@ -35,8 +35,8 @@ return packer.startup(function(use)
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
   use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-	use "rstacruz/vim-closer"
-	use "tpope/vim-endwise"
+	use "windwp/nvim-ts-autotag"
+	use "windwp/nvim-autopairs"
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 	use 'shaunsingh/nord.nvim'
 	use 'numToStr/Comment.nvim'
@@ -48,6 +48,7 @@ return packer.startup(function(use)
 	use 'lewis6991/gitsigns.nvim'
 	use 'nvim-telescope/telescope.nvim'
 	use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+	use 'folke/which-key.nvim'
 	-- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if PACKER_BOOTSTRAP then

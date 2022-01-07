@@ -7,5 +7,8 @@ require "user.nvim-colorizer"
 require "user.gitsigns"
 require "user.telescope"
 require "user.dashboard"
+require "user.treesitter"
+require "user.autopairs"
 
 vim.cmd[[colorscheme nord]]
+
