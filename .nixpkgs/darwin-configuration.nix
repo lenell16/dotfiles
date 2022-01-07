@@ -4,6 +4,7 @@
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
+  imports = [ <home-manager/nix-darwin> ];
 
   # Auto upgrade nix package and the daemon service.
   services = {
@@ -28,7 +29,19 @@
     fish
     zsh
   ];
-  users.users.alonzothomas.shell = pkgs.fish;
+
+  users = {
+    users.alonzothomas = {
+      name = "alonzothomas";
+      home = "/Users/alonzothomas";
+      shell = pkgs.fish;
+    };
+  };
+
+  home-manager = {
+    useGlobalPkgs = true;
+    users.alonzothomas = import ./hm/home.nix;
+  };
 
   fonts = {
     enableFontDir = true;

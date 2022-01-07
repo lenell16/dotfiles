@@ -11,9 +11,6 @@ in
       DOTBARE_DIR = "$HOME/dotfiles";
       DOTBARE_TREE = "$HOME";
     };
-    stateVersion = "21.11";
-    username = "alonzothomas";
-    homeDirectory = "/Users/alonzothomas";
     packages = with pkgs; [
       any-nix-shell
       amp
