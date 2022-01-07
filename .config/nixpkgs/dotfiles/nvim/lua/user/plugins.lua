@@ -30,7 +30,7 @@ if not status_ok then
 end
 
 -- Install your plugins here
-return packer.startup(function(use)
+return packer.startup({function(use)
   -- My plugins here
   use "wbthomason/packer.nvim" -- Have packer manage itself
   use "nvim-lua/popup.nvim" -- An implementation of the Popup API from vim in Neovim
@@ -54,4 +54,6 @@ return packer.startup(function(use)
   if PACKER_BOOTSTRAP then
     require("packer").sync()
   end
-end)
+end, config = {
+  compile_path = require('packer.util').join_paths(vim.fn.stdpath('config'), 'nixpkgs', 'dotfiles', 'nvim', 'plugin', 'packer_compiled.lua'),
+}})

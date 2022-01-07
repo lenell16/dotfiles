@@ -1,5 +1,9 @@
 { config, pkgs, ... }:
 
+let
+	stable = import <stable> {};
+in
+
 {
   programs.home-manager.enable = true;
   home = {
@@ -13,9 +17,9 @@
     packages = with pkgs; [
       any-nix-shell
       amp
-      blender
+      stable.blender
       cocoapods
-      crystal
+      stable.crystal
       curl
       deno
       fd
@@ -26,10 +30,10 @@
       google-cloud-sdk
       httpie
       kubectx
-      lucky-cli
+      stable.lucky-cli
       micro
       miller
-      mongodb
+      stable.mongodb
       ngrok
       neovim
       nixpkgs-fmt
@@ -50,6 +54,29 @@
       youtube-dl
     ];
   };
+
+	home.file.".npmrc".source = ./dotfiles/npmrc;
+	home.file.".ngrok2" = {
+    source = ./dotfiles/ngrok2;
+    recursive = true;
+  };
+  xdg.configFile."nvim" = {
+    source = ./dotfiles/nvim;
+    recursive = true;
+  };
+  xdg.configFile."gh" = {
+    source = ./dotfiles/gh;
+    recursive = true;
+  };
+  xdg.configFile."skhd/skhdrc" = {
+    source = ./dotfiles/skhd/skhdrc;
+    executable = true;
+  };
+  xdg.configFile."yabai/yabairc" = {
+    source = ./dotfiles/yabai/yabairc;
+    executable = true;
+  };
+
 
   programs = {
     bat.enable = true;
