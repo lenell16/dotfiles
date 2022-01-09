@@ -1,10 +1,20 @@
 { config, pkgs, ... }:
 
 let
-	stable = import <stable> {};
+	stable = import <stable> {
+		config = {
+			allowUnfree = true;
+			allowInsecure = true;
+		};
+	};
 in
 
 {
+
+  nixpkgs.config = {
+		allowUnfree = true;
+  	allowInsecure = true;
+	};
   programs.home-manager.enable = true;
   home = {
     sessionVariables= {

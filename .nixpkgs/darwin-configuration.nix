@@ -17,9 +17,11 @@
   };
 
   # nix.package = pkgs.nix;
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.allowInsecure = true;
-  nixpkgs.config.input-fonts.acceptLicense = true;
+  nixpkgs.config = {
+		allowUnfree = true;
+  	allowInsecure = true;
+  	input-fonts.acceptLicense = true;
+	};
 
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.bash.enable = true;
