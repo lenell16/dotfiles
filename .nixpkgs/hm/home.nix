@@ -20,7 +20,9 @@ in
     sessionVariables= {
       DOTBARE_DIR = "$HOME/dotfiles";
       DOTBARE_TREE = "$HOME";
-    };
+			NIXPKGS_ALLOW_INSECURE = 1;
+			NIXPKGS_ALLOW_UNFREE = 1;
+		};
     packages = with pkgs; [
       any-nix-shell
       amp
@@ -59,6 +61,7 @@ in
       wget
       yarn
       youtube-dl
+			yt-dlp
     ];
   };
 
@@ -114,6 +117,11 @@ in
       enable = true;
       userName = "lenell16";
       userEmail = "lenell16@gmail.com";
+			includes = [
+				{
+						path = ./dotfiles/git/gitalias.txt;
+					}
+			];
     };
 
     go.enable = true;

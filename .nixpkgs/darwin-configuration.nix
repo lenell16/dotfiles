@@ -53,7 +53,10 @@
       fira-code
       fira-mono
       input-fonts
-      (nerdfonts.override { fonts = [ "FiraMono" ]; })
+      (nerdfonts.override { fonts = [ 
+				"FiraMono"
+				"JetBrainsMono"
+			]; })
     ];
   };
 
@@ -111,11 +114,11 @@
 			# "lens"
       # "loopback"
 			# "mailspring"
-      # "marta"
+      "marta"
       # "notion"
       # "nova"
       # "now"
-      # "omnidisksweeper"
+      "omnidisksweeper"
       # "pastebot"
       # "pixelsnap"
       # "pocket-casts"
