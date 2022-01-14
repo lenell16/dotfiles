@@ -119,7 +119,7 @@ in
       userEmail = "lenell16@gmail.com";
 			includes = [
 				{
-						path = ./dotfiles/git/gitalias.txt;
+						path = ./dotfiles/git/gitalias/gitalias.txt;
 					}
 			];
     };

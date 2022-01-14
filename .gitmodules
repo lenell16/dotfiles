@@ -4,3 +4,6 @@
 [submodule ".nixpkgs/hm/dotfiles/iterm/rose-pine"]
 	path = .nixpkgs/hm/dotfiles/iterm/rose-pine
 	url = git@github.com:rose-pine/iterm.git
+[submodule ".nixpkgs/hm/dotfiles/git/gitalias"]
+	path = .nixpkgs/hm/dotfiles/git/gitalias
+	url = git@github.com:GitAlias/gitalias.git
