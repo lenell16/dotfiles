@@ -22,6 +22,7 @@ in
       DOTBARE_TREE = "$HOME";
 			NIXPKGS_ALLOW_INSECURE = 1;
 			NIXPKGS_ALLOW_UNFREE = 1;
+			TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
 		};
     packages = with pkgs; [
       any-nix-shell
