@@ -127,6 +127,10 @@ in
     go.enable = true;
 
     jq.enable = true;
+		
+		kitty = {
+			enable = true;	
+		};
 
     lazygit.enable = true;
 
