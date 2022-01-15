@@ -1,5 +1,13 @@
 { config, pkgs, ... }:
 
+let
+	stable = import <stable> {
+		config = {
+			allowUnfree = true;
+			allowInsecure = true;
+		};
+	};
+in
 {
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
@@ -41,10 +49,7 @@
     };
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    users.alonzothomas = import ./hm/home.nix;
-  };
+
 
   fonts = {
     enableFontDir = true;
@@ -53,7 +58,7 @@
       fira-code
       fira-mono
       input-fonts
-      (nerdfonts.override { fonts = [ 
+      (nerdfonts.override { fonts = [
 				"FiraMono"
 				"JetBrainsMono"
 			]; })
@@ -189,5 +194,17 @@
         _HIHideMenuBar = true;
       };
     };
+  };
+
+  environment.systemPackages = with pkgs; [
+    stable.blender
+    kitty
+    mpv
+    vscode
+  ];
+
+  home-manager = {
+    useGlobalPkgs = true;
+    users.alonzothomas = import ./hm/home.nix;
   };
 }
