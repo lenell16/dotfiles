@@ -7,3 +7,6 @@
 [submodule ".nixpkgs/hm/dotfiles/git/gitalias"]
 	path = .nixpkgs/hm/dotfiles/git/gitalias
 	url = git@github.com:GitAlias/gitalias.git
+[submodule ".nixpkgs/hm/dotfiles/kitty/rose-pine"]
+	path = .nixpkgs/hm/dotfiles/kitty/rose-pine
+	url = git@github.com:rose-pine/kitty.git

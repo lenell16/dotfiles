@@ -1,11 +1,11 @@
 require'nvim-treesitter.configs'.setup {
 	ensure_installed = "all",
-  -- autotag = {
-  --   enable = true,
-  -- },
-	 --  autopairs = {
-  --   enable = true,
-  -- },
+  autotag = {
+    enable = true,
+  },
+	  autopairs = {
+    enable = true,
+  },
   highlight = {
     -- `false` will disable the whole extension
     enable = true,

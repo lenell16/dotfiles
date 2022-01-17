@@ -122,7 +122,6 @@ in
       "marta"
       # "notion"
       # "nova"
-      # "now"
       "omnidisksweeper"
       # "pastebot"
       # "pixelsnap"
