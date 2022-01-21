@@ -1,13 +1,33 @@
 vim.g.mapleader = " "
 
-local map = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+local nest = require('nest')
 
-map('n', '<A-i>', '<CMD>lua require("FTerm").toggle()<CR>', opts)
-map('t', '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', opts)
-vim.cmd[[
-  nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-  nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-  nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-  nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-]]
+nest.applyKeymaps {
+    -- Remove silent from ; : mapping, so that : shows up in command mode
+    { ';', ':' , options = { silent = false } },
+    { ':', ';' },
+		{ '<A-i>', '<CMD>lua require("FTerm").toggle()<cr>' },
+
+    -- Prefix  every nested keymap with <leader>
+    { '<leader>', {
+        -- Prefix every nested keymap with f (meaning actually <leader>f here)
+        { 'f', {
+            { 'f', require('telescope.builtin').find_files },
+            -- This will actually map <leader>fl
+            { 'l', '<cmd>Telescope live_grep<cr>' },
+            -- Prefix every nested keymap with g (meaning actually <leader>fg here)
+            { 'g', {
+                { 'b', '<cmd>Telescope git_branches<cr>' },
+                -- This will actually map <leader>fgc
+                { 'c', '<cmd>Telescope git_commits<cr>' },
+                { 's', '<cmd>Telescope git_status<cr>' },
+            }},
+        }},
+
+    }},
+
+    -- Use insert mode for all nested keymaps
+		{ mode = 't', {
+			{ '<A-i>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<cr>' },
+		}},
+}

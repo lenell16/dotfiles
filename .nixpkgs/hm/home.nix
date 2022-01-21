@@ -112,6 +112,9 @@ in
 
 		kitty = {
 			enable = true;
+			settings = {
+				macos_option_as_alt = true;
+			};
       extraConfig = builtins.readFile ./dotfiles/kitty/extraConfig.conf;
 		};
 

@@ -38,6 +38,8 @@ return packer.startup({function(use)
 
 	use 'kyazdani42/nvim-web-devicons'
 
+	use 'LionC/nest.nvim'
+
 	use 'windwp/nvim-ts-autotag'
 	use 'windwp/nvim-autopairs'
 	use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
