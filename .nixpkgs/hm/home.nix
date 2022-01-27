@@ -64,6 +64,7 @@ in
       wally-cli
       watchman
       wget
+			xplr
       yarn
       youtube-dl
 			yt-dlp
@@ -71,9 +72,18 @@ in
   };
 
   programs = {
+		# atuin = {
+		# 	enable = true;
+		# };
+
     bat.enable = true;
 
     bottom.enable = true;
+
+		broot = {
+			enable = true;
+			enableFishIntegration = true;
+		};
 
     exa = {
       enable = true;
@@ -88,6 +98,9 @@ in
       shellAliases = {
         dotbare = "$HOME/.dotbare/dotbare";
       };
+			# interactiveShellInit = ''
+			# 	${pkgs.atuin}/bin/atuin init fish | source
+			# '';
     };
 
     fzf = {
@@ -108,7 +121,15 @@ in
 
     go.enable = true;
 
+		# helix = {
+		# 	enable = true;
+		# };
+
     jq.enable = true;
+
+		kakoune = {
+			enable = true;
+		};
 
 		kitty = {
 			enable = true;

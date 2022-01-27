@@ -14,14 +14,15 @@ nest.applyKeymaps {
         { 'f', {
             { 'f', require('telescope.builtin').find_files },
             -- This will actually map <leader>fl
+            { 'b', require 'telescope'.extensions.file_browser.file_browser },
             { 'l', '<cmd>Telescope live_grep<cr>' },
             -- Prefix every nested keymap with g (meaning actually <leader>fg here)
-            { 'g', {
-                { 'b', '<cmd>Telescope git_branches<cr>' },
-                -- This will actually map <leader>fgc
-                { 'c', '<cmd>Telescope git_commits<cr>' },
-                { 's', '<cmd>Telescope git_status<cr>' },
-            }},
+            -- { 'g', {
+            --     { 'b', '<cmd>Telescope git_branches<cr>' },
+            --     -- This will actually map <leader>fgc
+            --     { 'c', '<cmd>Telescope git_commits<cr>' },
+            --     { 's', '<cmd>Telescope git_status<cr>' },
+            -- }},
         }},
 
     }},
