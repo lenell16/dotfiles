@@ -22,6 +22,11 @@ in
       enable = true;
       package = pkgs.postgresql_14;
     };
+
+		skhd = {
+			enable = true;
+			skhdConfig = builtins.readFile ./hm/dotfiles/skhd/skhdrc;
+		};
   };
 
   # nix.package = pkgs.nix;
@@ -72,9 +77,11 @@ in
     taps = [
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
+			"unisonweb/unison"
     ];
     brews = [
-      "skhd"
+      # "skhd"
+			"unison-language"
     ];
     casks = [
       # "4k-stogram"
@@ -111,7 +118,7 @@ in
       # "insomnia-designer"
 			# "instabro" (not in brew)
       # "itch"
-      "iterm2"
+      # "iterm2"
       # "java"
       # "kap"
       # "kindle"
@@ -140,7 +147,7 @@ in
       # "screens-connect"
       # "sizzy"
       # "slack"
-      "soda-player"
+      # "soda-player"
       "soundsource"
       # "spotify"
       # "steam"
