@@ -1,7 +1,7 @@
-:: default : echo "default"
+:: default : osascript -e 'display notification "Default"'
 
 # # floating
-:: floating @ : echo "floating"
+:: floating @ : osascript -e 'display notification "Floating"'
 
 hyper - f ; floating
 
@@ -20,7 +20,7 @@ floating < e : yabai -m window --move rel:0:40
 floating < o : yabai -m window --move rel:0:-40
 floating < i : yabai -m window --move rel:40:0
 
-:: thing @ : echo "thing"
+:: thing @ : osascript -e 'display notification "Spaces"'
 
 hyper - s ; thing
 
@@ -65,7 +65,7 @@ thing < shift - 0 : yabai -m window --space  10; yabai -m space --focus 10
 
 thing < s : yabai -m window --toggle sticky
 
-:: monitor @ : echo "monitor"
+:: monitor @ : osascript -e 'display notification "Monitor"'
 
 hyper - m ; monitor
 

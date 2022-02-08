@@ -17,6 +17,10 @@
       source = ./gh;
       recursive = true;
     };
+    "skhd/skhdrc" = {
+      source = ./skhd/skhdrc;
+      executable = true;
+    };
    "yabai/yabairc" = {
       source = ./yabai/yabairc;
       executable = true;

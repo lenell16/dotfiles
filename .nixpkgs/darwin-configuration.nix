@@ -23,10 +23,10 @@ in
       package = pkgs.postgresql_14;
     };
 
-		skhd = {
-			enable = true;
-			skhdConfig = builtins.readFile ./hm/dotfiles/skhd/skhdrc;
-		};
+		# skhd = {
+		# 	enable = true;
+		# 	skhdConfig = builtins.readFile ./hm/dotfiles/skhd/skhdrc;
+		# };
   };
 
   # nix.package = pkgs.nix;
@@ -80,7 +80,7 @@ in
 			"unisonweb/unison"
     ];
     brews = [
-      # "skhd"
+      "skhd"
 			"unison-language"
     ];
     casks = [
