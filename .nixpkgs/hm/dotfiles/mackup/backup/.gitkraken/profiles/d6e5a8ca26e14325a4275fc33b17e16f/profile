@@ -1,0 +1,91 @@
+{
+  "tabInfo": {
+    "permanentTabs": {
+      "PROJECTS": {
+        "selectedProject": null,
+        "closed": true
+      }
+    },
+    "selectedTabId": "26f130e2-923d-4856-8e5f-15dbd7841769",
+    "tabs": [
+      {
+        "id": "c080303d-7ab4-468c-b80b-2d16f487d74e",
+        "type": "REPO",
+        "repoName": "fdr-cx-enrollment",
+        "repoPath": "/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"
+      },
+      {
+        "id": "26f130e2-923d-4856-8e5f-15dbd7841769",
+        "type": "REPO",
+        "repoName": "dotfiles",
+        "repoPath": "/Users/alonzothomas/dotfiles/"
+      }
+    ]
+  },
+  "externalEditor": "Visual Studio Code",
+  "profileIcon": "Gourmet-Keif.png",
+  "profileName": "Default Profile",
+  "userEmail": "lenell16@gmail.com",
+  "userName": "Alonzo Thomas",
+  "gpg": {
+    "commitGpgSign": false,
+    "tagForceSignAnnotated": false
+  },
+  "organizationId": null,
+  "editor": {
+    "fontFamily": "Monaco"
+  },
+  "cli": {
+    "fontFamily": "Monaco"
+  },
+  "repoInit": {
+    "lastRepoInitPath": "/Users/alonzothomas/Developer/work"
+  },
+  "projectGroupsFrecencyMetadata": {
+    "/Users/alonzothomas/Developer/work": {
+      "id": "project-group-/Users/alonzothomas/Developer/work",
+      "timestamps": [
+        1635449399157
+      ],
+      "total": 1
+    }
+  },
+  "hostingServiceFrecencyMetadata": {
+    "bitbucket": {
+      "id": "bitbucket",
+      "timestamps": [
+        1635449399185
+      ],
+      "total": 1
+    }
+  },
+  "layout": {
+    "RefPanel": {
+      "width": 272
+    }
+  },
+  "ssh": {
+    "useLocalAgent": true
+  },
+  "services": {
+    "bitbucket": {
+      "ssh": {}
+    }
+  },
+  "defaultIssueTrackerType": "jiraCloud",
+  "issues": {
+    "jiraCloud": {
+      "filtersByProjectKey": {
+        "88fe7a39-56cc-4591-8c0c-4bb802318829-CX": [
+          {
+            "id": "79bb78bb-e618-4738-8cbb-c9682a4d0552",
+            "jql": "project = \"CX\" AND assignee = currentUser() AND sprint in openSprints() ",
+            "name": "My Issues",
+            "resourceId": "88fe7a39-56cc-4591-8c0c-4bb802318829"
+          }
+        ]
+      }
+    }
+  },
+  "projects": {}
+}

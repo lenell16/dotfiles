@@ -1,0 +1,109 @@
+{
+  "lastUpgradeScriptRun": "v8.0.0",
+  "appId": "e2bc6d80ba3c34e147aba54b1ba0677f2fcdd550",
+  "sslWhitelist": [],
+  "lastVersion": "8.2.1",
+  "lastReleaseNotesDisplayed": "8.2.1",
+  "registration": {
+    "email": "lenell16@gmail.com",
+    "name": "Alonzo Thomas",
+    "status": "activated",
+    "loginType": "github",
+    "date": "2021-10-28T19:23:26.998Z",
+    "EULA": {
+      "version": "7.5.0",
+      "status": "agree_verified"
+    }
+  },
+  "userId": "bece3068-05fd-45a5-aff8-b73756a45ed3",
+  "licensedFeatures": [
+    "individual"
+  ],
+  "userFeatures": [
+    {
+      "name": "gitkraken"
+    },
+    {
+      "name": "glo"
+    },
+    {
+      "name": "timelines"
+    },
+    {
+      "name": "cli"
+    },
+    {
+      "name": "useChargebee"
+    },
+    {
+      "name": "activityStatus"
+    }
+  ],
+  "keepGitConfigInSyncWithProfile": false,
+  "hasSeenNewUserOnboarding": true,
+  "commits": {
+    "maxCommitsInGraph": 2000
+  },
+  "notification": {
+    "settings": {
+      "local": {
+        "showDesktopNotifications": true
+      }
+    }
+  },
+  "fuzzyFinderMetadata": {
+    "itemMetadata": {
+      "OPEN_REPO": {
+        "openRepo-/Users/alonzothomas/Developer/work/fdr-cx-enrollment/": {
+          "id": "openRepo-/Users/alonzothomas/Developer/work/fdr-cx-enrollment/",
+          "timestamps": [
+            1635449407762
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/alonzothomas/.cfg": {
+          "id": "openRepo-/Users/alonzothomas/.cfg",
+          "timestamps": [
+            1638255760737
+          ],
+          "total": 1
+        },
+        "openRepo-/Users/alonzothomas/dotfiles": {
+          "id": "openRepo-/Users/alonzothomas/dotfiles",
+          "timestamps": [
+            1642178862133,
+            1642179029212,
+            1644280932931
+          ],
+          "total": 3
+        }
+      }
+    }
+  },
+  "repoDeepLinkMap": {
+    "ff247122a98aa703895e310f0008c01d9dd9b9d7": {
+      "paths": [
+        "/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"
+      ],
+      "pullUrls": {
+        "https://alonzoff@bitbucket.org/billsdotcom_bills/fdr-cx-enrollment.git": {
+          "paths": [
+            "/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"
+          ],
+          "name": "fdr-cx-enrollment",
+          "hostName": "bitbucket.org",
+          "owner": "billsdotcom_bills",
+          "hostingServiceType": "bitbucket"
+        }
+      }
+    }
+  },
+  "windowSettings": {
+    "x": 869,
+    "y": 12,
+    "width": 1024,
+    "height": 1416,
+    "fullScreen": false,
+    "maximized": false
+  }
+}

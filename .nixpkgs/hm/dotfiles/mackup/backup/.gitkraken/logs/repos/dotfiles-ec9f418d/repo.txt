@@ -1,0 +1,7 @@
+[2022-01-14T16:48:36.683Z] Create submodule git@github.com:rose-pine/iterm.git at .nixpkgs/hm/dotfiles/iterm/rose-pine: started.
+[2022-01-14T16:49:15.363Z] Create submodule git@github.com:rose-pine/iterm.git at .nixpkgs/hm/dotfiles/iterm/rose-pine: started.
+[2022-01-14T16:50:17.863Z] Fetch all remotes: started.
+[2022-01-14T16:50:17.874Z] Fetch all remotes: finished. gk-log://duration?t=11
+[2022-01-15T19:10:52.963Z] Pull main: started.
+[2022-01-15T19:10:52.970Z] Pull main: Invalid name for remote
+[2022-01-15T19:10:52.972Z] Pull main: finished with errors. gk-log://duration?t=9

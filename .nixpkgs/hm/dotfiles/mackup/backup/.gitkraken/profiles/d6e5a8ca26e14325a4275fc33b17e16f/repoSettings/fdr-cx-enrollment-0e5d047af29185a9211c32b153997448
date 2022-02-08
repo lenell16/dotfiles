@@ -1,0 +1,393 @@
+{
+  "pullRequests": {
+    "filters": [
+      {
+        "id": "a69890b6-3845-48d2-a01d-796f4483c9f3",
+        "filter": "author:\"Alonzo Thomas\"",
+        "name": "My Pull Requests",
+        "author": [
+          {
+            "not": false,
+            "values": [
+              "Alonzo Thomas"
+            ]
+          }
+        ],
+        "in": [
+          {
+            "not": false,
+            "values": [
+              "title",
+              "body"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "496e56ac-4549-4282-8949-5cd106d4a09d",
+        "filter": "",
+        "name": "All Pull Requests",
+        "in": [
+          {
+            "not": false,
+            "values": [
+              "title",
+              "body"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "teams": {
+    "hasFinishedSettingUpTeams": true
+  },
+  "remoteParents": {
+    "bitbucket": {
+      "billsdotcom_bills": {
+        "fdr-cx-enrollment": {
+          "owner": "billsdotcom_bills",
+          "name": "fdr-cx-enrollment"
+        }
+      }
+    }
+  },
+  "remoteHeadCollectionByRemoteName": {
+    "origin": {
+      "HEAD": {
+        "name": "HEAD",
+        "oid": "7a7409e00b9e1ee2b2a9e03cb25692d30d941d2b",
+        "local": 0,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": "refs/heads/master"
+      },
+      "refs/heads/5710-LX-DEX-Transfer-Interval-Change": {
+        "name": "refs/heads/5710-LX-DEX-Transfer-Interval-Change",
+        "oid": "d0a8d9049042da497ba79065ea415e938c3da9d2",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-4632-facebook-px-test-form-complete-t": {
+        "name": "refs/heads/CX-4632-facebook-px-test-form-complete-t",
+        "oid": "588263aa9a95208e47df56b35c427c7a33351eef",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-4774-transfer-to-dashboard": {
+        "name": "refs/heads/CX-4774-transfer-to-dashboard",
+        "oid": "77e5a92a770b6e0a450195aabbb6fa27628ce594",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-4820-first-2-settlements-update-copy": {
+        "name": "refs/heads/CX-4820-first-2-settlements-update-copy",
+        "oid": "6146b6f9ede2163cb4edb836383dbd85f6fc0be7",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-4858-tech-unify-eslint-rules-into-a-e": {
+        "name": "refs/heads/CX-4858-tech-unify-eslint-rules-into-a-e",
+        "oid": "2248e1c243f8345a26b3e8cfffe494486ce71a94",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-5355-protect-routes": {
+        "name": "refs/heads/CX-5355-protect-routes",
+        "oid": "4827f73e39b28e73697e1400a075cab40664c335",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-5499-update-application-summary-totals": {
+        "name": "refs/heads/CX-5499-update-application-summary-totals",
+        "oid": "decb96de9392c0d8cc21a11e84f7a2bf16037759",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6017-Add-LeadUUID": {
+        "name": "refs/heads/CX-6017-Add-LeadUUID",
+        "oid": "75fd16fbf7d76eedc95487934b5b594b860404f0",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6115/logger-stack-msg": {
+        "name": "refs/heads/CX-6115/logger-stack-msg",
+        "oid": "f759e1767d6293881b0fbf61d61b64e6007c53b0",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6153-bugfix-transfer-page-redirect": {
+        "name": "refs/heads/CX-6153-bugfix-transfer-page-redirect",
+        "oid": "6f450614998a9ef095495c3b7b53bbf61ff744d4",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6157-route-protection-carry-highestIndexValue-from-url": {
+        "name": "refs/heads/CX-6157-route-protection-carry-highestIndexValue-from-url",
+        "oid": "ab5606967b8baaaf830618007b324ebd6fffa87f",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6160-bugfix-route-protection-decline-contract-sign": {
+        "name": "refs/heads/CX-6160-bugfix-route-protection-decline-contract-sign",
+        "oid": "a50afe53864f227eb7251089ee2e43c347e22bc4",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6161-breaking-change-gateway": {
+        "name": "refs/heads/CX-6161-breaking-change-gateway",
+        "oid": "895d633853a2f9e87098ee10fecbfd84e6c51bef",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6161-bugfix-route-protection-preintro-not-loading": {
+        "name": "refs/heads/CX-6161-bugfix-route-protection-preintro-not-loading",
+        "oid": "5ec34862d3bc571ab9688022ef48e5f881c527c0",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6193-ld-flag-query-params": {
+        "name": "refs/heads/CX-6193-ld-flag-query-params",
+        "oid": "9309c78637dd1fa80fd4b83a5b193119996613e3",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6193-ld-flag-route-protection": {
+        "name": "refs/heads/CX-6193-ld-flag-route-protection",
+        "oid": "3c61270698b71b6e7cba94c61269ca94edd6b645",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6193-ld-flag-route-protection-fix": {
+        "name": "refs/heads/CX-6193-ld-flag-route-protection-fix",
+        "oid": "f98395ce37ebd1b604fcc78127f81280dcee16fb",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6233-final-page---transition-to-dashb": {
+        "name": "refs/heads/CX-6233-final-page---transition-to-dashb",
+        "oid": "eb887522eb24a1cbdc48f7b1f40c05b080ab1bf3",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6250-ab-test-final-offer": {
+        "name": "refs/heads/CX-6250-ab-test-final-offer",
+        "oid": "0bc0590d17ef06501b327b0dcc726ceffeebaa9d",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6299-remove-CA-select-option": {
+        "name": "refs/heads/CX-6299-remove-CA-select-option",
+        "oid": "5b6c923722f96b173709ad948a30a0ecb0d8b699",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6311-Fix-typo": {
+        "name": "refs/heads/CX-6311-Fix-typo",
+        "oid": "db01337252d789b57020c4c3bee042dc5dea0f00",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6312-bank-account-address-fix": {
+        "name": "refs/heads/CX-6312-bank-account-address-fix",
+        "oid": "fb4503b26e5a2624d3bc7244ed0fb7415560d4e4",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/DEVOPS-346-v2-migration": {
+        "name": "refs/heads/DEVOPS-346-v2-migration",
+        "oid": "e4684d06017ad9a288a4982b4a1ebbea58eeecc2",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/master": {
+        "name": "refs/heads/master",
+        "oid": "7a7409e00b9e1ee2b2a9e03cb25692d30d941d2b",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      }
+    }
+  },
+  "upstreamFrecencyMetadata": {
+    "origin": {
+      "id": "remote-origin",
+      "timestamps": [
+        1637782057244,
+        1638401224730,
+        1639680014515,
+        1640042967971,
+        1642006452974,
+        1642698507990,
+        1643394140871,
+        1643681517677,
+        1643681540267,
+        1643825236544
+      ],
+      "total": 23
+    }
+  },
+  "collapsedSections": [
+    "TEAM_VISIBILITY"
+  ],
+  "issues": {
+    "github": {
+      "type": "github",
+      "currentRemote": null,
+      "collapsedFilters": []
+    },
+    "githubEnterprise": {
+      "type": "githubEnterprise",
+      "currentRemote": null,
+      "collapsedFilters": []
+    },
+    "gitlabSelfHosted": {
+      "type": "gitlabSelfHosted",
+      "collapsedFilters": [],
+      "currentProjectId": null
+    },
+    "gitlab": {
+      "type": "gitlab",
+      "collapsedFilters": [],
+      "currentProjectId": null
+    },
+    "glo": {
+      "type": "glo",
+      "collapsedFilters": [],
+      "currentBoardId": null
+    },
+    "jiraCloud": {
+      "type": "jiraCloud",
+      "currentProject": {
+        "id": "18917",
+        "key": "CX",
+        "name": "CX",
+        "projectType": "classic",
+        "resourceId": "88fe7a39-56cc-4591-8c0c-4bb802318829"
+      },
+      "collapsedFilters": [],
+      "collapsedIssues": []
+    },
+    "jiraServer": {
+      "type": "jiraServer",
+      "currentProject": null,
+      "collapsedFilters": [],
+      "collapsedIssues": []
+    },
+    "trello": {
+      "type": "trello",
+      "collapsedFilters": [],
+      "currentBoardId": null
+    },
+    "activeIssueTrackerType": "jiraCloud"
+  },
+  "layout": {
+    "GraphPanel": {
+      "Tree": {
+        "width": 194
+      }
+    }
+  },
+  "collapsedRemotes": [],
+  "hiddenRemotes": [],
+  "hiddenRefs": [
+    "refs/remotes/origin/CX-4245-stg-ingress-step2",
+    "refs/remotes/origin/CX-4350-custom-error-page",
+    "refs/remotes/origin/CX-4355-meet-your-advisor",
+    "refs/remotes/origin/CX-4357-debt-summary-page-ui",
+    "refs/remotes/origin/CX-4359-estimated-program_-cfos-page-dat",
+    "refs/remotes/origin/CX-4369-create-trust-pilot-carousel-comp",
+    "refs/remotes/origin/CX-4372-tradelines-create-table-componen",
+    "refs/remotes/origin/CX-4373-tradelines-create-pop-upmodal-co",
+    "refs/remotes/origin/CX-4400/logger-plus",
+    "refs/remotes/origin/CX-4412-component-organization-update-fo",
+    "refs/remotes/origin/CX-4411-component-organization-follow-fi",
+    "refs/remotes/origin/CX-4418/env",
+    "refs/remotes/origin/CX-4413-add-quick-fix-for-desktop-and-ta",
+    "refs/remotes/origin/CX-4425-add-ffn-auth-secrets",
+    "refs/remotes/origin/CX-4454-account-numbers-payment-date-pag",
+    "refs/remotes/origin/CX-4452-goals-page-ui",
+    "refs/remotes/origin/CX-4455-create-input-component-2",
+    "refs/remotes/origin/CX-4454-account-numbers-payment-date-pag-2",
+    "refs/remotes/origin/CX-4475-add-eslint-rule-for-proptypes",
+    "refs/remotes/origin/CX-4519-bank-account-numbers-page-ui",
+    "refs/remotes/origin/CX-4520-draft-date-page-ui",
+    "refs/remotes/origin/CX-4529-ensure-correct-semantic-html-in-",
+    "refs/remotes/origin/CX-4522-current-situation-description-page-ui",
+    "refs/remotes/origin/CX-4522-current-situation-full-form",
+    "refs/remotes/origin/CX-4553-contentful-update-header-and-foo",
+    "refs/remotes/origin/CX-4574-define-flow-and-step-logic",
+    "refs/remotes/origin/CX-4578-dc-guide-component",
+    "refs/remotes/origin/CX-4588-build-placeholder-transition-pag",
+    "refs/remotes/origin/CX-4589-guesstimate-offer-program-cfos-t",
+    "refs/remotes/origin/CX-4598-create-a-launch-darkly-flag-for-",
+    "refs/remotes/origin/CX-4644-final-offer-page-ui",
+    "refs/remotes/origin/CX-4646-Kafka-Analytic-Plugin",
+    "refs/remotes/origin/CX-4716-estimated-program-final-ui",
+    "refs/remotes/origin/CX-4719-goals-page-final-ui",
+    "refs/remotes/origin/CX-4757-Client-Side-Data-Refresh",
+    "refs/remotes/origin/CX-4814-account-validation-page-final-ui",
+    "refs/remotes/origin/CX-4820-first-2-settlements-update-copy",
+    "refs/remotes/origin/CX-4838-event-tracker---add-fdr-applican",
+    "refs/remotes/origin/CX-4856-account-number-payment-final-ui",
+    "refs/remotes/origin/CX-4869-freedom-guide-ui",
+    "refs/remotes/origin/CX-4869-freedom-guide-ui-bug-fix",
+    "refs/remotes/origin/CX-4870-footer-should-be-sticky",
+    "refs/remotes/origin/CX-4940-current-situation-description-fi",
+    "refs/remotes/origin/CX-4945-hide-unfavorable-cfos",
+    "refs/remotes/origin/CX-4957-submit-application-final-ui",
+    "refs/remotes/origin/CX-4960-disable-display-name-rule",
+    "refs/remotes/origin/CX-4963-desktop-summary-background",
+    "refs/remotes/origin/CX-4992-End-2-End-Analytics",
+    "refs/remotes/origin/CX-4998-global-kevin-spacey-issues",
+    "refs/remotes/origin/CX-5001-remove-offer-select-step",
+    "refs/remotes/origin/CX-5002/remove-change-button",
+    "refs/remotes/origin/CX-5004-update-cta-text",
+    "refs/remotes/origin/CX-5007-copy-fixes",
+    "refs/remotes/origin/CX-5038/CX-5039-route-order-and-negative-debt-tabs-amounts",
+    "refs/remotes/origin/CX-5041-select-state-for-account-validat",
+    "refs/remotes/origin/CX-5050-contract-readiness-final-ui",
+    "refs/remotes/origin/CX-5057",
+    "refs/remotes/origin/CX-5057-freedom-guide-configurability",
+    "refs/remotes/origin/CX-5057-qa-fixes",
+    "refs/remotes/origin/CX-5112-decimals",
+    "refs/remotes/origin/CX-5133",
+    "refs/remotes/origin/CX-5133-current-situation--character-cou",
+    "refs/remotes/origin/5710-LX-DEX-Transfer-Interval-Change",
+    "refs/remotes/origin/CX-4858-tech-unify-eslint-rules-into-a-e",
+    "refs/remotes/origin/CX-5355-protect-routes",
+    "refs/remotes/origin/CX-5499-update-application-summary-totals",
+    "refs/remotes/origin/CX-6115/logger-stack-msg",
+    "refs/remotes/origin/CX-6153-bugfix-transfer-page-redirect",
+    "refs/remotes/origin/CX-6160-bugfix-route-protection-decline-contract-sign",
+    "refs/remotes/origin/CX-6161-bugfix-route-protection-preintro-not-loading",
+    "refs/remotes/origin/CX-6157-route-protection-carry-highestIndexValue-from-url",
+    "refs/remotes/origin/CX-6193-ld-flag-route-protection"
+  ],
+  "collapsedBranchFolders": [
+    "REMOTEorigin-CX-4400",
+    "REMOTEorigin-CX-6115"
+  ]
+}

@@ -1,0 +1,10 @@
+[Tue Nov 16 2021 10:30:18 GMT-0700 (Mountain Standard Time)] Checkout Failed: 1 conflict prevents checkout. Commit, stash, or discard your changes first.
+[Tue Nov 16 2021 10:30:36 GMT-0700 (Mountain Standard Time)] Conflict Detected: There are merge conflicts that need to be resolved
+[Thu Nov 18 2021 11:50:31 GMT-0700 (Mountain Standard Time)] Delete Failed: refs/heads/CX-5281: Cannot delete currently checked out branch. Switch branches first.
+[Thu Dec 16 2021 11:28:40 GMT-0700 (Mountain Standard Time)] Conflict Detected: There are merge conflicts that need to be resolved
+[Wed Jan 12 2022 07:33:29 GMT-0700 (Mountain Standard Time)] Jira Cloud integration failed to initialize: net::ERR_NAME_NOT_RESOLVED
+[Sat Jan 15 2022 12:10:53 GMT-0700 (Mountain Standard Time)] Pull Failed: Invalid name for remote
+[Fri Jan 28 2022 10:39:50 GMT-0700 (Mountain Standard Time)] Conflict Detected: There are merge conflicts that need to be resolved
+[Thu Feb 03 2022 14:38:41 GMT-0700 (Mountain Standard Time)] Failed to initialize: net::ERR_NETWORK_IO_SUSPENDED
+[Thu Feb 03 2022 14:38:42 GMT-0700 (Mountain Standard Time)] Fetching issues failed: net::ERR_NETWORK_IO_SUSPENDED
+[Mon Feb 07 2022 17:41:59 GMT-0700 (Mountain Standard Time)] Jira Cloud integration failed to initialize: net::ERR_NETWORK_IO_SUSPENDED

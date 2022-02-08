@@ -75,61 +75,66 @@ monitor < e  : yabai -m display --focus 2
 monitor < shift - o  : yabai -m window --display 1 && yabai -m display --focus 1
 monitor < shift - e  : yabai -m window --display 2 && yabai -m display --focus 2
 
-monitor, thing, floating < hyper - q ; default
+:: window @ : osascript -e 'display notification "Windows"'
 
-# # # focus window
-# # alt - x : yabai -m window --focus recent
-# shift + ctrl + alt - h : yabai -m window --focus west
-# shift + ctrl + alt - j : yabai -m window --focus south
-# shift + ctrl + alt - k : yabai -m window --focus north
-# shift + ctrl + alt - l : yabai -m window --focus east
-# alt - z : yabai -m window --focus stack.prev
-# alt - c : yabai -m window --focus stack.next
+hyper - w ; window
+
+# focus window
+window < x : yabai -m window --focus recent
+window < n : yabai -m window --focus west
+window < e : yabai -m window --focus south
+window < o : yabai -m window --focus north
+window < i : yabai -m window --focus east
+window < z : yabai -m window --focus stack.prev
+window < c : yabai -m window --focus stack.next
 
 # # swap window
-# shift + alt - x : yabai -m window --swap recent
-# shift + alt - h : yabai -m window --swap west
-# shift + alt - j : yabai -m window --swap south
-# shift + alt - k : yabai -m window --swap north
-# shift + alt - l : yabai -m window --swap east
+window < shift - x : yabai -m window --swap recent
+window < shift - n : yabai -m window --swap west
+window < shift - e : yabai -m window --swap south
+window < shift - o : yabai -m window --swap north
+window < shift - i : yabai -m window --swap east
 
 # # move window
-# shift + cmd - h : yabai -m window --warp west
-# shift + cmd - j : yabai -m window --warp south
-# shift + cmd - k : yabai -m window --warp north
-# shift + cmd - l : yabai -m window --warp east
+window < alt - n : yabai -m window --warp west
+window < alt - e : yabai -m window --warp south
+window < alt - o : yabai -m window --warp north
+window < alt - i : yabai -m window --warp east
 
 # # set insertion point in focused container
-# ctrl + alt - h : yabai -m window --insert west
-# ctrl + alt - j : yabai -m window --insert south
-# ctrl + alt - k : yabai -m window --insert north
-# ctrl + alt - l : yabai -m window --insert east
-# ctrl + alt - i : yabai -m window --insert stack
+window < ctrl + alt - n : yabai -m window --insert west
+window < ctrl + alt - e : yabai -m window --insert south
+window < ctrl + alt - o : yabai -m window --insert north
+window < ctrl + alt - i : yabai -m window --insert east
+window < ctrl + alt - s : yabai -m window --insert stack
 
-# # rotate tree
-# alt - r : yabai -m space --rotate 90
+# rotate tree
+window < alt - r : yabai -m space --rotate 90
 
-# # mirror tree y-axis
-# alt - y : yabai -m space --mirror y-axis
+# mirror tree y-axis
+window < alt - y : yabai -m space --mirror y-axis
 
-# # mirror tree x-axis
-# alt - x : yabai -m space --mirror x-axis
+# mirror tree x-axis
+window < alt - x : yabai -m space --mirror x-axis
 
-# # toggle window fullscreen zoom
-# alt - f : yabai -m window --toggle zoom-fullscreen
+# toggle window fullscreen zoom
+window < alt - f : yabai -m window --toggle zoom-fullscreen
 
-# # toggle window native fullscreen
-# shift + alt - f : yabai -m window --toggle native-fullscreen
+# toggle window native fullscreen
+window < shift + alt - f : yabai -m window --toggle native-fullscreen
 
-# # toggle window split type
-# alt - e : yabai -m window --toggle split
+# toggle window split type
+window < alt - e : yabai -m window --toggle split
 
-# # toggle topmost (keep above other windows)
-# alt - o : yabai -m window --toggle topmost
+# toggle topmost (keep above other windows)
+window < alt - o : yabai -m window --toggle topmost
 
-# # toggle picture-in-picture
-# alt - p : yabai -m window --toggle border && \
-#           yabai -m window --toggle pip
+# toggle picture-in-picture
+window < alt - p : yabai -m window --toggle border && \
+          yabai -m window --toggle pip
 
-# # Quickly restart the yabai launch agent
-# ctrl + alt + cmd - r : launchctl kickstart -k "gui/$UID/homebrew.mxcl.yabai"
+# Quickly restart the yabai launch agent
+ctrl + alt + cmd - r : launchctl kickstart -k "gui/$UID/homebrew.mxcl.yabai"
+
+window, monitor, thing, floating < hyper - q ; default
+

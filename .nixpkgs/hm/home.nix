@@ -27,6 +27,8 @@ in
 			NIXPKGS_ALLOW_INSECURE = 1;
 			NIXPKGS_ALLOW_UNFREE = 1;
 			TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
+			EDITOR = "nvim";
+			VISUAL = "nvim";
 		};
     packages = with pkgs; [
       any-nix-shell

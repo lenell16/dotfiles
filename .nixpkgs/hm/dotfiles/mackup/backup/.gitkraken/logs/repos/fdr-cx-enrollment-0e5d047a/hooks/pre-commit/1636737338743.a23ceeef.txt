@@ -1,0 +1,38 @@
+⚠ Some of your tasks use `git add` command. Please remove it from the config since all modifications made by tasks will be automatically added to the git commit index.
+
+[STARTED] Preparing...
+[SUCCESS] Preparing...
+[STARTED] Running tasks...
+[STARTED] Running tasks for ./**/*.{js,jsx,ts,tsx}
+[STARTED] Running tasks for ./**/*.{js,jsx,ts,tsx,css,md,json}
+[STARTED] Running tasks for src/**/*.scss
+[STARTED] eslint --fix
+[STARTED] prettier --write --config ./.prettierrc
+[STARTED] yarn lint:style --fix
+[SUCCESS] prettier --write --config ./.prettierrc
+[STARTED] git add
+[SUCCESS] git add
+[SUCCESS] Running tasks for ./**/*.{js,jsx,ts,tsx,css,md,json}
+[SUCCESS] yarn lint:style --fix
+[STARTED] git add
+[SUCCESS] git add
+[SUCCESS] Running tasks for src/**/*.scss
+[FAILED] eslint --fix [FAILED]
+[FAILED] eslint --fix [FAILED]
+[SUCCESS] Running tasks...
+[STARTED] Applying modifications...
+[SKIPPED] Skipped because of errors from tasks.
+[STARTED] Reverting to original state because of errors...
+[SUCCESS] Reverting to original state because of errors...
+[STARTED] Cleaning up...
+[SUCCESS] Cleaning up...
+
+✖ eslint --fix:
+
+/Users/alonzothomas/Developer/work/fdr-cx-enrollment/src/components/steps/VerifyYourIdentity/VerifyYourIdentity.js
+  43:31  error  'data' is defined but never used  no-unused-vars
+
+✖ 1 problem (1 error, 0 warnings)
+
+husky - pre-commit hook exited with code 1 (error)
+Hook process exited.
