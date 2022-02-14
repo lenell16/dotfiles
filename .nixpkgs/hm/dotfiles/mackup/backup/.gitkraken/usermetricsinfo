@@ -1,1 +1,1 @@
-{"metrics":{"tab":[{"timestamp":1644280939797,"tabType":"repo"}]},"version":"8.2.1"}
+{"metrics":{"merge":[{"timestamp":1644534426299,"durationMs":63,"provider":"bitbucket","lfs":false}],"pull":[{"timestamp":1644534426223,"durationMs":146,"provider":"bitbucket","method":"pull_merge"}]},"version":"8.2.1"}

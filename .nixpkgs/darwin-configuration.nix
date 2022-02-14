@@ -30,12 +30,18 @@ in
   };
 
   # nix.package = pkgs.nix;
-  nixpkgs.config = {
-		allowUnfree = true;
-  	allowInsecure = true;
-  	input-fonts.acceptLicense = true;
-	};
-
+  nixpkgs = {
+    config = {
+      allowUnfree = true;
+      allowInsecure = true;
+      input-fonts.acceptLicense = true;
+    };
+    overlays = [
+      (import (builtins.fetchTarball {
+        url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
+      }))
+    ];
+  };
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.bash.enable = true;
   programs.zsh.enable = true; # default shell on catalina
@@ -83,6 +89,7 @@ in
 			"mackup"
       "skhd"
 			"unison-language"
+			"viu"
     ];
     casks = [
       # "4k-stogram"

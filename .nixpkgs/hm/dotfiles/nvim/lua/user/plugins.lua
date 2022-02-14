@@ -39,6 +39,7 @@ return packer.startup({function(use)
 	use 'kyazdani42/nvim-web-devicons'
 
 	use 'LionC/nest.nvim'
+	use 'mrjones2014/legendary.nvim'
 
 	use 'windwp/nvim-ts-autotag'
 	use 'windwp/nvim-autopairs'

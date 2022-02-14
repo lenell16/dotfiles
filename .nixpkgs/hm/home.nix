@@ -15,10 +15,6 @@ in
     ./programs
   ];
 
-  nixpkgs.config = {
-		allowUnfree = true;
-  	allowInsecure = true;
-	};
   programs.home-manager.enable = true;
   home = {
     sessionVariables= {
@@ -51,7 +47,7 @@ in
       miller
       stable.mongodb
       ngrok
-      neovim
+      neovim-nightly
       nixpkgs-fmt
       nodejs
       nodePackages.pnpm

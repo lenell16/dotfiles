@@ -1119,3 +1119,70 @@ Git Hook exited with 1
 [2022-02-02T18:07:26.776Z] Finished creating pull request
 [2022-02-02T18:50:10.565Z] Apply stash e100d45c071bb79b96bed7ed255c28918f99fdb1: started.
 [2022-02-02T18:50:11.870Z] Apply stash 7f520a51849b499decbe336c3103f6cce9389aba: finished. gk-log://duration?t=1305
+[2022-02-09T23:23:50.382Z] Checkout refs/heads/master: started.
+[2022-02-09T23:23:50.701Z] Checkout refs/heads/master: finished. gk-log://duration?t=319
+[2022-02-09T23:23:52.729Z] Pull master: started.
+[2022-02-09T23:23:52.741Z] Fetch remote origin: started
+[2022-02-09T23:23:53.429Z] Fetch remote origin: finished gk-log://duration?t=688
+[2022-02-09T23:23:53.520Z] Merge origin/master into master: started.
+[2022-02-09T23:23:53.610Z] Merge origin/master into master: finished. gk-log://duration?t=90
+[2022-02-09T23:23:53.623Z] Pull master: finished. gk-log://duration?t=894
+[2022-02-09T23:27:51.942Z] Fetch remote origin: started
+[2022-02-09T23:27:52.633Z] Fetch remote origin: finished gk-log://duration?t=691
+[2022-02-09T23:28:20.152Z] Delete ref refs/heads/CX-6233-final-page---transition-to-dashb at eb887522eb24a1cbdc48f7b1f40c05b080ab1bf3: started.
+[2022-02-09T23:28:20.244Z] Delete ref refs/heads/CX-6233-final-page---transition-to-dashb at eb887522eb24a1cbdc48f7b1f40c05b080ab1bf3: finished. gk-log://duration?t=92
+[2022-02-09T23:28:27.690Z] Delete ref refs/heads/CX-6311-Fix-typo at db01337252d789b57020c4c3bee042dc5dea0f00: started.
+[2022-02-09T23:28:27.761Z] Delete ref refs/heads/CX-6311-Fix-typo at db01337252d789b57020c4c3bee042dc5dea0f00: finished. gk-log://duration?t=71
+[2022-02-09T23:28:27.763Z] Delete ref refs/remotes/origin/CX-6311-Fix-typo at db01337252d789b57020c4c3bee042dc5dea0f00: started.
+[2022-02-09T23:28:29.619Z] Delete ref refs/remotes/origin/CX-6311-Fix-typo at db01337252d789b57020c4c3bee042dc5dea0f00: finished. gk-log://duration?t=1856
+[2022-02-09T23:28:42.921Z] Drop stash 611f7353573ec5370d9293626f50afeea2e8a301: started.
+[2022-02-09T23:28:44.480Z] Drop stash 611f7353573ec5370d9293626f50afeea2e8a301: finished. gk-log://duration?t=1559
+[2022-02-09T23:28:57.091Z] Delete ref refs/heads/CX-4774-transfer-to-dashboard at 77e5a92a770b6e0a450195aabbb6fa27628ce594: started.
+[2022-02-09T23:28:57.154Z] Delete ref refs/heads/CX-4774-transfer-to-dashboard at 77e5a92a770b6e0a450195aabbb6fa27628ce594: finished. gk-log://duration?t=63
+[2022-02-09T23:28:57.158Z] Delete ref refs/remotes/origin/CX-4774-transfer-to-dashboard at 77e5a92a770b6e0a450195aabbb6fa27628ce594: started.
+[2022-02-09T23:28:58.940Z] Delete ref refs/remotes/origin/CX-4774-transfer-to-dashboard at 77e5a92a770b6e0a450195aabbb6fa27628ce594: finished. gk-log://duration?t=1782
+[2022-02-10T00:58:35.201Z] Drop stash e100d45c071bb79b96bed7ed255c28918f99fdb1: started.
+[2022-02-10T00:58:37.169Z] Drop stash e100d45c071bb79b96bed7ed255c28918f99fdb1: finished. gk-log://duration?t=1968
+[2022-02-10T00:58:46.878Z] Checkout refs/remotes/origin/CX-6356-final-offer-hybrid-part-2: started.
+[2022-02-10T00:58:46.896Z] Create ref refs/heads/CX-6356-final-offer-hybrid-part-2 at 5fdf4c2d6dc6f2ea0be60fb469ce8566310cacf1: started.
+[2022-02-10T00:58:47.007Z] Create ref refs/heads/CX-6356-final-offer-hybrid-part-2 at 5fdf4c2d6dc6f2ea0be60fb469ce8566310cacf1: finished. gk-log://duration?t=111
+[2022-02-10T00:58:47.310Z] Checkout refs/remotes/origin/CX-6356-final-offer-hybrid-part-2: finished. gk-log://duration?t=432
+[2022-02-10T01:05:49.906Z] Create branch for Jira Cloud issue CX-6410: started.
+[2022-02-10T01:05:49.952Z] Create branch for Jira Cloud issue CX-6410: finished. gk-log://duration?t=46
+[2022-02-10T01:05:51.280Z] Create ref refs/heads/CX-6410-dex-hybrid--trust-markers---mvp at 5fdf4c2d6dc6f2ea0be60fb469ce8566310cacf1: started.
+[2022-02-10T01:05:51.347Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-10T01:05:51.625Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=278
+[2022-02-10T01:05:51.641Z] Create ref refs/heads/CX-6410-dex-hybrid--trust-markers---mvp at 5fdf4c2d6dc6f2ea0be60fb469ce8566310cacf1: finished. gk-log://duration?t=361
+[2022-02-10T09:37:14.932Z] Fetch all remotes: started.
+[2022-02-10T09:37:14.948Z] Fetch all remotes: finished. gk-log://duration?t=16
+[2022-02-10T09:39:11.242Z] Fetch all remotes: started.
+[2022-02-10T09:39:11.261Z] Fetch all remotes: finished. gk-log://duration?t=19
+[2022-02-10T09:42:12.771Z] Commit: started.
+[2022-02-10T09:42:12.822Z] pre-commit hook started.
+[2022-02-10T09:42:20.051Z] pre-commit hook failed. gk-log://duration?t=7229 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1644486132847.4b26ad11&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-10T09:42:20.075Z] {{{GK_MULTI_LINE}}}
+Commit: pre-commit Failed
+Git Hook exited with 1
+{{{/GK_MULTI_LINE}}}
+[2022-02-10T09:42:20.078Z] Commit: finished with errors. gk-log://duration?t=7307
+[2022-02-10T09:42:20.082Z] Commit: finished gk-log://duration?t=7311
+[2022-02-10T09:44:08.122Z] Stage 3 files for commit: started.
+[2022-02-10T09:44:08.204Z] Stage 3 files for commit: finished. gk-log://duration?t=82
+[2022-02-10T23:07:03.954Z] Checkout refs/heads/master: started.
+[2022-02-10T23:07:04.193Z] Checkout refs/heads/master: finished. gk-log://duration?t=239
+[2022-02-10T23:07:06.230Z] Pull master: started.
+[2022-02-10T23:07:06.288Z] Merge origin/master into master: started.
+[2022-02-10T23:07:06.351Z] Merge origin/master into master: finished. gk-log://duration?t=63
+[2022-02-10T23:07:06.364Z] Pull master: finished. gk-log://duration?t=134
+[2022-02-10T23:07:12.503Z] Cherry pick 1b689da92e39187a8258f197f57bf8bd596cbfa7 onto refs/heads/master: started.
+[2022-02-10T23:07:12.654Z] Cherry pick 1b689da92e39187a8258f197f57bf8bd596cbfa7 onto refs/heads/master: finished. gk-log://duration?t=151
+[2022-02-10T23:07:22.508Z] Cherry pick f49a8579f9cebcaf8be4b8c682e60b1d6d0fe4a7 onto refs/heads/master: started.
+[2022-02-10T23:07:22.629Z] Cherry pick f49a8579f9cebcaf8be4b8c682e60b1d6d0fe4a7 onto refs/heads/master: finished. gk-log://duration?t=121
+[2022-02-10T23:07:29.650Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-10T23:07:29.891Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=241
+[2022-02-10T23:07:34.724Z] Reset (hard) refs/heads/CX-6410-dex-hybrid--trust-markers---mvp to d3739d1df6c9e2ab2ede9ae2e18cc6fc5d9847b3: started.
+[2022-02-10T23:07:34.817Z] Reset (hard) refs/heads/CX-6410-dex-hybrid--trust-markers---mvp to d3739d1df6c9e2ab2ede9ae2e18cc6fc5d9847b3: finished. gk-log://duration?t=93
+[2022-02-10T23:07:39.453Z] Push CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-10T23:07:41.682Z] Set upstream for refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-10T23:07:41.934Z] Set upstream for refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=252
+[2022-02-10T23:07:47.927Z] Push CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=8474
