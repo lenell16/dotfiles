@@ -45,6 +45,6 @@ local keymaps = {
 }
 
 require('legendary').setup({
-	invlude_builtin = false,
+	include_builtin = false,
 	keymaps = keymaps
 })
