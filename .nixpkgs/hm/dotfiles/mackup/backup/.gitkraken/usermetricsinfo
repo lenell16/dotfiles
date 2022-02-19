@@ -1,1 +1,1 @@
-{"metrics":{"merge":[{"timestamp":1644534426299,"durationMs":63,"provider":"bitbucket","lfs":false}],"pull":[{"timestamp":1644534426223,"durationMs":146,"provider":"bitbucket","method":"pull_merge"}]},"version":"8.2.1"}
+{"metrics":{"mergeTool":[{"timestamp":1645135381602},{"timestamp":1645135391050},{"timestamp":1645135469914},{"timestamp":1645135478132},{"timestamp":1645135491368},{"timestamp":1645135683375},{"timestamp":1645211842147}],"appStart":[{"timestamp":1645211629922,"durationMs":7574,"method":"start","repoOpened":true}]},"version":"8.3.0"}

@@ -1186,3 +1186,212 @@ Git Hook exited with 1
 [2022-02-10T23:07:41.682Z] Set upstream for refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
 [2022-02-10T23:07:41.934Z] Set upstream for refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=252
 [2022-02-10T23:07:47.927Z] Push CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=8474
+[2022-02-15T17:57:21.293Z] Stage src/utils/contentful/index.js for commit: started.
+[2022-02-15T17:57:21.542Z] Stage src/utils/contentful/index.js for commit: finished. gk-log://duration?t=249
+[2022-02-15T17:58:45.826Z] Commit: started.
+[2022-02-15T17:58:45.877Z] pre-commit hook started.
+[2022-02-15T17:58:52.885Z] pre-commit hook finished. gk-log://duration?t=7008 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1644947925907.424802b7&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-15T17:58:53.513Z] Commit: successfully created commit a4ec334fc10b8967b0f9363c34f38edcbc705659
+[2022-02-15T17:58:53.522Z] Commit: finished gk-log://duration?t=7696
+[2022-02-15T17:59:06.058Z] Push CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-15T17:59:10.178Z] Push CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=4120
+[2022-02-15T18:00:05.450Z] Rebase CX-6410-dex-hybrid--trust-markers---mvp onto origin/master: started.
+[2022-02-15T18:00:05.930Z] Rebase CX-6410-dex-hybrid--trust-markers---mvp onto origin/master: conflict occured while rebasing
+[2022-02-15T18:00:05.932Z] Rebase CX-6410-dex-hybrid--trust-markers---mvp onto origin/master: finished with errors. gk-log://duration?t=482
+[2022-02-15T18:00:08.101Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: started.
+[2022-02-15T18:00:08.118Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: finished. gk-log://duration?t=17
+[2022-02-15T18:00:28.781Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: started.
+[2022-02-15T18:00:28.796Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: finished. gk-log://duration?t=15
+[2022-02-15T18:00:28.801Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: started.
+[2022-02-15T18:00:29.180Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: finished. gk-log://duration?t=379
+[2022-02-15T18:00:30.564Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: started.
+[2022-02-15T18:00:30.599Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: finished. gk-log://duration?t=35
+[2022-02-15T18:00:39.002Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: started.
+[2022-02-15T18:00:39.012Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: finished. gk-log://duration?t=10
+[2022-02-15T18:00:39.016Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: started.
+[2022-02-15T18:00:39.373Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: finished. gk-log://duration?t=357
+[2022-02-15T18:00:42.160Z] Continue rebase: started.
+[2022-02-15T18:00:42.457Z] Continue rebase: finished. gk-log://duration?t=297
+[2022-02-15T18:00:47.495Z] Push CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-15T18:01:05.505Z] Push CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=18010
+[2022-02-15T18:18:34.182Z] Checkout refs/heads/master: started.
+[2022-02-15T18:18:34.655Z] Checkout refs/heads/master: finished. gk-log://duration?t=473
+[2022-02-15T18:18:48.211Z] Reset (hard) refs/heads/master to cb0dddfe1c03f097a59fac07a15dc1ecb79df175: started.
+[2022-02-15T18:18:48.401Z] Reset (hard) refs/heads/master to cb0dddfe1c03f097a59fac07a15dc1ecb79df175: finished. gk-log://duration?t=190
+[2022-02-15T19:07:02.530Z] Edit filter My Issues: started.
+[2022-02-15T19:07:02.539Z] Edit filter My Issues: finished. gk-log://duration?t=9
+[2022-02-15T19:07:04.367Z] Create filter for Jira Cloud: started.
+[2022-02-15T19:07:12.670Z] Create filter for Jira Cloud: finished. gk-log://duration?t=8303
+[2022-02-15T19:07:18.723Z] Create branch for Jira Cloud issue CX-6433: started.
+[2022-02-15T19:07:18.771Z] Create branch for Jira Cloud issue CX-6433: finished. gk-log://duration?t=48
+[2022-02-15T19:07:21.314Z] Create ref refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf at cb0dddfe1c03f097a59fac07a15dc1ecb79df175: started.
+[2022-02-15T19:07:21.401Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-15T19:07:21.825Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=424
+[2022-02-15T19:07:21.845Z] Create ref refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf at cb0dddfe1c03f097a59fac07a15dc1ecb79df175: finished. gk-log://duration?t=531
+[2022-02-15T19:19:31.261Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-15T19:19:31.514Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=253
+[2022-02-15T20:16:13.116Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-15T20:16:13.342Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=226
+[2022-02-15T20:16:19.112Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-15T20:16:19.201Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=89
+[2022-02-15T20:16:20.848Z] Checkout refs/heads/master: started.
+[2022-02-15T20:16:21.096Z] Checkout refs/heads/master: finished. gk-log://duration?t=248
+[2022-02-15T20:16:24.325Z] Merge origin/master into master: started.
+[2022-02-15T20:16:24.402Z] Merge origin/master into master: finished. gk-log://duration?t=77
+[2022-02-15T20:16:26.111Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-15T20:16:26.319Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=208
+[2022-02-16T16:25:22.799Z] Commit: started.
+[2022-02-16T16:25:22.855Z] pre-commit hook started.
+[2022-02-16T16:25:27.403Z] pre-commit hook failed. gk-log://duration?t=4548 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645028722880.c7d2317e&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-16T16:25:27.421Z] {{{GK_MULTI_LINE}}}
+Commit: pre-commit Failed
+Git Hook exited with 1
+{{{/GK_MULTI_LINE}}}
+[2022-02-16T16:25:27.423Z] Commit: finished with errors. gk-log://duration?t=4624
+[2022-02-16T16:25:27.425Z] Commit: finished gk-log://duration?t=4626
+[2022-02-16T16:26:20.835Z] Stage src/pages/steps/final-offer-hybrid.js for commit: started.
+[2022-02-16T16:26:20.938Z] Stage src/pages/steps/final-offer-hybrid.js for commit: finished. gk-log://duration?t=103
+[2022-02-16T16:26:22.452Z] Commit: started.
+[2022-02-16T16:26:22.509Z] pre-commit hook started.
+[2022-02-16T16:26:26.522Z] pre-commit hook finished. gk-log://duration?t=4013 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645028782510.380523f6&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-16T16:26:26.763Z] Commit: successfully created commit 7eaab73844bb19510052ab105124afea9559527b
+[2022-02-16T16:26:26.765Z] Commit: finished gk-log://duration?t=4313
+[2022-02-16T16:26:47.289Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-16T16:26:49.025Z] Set upstream for refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-16T16:26:49.317Z] Set upstream for refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=292
+[2022-02-16T16:26:56.686Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=9397
+[2022-02-16T16:26:59.004Z] Creating pull request on Bitbucket: started.
+[2022-02-16T16:27:01.063Z] Finished creating pull request
+[2022-02-16T16:39:33.630Z] Stage 2 files for commit: started.
+[2022-02-16T16:39:33.724Z] Stage 2 files for commit: finished. gk-log://duration?t=94
+[2022-02-16T16:40:14.141Z] Commit: started.
+[2022-02-16T16:40:14.197Z] pre-commit hook started.
+[2022-02-16T16:40:17.913Z] pre-commit hook finished. gk-log://duration?t=3716 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645029614229.04e6319d&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-16T16:40:18.612Z] Commit: successfully created commit b1050f74e59359eb6be2dc7c10b35721364bec6d
+[2022-02-16T16:40:18.614Z] Commit: finished gk-log://duration?t=4473
+[2022-02-16T16:40:20.885Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-16T16:40:25.278Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=4393
+[2022-02-16T17:48:31.130Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-16T17:48:31.856Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=726
+[2022-02-16T17:51:49.242Z] Stage src/utils/contentful/index.js for commit: started.
+[2022-02-16T17:51:49.423Z] Stage src/utils/contentful/index.js for commit: finished. gk-log://duration?t=181
+[2022-02-16T17:52:10.314Z] Commit: started.
+[2022-02-16T17:52:10.364Z] pre-commit hook started.
+[2022-02-16T17:52:14.401Z] pre-commit hook finished. gk-log://duration?t=4037 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645033930395.1c6174a0&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-16T17:52:14.936Z] Commit: successfully created commit d93b1532439ec7fb2d62b880dc4f46828c0c1e64
+[2022-02-16T17:52:14.940Z] Commit: finished gk-log://duration?t=4626
+[2022-02-16T17:52:23.349Z] Push CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-16T17:52:27.021Z] Push CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=3672
+[2022-02-17T20:58:22.175Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-17T20:58:22.282Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: There are merge conflicts that need to be resolved
+[2022-02-17T20:58:22.285Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: finished with errors. gk-log://duration?t=110
+[2022-02-17T20:58:24.366Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: started.
+[2022-02-17T20:58:24.412Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: finished. gk-log://duration?t=46
+[2022-02-17T20:58:50.963Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: started.
+[2022-02-17T20:58:50.978Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: finished. gk-log://duration?t=15
+[2022-02-17T20:58:50.983Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: started.
+[2022-02-17T20:58:51.445Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: finished. gk-log://duration?t=462
+[2022-02-17T20:58:52.665Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: started.
+[2022-02-17T20:58:52.681Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: finished. gk-log://duration?t=16
+[2022-02-17T20:59:07.265Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: started.
+[2022-02-17T20:59:07.276Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: finished. gk-log://duration?t=11
+[2022-02-17T20:59:07.279Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: started.
+[2022-02-17T20:59:07.582Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: finished. gk-log://duration?t=303
+[2022-02-17T20:59:09.137Z] Finish merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-17T20:59:09.146Z] pre-commit hook started.
+[2022-02-17T20:59:14.679Z] pre-commit hook finished. gk-log://duration?t=5533 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645131549175.86c839ca&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-17T20:59:14.750Z] Finish merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=5613
+[2022-02-17T20:59:29.539Z] Push CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-17T20:59:33.548Z] Push CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=4009
+[2022-02-17T20:59:47.446Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T20:59:47.719Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=273
+[2022-02-17T20:59:55.872Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T20:59:55.987Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: There are merge conflicts that need to be resolved
+[2022-02-17T20:59:55.990Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: finished with errors. gk-log://duration?t=118
+[2022-02-17T20:59:58.476Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: started.
+[2022-02-17T20:59:58.508Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: finished. gk-log://duration?t=32
+[2022-02-17T21:00:09.539Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: started.
+[2022-02-17T21:00:09.552Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: finished. gk-log://duration?t=13
+[2022-02-17T21:00:09.556Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: started.
+[2022-02-17T21:00:09.853Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: finished. gk-log://duration?t=297
+[2022-02-17T21:00:12.101Z] Finish merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T21:00:12.112Z] pre-commit hook started.
+[2022-02-17T21:00:20.900Z] pre-commit hook finished. gk-log://duration?t=8788 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645131612113.ad176aaf&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-17T21:00:21.004Z] Finish merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=8903
+[2022-02-17T21:34:00.255Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T21:34:05.025Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=4770
+[2022-02-17T22:03:00.229Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T22:03:00.336Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: There are merge conflicts that need to be resolved
+[2022-02-17T22:03:00.338Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: finished with errors. gk-log://duration?t=109
+[2022-02-17T22:03:01.598Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: started.
+[2022-02-17T22:03:01.615Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: finished. gk-log://duration?t=17
+[2022-02-17T22:03:09.340Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: started.
+[2022-02-17T22:03:09.351Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: finished. gk-log://duration?t=11
+[2022-02-17T22:03:09.355Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: started.
+[2022-02-17T22:03:09.681Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: finished. gk-log://duration?t=326
+[2022-02-17T22:03:11.048Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: started.
+[2022-02-17T22:03:11.078Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: finished. gk-log://duration?t=30
+[2022-02-17T22:03:36.325Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: started.
+[2022-02-17T22:03:36.338Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: finished. gk-log://duration?t=13
+[2022-02-17T22:03:36.342Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: started.
+[2022-02-17T22:03:36.697Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: finished. gk-log://duration?t=355
+[2022-02-17T22:03:38.855Z] Finish merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T22:03:38.866Z] pre-commit hook started.
+[2022-02-17T22:03:44.772Z] pre-commit hook finished. gk-log://duration?t=5906 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645135418867.3a21c153&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-17T22:03:44.836Z] Finish merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=5981
+[2022-02-17T22:04:22.027Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-17T22:04:22.579Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=552
+[2022-02-17T22:04:27.332Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-17T22:04:27.479Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: There are merge conflicts that need to be resolved
+[2022-02-17T22:04:27.481Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: finished with errors. gk-log://duration?t=149
+[2022-02-17T22:04:29.910Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: started.
+[2022-02-17T22:04:29.925Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: finished. gk-log://duration?t=15
+[2022-02-17T22:04:35.834Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: started.
+[2022-02-17T22:04:35.844Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: finished. gk-log://duration?t=9
+[2022-02-17T22:04:35.857Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: started.
+[2022-02-17T22:04:36.294Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: finished. gk-log://duration?t=437
+[2022-02-17T22:04:38.129Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: started.
+[2022-02-17T22:04:38.159Z] Opening src/components/steps/FinalOffer/FinalOfferHybrid.js in built-in merge tool: finished. gk-log://duration?t=30
+[2022-02-17T22:04:49.853Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: started.
+[2022-02-17T22:04:49.862Z] Save merged src/components/steps/FinalOffer/FinalOfferHybrid.js: finished. gk-log://duration?t=9
+[2022-02-17T22:04:49.866Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: started.
+[2022-02-17T22:04:50.229Z] Stage src/components/steps/FinalOffer/FinalOfferHybrid.js for commit: finished. gk-log://duration?t=363
+[2022-02-17T22:04:51.366Z] Opening src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js in built-in merge tool: started.
+[2022-02-17T22:04:51.391Z] Opening src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js in built-in merge tool: finished. gk-log://duration?t=25
+[2022-02-17T22:08:03.371Z] Opening src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js in built-in merge tool: started.
+[2022-02-17T22:08:03.407Z] Opening src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js in built-in merge tool: finished. gk-log://duration?t=36
+[2022-02-17T22:08:07.401Z] Save merged src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js: started.
+[2022-02-17T22:08:10.605Z] Save merged src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js: finished. gk-log://duration?t=3204
+[2022-02-17T22:08:10.609Z] Stage src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js for commit: started.
+[2022-02-17T22:08:10.844Z] Stage src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js for commit: finished. gk-log://duration?t=235
+[2022-02-17T22:08:16.763Z] Finish merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-17T22:08:16.771Z] pre-commit hook started.
+[2022-02-17T22:08:22.519Z] pre-commit hook finished. gk-log://duration?t=5748 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645135696772.f2004c30&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-17T22:08:22.575Z] Finish merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=5812
+[2022-02-17T22:09:52.403Z] Stage src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js for commit: started.
+[2022-02-17T22:09:52.537Z] Stage src/components/steps/FinalOffer/Tradelines/Tradelines.spec.js for commit: finished. gk-log://duration?t=134
+[2022-02-17T22:10:00.511Z] Amend commit 5558b4980136864031f843f775ed340b5bf281ad: started.
+[2022-02-17T22:10:00.519Z] pre-commit hook started.
+[2022-02-17T22:10:03.774Z] pre-commit hook finished. gk-log://duration?t=3255 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645135800520.cc027590&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-17T22:10:03.813Z] Amend commit 5558b4980136864031f843f775ed340b5bf281ad: finished.
+[2022-02-17T22:10:06.014Z] Push CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-17T22:10:10.871Z] Push CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=4857
+[2022-02-17T22:10:10.879Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T22:10:11.184Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=305
+[2022-02-17T22:12:06.356Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-17T22:12:10.624Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=4268
+[2022-02-18T19:17:19.974Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-18T19:17:20.092Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: There are merge conflicts that need to be resolved
+[2022-02-18T19:17:20.095Z] Merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: finished with errors. gk-log://duration?t=121
+[2022-02-18T19:17:22.145Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: started.
+[2022-02-18T19:17:22.178Z] Opening src/components/steps/FinalOffer/contentHybrid.js in built-in merge tool: finished. gk-log://duration?t=33
+[2022-02-18T19:17:31.320Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: started.
+[2022-02-18T19:17:31.330Z] Save merged src/components/steps/FinalOffer/contentHybrid.js: finished. gk-log://duration?t=10
+[2022-02-18T19:17:31.335Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: started.
+[2022-02-18T19:17:31.689Z] Stage src/components/steps/FinalOffer/contentHybrid.js for commit: finished. gk-log://duration?t=354
+[2022-02-18T19:17:33.696Z] Finish merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-18T19:17:33.704Z] pre-commit hook started.
+[2022-02-18T19:17:38.373Z] pre-commit hook finished. gk-log://duration?t=4669 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645211853744.f7bacc94&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-18T19:17:38.432Z] Finish merge origin/master into CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=4736
+[2022-02-18T19:17:40.256Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-18T19:17:44.325Z] Push CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=4069

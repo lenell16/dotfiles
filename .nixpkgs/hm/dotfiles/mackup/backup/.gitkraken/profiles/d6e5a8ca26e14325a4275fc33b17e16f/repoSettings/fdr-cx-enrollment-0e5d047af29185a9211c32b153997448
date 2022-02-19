@@ -54,101 +54,171 @@
   },
   "remoteHeadCollectionByRemoteName": {
     "origin": {
+      "HEAD": {
+        "name": "HEAD",
+        "oid": "3957253a0a5f84cb413a20b0682f35f701bfee21",
+        "local": 0,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": "refs/heads/master"
+      },
       "refs/heads/5710-LX-DEX-Transfer-Interval-Change": {
         "name": "refs/heads/5710-LX-DEX-Transfer-Interval-Change",
         "oid": "d0a8d9049042da497ba79065ea415e938c3da9d2",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-4632-facebook-px-test-form-complete-t": {
         "name": "refs/heads/CX-4632-facebook-px-test-form-complete-t",
         "oid": "588263aa9a95208e47df56b35c427c7a33351eef",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-4820-first-2-settlements-update-copy": {
         "name": "refs/heads/CX-4820-first-2-settlements-update-copy",
         "oid": "6146b6f9ede2163cb4edb836383dbd85f6fc0be7",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-4858-tech-unify-eslint-rules-into-a-e": {
         "name": "refs/heads/CX-4858-tech-unify-eslint-rules-into-a-e",
         "oid": "2248e1c243f8345a26b3e8cfffe494486ce71a94",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-5969-pass-cerebro-id": {
         "name": "refs/heads/CX-5969-pass-cerebro-id",
         "oid": "fced216491352b4ab99c31e2afd4a9fa6545844d",
-        "local": 0,
-        "loid": "0000000000000000000000000000000000000000",
-        "symrefTarget": null
-      },
-      "refs/heads/CX-6017-Add-LeadUUID": {
-        "name": "refs/heads/CX-6017-Add-LeadUUID",
-        "oid": "75fd16fbf7d76eedc95487934b5b594b860404f0",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-6217-bank-account-ab-test": {
         "name": "refs/heads/CX-6217-bank-account-ab-test",
         "oid": "3bec3dce32267156d6a6b89a98b7a85501d2e95e",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-6250-ab-test-final-offer": {
         "name": "refs/heads/CX-6250-ab-test-final-offer",
         "oid": "0bc0590d17ef06501b327b0dcc726ceffeebaa9d",
-        "local": 0,
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6296-next-steps-accordion": {
+        "name": "refs/heads/CX-6296-next-steps-accordion",
+        "oid": "ba720b9578921727e1026fb12d1650fb3618ddca",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6353-no-progress-bar-hybrid": {
+        "name": "refs/heads/CX-6353-no-progress-bar-hybrid",
+        "oid": "2cdc21b9006cb07e32edea3d2d447882a364b493",
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-6356-final-offer-hybrid": {
         "name": "refs/heads/CX-6356-final-offer-hybrid",
         "oid": "44b227cd4197b0c3005e7cfd08453f9fc6ed21d4",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-6356-final-offer-hybrid-part-2": {
         "name": "refs/heads/CX-6356-final-offer-hybrid-part-2",
         "oid": "5fdf4c2d6dc6f2ea0be60fb469ce8566310cacf1",
-        "local": 0,
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6358-click-to-call": {
+        "name": "refs/heads/CX-6358-click-to-call",
+        "oid": "1183424d4c19bf3f3eec87b6e3efc01fed6380bc",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6389-budget-summary-cash-flow": {
+        "name": "refs/heads/CX-6389-budget-summary-cash-flow",
+        "oid": "b074828faee0f2310384a0593047c193f126a73b",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6389-cash-flow-meter-legend": {
+        "name": "refs/heads/CX-6389-cash-flow-meter-legend",
+        "oid": "ce1d40a94da7beef2f18320d0545097f99d00586",
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/CX-6405-contract-sign-loading": {
         "name": "refs/heads/CX-6405-contract-sign-loading",
         "oid": "50987d6f08fcf2ef1e37cb65e2ac5cca62213933",
-        "local": 0,
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
-      "refs/heads/CX-6410-dex-hybrid--trust-markers---mvp": {
-        "name": "refs/heads/CX-6410-dex-hybrid--trust-markers---mvp",
-        "oid": "d3739d1df6c9e2ab2ede9ae2e18cc6fc5d9847b3",
-        "local": 0,
+      "refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf": {
+        "name": "refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf",
+        "oid": "6fe10f12c66cdc3149409d46d30167324ac3a697",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6442-eligible-accounts-accordion": {
+        "name": "refs/heads/CX-6442-eligible-accounts-accordion",
+        "oid": "12f88df7a91e84c87369f474c87752fded532038",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6469-bank-account-missing-current-address": {
+        "name": "refs/heads/CX-6469-bank-account-missing-current-address",
+        "oid": "c3cb705179b80cbcb8f0554302593049a9b76bf2",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6513-redirection-fix": {
+        "name": "refs/heads/CX-6513-redirection-fix",
+        "oid": "843f3185f6628a05a80612cff044b951a06a782f",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/CX-6521-duplicate-cfos-text": {
+        "name": "refs/heads/CX-6521-duplicate-cfos-text",
+        "oid": "f0d68ee53649c1dca18096fd0ba77027c593b35c",
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/DEVOPS-346-v2-migration": {
         "name": "refs/heads/DEVOPS-346-v2-migration",
-        "oid": "e4684d06017ad9a288a4982b4a1ebbea58eeecc2",
-        "local": 0,
+        "oid": "7325c39c8bf6756b47061b833acd75550992d501",
+        "local": 1,
+        "loid": "0000000000000000000000000000000000000000",
+        "symrefTarget": null
+      },
+      "refs/heads/bug-fix-spread-potential-undefined": {
+        "name": "refs/heads/bug-fix-spread-potential-undefined",
+        "oid": "e89e6c1c8db5075dd9d4e8eb806838ddc3677ddd",
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       },
       "refs/heads/master": {
         "name": "refs/heads/master",
-        "oid": "6a007348c6462a967ee36ee318605788a53d117a",
-        "local": 0,
+        "oid": "3957253a0a5f84cb413a20b0682f35f701bfee21",
+        "local": 1,
         "loid": "0000000000000000000000000000000000000000",
         "symrefTarget": null
       }
@@ -158,7 +228,6 @@
     "origin": {
       "id": "remote-origin",
       "timestamps": [
-        1638401224730,
         1639680014515,
         1640042967971,
         1642006452974,
@@ -167,9 +236,10 @@
         1643681517677,
         1643681540267,
         1643825236544,
-        1644534461792
+        1644534461792,
+        1645028809163
       ],
-      "total": 24
+      "total": 25
     }
   },
   "collapsedSections": [
@@ -210,7 +280,9 @@
         "projectType": "classic",
         "resourceId": "88fe7a39-56cc-4591-8c0c-4bb802318829"
       },
-      "collapsedFilters": [],
+      "collapsedFilters": [
+        "79bb78bb-e618-4738-8cbb-c9682a4d0552"
+      ],
       "collapsedIssues": []
     },
     "jiraServer": {
@@ -229,7 +301,7 @@
   "layout": {
     "GraphPanel": {
       "Tree": {
-        "width": 106
+        "width": 194
       }
     }
   },

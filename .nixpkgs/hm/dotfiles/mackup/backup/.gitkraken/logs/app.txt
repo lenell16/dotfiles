@@ -1305,3 +1305,132 @@
 [2022-02-11T02:42:41.013Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=10
 [2022-02-11T04:42:40.055Z] Verify SSH key for Bitbucket: started.
 [2022-02-11T04:42:40.065Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=10
+[2022-02-15T17:27:35.952Z] Verify SSH key for GitHub: started.
+[2022-02-15T17:27:35.971Z] Verify SSH key for GitHub: finished. gk-log://duration?t=19
+[2022-02-15T17:27:36.392Z] Verify SSH key for Bitbucket: started.
+[2022-02-15T17:27:36.408Z] Verify SSH key for Bitbucket: started.
+[2022-02-15T17:27:36.409Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=1
+[2022-02-15T17:27:36.411Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=19
+[2022-02-15T17:27:36.946Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-15T17:27:36.952Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=6
+[2022-02-15T17:27:37.931Z] Detecting Git and Git LFS: started
+[2022-02-15T17:27:42.204Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-15T17:27:42.212Z] Did not detect Git LFS
+[2022-02-15T17:27:42.356Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-15T17:27:55.611Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=13255
+[2022-02-15T17:27:55.618Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"}]}: started.
+[2022-02-15T17:27:55.620Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"}]}: finished. gk-log://duration?t=2
+[2022-02-15T17:28:05.554Z] Send usage data to Axosoft: started.
+[2022-02-15T17:28:07.664Z] Send usage data to Axosoft: bad request
+[2022-02-15T17:28:07.672Z] Send usage data to Axosoft: finished with errors. gk-log://duration?t=2118
+[2022-02-15T18:18:59.215Z] Verify SSH key for Bitbucket: started.
+[2022-02-15T18:18:59.226Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=11
+[2022-02-15T18:18:59.255Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-15T18:18:59.269Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=14
+[2022-02-15T18:18:59.271Z] Verify SSH key for GitHub: started.
+[2022-02-15T18:18:59.273Z] Verify SSH key for GitHub: finished. gk-log://duration?t=2
+[2022-02-15T18:19:01.191Z] Detecting Git and Git LFS: started
+[2022-02-15T18:19:02.005Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-15T18:19:02.008Z] Did not detect Git LFS
+[2022-02-15T18:19:02.531Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"86c826b9-8cb4-4b94-a4dc-a32490d15647","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-15T18:19:02.538Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"86c826b9-8cb4-4b94-a4dc-a32490d15647","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=7
+[2022-02-15T19:06:49.979Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-15T19:06:50.831Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=852
+[2022-02-15T19:06:50.838Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-15T19:06:50.840Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=2
+[2022-02-15T19:07:04.382Z] Set profile setting ["issues","jiraCloud","filtersByProjectKey","88fe7a39-56cc-4591-8c0c-4bb802318829-CX"] to [{"id":"d037284d-7feb-4585-8703-504e2fd63085","jql":"project = \"CX\" AND assignee = currentUser() AND sprint in openSprints() ","name":"My Issues","resourceId":"88fe7a39-56cc-4591-8c0c-4bb802318829"}]: started.
+[2022-02-15T19:07:04.387Z] Set profile setting ["issues","jiraCloud","filtersByProjectKey","88fe7a39-56cc-4591-8c0c-4bb802318829-CX"] to [{"id":"d037284d-7feb-4585-8703-504e2fd63085","jql":"project = \"CX\" AND assignee = currentUser() AND sprint in openSprints() ","name":"My Issues","resourceId":"88fe7a39-56cc-4591-8c0c-4bb802318829"}]: finished. gk-log://duration?t=5
+[2022-02-15T19:27:52.268Z] Verify SSH key for Bitbucket: started.
+[2022-02-15T19:27:52.277Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-16T16:24:53.579Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-16T16:24:53.585Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=6
+[2022-02-16T16:24:53.623Z] Verify SSH key for GitHub: started.
+[2022-02-16T16:24:53.643Z] Verify SSH key for GitHub: finished. gk-log://duration?t=20
+[2022-02-16T16:24:53.976Z] Verify SSH key for Bitbucket: started.
+[2022-02-16T16:24:53.992Z] Verify SSH key for Bitbucket: started.
+[2022-02-16T16:24:53.997Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=5
+[2022-02-16T16:24:54.002Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=26
+[2022-02-16T16:24:55.420Z] Detecting Git and Git LFS: started
+[2022-02-16T16:24:56.311Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-16T16:24:56.320Z] Did not detect Git LFS
+[2022-02-16T16:24:56.460Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-16T16:24:57.463Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=1003
+[2022-02-16T16:24:57.468Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-16T16:24:57.471Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=3
+[2022-02-16T16:39:25.492Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-16T16:39:25.498Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=6
+[2022-02-16T16:39:25.602Z] Verify SSH key for Bitbucket: started.
+[2022-02-16T16:39:25.624Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=22
+[2022-02-16T16:39:25.659Z] Verify SSH key for GitHub: started.
+[2022-02-16T16:39:25.664Z] Verify SSH key for GitHub: finished. gk-log://duration?t=5
+[2022-02-16T16:39:27.480Z] Detecting Git and Git LFS: started
+[2022-02-16T16:39:28.335Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-16T16:39:28.359Z] Did not detect Git LFS
+[2022-02-16T16:39:28.556Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-16T16:39:29.595Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=1038
+[2022-02-16T16:39:29.601Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-16T16:39:29.603Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=2
+[2022-02-16T17:48:13.148Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-16T17:48:13.176Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=28
+[2022-02-16T17:48:13.240Z] Verify SSH key for GitHub: started.
+[2022-02-16T17:48:13.260Z] Verify SSH key for GitHub: finished. gk-log://duration?t=20
+[2022-02-16T17:48:13.262Z] Verify SSH key for Bitbucket: started.
+[2022-02-16T17:48:13.263Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=1
+[2022-02-16T17:48:15.309Z] Detecting Git and Git LFS: started
+[2022-02-16T17:48:16.094Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-16T17:48:16.135Z] Did not detect Git LFS
+[2022-02-16T17:48:16.404Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-16T17:48:18.896Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=2492
+[2022-02-16T17:48:18.901Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-16T17:48:18.904Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=3
+[2022-02-16T17:48:42.882Z] Send usage data to Axosoft: started.
+[2022-02-16T17:48:43.032Z] Send usage data to Axosoft: finished. gk-log://duration?t=150
+[2022-02-16T18:24:32.368Z] Verify SSH key for Bitbucket: started.
+[2022-02-16T18:24:32.377Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-16T20:24:25.978Z] Verify SSH key for Bitbucket: started.
+[2022-02-16T20:24:25.987Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-16T22:24:31.336Z] Verify SSH key for Bitbucket: started.
+[2022-02-16T22:24:31.345Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-17T00:24:30.702Z] Verify SSH key for Bitbucket: started.
+[2022-02-17T00:24:30.710Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=8
+[2022-02-17T02:24:30.188Z] Verify SSH key for Bitbucket: started.
+[2022-02-17T02:24:30.198Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=10
+[2022-02-17T04:24:25.178Z] Verify SSH key for Bitbucket: started.
+[2022-02-17T04:24:25.184Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=6
+[2022-02-17T06:24:25.252Z] Verify SSH key for Bitbucket: started.
+[2022-02-17T06:24:25.261Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-17T08:24:28.582Z] Verify SSH key for Bitbucket: started.
+[2022-02-17T08:24:28.591Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-17T20:57:55.135Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-17T20:57:55.141Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=6
+[2022-02-17T20:57:55.151Z] Verify SSH key for GitHub: started.
+[2022-02-17T20:57:55.159Z] Verify SSH key for GitHub: finished. gk-log://duration?t=8
+[2022-02-17T20:57:55.551Z] Verify SSH key for Bitbucket: started.
+[2022-02-17T20:57:55.573Z] Verify SSH key for Bitbucket: started.
+[2022-02-17T20:57:55.582Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-17T20:57:55.586Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=35
+[2022-02-17T20:57:57.453Z] Detecting Git and Git LFS: started
+[2022-02-17T20:57:58.265Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-17T20:57:58.293Z] Did not detect Git LFS
+[2022-02-17T20:57:58.414Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-17T20:58:00.072Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=1658
+[2022-02-17T20:58:00.079Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-17T20:58:00.081Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=2
+[2022-02-17T20:58:24.716Z] Send usage data to Axosoft: started.
+[2022-02-17T20:58:24.843Z] Send usage data to Axosoft: bad request
+[2022-02-17T20:58:24.851Z] Send usage data to Axosoft: finished with errors. gk-log://duration?t=135
+[2022-02-18T19:13:52.656Z] Verify SSH key for GitHub: started.
+[2022-02-18T19:13:52.664Z] Verify SSH key for GitHub: finished. gk-log://duration?t=7
+[2022-02-18T19:13:52.968Z] Verify SSH key for Bitbucket: started.
+[2022-02-18T19:13:52.974Z] Verify SSH key for Bitbucket: started.
+[2022-02-18T19:13:52.975Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=1
+[2022-02-18T19:13:52.977Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9
+[2022-02-18T19:13:54.198Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-18T19:13:54.203Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=5
+[2022-02-18T19:13:54.837Z] Detecting Git and Git LFS: started
+[2022-02-18T19:13:55.703Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-18T19:13:55.730Z] Did not detect Git LFS
+[2022-02-18T19:13:55.889Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-18T19:13:57.161Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=1272
+[2022-02-18T19:13:57.165Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-18T19:13:57.167Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=2

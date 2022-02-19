@@ -19,6 +19,10 @@
         "type": "REPO",
         "repoName": "dotfiles",
         "repoPath": "/Users/alonzothomas/dotfiles/"
+      },
+      {
+        "id": "86c826b9-8cb4-4b94-a4dc-a32490d15647",
+        "type": "RELEASE_NOTES"
       }
     ]
   },
@@ -78,7 +82,7 @@
       "filtersByProjectKey": {
         "88fe7a39-56cc-4591-8c0c-4bb802318829-CX": [
           {
-            "id": "79bb78bb-e618-4738-8cbb-c9682a4d0552",
+            "id": "d037284d-7feb-4585-8703-504e2fd63085",
             "jql": "project = \"CX\" AND assignee = currentUser() AND sprint in openSprints() ",
             "name": "My Issues",
             "resourceId": "88fe7a39-56cc-4591-8c0c-4bb802318829"

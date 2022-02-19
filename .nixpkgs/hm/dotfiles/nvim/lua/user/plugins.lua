@@ -56,8 +56,8 @@ return packer.startup({function(use)
 
 	use 'norcalli/nvim-colorizer.lua'
 
-	use 'glepnir/dashboard-nvim'
-
+	use 'goolord/alpha-nvim'
+	
 	use 'lewis6991/gitsigns.nvim'
 
 	use 'nvim-telescope/telescope.nvim'

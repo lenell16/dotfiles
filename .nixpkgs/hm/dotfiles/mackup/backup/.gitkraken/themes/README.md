@@ -26,20 +26,11 @@ NOTE: Themes are hot-loaded. That means that as you save color edits to your the
 
 ### SUPPORTED CSS FUNCTIONS
 
-- attr
 - calc
-- conic-gradient
-- counter
-- cubic-bezier
 - hsl
 - hsla
-- linear-gradient
 - max
 - min
-- radial-gradient
-- repeating-conic-gradient
-- repeating-linear-gradient
-- repeating-radial-gradient
 - rgb
 - rgba
 - var
