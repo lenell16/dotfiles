@@ -89,7 +89,6 @@ in
 			"mackup"
       "skhd"
 			"unison-language"
-			"viu"
     ];
     casks = [
       # "4k-stogram"
@@ -104,6 +103,7 @@ in
       "docker"
       # "drama"
       "dropbox"
+			"elmedia-player"
       "expressvpn"
       "fantastical"
       # "firecamp"
@@ -114,7 +114,7 @@ in
       # "framer-x"
 			# FruityUi (not in brew)
       # "gitfox"
-      "gitkraken"
+      # "gitkraken"
       # "goneovim"
       "google-chrome"
       # "google-chrome-canary"
@@ -215,6 +215,8 @@ in
     kitty
     mpv
     vscode
+		gitkraken
+		# iina
   ];
 
   home-manager = {

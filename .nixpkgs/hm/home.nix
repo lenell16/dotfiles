@@ -38,9 +38,11 @@ in
       ffmpeg
       fx
       gitflow
+			gitkraken
       gh
       google-cloud-sdk
       httpie
+			# iina
       kubectx
       stable.lucky-cli
       micro
@@ -62,6 +64,7 @@ in
       wally-cli
       watchman
       wget
+			viu
 			xplr
       yarn
       youtube-dl
