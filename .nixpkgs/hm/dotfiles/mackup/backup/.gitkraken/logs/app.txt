@@ -1434,3 +1434,77 @@
 [2022-02-18T19:13:57.161Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=1272
 [2022-02-18T19:13:57.165Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
 [2022-02-18T19:13:57.167Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=2
+[2022-02-21T17:24:52.597Z] Verify SSH key for GitHub: started.
+[2022-02-21T17:24:52.607Z] Verify SSH key for GitHub: finished. gk-log://duration?t=10
+[2022-02-21T17:24:53.262Z] Verify SSH key for Bitbucket: started.
+[2022-02-21T17:24:53.268Z] Verify SSH key for Bitbucket: started.
+[2022-02-21T17:24:53.272Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=4
+[2022-02-21T17:24:53.277Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=15
+[2022-02-21T17:24:53.869Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-21T17:24:53.874Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=5
+[2022-02-21T17:24:54.535Z] Detecting Git and Git LFS: started
+[2022-02-21T17:24:55.180Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-21T17:24:55.191Z] Did not detect Git LFS
+[2022-02-21T17:24:55.420Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-21T17:24:56.500Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=1080
+[2022-02-21T17:24:56.507Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: started.
+[2022-02-21T17:24:56.511Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"}]}: finished. gk-log://duration?t=4
+[2022-02-21T17:24:59.093Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"}]}: started.
+[2022-02-21T17:24:59.133Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"}]}: finished. gk-log://duration?t=40
+[2022-02-21T17:25:22.223Z] Send usage data to Axosoft: started.
+[2022-02-21T17:25:22.396Z] Send usage data to Axosoft: finished. gk-log://duration?t=173
+[2022-02-21T17:25:24.513Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-21T17:25:24.520Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=7
+[2022-02-21T17:25:30.738Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-21T17:25:31.652Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=914
+[2022-02-21T17:25:31.662Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"}]}: started.
+[2022-02-21T17:25:31.668Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"}]}: finished. gk-log://duration?t=6
+[2022-02-21T17:25:41.082Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"e773612f-7e0c-45ba-8ba9-98499258b02f","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"},{"id":"e773612f-7e0c-45ba-8ba9-98499258b02f","type":"NEW"}]}: started.
+[2022-02-21T17:25:41.088Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"e773612f-7e0c-45ba-8ba9-98499258b02f","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"},{"id":"e773612f-7e0c-45ba-8ba9-98499258b02f","type":"NEW"}]}: finished. gk-log://duration?t=6
+[2022-02-21T17:25:49.387Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-21T17:25:49.391Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=4
+[2022-02-21T17:25:57.256Z] Remove auth token for Jira Cloud: started.
+[2022-02-21T17:25:57.269Z] Remove auth token for Jira Cloud: finished. gk-log://duration?t=13
+[2022-02-21T17:26:32.177Z] Remove auth token for Bitbucket: started.
+[2022-02-21T17:26:32.194Z] Remove SSH key from Bitbucket: started.
+[2022-02-21T17:26:32.197Z] Set profile setting ["services","bitbucket","ssh","keyState"] to undefined: started.
+[2022-02-21T17:26:32.200Z] Set profile setting ["services","bitbucket","ssh","keyState"] to undefined: finished. gk-log://duration?t=3
+[2022-02-21T17:26:32.202Z] Set profile setting ["services","bitbucket","ssh","privateKeyPath"] to undefined: started.
+[2022-02-21T17:26:32.205Z] Set profile setting ["services","bitbucket","ssh","privateKeyPath"] to undefined: finished. gk-log://duration?t=3
+[2022-02-21T17:26:32.208Z] Set profile setting ["services","bitbucket","ssh","publicKeyPath"] to undefined: started.
+[2022-02-21T17:26:32.209Z] Set profile setting ["services","bitbucket","ssh","publicKeyPath"] to undefined: finished. gk-log://duration?t=1
+[2022-02-21T17:26:32.211Z] Set profile setting ["services","bitbucket","ssh","appVersion"] to undefined: started.
+[2022-02-21T17:26:32.214Z] Set profile setting ["services","bitbucket","ssh","appVersion"] to undefined: finished. gk-log://duration?t=3
+[2022-02-21T17:26:32.216Z] Remove SSH key from Bitbucket: finished. Removed public key with fingerprint {Not Found}
+[2022-02-21T17:26:32.218Z] Verify SSH key for Bitbucket: started.
+[2022-02-21T17:26:32.219Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=1
+[2022-02-21T17:26:32.221Z] Remove auth token for Bitbucket: finished. gk-log://duration?t=44
+[2022-02-21T17:26:32.936Z] Request OAuth token from Bitbucket: started.
+[2022-02-21T17:26:48.530Z] Request OAuth token from Bitbucket: finished. gk-log://duration?t=15594
+[2022-02-21T17:26:48.678Z] Verify SSH key for Bitbucket: started.
+[2022-02-21T17:26:48.690Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=11
+[2022-02-21T17:26:52.321Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-21T17:26:53.093Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=772
+[2022-02-21T17:26:53.100Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"},{"id":"e773612f-7e0c-45ba-8ba9-98499258b02f","type":"NEW"}]}: started.
+[2022-02-21T17:26:53.103Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"},{"id":"e773612f-7e0c-45ba-8ba9-98499258b02f","type":"NEW"}]}: finished. gk-log://duration?t=3
+[2022-02-21T17:27:25.691Z] Set profile setting ["layout","RefPanel","width"] to 272: started.
+[2022-02-21T17:27:25.694Z] Set profile setting ["layout","RefPanel","width"] to 272: finished. gk-log://duration?t=3
+[2022-02-21T17:27:40.070Z] Set profile setting ["organizationId"] to null: started.
+[2022-02-21T17:27:40.096Z] Set profile setting ["organizationId"] to null: finished. gk-log://duration?t=26
+[2022-02-21T17:27:40.217Z] Verify SSH key for GitHub: started.
+[2022-02-21T17:27:40.225Z] Verify SSH key for GitHub: finished. gk-log://duration?t=8
+[2022-02-21T17:27:40.237Z] Verify SSH key for Bitbucket: started.
+[2022-02-21T17:27:40.242Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=5
+[2022-02-21T17:27:42.516Z] Detecting Git and Git LFS: started
+[2022-02-21T17:27:43.455Z] Detected Git: git version 2.32.0.2.32.0
+[2022-02-21T17:27:43.482Z] Did not detect Git LFS
+[2022-02-21T17:27:43.664Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: started.
+[2022-02-21T17:27:45.457Z] Open repository /Users/alonzothomas/Developer/work/fdr-cx-enrollment/: finished. gk-log://duration?t=1793
+[2022-02-21T17:27:45.463Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"},{"id":"e773612f-7e0c-45ba-8ba9-98499258b02f","type":"NEW"}]}: started.
+[2022-02-21T17:27:45.470Z] Set profile setting ["tabInfo"] to {"permanentTabs":{"PROJECTS":{"selectedProject":null,"closed":true}},"selectedTabId":"c080303d-7ab4-468c-b80b-2d16f487d74e","tabs":[{"id":"c080303d-7ab4-468c-b80b-2d16f487d74e","type":"REPO","repoName":"fdr-cx-enrollment","repoPath":"/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"},{"id":"26f130e2-923d-4856-8e5f-15dbd7841769","type":"REPO","repoName":"dotfiles","repoPath":"/Users/alonzothomas/dotfiles/"},{"id":"86c826b9-8cb4-4b94-a4dc-a32490d15647","type":"RELEASE_NOTES"},{"id":"c2ba7a11-f8af-42de-9180-cc0dfbf50569","type":"NEW"},{"id":"e773612f-7e0c-45ba-8ba9-98499258b02f","type":"NEW"}]}: finished. gk-log://duration?t=7
+[2022-02-21T17:30:14.601Z] Set profile setting ["layout","RefPanel","width"] to 433: started.
+[2022-02-21T17:30:14.609Z] Set profile setting ["layout","RefPanel","width"] to 433: finished. gk-log://duration?t=8
+[2022-02-21T19:27:12.165Z] Verify SSH key for Bitbucket: started.
+[2022-02-21T19:27:12.178Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=13
+[2022-02-21T21:27:12.831Z] Verify SSH key for Bitbucket: started.
+[2022-02-21T21:27:12.840Z] Verify SSH key for Bitbucket: finished. gk-log://duration?t=9

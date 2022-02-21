@@ -1,5 +1,3 @@
-[Thu Feb 03 2022 14:38:42 GMT-0700 (Mountain Standard Time)] Fetching issues failed: net::ERR_NETWORK_IO_SUSPENDED
-[Mon Feb 07 2022 17:41:59 GMT-0700 (Mountain Standard Time)] Jira Cloud integration failed to initialize: net::ERR_NETWORK_IO_SUSPENDED
 [Thu Feb 10 2022 02:42:20 GMT-0700 (Mountain Standard Time)] Commit failed: pre-commit Failed Git Hook exited with 1
 [Tue Feb 15 2022 11:00:05 GMT-0700 (Mountain Standard Time)] Rebase Failed: There are merge conflicts that need to be resolved
 [Wed Feb 16 2022 09:25:27 GMT-0700 (Mountain Standard Time)] Commit failed: pre-commit Failed Git Hook exited with 1
@@ -8,3 +6,5 @@
 [Thu Feb 17 2022 15:03:00 GMT-0700 (Mountain Standard Time)] Merge Failed: There are merge conflicts that need to be resolved
 [Thu Feb 17 2022 15:04:27 GMT-0700 (Mountain Standard Time)] Merge Failed: There are merge conflicts that need to be resolved
 [Fri Feb 18 2022 12:17:20 GMT-0700 (Mountain Standard Time)] Merge Failed: There are merge conflicts that need to be resolved
+[Mon Feb 21 2022 10:24:58 GMT-0700 (Mountain Standard Time)] Jira Cloud integration failed to initialize: bad request
+[Mon Feb 21 2022 10:25:32 GMT-0700 (Mountain Standard Time)] Fetching issues failed: bad request

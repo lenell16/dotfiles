@@ -1,1 +1,1 @@
-{"metrics":{"mergeTool":[{"timestamp":1645135381602},{"timestamp":1645135391050},{"timestamp":1645135469914},{"timestamp":1645135478132},{"timestamp":1645135491368},{"timestamp":1645135683375},{"timestamp":1645211842147}],"appStart":[{"timestamp":1645211629922,"durationMs":7574,"method":"start","repoOpened":true}]},"version":"8.3.0"}
+{"metrics":{"branch":[{"timestamp":1645464744055,"durationMs":564,"provider":"bitbucket","action":"create"}]},"version":"8.3.0"}

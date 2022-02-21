@@ -53,6 +53,8 @@ in
       nixpkgs-fmt
       nodejs
       nodePackages.pnpm
+			nodePackages.prettier
+			nodePackages.eslint
       openconnect
       overmind
       procs

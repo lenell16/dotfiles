@@ -23,6 +23,14 @@
       {
         "id": "86c826b9-8cb4-4b94-a4dc-a32490d15647",
         "type": "RELEASE_NOTES"
+      },
+      {
+        "id": "c2ba7a11-f8af-42de-9180-cc0dfbf50569",
+        "type": "NEW"
+      },
+      {
+        "id": "e773612f-7e0c-45ba-8ba9-98499258b02f",
+        "type": "NEW"
       }
     ]
   },
@@ -65,7 +73,7 @@
   },
   "layout": {
     "RefPanel": {
-      "width": 272
+      "width": 433
     }
   },
   "ssh": {
