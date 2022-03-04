@@ -10,10 +10,14 @@
     };
   };
   xdg.configFile = {
-    nvim = {
-      source = ./nvim;
-      recursive = true;
-    };
+		xplr = {
+			source = ./xplr;
+			recursive = true;
+		};
+    # nvim = {
+    #   source = ./nvim;
+    #   recursive = true;
+    # };
     gh = {
       source = ./gh;
       recursive = true;

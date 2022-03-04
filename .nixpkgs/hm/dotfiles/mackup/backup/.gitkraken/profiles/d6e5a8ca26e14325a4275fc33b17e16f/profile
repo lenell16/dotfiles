@@ -13,24 +13,6 @@
         "type": "REPO",
         "repoName": "fdr-cx-enrollment",
         "repoPath": "/Users/alonzothomas/Developer/work/fdr-cx-enrollment/"
-      },
-      {
-        "id": "26f130e2-923d-4856-8e5f-15dbd7841769",
-        "type": "REPO",
-        "repoName": "dotfiles",
-        "repoPath": "/Users/alonzothomas/dotfiles/"
-      },
-      {
-        "id": "86c826b9-8cb4-4b94-a4dc-a32490d15647",
-        "type": "RELEASE_NOTES"
-      },
-      {
-        "id": "c2ba7a11-f8af-42de-9180-cc0dfbf50569",
-        "type": "NEW"
-      },
-      {
-        "id": "e773612f-7e0c-45ba-8ba9-98499258b02f",
-        "type": "NEW"
       }
     ]
   },

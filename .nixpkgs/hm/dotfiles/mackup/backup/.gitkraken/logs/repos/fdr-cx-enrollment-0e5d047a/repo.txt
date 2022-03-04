@@ -1411,3 +1411,275 @@ Git Hook exited with 1
 [2022-02-21T17:32:24.165Z] Checkout refs/heads/CX-6448-dex-hybrid--remove-account-valid: started.
 [2022-02-21T17:32:24.605Z] Checkout refs/heads/CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=440
 [2022-02-21T17:32:24.626Z] Create ref refs/heads/CX-6448-dex-hybrid--remove-account-valid at ba7a29a314bff381d38cce76fea21c79cf71e23c: finished. gk-log://duration?t=571
+[2022-02-22T18:21:22.361Z] Reset unstaged changes in src/hooks/usePageDisclosure/usePageDisclosure.js: started.
+[2022-02-22T18:21:22.570Z] Reset unstaged changes in src/hooks/usePageDisclosure/usePageDisclosure.js: finished. gk-log://duration?t=209
+[2022-02-22T19:03:18.555Z] Stage 9 files for commit: started.
+[2022-02-22T19:03:18.779Z] Stage 9 files for commit: finished. gk-log://duration?t=223
+[2022-02-22T19:04:01.821Z] Commit: started.
+[2022-02-22T19:04:01.872Z] pre-commit hook started.
+[2022-02-22T19:04:06.738Z] pre-commit hook finished. gk-log://duration?t=4866 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645556641901.3a08dd22&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-22T19:04:07.235Z] Commit: successfully created commit f2183847c23e37b9f898d12559bef3444eb2d2c7
+[2022-02-22T19:04:07.237Z] Commit: finished gk-log://duration?t=5416
+[2022-02-22T19:04:10.933Z] Push CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-22T19:04:12.356Z] Set upstream for refs/heads/CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-22T19:04:12.649Z] Set upstream for refs/heads/CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=293
+[2022-02-22T19:04:16.220Z] Push CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=5287
+[2022-02-22T19:04:21.688Z] Checkout refs/heads/master: started.
+[2022-02-22T19:04:21.925Z] Checkout refs/heads/master: finished. gk-log://duration?t=237
+[2022-02-22T19:04:28.585Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-22T19:04:28.833Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=248
+[2022-02-22T19:04:38.823Z] Reset (hard) refs/heads/CX-6410-dex-hybrid--trust-markers---mvp to ba7a29a314bff381d38cce76fea21c79cf71e23c: started.
+[2022-02-22T19:04:38.942Z] Reset (hard) refs/heads/CX-6410-dex-hybrid--trust-markers---mvp to ba7a29a314bff381d38cce76fea21c79cf71e23c: finished. gk-log://duration?t=119
+[2022-02-22T19:49:36.674Z] Checkout refs/heads/CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-22T19:49:36.936Z] Checkout refs/heads/CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=262
+[2022-02-22T19:55:42.384Z] Push CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-22T19:55:46.315Z] Push CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=3931
+[2022-02-23T18:22:19.735Z] Merge origin/master into CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-23T18:22:19.818Z] Finish merge origin/master into CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-23T18:22:19.895Z] Finish merge origin/master into CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=77
+[2022-02-23T18:22:19.907Z] Merge origin/master into CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=172
+[2022-02-23T18:22:32.563Z] Push CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-23T18:22:35.965Z] Push CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=3401
+[2022-02-23T22:50:17.811Z] Merge origin/master into CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-23T22:50:17.915Z] Merge origin/master into CX-6448-dex-hybrid--remove-account-valid: There are merge conflicts that need to be resolved
+[2022-02-23T22:50:17.917Z] Merge origin/master into CX-6448-dex-hybrid--remove-account-valid: finished with errors. gk-log://duration?t=106
+[2022-02-23T22:50:19.714Z] Opening src/providers/AppProvider/AppProvider.js in built-in merge tool: started.
+[2022-02-23T22:50:19.731Z] Opening src/providers/AppProvider/AppProvider.js in built-in merge tool: finished. gk-log://duration?t=17
+[2022-02-23T22:50:34.568Z] Save merged src/providers/AppProvider/AppProvider.js: started.
+[2022-02-23T22:50:34.579Z] Save merged src/providers/AppProvider/AppProvider.js: finished. gk-log://duration?t=11
+[2022-02-23T22:50:34.584Z] Stage src/providers/AppProvider/AppProvider.js for commit: started.
+[2022-02-23T22:50:34.896Z] Stage src/providers/AppProvider/AppProvider.js for commit: finished. gk-log://duration?t=312
+[2022-02-23T22:50:36.778Z] Finish merge origin/master into CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-23T22:50:36.789Z] pre-commit hook started.
+[2022-02-23T22:50:41.807Z] pre-commit hook finished. gk-log://duration?t=5018 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1645656636791.582f51bf&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-02-23T22:50:41.870Z] Finish merge origin/master into CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=5092
+[2022-02-23T22:50:44.591Z] Push CX-6448-dex-hybrid--remove-account-valid: started.
+[2022-02-23T22:50:48.556Z] Push CX-6448-dex-hybrid--remove-account-valid: finished. gk-log://duration?t=3965
+[2022-02-23T23:15:21.354Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-23T23:15:22.251Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=897
+[2022-02-23T23:15:25.044Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-23T23:15:25.151Z] Merge origin/master into CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=107
+[2022-02-23T23:15:27.037Z] Checkout refs/heads/master: started.
+[2022-02-23T23:15:27.261Z] Checkout refs/heads/master: finished. gk-log://duration?t=224
+[2022-02-23T23:15:29.924Z] Merge origin/master into master: started.
+[2022-02-23T23:15:30.014Z] Merge origin/master into master: finished. gk-log://duration?t=90
+[2022-02-23T23:15:33.761Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: started.
+[2022-02-23T23:15:33.986Z] Checkout refs/heads/CX-6410-dex-hybrid--trust-markers---mvp: finished. gk-log://duration?t=224
+[2022-02-23T23:20:24.786Z] Delete ref refs/heads/CX-6356-final-offer-hybrid-part-2 at 5fdf4c2d6dc6f2ea0be60fb469ce8566310cacf1: started.
+[2022-02-23T23:20:24.870Z] Delete ref refs/heads/CX-6356-final-offer-hybrid-part-2 at 5fdf4c2d6dc6f2ea0be60fb469ce8566310cacf1: finished. gk-log://duration?t=84
+[2022-02-23T23:20:34.912Z] Delete ref refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf at 6fe10f12c66cdc3149409d46d30167324ac3a697: started.
+[2022-02-23T23:20:34.985Z] Delete ref refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf at 6fe10f12c66cdc3149409d46d30167324ac3a697: finished. gk-log://duration?t=73
+[2022-02-23T23:20:43.259Z] Checkout refs/heads/master: started.
+[2022-02-23T23:20:43.475Z] Checkout refs/heads/master: finished. gk-log://duration?t=216
+[2022-02-23T23:20:47.385Z] Create branch for Jira Cloud issue CX-6433: started.
+[2022-02-23T23:20:47.412Z] Create branch for Jira Cloud issue CX-6433: finished. gk-log://duration?t=26
+[2022-02-23T23:20:48.503Z] Create ref refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf at 0ad3fbbaed96dc3c44b35b917ff18266bbc74ec5: started.
+[2022-02-23T23:20:48.579Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-02-23T23:20:48.968Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=389
+[2022-02-23T23:20:48.986Z] Create ref refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf at 0ad3fbbaed96dc3c44b35b917ff18266bbc74ec5: finished. gk-log://duration?t=483
+[2022-02-24T18:22:22.593Z] Fetch remote origin: unexpected return value from ssl handshake -9806
+[2022-02-24T18:24:22.809Z] Fetch remote origin: failed to connect to bitbucket.org: Operation timed out
+[2022-02-24T18:26:22.478Z] Fetch remote origin: failed to connect to bitbucket.org: Operation timed out
+[2022-03-01T01:44:10.436Z] Checkout refs/heads/master: started.
+[2022-03-01T01:44:10.719Z] Checkout refs/heads/master: finished. gk-log://duration?t=283
+[2022-03-01T01:44:12.100Z] Pull master: started.
+[2022-03-01T01:44:12.111Z] Fetch remote origin: started
+[2022-03-01T01:44:12.783Z] Fetch remote origin: finished gk-log://duration?t=672
+[2022-03-01T01:44:12.885Z] Merge origin/master into master: started.
+[2022-03-01T01:44:12.948Z] Merge origin/master into master: finished. gk-log://duration?t=63
+[2022-03-01T01:44:12.958Z] Pull master: finished. gk-log://duration?t=858
+[2022-03-01T02:11:35.846Z] Stash uncommitted changes: started.
+[2022-03-01T02:11:36.009Z] Stage src/constants/routeLookup.js for stash: started.
+[2022-03-01T02:11:36.130Z] Stage src/constants/routeLookup.js for stash: finished. gk-log://duration?t=121
+[2022-03-01T02:11:36.382Z] Stash uncommitted changes: finished. Stash sha: ec703934f7dd4c74686a3e0ce80d40c8c50201dd gk-log://duration?t=536
+[2022-03-01T02:11:57.180Z] Create branch for Jira Cloud issue CX-6596: started.
+[2022-03-01T02:11:57.212Z] Create branch for Jira Cloud issue CX-6596: finished. gk-log://duration?t=32
+[2022-03-01T02:12:00.602Z] Create ref refs/heads/CX-6596-dex-hybrid--events at 807023063e7dd7ce9f63367435ae278cfed648cf: started.
+[2022-03-01T02:12:00.706Z] Checkout refs/heads/CX-6596-dex-hybrid--events: started.
+[2022-03-01T02:12:01.080Z] Checkout refs/heads/CX-6596-dex-hybrid--events: finished. gk-log://duration?t=374
+[2022-03-01T02:12:01.098Z] Create ref refs/heads/CX-6596-dex-hybrid--events at 807023063e7dd7ce9f63367435ae278cfed648cf: finished. gk-log://duration?t=496
+[2022-03-01T02:12:05.894Z] Merge origin/CX-6358-click-to-call into CX-6596-dex-hybrid--events: started.
+[2022-03-01T02:12:05.967Z] Finish merge origin/CX-6358-click-to-call into CX-6596-dex-hybrid--events: started.
+[2022-03-01T02:12:05.989Z] Finish merge origin/CX-6358-click-to-call into CX-6596-dex-hybrid--events: finished. gk-log://duration?t=22
+[2022-03-01T02:12:05.991Z] Merge origin/CX-6358-click-to-call into CX-6596-dex-hybrid--events: finished. gk-log://duration?t=97
+[2022-03-01T02:13:04.113Z] Apply stash 4f30e0e2dbde0a5d40bfdf707b8e178fe901a7f0: started.
+[2022-03-01T02:13:04.176Z] Apply stash ec703934f7dd4c74686a3e0ce80d40c8c50201dd: finished. gk-log://duration?t=63
+[2022-03-01T05:30:28.885Z] Stage 14 files for commit: started.
+[2022-03-01T05:30:29.071Z] Stage 14 files for commit: finished. gk-log://duration?t=186
+[2022-03-01T05:31:18.776Z] Commit: started.
+[2022-03-01T05:31:18.839Z] pre-commit hook started.
+[2022-03-01T05:31:23.922Z] pre-commit hook failed. gk-log://duration?t=5083 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646112678868.51630bf5&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-01T05:31:23.942Z] {{{GK_MULTI_LINE}}}
+Commit: pre-commit Failed
+Git Hook exited with 1
+{{{/GK_MULTI_LINE}}}
+[2022-03-01T05:31:23.944Z] Commit: finished with errors. gk-log://duration?t=5168
+[2022-03-01T05:31:23.947Z] Commit: finished gk-log://duration?t=5171
+[2022-03-01T05:32:20.921Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.js for commit: started.
+[2022-03-01T05:32:21.053Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.js for commit: finished. gk-log://duration?t=132
+[2022-03-01T05:32:26.750Z] Unstage src/pages/steps/final-offer-hybrid.js: started.
+[2022-03-01T05:32:26.938Z] Unstage src/pages/steps/final-offer-hybrid.js: finished. gk-log://duration?t=188
+[2022-03-01T05:32:28.888Z] Commit: started.
+[2022-03-01T05:32:28.992Z] pre-commit hook started.
+[2022-03-01T05:32:34.087Z] pre-commit hook finished. gk-log://duration?t=5095 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646112748993.455ed237&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-01T05:32:34.701Z] Commit: successfully created commit 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00
+[2022-03-01T05:32:34.704Z] Commit: finished gk-log://duration?t=5816
+[2022-03-01T06:20:15.863Z] Unstage src/pages/steps/final-offer-hybrid.js: started.
+[2022-03-01T06:20:16.021Z] Unstage src/pages/steps/final-offer-hybrid.js: finished. gk-log://duration?t=158
+[2022-03-01T06:21:42.822Z] Commit: started.
+[2022-03-01T06:21:42.872Z] pre-commit hook started.
+[2022-03-01T06:21:46.220Z] pre-commit hook finished. gk-log://duration?t=3348 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646115702873.bee1d8d2&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-01T06:21:46.723Z] Commit: successfully created commit 62c8313082b4c79576fab4a054c92c6195906cae
+[2022-03-01T06:21:46.725Z] Commit: finished gk-log://duration?t=3903
+[2022-03-01T06:53:48.456Z] Commit: started.
+[2022-03-01T06:53:48.505Z] pre-commit hook started.
+[2022-03-01T06:53:52.213Z] pre-commit hook finished. gk-log://duration?t=3708 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646117628506.877aa95a&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-01T06:53:52.464Z] Commit: successfully created commit 46370dba405dfa708db2113d0fb414f0da2401bd
+[2022-03-01T06:53:52.471Z] Commit: finished gk-log://duration?t=4015
+[2022-03-01T06:54:59.482Z] Drop stash 4f30e0e2dbde0a5d40bfdf707b8e178fe901a7f0: started.
+[2022-03-01T06:55:08.220Z] Drop stash 4f30e0e2dbde0a5d40bfdf707b8e178fe901a7f0: finished. gk-log://duration?t=8738
+[2022-03-01T06:55:25.518Z] Checkout refs/heads/master: started.
+[2022-03-01T06:55:25.760Z] Checkout refs/heads/master: finished. gk-log://duration?t=242
+[2022-03-01T06:55:42.688Z] Reset (hard) refs/heads/master to 807023063e7dd7ce9f63367435ae278cfed648cf: started.
+[2022-03-01T06:55:42.850Z] Reset (hard) refs/heads/master to 807023063e7dd7ce9f63367435ae278cfed648cf: finished. gk-log://duration?t=162
+[2022-03-01T06:55:49.269Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-03-01T06:55:49.489Z] Checkout refs/heads/CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=220
+[2022-03-01T06:55:55.730Z] Merge master into CX-6433-dex-hybrid--freedom-advantage-cf: started.
+[2022-03-01T06:55:55.815Z] Merge master into CX-6433-dex-hybrid--freedom-advantage-cf: finished. gk-log://duration?t=85
+[2022-03-01T06:56:21.384Z] Delete ref refs/heads/CX-6448-dex-hybrid--remove-account-valid at 33643357682a47a8d0704085e383a1d5d0f65958: started.
+[2022-03-01T06:56:21.480Z] Delete ref refs/heads/CX-6448-dex-hybrid--remove-account-valid at 33643357682a47a8d0704085e383a1d5d0f65958: finished. gk-log://duration?t=96
+[2022-03-01T06:56:36.576Z] Delete ref refs/heads/CX-6410-dex-hybrid--trust-markers---mvp at 0ad3fbbaed96dc3c44b35b917ff18266bbc74ec5: started.
+[2022-03-01T06:56:36.679Z] Delete ref refs/heads/CX-6410-dex-hybrid--trust-markers---mvp at 0ad3fbbaed96dc3c44b35b917ff18266bbc74ec5: finished. gk-log://duration?t=103
+[2022-03-03T22:06:51.667Z] Checkout refs/heads/master: started.
+[2022-03-03T22:06:51.954Z] Checkout refs/heads/master: finished. gk-log://duration?t=287
+[2022-03-03T22:06:53.774Z] Pull master: started.
+[2022-03-03T22:06:53.787Z] Fetch remote origin: started
+[2022-03-03T22:06:54.475Z] Fetch remote origin: finished gk-log://duration?t=688
+[2022-03-03T22:06:54.571Z] Merge origin/master into master: started.
+[2022-03-03T22:06:54.651Z] Merge origin/master into master: finished. gk-log://duration?t=80
+[2022-03-03T22:06:54.663Z] Pull master: finished. gk-log://duration?t=889
+[2022-03-03T22:07:45.068Z] Rebase master onto CX-6596-dex-hybrid--events: started.
+[2022-03-03T22:07:45.326Z] Rebase master onto CX-6596-dex-hybrid--events: conflict occured while rebasing
+[2022-03-03T22:07:45.329Z] Rebase master onto CX-6596-dex-hybrid--events: finished with errors. gk-log://duration?t=261
+[2022-03-03T22:08:10.111Z] Abort rebase: started.
+[2022-03-03T22:08:10.437Z] Abort rebase: finished. gk-log://duration?t=326
+[2022-03-03T22:08:15.900Z] Cherry pick 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00 onto refs/heads/master: started.
+[2022-03-03T22:08:16.072Z] Cherry pick 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00 onto refs/heads/master: finished. gk-log://duration?t=172
+[2022-03-03T22:08:33.565Z] Cherry pick 62c8313082b4c79576fab4a054c92c6195906cae onto refs/heads/master: started.
+[2022-03-03T22:08:33.643Z] Cherry pick 62c8313082b4c79576fab4a054c92c6195906cae onto refs/heads/master: conflicts occurred while applying changes.
+[2022-03-03T22:08:33.646Z] Cherry pick 62c8313082b4c79576fab4a054c92c6195906cae onto refs/heads/master: finished with errors. gk-log://duration?t=81
+[2022-03-03T22:08:34.985Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.js in built-in merge tool: started.
+[2022-03-03T22:08:35.019Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.js in built-in merge tool: finished. gk-log://duration?t=34
+[2022-03-03T22:09:20.561Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.js: started.
+[2022-03-03T22:09:20.577Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.js: finished. gk-log://duration?t=16
+[2022-03-03T22:09:20.581Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.js for commit: started.
+[2022-03-03T22:09:20.937Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.js for commit: finished. gk-log://duration?t=356
+[2022-03-03T22:09:22.995Z] Commit: started.
+[2022-03-03T22:09:23.048Z] pre-commit hook started.
+[2022-03-03T22:09:28.239Z] pre-commit hook finished. gk-log://duration?t=5191 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646345363077.e973e2c0&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-03T22:09:28.605Z] Commit: successfully created commit 3da5e856ed608b977b1b592624feb6e6e977a830
+[2022-03-03T22:09:28.608Z] Commit: finished gk-log://duration?t=5613
+[2022-03-03T22:09:45.980Z] Cherry pick 46370dba405dfa708db2113d0fb414f0da2401bd onto refs/heads/master: started.
+[2022-03-03T22:09:46.050Z] Cherry pick 46370dba405dfa708db2113d0fb414f0da2401bd onto refs/heads/master: conflicts occurred while applying changes.
+[2022-03-03T22:09:46.054Z] Cherry pick 46370dba405dfa708db2113d0fb414f0da2401bd onto refs/heads/master: finished with errors. gk-log://duration?t=74
+[2022-03-03T22:09:47.400Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js in built-in merge tool: started.
+[2022-03-03T22:09:47.435Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js in built-in merge tool: finished. gk-log://duration?t=35
+[2022-03-03T22:10:41.801Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js: started.
+[2022-03-03T22:10:41.814Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js: finished. gk-log://duration?t=13
+[2022-03-03T22:10:41.818Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js for commit: started.
+[2022-03-03T22:10:42.207Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js for commit: finished. gk-log://duration?t=389
+[2022-03-03T22:10:43.968Z] Commit: started.
+[2022-03-03T22:10:44.053Z] pre-commit hook started.
+[2022-03-03T22:10:46.973Z] pre-commit hook finished. gk-log://duration?t=2920 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646345444054.231d2b60&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-03T22:10:47.232Z] Commit: successfully created commit 2368d2d2df7c6ddfe5ac28c6d99cdf6bdbd8f861
+[2022-03-03T22:10:47.234Z] Commit: finished gk-log://duration?t=3266
+[2022-03-03T22:10:58.369Z] Reset (hard) refs/heads/master to 46370dba405dfa708db2113d0fb414f0da2401bd: started.
+[2022-03-03T22:10:58.487Z] Reset (hard) refs/heads/master to 46370dba405dfa708db2113d0fb414f0da2401bd: finished. gk-log://duration?t=118
+[2022-03-03T22:11:12.525Z] Reset (hard) refs/heads/master to 38a1643db7f075d4730498d6b156f5fe80c70520: started.
+[2022-03-03T22:11:12.697Z] Reset (hard) refs/heads/master to 38a1643db7f075d4730498d6b156f5fe80c70520: finished. gk-log://duration?t=172
+[2022-03-03T22:11:50.216Z] Checkout refs/heads/CX-6596-dex-hybrid--events: started.
+[2022-03-03T22:11:50.637Z] Checkout refs/heads/CX-6596-dex-hybrid--events: finished. gk-log://duration?t=421
+[2022-03-03T22:11:59.307Z] Rebase CX-6596-dex-hybrid--events onto master: started.
+[2022-03-03T22:11:59.606Z] Rebase CX-6596-dex-hybrid--events onto master: conflict occured while rebasing
+[2022-03-03T22:11:59.609Z] Rebase CX-6596-dex-hybrid--events onto master: finished with errors. gk-log://duration?t=302
+[2022-03-03T22:12:12.411Z] Opening src/pages/steps/final-offer-hybrid.js in built-in merge tool: started.
+[2022-03-03T22:12:12.427Z] Opening src/pages/steps/final-offer-hybrid.js in built-in merge tool: finished. gk-log://duration?t=16
+[2022-03-03T22:12:19.402Z] Abort rebase: started.
+[2022-03-03T22:12:19.532Z] Abort rebase: finished. gk-log://duration?t=130
+[2022-03-03T22:12:24.474Z] Cherry pick 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00 onto refs/heads/CX-6596-dex-hybrid--events: started.
+[2022-03-03T22:12:24.562Z] Cherry pick 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00 onto refs/heads/CX-6596-dex-hybrid--events: conflicts occurred while applying changes.
+[2022-03-03T22:12:24.564Z] Cherry pick 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00 onto refs/heads/CX-6596-dex-hybrid--events: finished with errors. gk-log://duration?t=90
+[2022-03-03T22:18:41.271Z] Opening src/constants/eventValues.js in built-in merge tool: started.
+[2022-03-03T22:18:41.302Z] Opening src/constants/eventValues.js in built-in merge tool: finished. gk-log://duration?t=31
+[2022-03-03T22:18:51.403Z] Stage 2 files for commit: started.
+[2022-03-03T22:18:51.531Z] Stage 2 files for commit: finished. gk-log://duration?t=128
+[2022-03-03T22:18:58.256Z] Commit: started.
+[2022-03-03T22:18:58.307Z] pre-commit hook started.
+[2022-03-03T22:19:01.733Z] pre-commit hook failed. gk-log://duration?t=3426 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646345938308.aa01bfbf&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-03T22:19:01.747Z] {{{GK_MULTI_LINE}}}
+Commit: pre-commit Failed
+Git Hook exited with 1
+{{{/GK_MULTI_LINE}}}
+[2022-03-03T22:19:01.749Z] Commit: finished with errors. gk-log://duration?t=3493
+[2022-03-03T22:19:01.751Z] Commit: finished gk-log://duration?t=3495
+[2022-03-03T22:19:06.481Z] Unstage and reset all files: started.
+[2022-03-03T22:19:07.973Z] Unstage 2 files: started.
+[2022-03-03T22:19:08.048Z] Unstage 2 files: finished. gk-log://duration?t=75
+[2022-03-03T22:19:08.057Z] Reset all files: started.
+[2022-03-03T22:19:08.113Z] Reset all files: finished. gk-log://duration?t=56
+[2022-03-03T22:19:08.226Z] Reset all submodules: started.
+[2022-03-03T22:19:08.308Z] Reset all submodules: finished. gk-log://duration?t=82
+[2022-03-03T22:19:08.318Z] Unstage and reset all files: finished. gk-log://duration?t=1837
+[2022-03-03T22:19:15.111Z] Checkout refs/heads/master: started.
+[2022-03-03T22:19:15.367Z] Checkout refs/heads/master: finished. gk-log://duration?t=256
+[2022-03-03T22:19:20.399Z] Cherry pick 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00 onto refs/heads/master: started.
+[2022-03-03T22:19:20.577Z] Cherry pick 9d4c5cf8978caabc94c1dba39d1f0cbc532e7f00 onto refs/heads/master: finished. gk-log://duration?t=178
+[2022-03-03T22:19:34.568Z] Cherry pick 62c8313082b4c79576fab4a054c92c6195906cae onto refs/heads/master: started.
+[2022-03-03T22:19:34.652Z] Cherry pick 62c8313082b4c79576fab4a054c92c6195906cae onto refs/heads/master: conflicts occurred while applying changes.
+[2022-03-03T22:19:34.656Z] Cherry pick 62c8313082b4c79576fab4a054c92c6195906cae onto refs/heads/master: finished with errors. gk-log://duration?t=88
+[2022-03-03T22:19:36.245Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.js in built-in merge tool: started.
+[2022-03-03T22:19:36.259Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.js in built-in merge tool: finished. gk-log://duration?t=14
+[2022-03-03T22:20:08.067Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.js: started.
+[2022-03-03T22:20:08.083Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.js: finished. gk-log://duration?t=16
+[2022-03-03T22:20:08.086Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.js for commit: started.
+[2022-03-03T22:20:08.378Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.js for commit: finished. gk-log://duration?t=292
+[2022-03-03T22:20:19.280Z] Commit: started.
+[2022-03-03T22:20:19.337Z] pre-commit hook started.
+[2022-03-03T22:20:23.598Z] pre-commit hook finished. gk-log://duration?t=4261 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646346019337.d5718beb&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-03T22:20:24.189Z] Commit: successfully created commit 4005d0bbfe82c8cb102a85e852b5a8e0f8fb1c48
+[2022-03-03T22:20:24.192Z] Commit: finished gk-log://duration?t=4912
+[2022-03-03T22:20:31.335Z] Cherry pick 46370dba405dfa708db2113d0fb414f0da2401bd onto refs/heads/master: started.
+[2022-03-03T22:20:31.406Z] Cherry pick 46370dba405dfa708db2113d0fb414f0da2401bd onto refs/heads/master: conflicts occurred while applying changes.
+[2022-03-03T22:20:31.408Z] Cherry pick 46370dba405dfa708db2113d0fb414f0da2401bd onto refs/heads/master: finished with errors. gk-log://duration?t=73
+[2022-03-03T22:20:32.786Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js in built-in merge tool: started.
+[2022-03-03T22:20:32.800Z] Opening src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js in built-in merge tool: finished. gk-log://duration?t=14
+[2022-03-03T22:21:03.503Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js: started.
+[2022-03-03T22:21:03.516Z] Save merged src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js: finished. gk-log://duration?t=12
+[2022-03-03T22:21:03.521Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js for commit: started.
+[2022-03-03T22:21:03.917Z] Stage src/hooks/useTrackButtonClick/useTrackButtonClick.spec.js for commit: finished. gk-log://duration?t=396
+[2022-03-03T22:21:07.890Z] Commit: started.
+[2022-03-03T22:21:07.962Z] pre-commit hook started.
+[2022-03-03T22:21:12.044Z] pre-commit hook finished. gk-log://duration?t=4082 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646346067965.42c833ae&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-03T22:21:12.333Z] Commit: successfully created commit 51035a3cfce995f910ad3e5cbabc685500effded
+[2022-03-03T22:21:12.337Z] Commit: finished gk-log://duration?t=4447
+[2022-03-03T22:21:16.185Z] Checkout refs/heads/CX-6596-dex-hybrid--events: started.
+[2022-03-03T22:21:16.457Z] Checkout refs/heads/CX-6596-dex-hybrid--events: finished. gk-log://duration?t=272
+[2022-03-03T22:21:22.732Z] Reset (hard) refs/heads/CX-6596-dex-hybrid--events to 51035a3cfce995f910ad3e5cbabc685500effded: started.
+[2022-03-03T22:21:22.848Z] Reset (hard) refs/heads/CX-6596-dex-hybrid--events to 51035a3cfce995f910ad3e5cbabc685500effded: finished. gk-log://duration?t=116
+[2022-03-03T22:21:31.201Z] Push CX-6596-dex-hybrid--events: started.
+[2022-03-03T22:21:33.444Z] Set upstream for refs/heads/CX-6596-dex-hybrid--events: started.
+[2022-03-03T22:21:33.692Z] Set upstream for refs/heads/CX-6596-dex-hybrid--events: finished. gk-log://duration?t=248
+[2022-03-03T22:21:37.853Z] Push CX-6596-dex-hybrid--events: finished. gk-log://duration?t=6652
+[2022-03-03T22:21:40.325Z] Checkout refs/heads/master: started.
+[2022-03-03T22:21:40.568Z] Checkout refs/heads/master: finished. gk-log://duration?t=243
+[2022-03-03T22:21:44.901Z] Reset (hard) refs/heads/master to 38a1643db7f075d4730498d6b156f5fe80c70520: started.
+[2022-03-03T22:21:45.018Z] Reset (hard) refs/heads/master to 38a1643db7f075d4730498d6b156f5fe80c70520: finished. gk-log://duration?t=117
+[2022-03-03T22:21:48.909Z] Checkout refs/heads/CX-6596-dex-hybrid--events: started.
+[2022-03-03T22:21:49.160Z] Checkout refs/heads/CX-6596-dex-hybrid--events: finished. gk-log://duration?t=251
+[2022-03-03T23:50:27.150Z] Commit: started.
+[2022-03-03T23:50:27.225Z] pre-commit hook started.
+[2022-03-03T23:50:33.385Z] pre-commit hook finished. gk-log://duration?t=6160 gk-log://log-link?type=RAW_TEXT&file=repos%2Ffdr-cx-enrollment-0e5d047a%2Fhooks%2Fpre-commit%2F1646351427226.90ca7d52&linktext=View%20hook%20log&loglabel=Hook%3A%20pre-commit
+[2022-03-03T23:50:33.771Z] Commit: successfully created commit 51e8d18ab50baaca04e8ce6b281facc82e80c8ee
+[2022-03-03T23:50:33.781Z] Commit: finished gk-log://duration?t=6631
+[2022-03-04T00:17:56.306Z] Push CX-6596-dex-hybrid--events: started.
+[2022-03-04T00:17:59.885Z] Push CX-6596-dex-hybrid--events: finished. gk-log://duration?t=3579

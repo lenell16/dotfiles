@@ -2,7 +2,7 @@
   "lastUpgradeScriptRun": "v8.0.0",
   "appId": "e2bc6d80ba3c34e147aba54b1ba0677f2fcdd550",
   "sslWhitelist": [],
-  "lastVersion": "8.3.0",
+  "lastVersion": "8.3.1",
   "lastReleaseNotesDisplayed": "8.3.0",
   "registration": {
     "email": "lenell16@gmail.com",
@@ -99,8 +99,8 @@
     }
   },
   "windowSettings": {
-    "x": 1726,
-    "y": 12,
+    "x": 12,
+    "y": 1452,
     "width": 1702,
     "height": 1416,
     "fullScreen": false,
