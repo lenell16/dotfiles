@@ -6,6 +6,9 @@
   "[javascriptreact]": {
     "editor.formatOnSave": false
   },
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
+  },
   "atlascode.bitbucket.explorer.enabled": true,
   "atlascode.bitbucket.issues.explorerEnabled": false,
   "atlascode.bitbucket.statusbar.enabled": false,

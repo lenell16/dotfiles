@@ -47,3 +47,10 @@ vim.cmd [[
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
 ]]
+
+-- Treesitter based folding
+vim.cmd [[
+  set foldlevel=20
+  set foldmethod=expr
+  set foldexpr=nvim_treesitter#foldexpr()
+]]

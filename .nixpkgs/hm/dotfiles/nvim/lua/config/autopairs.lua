@@ -25,6 +25,8 @@ function M.setup()
       highlight_grey = "LineNr",
     },
   }
+
+  -- npairs.add_rules(require "nvim-autopairs.rules.endwise-lua")
 end
 
 return M

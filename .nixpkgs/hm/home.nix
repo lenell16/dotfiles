@@ -29,6 +29,7 @@ in
     packages = with pkgs; [
       any-nix-shell
       amp
+			black
       stable.blender
       cocoapods
       stable.crystal
@@ -52,15 +53,21 @@ in
       neovim-nightly
       nixpkgs-fmt
       nodejs
+			nodePackages.eslint_d
+			nodePackages.fixjson
       nodePackages.pnpm
 			nodePackages.prettier
-			nodePackages.eslint
+			nodePackages.typescript
       openconnect
       overmind
       procs
       ripgrep
       sd
+			selene
+			shellcheck
+			shfmt
       streamlink
+			stylua
       tree
       vault
       wally-cli

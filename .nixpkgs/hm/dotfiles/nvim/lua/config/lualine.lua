@@ -1,26 +1,26 @@
 local M = {}
 
 function M.setup()
-	local status_ok, gps = pcall(require, 'nvim-gps')
-	if not status_ok then
-		vim.notify 'gps failed'
-		return
-	end
+  local status_ok, gps = pcall(require, "nvim-gps")
+  if not status_ok then
+    vim.notify "gps failed"
+    return
+  end
 
-	local status_ok, lualine = pcall(require, 'lualine')
-	if not status_ok then
-		vim.notify 'lualine failed'
-		return
-	end
+  local status_ok, lualine = pcall(require, "lualine")
+  if not status_ok then
+    vim.notify "lualine failed"
+    return
+  end
 
-	lualine.setup {
-		options = {
-			icons_enabled = true,
-			theme = 'rose-pine',
-			section_separators = '',
-			component_separators = '',
-		},
-		sections = {
+  lualine.setup {
+    options = {
+      icons_enabled = true,
+      theme = "rose-pine",
+      section_separators = "",
+      component_separators = "",
+    },
+    sections = {
       lualine_a = { "mode" },
       lualine_b = { "branch", "diff", "diagnostics" },
       lualine_c = {
@@ -45,7 +45,7 @@ function M.setup()
     },
     tabline = {},
     extensions = {},
-	}
+  }
 end
 
 return M

@@ -1,11 +1,11 @@
 local M = {}
 
 function M.setup()
-  local status_ok, whichkey = pcall(require, 'which-key')
-	if not status_ok then
-		vim.notify 'which-key failed'
-		return
-	end
+  local status_ok, whichkey = pcall(require, "which-key")
+  if not status_ok then
+    vim.notify "which-key failed"
+    return
+  end
 
   local conf = {
     window = {
@@ -33,14 +33,44 @@ function M.setup()
       D = { "<Cmd>%bd|e#|bd#<Cr>", "Delete all buffers" },
     },
 
+    c = {
+      name = "Code",
+      -- g = { "<cmd>Neogen func<Cr>", "Func Doc" },
+      -- G = { "<cmd>Neogen class<Cr>", "Class Doc" },
+      x = "Swap Next Param",
+      X = "Swap Prev Param",
+      -- f = "Select Outer Function",
+      -- F = "Select Outer Class",
+    },
+
+    f = {
+      name = "Find",
+      f = { "<cmd>lua require('utils.finder').find_files()<cr>", "Files" },
+      d = { "<cmd>lua require('utils.finder').find_dotfiles()<cr>", "Dotfiles" },
+      b = { "<cmd>Telescope buffers<cr>", "Buffers" },
+      o = { "<cmd>Telescope oldfiles<cr>", "Old Files" },
+      g = { "<cmd>Telescope live_grep<cr>", "Live Grep" },
+      c = { "<cmd>Telescope commands<cr>", "Commands" },
+      r = { "<cmd>Telescope file_browser<cr>", "Browser" },
+      w = { "<cmd>Telescope current_buffer_fuzzy_find<cr>", "Current Buffer" },
+      e = { "<cmd>NvimTreeToggle<cr>", "Explorer" },
+    },
+
+    p = {
+      name = "Project",
+      p = { "<cmd>lua require'telescope'.extensions.project.project{}<cr>", "List" },
+      s = { "<cmd>Telescope repo list<cr>", "Search" },
+    },
+
     z = {
-      name = "Packer",
+      name = "System",
       c = { "<cmd>PackerCompile<cr>", "Compile" },
       i = { "<cmd>PackerInstall<cr>", "Install" },
+      p = { "<cmd>PackerProfile<cr>", "Profile" },
       s = { "<cmd>PackerSync<cr>", "Sync" },
       S = { "<cmd>PackerStatus<cr>", "Status" },
       u = { "<cmd>PackerUpdate<cr>", "Update" },
-      p = { "<cmd>PackerProfile<cr>", "Profile" },
+      r = { "<cmd>Telescope reloader<cr>", "Reload Module" },
     },
 
     g = {
