@@ -1,2 +1,0 @@
-ℹ No staged files found.
-Hook process exited.

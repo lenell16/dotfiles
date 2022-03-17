@@ -91,14 +91,14 @@ function M.setup()
       end,
     }
 
-    -- IndentLine
-    use {
-      "lukas-reineke/indent-blankline.nvim",
-      event = "BufReadPre",
-      config = function()
-        require("config.indentblankline").setup()
-      end,
-    }
+    -- -- IndentLine
+    -- use {
+    --   "lukas-reineke/indent-blankline.nvim",
+    --   event = "BufReadPre",
+    --   config = function()
+    --     require("config.indentblankline").setup()
+    --   end,
+    -- }
 
     -- Better icons
     use {

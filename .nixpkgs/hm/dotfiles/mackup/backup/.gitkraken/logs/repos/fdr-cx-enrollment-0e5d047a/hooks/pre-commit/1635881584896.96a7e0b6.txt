@@ -1,3 +1,0 @@
-/Users/alonzothomas/Developer/work/fdr-cx-enrollment/.husky/pre-commit: line 4: npx: command not found
-husky - pre-commit hook exited with code 127 (error)
-Hook process exited.

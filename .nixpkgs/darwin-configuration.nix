@@ -86,7 +86,6 @@ in
 			"unisonweb/unison"
     ];
     brews = [
-			"mackup"
       "skhd"
 			"unison-language"
     ];

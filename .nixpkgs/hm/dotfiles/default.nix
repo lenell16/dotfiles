@@ -2,7 +2,6 @@
 
 {
 	home.file = {
-		".mackup.cfg".source = ./mackup/mackup.cfg;
     ".npmrc".source = ./npmrc;
     ".ngrok2" = {
       source = ./ngrok2;
