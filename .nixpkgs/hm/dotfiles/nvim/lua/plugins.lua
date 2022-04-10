@@ -52,8 +52,14 @@ function M.setup()
     use { "onsails/lspkind-nvim" }
 
     -- use 'LionC/nest.nvim'
-    -- use 'mrjones2014/legendary.nvim'
-
+    -- use 'mrjones2014/legendary.nvim
+    use {
+      "startup-nvim/startup.nvim",
+      requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+      config = function()
+        require("config.startup").setup()
+      end,
+    }
     -- Notification
     use {
       "rcarriga/nvim-notify",
@@ -210,13 +216,15 @@ function M.setup()
     }
 
     use {
-      "kyazdani42/nvim-tree.lua",
+      "nvim-neo-tree/neo-tree.nvim",
+      branch = "v2.x",
       requires = {
+        "nvim-lua/plenary.nvim",
         "kyazdani42/nvim-web-devicons",
+        "MunifTanjim/nui.nvim",
       },
-      cmd = { "NvimTreeToggle", "NvimTreeClose" },
       config = function()
-        require("config.nvimtree").setup()
+        require("config.neo-tree").setup()
       end,
     }
 

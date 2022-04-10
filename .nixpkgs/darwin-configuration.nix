@@ -167,7 +167,7 @@ in
 			# "vimac" (not in brew)
 			# "visly" (not in brew)
       # "vlc"
-      # "vmware-horizon-client"
+      "vmware-horizon-client"
 			# warp" (not in brew)
       # "webstorm"
       # "wormhole"
