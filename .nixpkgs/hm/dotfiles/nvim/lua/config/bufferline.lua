@@ -1,15 +1,15 @@
 local M = {}
 
 function M.setup()
-	local status_ok, bufferline = pcall(require, 'bufferline')
-	if not status_ok then
-		vim.notify 'bufferline'
-		return
-	end
+  -- local status_ok, bufferline = pcall(require, 'bufferline')
+  -- if not status_ok then
+  -- 	vim.notify 'bufferline'
+  -- 	return
+  -- end
 
-	bufferline.setup{}
+  require("bufferline").setup {}
 
-	vim.cmd[[
+  vim.cmd [[
 		nnoremap <silent>[b :BufferLineCycleNext<CR>
 		nnoremap <silent>b] :BufferLineCyclePrev<CR>
 	]]

@@ -86,10 +86,11 @@ function M.setup()
       { name = "nvim_lua" },
       { name = "path" },
     },
-    documentation = {
+    window = {
+	documentation = {
       border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
       winhighlight = "NormalFloat:NormalFloat,FloatBorder:TelescopeBorder",
-    },
+			},},
   }
 
   -- Use buffer source for `/`

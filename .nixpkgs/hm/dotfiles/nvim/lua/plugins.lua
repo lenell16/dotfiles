@@ -230,11 +230,14 @@ function M.setup()
 
     -- Buffer line
     use {
-      "akinsho/nvim-bufferline.lua",
-      event = "BufReadPre",
-      wants = "nvim-web-devicons",
+      "akinsho/bufferline.nvim",
+      -- event = "BufReadPre",
+      requires = "nvim-web-devicons",
+      tag = "*",
       config = function()
-        require("config.bufferline").setup()
+        vim.opt.termguicolors = true
+        require("bufferline").setup {}
+        -- require("config.bufferline").setup()
       end,
     }
 
@@ -315,7 +318,7 @@ function M.setup()
       wants = {
         "nvim-lsp-installer",
         "lsp_signature.nvim",
-        "cmp-nvim-lsp",
+        -- "cmp-nvim-lsp",
         "lua-dev.nvim",
         "vim-illuminate",
         "null-ls.nvim",

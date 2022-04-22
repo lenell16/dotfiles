@@ -107,7 +107,7 @@ in
       "fantastical"
       # "firecamp"
 			# firefoo (not in brew)
-      # "firefox"
+      "firefox"
       # "firefox-developer-edition"
       # "fork"
       # "framer-x"
