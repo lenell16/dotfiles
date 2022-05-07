@@ -1,18 +1,8 @@
-{ config, pkgs, ... }:
+{ pkgs, lib, config, home-manager, nix-darwin, inputs, ... }: {
 
-let
-	stable = import <stable> {
-		config = {
-			allowUnfree = true;
-			allowInsecure = true;
-		};
-	};
-in
-
-{
   imports = [
-    ./dotfiles
-    ./programs
+    ../hm/dotfiles
+    ../hm/programs
   ];
 
   programs.home-manager.enable = true;
@@ -124,7 +114,7 @@ in
       userEmail = "lenell16@gmail.com";
 			includes = [
 				{
-						path = ./dotfiles/git/gitalias/gitalias.txt;
+						path = ../hm/dotfiles/git/gitalias/gitalias.txt;
 					}
 			];
     };
@@ -146,7 +136,7 @@ in
 			settings = {
 				macos_option_as_alt = true;
 			};
-      extraConfig = builtins.readFile ./dotfiles/kitty/extraConfig.conf;
+      extraConfig = builtins.readFile ../hm/dotfiles/kitty/extraConfig.conf;
 		};
 
     lazygit.enable = true;

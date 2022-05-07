@@ -1,19 +1,11 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }: {
 
-let
-	stable = import <stable> {
-		config = {
-			allowUnfree = true;
-			allowInsecure = true;
-		};
-	};
-in
-{
-  # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
-  # environment.darwinConfig = "$HOME/.config/nixpkgs/darwin/configuration.nix";
-  imports = [ <home-manager/nix-darwin> ];
-
+  nix = {
+    package = pkgs.nix;
+    extraOptions = ''
+      experimental-features = nix-command flakes
+    '';
+  };
   # Auto upgrade nix package and the daemon service.
   services = {
     nix-daemon.enable = true;
@@ -29,19 +21,6 @@ in
 		# };
   };
 
-  # nix.package = pkgs.nix;
-  nixpkgs = {
-    config = {
-      allowUnfree = true;
-      allowInsecure = true;
-      input-fonts.acceptLicense = true;
-    };
-    overlays = [
-      (import (builtins.fetchTarball {
-        url = https://github.com/nix-community/neovim-nightly-overlay/archive/master.tar.gz;
-      }))
-    ];
-  };
   # Create /etc/bashrc that loads the nix-darwin environment.
   programs.bash.enable = true;
   programs.zsh.enable = true; # default shell on catalina
@@ -60,10 +39,8 @@ in
     };
   };
 
-
-
   fonts = {
-    enableFontDir = true;
+    fontDir.enable = true;
     fonts = with pkgs; [
       powerline-fonts
       fira-code
@@ -75,7 +52,6 @@ in
 			]; })
     ];
   };
-
 
   homebrew = {
     enable = true;
@@ -207,6 +183,10 @@ in
         _HIHideMenuBar = true;
       };
     };
+    activationScripts.postActivation.text = ''
+      # Set the default shell as fish for the user. MacOS doesn't do this like nixOS does
+      sudo chsh -s ${lib.getBin pkgs.fish}/bin/fish shauryasingh
+    '';
   };
 
   environment.systemPackages = with pkgs; [
@@ -217,9 +197,4 @@ in
 		gitkraken
 		# iina
   ];
-
-  home-manager = {
-    useGlobalPkgs = true;
-    users.alonzothomas = import ./hm/home.nix;
-  };
 }
