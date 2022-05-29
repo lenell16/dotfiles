@@ -1,0 +1,9 @@
+[submodule "modules/hm/dotfiles/iterm/rose-pine"]
+	path = modules/hm/dotfiles/iterm/rose-pine
+	url = git@github.com:rose-pine/iterm.git
+[submodule "modules/hm/dotfiles/git/gitalias"]
+	path = modules/hm/dotfiles/git/gitalias
+	url = git@github.com:GitAlias/gitalias.git
+[submodule "modules/hm/dotfiles/kitty/rose-pine"]
+	path = modules/hm/dotfiles/kitty/rose-pine
+	url = git@github.com:rose-pine/kitty.git
