@@ -79,7 +79,6 @@
         viu
         xplr
         yarn
-        youtube-dl
         yt-dlp
       ];
     };
@@ -108,9 +107,6 @@
       shellInit = ''
         any-nix-shell fish --info-right | source
       '';
-      shellAliases = {
-        # dotbare = "$HOME/.dotbare/dotbare";
-      };
       # interactiveShellInit = ''
       #   ${pkgs.atuin}/bin/atuin init fish | source
       # '';
