@@ -29,9 +29,5 @@
       source = ./yabai/yabairc;
       executable = true;
     };
-    kitty = {
-      source = ./kitty;
-      recursive = true;
-    };
   };
 }

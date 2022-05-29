@@ -5,10 +5,6 @@
     ./programs
   ];
 
-  nixpkgs.config = {
-    allowUnfree = true;
-  };
-
   programs.home-manager = {
     enable = true;
     path = "${config.home.homeDirectory}/.nixpkgs/modules/home-manager";
@@ -39,7 +35,7 @@
         black
         stable.blender
         cocoapods
-        crystal_1_2
+        # crystal_1_2
         curl
         deno
         fd
@@ -50,9 +46,8 @@
         gh
         google-cloud-sdk
         httpie
-        iina
         kubectx
-        lucky-cli
+        # lucky-cli
         micro
         miller
         mongodb
@@ -76,6 +71,7 @@
         streamlink
         stylua
         tree
+        unison-ucm
         vault
         wally-cli
         watchman
@@ -113,7 +109,7 @@
         any-nix-shell fish --info-right | source
       '';
       shellAliases = {
-        dotbare = "$HOME/.dotbare/dotbare";
+        # dotbare = "$HOME/.dotbare/dotbare";
       };
       # interactiveShellInit = ''
       #   ${pkgs.atuin}/bin/atuin init fish | source
@@ -131,16 +127,16 @@
       userEmail = "lenell16@gmail.com";
       includes = [
         {
-          path = ./dotfiles/git/gitalias/gitalias.txt;
+          path = "${inputs.gitalias}/gitalias.txt";
         }
       ];
     };
 
     go.enable = true;
 
-    # helix = {
-    #   enable = true;
-    # };
+    helix = {
+      enable = true;
+    };
 
     jq.enable = true;
 
@@ -154,7 +150,9 @@
       settings = {
         macos_option_as_alt = true;
       };
-      extraConfig = builtins.readFile ./dotfiles/kitty/extraConfig.conf;
+      extraConfig = ''
+        include ${inputs.rose-pine-kitty}/dist/rose-pine-moon.conf
+      '';
     };
 
     lazygit.enable = true;

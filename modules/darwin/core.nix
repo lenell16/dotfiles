@@ -6,13 +6,12 @@ in
   environment = {
     loginShell = pkgs.fish;
     etc = { darwin.source = "${inputs.darwin}"; };
-    # Use a custom configuration.nix location.
-    # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
 
     systemPackages = with pkgs; [
       stable.blender
       gitkraken
       iina
+      postman
     ];
   };
 

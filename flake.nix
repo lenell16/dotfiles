@@ -2,7 +2,7 @@
   description = "test";
   inputs = {
     stable.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
-    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-22.05-darwin";
     # Nix-Darwin
     darwin = {
       url = "github:lnl7/nix-darwin/master";
@@ -18,6 +18,23 @@
       url = "github:nix-community/neovim-nightly-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    unison = {
+      url = "github:ceedubs/unison-nix";
+      inputs.nixpkgs.follows = "stable";
+    };
+    rose-pine-kitty = {
+      type = "github";
+      owner = "rose-pine";
+      repo = "kitty";
+      flake = false;
+    };
+    gitalias = {
+      type = "github";
+      owner = "GitAlias";
+      repo = "gitalias";
+      flake = false;
+    };
+
   };
   outputs = inputs@{ self, nixpkgs, darwin, home-manager, flake-utils, ... }:
     let

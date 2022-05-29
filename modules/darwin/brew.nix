@@ -5,100 +5,83 @@
     taps = [
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
-			"unisonweb/unison"
     ];
     brews = [
       "skhd"
-			"unison-language"
     ];
     casks = [
-      # "4k-stogram"
-      # "alfred"
-      "altserver"
-      # "amethyst"
-      "appzapper"
+			"elmedia-player"
 			# "arc" (not in brew)
+			# "lens"
+			# "mailspring"
+			# "quetbrowser"
+			# "replay" (not in brew)
+			# "scriptkit" (not in brew)
+			# "vimac" (not in brew)
+			# "visly" (not in brew)
+			# firefoo (not in brew)
+			# FruityUi (not in brew)
+			# hide my bar (not in brew)
+			# httpie ui (not in brew)
+			# warp" (not in brew)
+      "altserver"
+      "appzapper"
+      "docker"
+      "dropbox"
+      "expressvpn"
+      "fantastical"
+      "firefox"
+      "google-chrome"
+      "hazel"
+      "marta"
+      "omnidisksweeper"
+      "raycast"
+      "soundsource"
+      "streamlink-twitch-gui"
+      "transmission"
+      "vmware-horizon-client"
+      "zoom"
+      "zsa-wally"
       # "brave-browser"
       # "contexts"
       # "daisydisk"
-      "docker"
-      # "drama"
-      "dropbox"
-			"elmedia-player"
-      "expressvpn"
-      "fantastical"
       # "firecamp"
-			# firefoo (not in brew)
-      "firefox"
       # "firefox-developer-edition"
       # "fork"
       # "framer-x"
-			# FruityUi (not in brew)
       # "gitfox"
-      # "gitkraken"
       # "goneovim"
-      "google-chrome"
       # "google-chrome-canary"
-      "hazel"
-			# hide my bar (not in brew)
-			# httpie ui (not in brew)
-      # "iina"
-      # "insomnia"
       # "insomnia-designer"
-			# "instabro" (not in brew)
+      # "insomnia"
       # "itch"
-      # "iterm2"
       # "java"
       # "kap"
       # "kindle"
-			# "scriptkit" (not in brew)
-			# "lens"
       # "loopback"
-			# "mailspring"
-      "marta"
-      # "notion"
       # "nova"
-      "omnidisksweeper"
       # "pastebot"
-      # "pixelsnap"
-      # "pocket-casts"
+      # "pixelsnap
       # "postgres"
-      "postman"
       # "prisma-studio"
       # "protopie"
-			# "quetbrowser"
-      # "raindropio"
-      "raycast"
-			# "replay" (not in brew)
       # "robo-3t"
       # "runjs"
-      # "screens"
       # "screens-connect"
+      # "screens"
       # "sizzy"
       # "slack"
       # "soda-player"
-      "soundsource"
       # "spotify"
       # "steam"
-      "streamlink-twitch-gui"
       # "sublime-merge"
       # "tableplus"
       # "the-unarchiver"
-      "transmission"
       # "transmit"
-			# "vimac" (not in brew)
-			# "visly" (not in brew)
       # "vlc"
-      "vmware-horizon-client"
-			# warp" (not in brew)
       # "webstorm"
       # "wormhole"
-      "zoom"
-      "zsa-wally"
     ];
-    extraConfig = ''
-      brew "koekeishiya/formulae/yabai", args: ["HEAD"]
-    '';
     # masApps = {
     #   "Black Out" = 1319884285;
     #   "ColorSlurp" = 1287239339;

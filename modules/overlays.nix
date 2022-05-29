@@ -6,5 +6,6 @@
       stable = import inputs.stable { system = prev.system; };
     })
     inputs.neovim-overlay.overlay
+    inputs.unison.overlay
   ];
 }
