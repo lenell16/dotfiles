@@ -1,5 +1,7 @@
 local M = {}
 
+local nvim_lsp = require "lspconfig"
+
 local servers = {
   gopls = {},
   html = {},
@@ -35,8 +37,13 @@ local servers = {
       },
     },
   },
-  tsserver = {},
+  tsserver = {
+    root_dir = nvim_lsp.util.root_pattern "package.json",
+  },
   vimls = {},
+  denols = {
+    root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+  },
 }
 
 local lsp_signature = require "lsp_signature"
@@ -60,10 +67,10 @@ local function on_attach(client, bufnr)
   require("config.lsp.keymaps").setup(client, bufnr)
 
   -- Configure highlighting
-  require("config.lsp.highlighting").setup(client)
+  -- require("config.lsp.highlighting").setup(client)
 
   -- Configure formatting
-  require("config.lsp.null-ls.formatters").setup(client, bufnr)
+  -- require("config.lsp.null-ls.formatters").setup(client, bufnr)
 
   -- Configure for Typescript
   if client.name == "tsserver" then
@@ -87,8 +94,9 @@ local opts = {
 -- require("config.lsp.handlers").setup()
 
 function M.setup()
+  -- vim.notify "steonoensto"
   -- null-ls
-  require("config.lsp.null-ls").setup(opts)
+  -- require("config.lsp.null-ls").setup(opts)
 
   -- Installer
   require("config.lsp.installer").setup(servers, opts)

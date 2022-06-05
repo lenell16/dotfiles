@@ -69,10 +69,16 @@ function M.setup()
       end,
     }
 
+    -- use {
+    --   "rose-pine/neovim",
+    --   config = function()
+    --     require("config.rose-pine").setup()
+    --   end,
+    -- }
     use {
-      "rose-pine/neovim",
+      "EdenEast/nightfox.nvim",
       config = function()
-        require("config.rose-pine").setup()
+        vim.cmd [[colorscheme nightfox]]
       end,
     }
 
@@ -269,9 +275,6 @@ function M.setup()
         "ray-x/cmp-treesitter",
         "hrsh7th/cmp-cmdline",
         "saadparwaiz1/cmp_luasnip",
-        -- "hrsh7th/cmp-calc",
-        -- "f3fora/cmp-spell",
-        -- "hrsh7th/cmp-emoji",
         "hrsh7th/cmp-nvim-lsp",
         {
           "L3MON4D3/LuaSnip",
@@ -295,14 +298,14 @@ function M.setup()
     }
 
     -- Auto tag
-    use {
-      "windwp/nvim-ts-autotag",
-      wants = "nvim-treesitter",
-      event = "InsertEnter",
-      config = function()
-        require("nvim-ts-autotag").setup { enable = true }
-      end,
-    }
+    -- use {
+    --   "windwp/nvim-ts-autotag",
+    --   wants = "nvim-treesitter",
+    --   event = "InsertEnter",
+    --   config = function()
+    --     require("nvim-ts-autotag").setup { enable = true }
+    --   end,
+    -- }
 
     -- End wise
     use {
@@ -318,7 +321,7 @@ function M.setup()
       wants = {
         "nvim-lsp-installer",
         "lsp_signature.nvim",
-        -- "cmp-nvim-lsp",
+        "cmp-nvim-lsp",
         "lua-dev.nvim",
         "vim-illuminate",
         "null-ls.nvim",
@@ -355,16 +358,6 @@ function M.setup()
         require("trouble").setup {
           use_diagnostic_signs = true,
         }
-      end,
-    }
-
-    -- lspsaga.nvim
-    use {
-      "tami5/lspsaga.nvim",
-      event = "VimEnter",
-      cmd = { "Lspsaga" },
-      config = function()
-        require("lspsaga").setup {}
       end,
     }
 

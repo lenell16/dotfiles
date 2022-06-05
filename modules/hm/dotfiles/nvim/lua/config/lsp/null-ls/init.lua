@@ -17,10 +17,17 @@ local with_root_file = function(builtin, file)
     end,
   }
 end
+local with_root_matches = function(builtin, file)
+  return builtin.with {
+    condition = function(utils)
+      return utils.root_matches(file)
+    end,
+  }
+end
 
 local sources = {
   -- formatting
-  b.formatting.prettier,
+  with_root_matches(b.formatting.prettier, "package.json"),
   -- b.formatting.prettierd,
   b.formatting.shfmt,
   b.formatting.fixjson,
@@ -32,15 +39,15 @@ local sources = {
   -- diagnostics
   -- b.diagnostics.write_good,
   -- b.diagnostics.markdownlint,
-  b.diagnostics.eslint_d,
+  with_root_matches(b.diagnostics.eslint_d, "package.json"),
   -- b.diagnostics.flake8,
-  b.diagnostics.tsc,
+  with_root_matches(b.diagnostics.tsc, "package.json"),
   -- with_root_file(b.diagnostics.selene, "selene.toml"),
   b.diagnostics.selene,
   with_diagnostics_code(b.diagnostics.shellcheck),
 
   -- code actions
-  b.code_actions.eslint_d,
+  with_root_matches(b.code_actions.eslint_d, "package.json"),
   b.code_actions.gitsigns,
   b.code_actions.gitrebase,
 
