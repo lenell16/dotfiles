@@ -2,6 +2,7 @@
   homebrew = {
     enable = true;
     cleanup = "zap";
+    autoUpdate = false;
     taps = [
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
@@ -34,12 +35,15 @@
       "google-chrome"
       "hazel"
       "marta"
+      "notion"
       "omnidisksweeper"
+      "prisma-studio"
       "raycast"
+      "slack"
       "soundsource"
       "streamlink-twitch-gui"
+      "tableplus"
       "transmission"
-      "vmware-horizon-client"
       "zoom"
       "zsa-wally"
       # "brave-browser"
@@ -63,19 +67,16 @@
       # "pastebot"
       # "pixelsnap
       # "postgres"
-      # "prisma-studio"
       # "protopie"
       # "robo-3t"
       # "runjs"
       # "screens-connect"
       # "screens"
       # "sizzy"
-      # "slack"
       # "soda-player"
       # "spotify"
       # "steam"
       # "sublime-merge"
-      # "tableplus"
       # "the-unarchiver"
       # "transmit"
       # "vlc"

@@ -14,6 +14,7 @@
     let NODE_GLOBAL = "${config.home.homeDirectory}/.node-packages";
     in
     {
+      stateVersion = "22.05";
       sessionVariables = {
         DOTBARE_DIR = "$HOME/dotfiles";
         DOTBARE_TREE = "$HOME";
@@ -34,6 +35,8 @@
         amp
         black
         stable.blender
+        cloudflared
+        cloud-sql-proxy
         cocoapods
         # crystal_1_2
         curl
@@ -43,7 +46,6 @@
         fx
         gitflow
         gitkraken
-        gh
         google-cloud-sdk
         httpie
         kubectx
@@ -60,8 +62,9 @@
         nodePackages.pnpm
         nodePackages.prettier
         nodePackages.typescript
-        openconnect
+        nodePackages.zx
         overmind
+        pkg-config
         procs
         ripgrep
         sd
@@ -117,6 +120,14 @@
       enableFishIntegration = true;
     };
 
+    gh = {
+      enable = true;
+      settings = {
+        git_protocol = "ssh";
+        prompt = "enabled";
+      };
+    };
+
     git = {
       enable = true;
       userName = "lenell16";
@@ -126,6 +137,10 @@
           path = "${inputs.gitalias}/gitalias.txt";
         }
       ];
+    };
+
+    gitui = {
+      enable = true;
     };
 
     go.enable = true;

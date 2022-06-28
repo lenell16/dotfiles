@@ -17,10 +17,6 @@
       source = ./nvim;
       recursive = true;
     };
-    gh = {
-      source = ./gh;
-      recursive = true;
-    };
     "skhd/skhdrc" = {
       source = ./skhd/skhdrc;
       executable = true;
