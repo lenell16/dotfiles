@@ -83,7 +83,7 @@
       # "webstorm"
       # "wormhole"
     ];
-    # masApps = {
+    masApps = {
     #   "Black Out" = 1319884285;
     #   "ColorSlurp" = 1287239339;
     #   "Dashlane" = 517914548;
@@ -95,8 +95,10 @@
     #   "SnippetsLab" = 1006087419;
     #   "Tweetbot" = 1384080005;
     #   "Twitter" = 1482454543;
-    #   "Xcode" = 497799835;
-    # };
+      "Xcode" = 497799835;
+      "AdGuard for Safari" = 1440147259;
+      "1Password 7" = 1333542190;
+    };
 
   };
 }

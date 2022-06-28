@@ -56,7 +56,7 @@
         ngrok
         neovim-nightly
         nixpkgs-fmt
-        nodejs_latest
+        nodejs-16_x
         nodePackages.eslint_d
         nodePackages.fixjson
         nodePackages.pnpm
