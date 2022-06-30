@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-	home.file = {
+  home.file = {
     ".npmrc".source = ./npmrc;
     ".ngrok2" = {
       source = ./ngrok2;
@@ -9,19 +9,15 @@
     };
   };
   xdg.configFile = {
-		xplr = {
-			source = ./xplr;
-			recursive = true;
-		};
+    xplr = {
+      source = ./xplr;
+      recursive = true;
+    };
     nvim = {
       source = ./nvim;
       recursive = true;
     };
-    "skhd/skhdrc" = {
-      source = ./skhd/skhdrc;
-      executable = true;
-    };
-   "yabai/yabairc" = {
+    "yabai/yabairc" = {
       source = ./yabai/yabairc;
       executable = true;
     };

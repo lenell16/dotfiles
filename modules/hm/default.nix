@@ -35,6 +35,7 @@
         amp
         black
         stable.blender
+        cargo
         cloudflared
         cloud-sql-proxy
         cocoapods
@@ -67,6 +68,8 @@
         pkg-config
         procs
         ripgrep
+        rustc
+        rustfmt
         sd
         selene
         shellcheck

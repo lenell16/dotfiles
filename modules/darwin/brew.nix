@@ -8,7 +8,8 @@
       "homebrew/cask-drivers"
     ];
     brews = [
-      "skhd"
+      # "skhd"
+      "yabai"
     ];
     casks = [
 			"elmedia-player"

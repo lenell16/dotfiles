@@ -36,6 +36,17 @@ in
       enable = true;
       package = pkgs.postgresql_14;
     };
+
+    skhd = {
+      enable = true;
+      skhdConfig = (builtins.readFile ../hm/dotfiles/skhd/skhdrc);
+    };
+    # yabai = {
+    #   enable = true;
+    #   # package = "/usr/local/bin/yabai";
+    #   enableScriptingAddition = true;
+    #   extraConfig = (builtins.readFile ../hm/dotfiles/yabai/yabairc);
+    # };
   };
 
   system = {
