@@ -26,7 +26,6 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    flake-compat = { url = "github:edolstra/flake-compat"; flake = false; };
     flake-utils.url = "github:numtide/flake-utils";
 
     rose-pine-kitty = {
@@ -46,8 +45,7 @@
   outputs = { self, darwin, home-manager, flake-utils, ... }@inputs:
     let
       inherit (darwin.lib) darwinSystem;
-      inherit (home-manager.lib) homeManagerConfiguration;
-      inherit (inputs.nixpkgs-unstable.lib) attrValues makeOverridable optionalAttrs singleton;
+      inherit (inputs.nixpkgs-unstable.lib) attrValues;
 
 
       # Configuration for `nixpkgs`
@@ -72,7 +70,7 @@
         username = "alonzothomas";
         fullName = "Alonzo Thomas";
         email = "lenell16@gmail.com";
-        nixConfigDirectory = "/Users/malo/.config/nixpkgs";
+        nixConfigDirectory = "/Users/alonzothomas/.nixpkgs";
       };
 
       # Modules shared by most `nix-darwin` personal configurations.
@@ -93,6 +91,7 @@
             users.users.${primaryUser.username}.home = "/Users/${primaryUser.username}";
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = { inherit inputs; };
             home-manager.users.${primaryUser.username} = {
               imports = attrValues self.homeManagerModules;
               home.stateVersion = homeManagerStateVersion;
@@ -108,14 +107,19 @@
     {
       # My `nix-darwin` configs
       darwinConfigurations = rec {
-        alonzo-intel = darwinSystem {
+        ZoBookPro = darwinSystem {
           system = "x86_64-darwin";
           modules = nixDarwinCommonModules ++ [
             {
               users.primaryUser = primaryUserInfo;
+              networking.computerName = "Alonzo Macbook";
+              networking.hostName = "ZoBookPro";
+              networking.knownNetworkServices = [
+                "Wi-Fi"
+                "USB 10/100/1000 LAN"
+              ];
             }
           ];
-          specialArgs = { inherit inputs; };
         };
 
       };
@@ -178,7 +182,6 @@
             }).options.users.primaryUser;
         };
       };
-      # }}}
 
       # Add re-export `nixpkgs` packages with overlays.
       # This is handy in combination with `nix registry add my /Users/malo/.config/nixpkgs`

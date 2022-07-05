@@ -1,7 +1,10 @@
-{ inputs, config, pkgs, lib, ... }:
-let prefix = "/run/current-system/sw/bin";
-in
-{
+{ inputs, config, pkgs, lib, ... }: {
+
+  networking.dns = [
+    "1.1.1.1"
+    "8.8.8.8"
+  ];
+
   # environment setup
   environment = {
     systemPackages = with pkgs; [
