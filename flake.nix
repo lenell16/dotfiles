@@ -158,6 +158,7 @@
         alonzo-bootstrap = import ./darwin/bootstrap.nix;
         alonzo-preferences = import ./darwin/preferences.nix;
         alonzo-core = import ./darwin/core.nix;
+        alonzo-postgres = import ./darwin/postgres.nix;
         alonzo-homebrew = import ./darwin/brew.nix;
 
         users-primaryUser = import ./modules/darwin/users.nix;

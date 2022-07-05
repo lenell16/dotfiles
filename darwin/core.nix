@@ -43,11 +43,6 @@
 
   # Auto upgrade nix package and the daemon service.
   services = {
-    postgresql = {
-      enable = true;
-      package = pkgs.postgresql_14;
-    };
-
     skhd = {
       enable = true;
       skhdConfig = (builtins.readFile ../hm/dotfiles/skhd/skhdrc);
