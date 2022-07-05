@@ -12,11 +12,11 @@
       enable = true;
       userName = "lenell16";
       userEmail = "lenell16@gmail.com";
-      # includes = [
-      #   {
-      #     path = "${inputs.gitalias}/gitalias.txt";
-      #   }
-      # ];
+      includes = [
+        {
+          path = "${inputs.gitalias}/gitalias.txt";
+        }
+      ];
     };
 
     gitui = {

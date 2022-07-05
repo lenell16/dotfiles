@@ -6,9 +6,9 @@
       settings = {
         macos_option_as_alt = true;
       };
-      # extraConfig = ''
-      #   include ${inputs.rose-pine-kitty}/dist/rose-pine-moon.conf
-      # '';
+      extraConfig = ''
+        include ${inputs.rose-pine-kitty}/dist/rose-pine-moon.conf
+      '';
     };
   };
 }

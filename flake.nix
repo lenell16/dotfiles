@@ -115,6 +115,7 @@
               users.primaryUser = primaryUserInfo;
             }
           ];
+          specialArgs = { inherit inputs; };
         };
 
       };
