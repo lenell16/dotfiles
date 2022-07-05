@@ -4,34 +4,42 @@ in
 {
   # environment setup
   environment = {
-    loginShell = pkgs.fish;
-    etc = { darwin.source = "${inputs.darwin}"; };
-
     systemPackages = with pkgs; [
-      stable.blender
+      pkgs-deprecated-darwin.blender
       gitkraken
       iina
       postman
+      pkgs-deprecated-darwin.kitty
+      mpv
+      vscode
     ];
   };
 
   fonts = {
     fontDir.enable = true;
   };
-  nix = {
-    nixPath = [ "darwin=/etc/${config.environment.etc.darwin.target}" ];
-    extraOptions = ''
-      extra-platforms = x86_64-darwin aarch64-darwin
-    '';
+  fonts = {
+    fonts = with pkgs; [
+      powerline-fonts
+      fira-code
+      fira-mono
+      input-fonts
+      (nerdfonts.override {
+        fonts = [
+          "FiraMono"
+          "JetBrainsMono"
+        ];
+      })
+    ];
   };
 
-  # auto manage nixbld users with nix darwin
-  users.nix.configureBuildUsers = true;
+  # https://github.com/nix-community/home-manager/issues/423
+  environment.variables = {
+    TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
+  };
 
   # Auto upgrade nix package and the daemon service.
   services = {
-    nix-daemon.enable = true;
-
     postgresql = {
       enable = true;
       package = pkgs.postgresql_14;
@@ -50,17 +58,9 @@ in
   };
 
   system = {
-    stateVersion = 4;
     activationScripts.postActivation.text = ''
       # Set the default shell as fish for the user. MacOS doesn't do this like nixOS does
       sudo chsh -s ${lib.getBin pkgs.fish}/bin/fish alonzothomas
     '';
-  };
-
-  documentation = {
-    enable = false;
-    doc.enable = false;
-    info.enable = false;
-    man.enable = false;
   };
 }

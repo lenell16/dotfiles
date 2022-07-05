@@ -14,13 +14,9 @@
     let NODE_GLOBAL = "${config.home.homeDirectory}/.node-packages";
     in
     {
-      stateVersion = "22.05";
       sessionVariables = {
-        DOTBARE_DIR = "$HOME/dotfiles";
-        DOTBARE_TREE = "$HOME";
-        NIXPKGS_ALLOW_INSECURE = 1;
-        NIXPKGS_ALLOW_UNFREE = 1;
-        TERMINFO_DIRS = "${pkgs.stable.kitty.terminfo.outPath}/share/terminfo";
+        # NIXPKGS_ALLOW_INSECURE = 1;
+        # NIXPKGS_ALLOW_UNFREE = 1;
         EDITOR = "nvim";
         VISUAL = "nvim";
         NODE_PATH = "${NODE_GLOBAL}/lib";
