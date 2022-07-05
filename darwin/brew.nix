@@ -12,20 +12,20 @@
       "yabai"
     ];
     casks = [
-			"elmedia-player"
-			# "arc" (not in brew)
-			# "lens"
-			# "mailspring"
-			# "quetbrowser"
-			# "replay" (not in brew)
-			# "scriptkit" (not in brew)
-			# "vimac" (not in brew)
-			# "visly" (not in brew)
-			# firefoo (not in brew)
-			# FruityUi (not in brew)
-			# hide my bar (not in brew)
-			# httpie ui (not in brew)
-			# warp" (not in brew)
+      "elmedia-player"
+      # "arc" (not in brew)
+      # "lens"
+      # "mailspring"
+      # "quetbrowser"
+      # "replay" (not in brew)
+      # "scriptkit" (not in brew)
+      # "vimac" (not in brew)
+      # "visly" (not in brew)
+      # firefoo (not in brew)
+      # FruityUi (not in brew)
+      # hide my bar (not in brew)
+      # httpie ui (not in brew)
+      # warp" (not in brew)
       "altserver"
       "appzapper"
       "docker"
@@ -36,17 +36,14 @@
       "google-chrome"
       "hazel"
       "marta"
-      "notion"
       "omnidisksweeper"
       "prisma-studio"
       "raycast"
-      "slack"
       "soundsource"
       "streamlink-twitch-gui"
       "tableplus"
       "transmission"
       "zoom"
-      "zsa-wally"
       # "brave-browser"
       # "contexts"
       # "daisydisk"
@@ -85,17 +82,17 @@
       # "wormhole"
     ];
     masApps = {
-    #   "Black Out" = 1319884285;
-    #   "ColorSlurp" = 1287239339;
-    #   "Dashlane" = 517914548;
-    #   "FireStream" = 1005325119;
-    #   "Pastory" = 1560463189;
-    #   "Pocket" = 568494494;
-    #   "Reeder" = 1529448980;
-    #   "Shazam" = 897118787;
-    #   "SnippetsLab" = 1006087419;
-    #   "Tweetbot" = 1384080005;
-    #   "Twitter" = 1482454543;
+      #   "Black Out" = 1319884285;
+      #   "ColorSlurp" = 1287239339;
+      #   "Dashlane" = 517914548;
+      #   "FireStream" = 1005325119;
+      #   "Pastory" = 1560463189;
+      #   "Pocket" = 568494494;
+      #   "Reeder" = 1529448980;
+      #   "Shazam" = 897118787;
+      #   "SnippetsLab" = 1006087419;
+      #   "Tweetbot" = 1384080005;
+      #   "Twitter" = 1482454543;
       "Xcode" = 497799835;
       "AdGuard for Safari" = 1440147259;
       "1Password 7" = 1333542190;

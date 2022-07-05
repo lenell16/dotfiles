@@ -62,15 +62,6 @@
         overlays = attrValues self.overlays ++ [
           inputs.neovim-overlay.overlay
           inputs.unison.overlay
-          # Sub in x86 version of packages that don't build on Apple Silicon yet
-          (final: prev: (optionalAttrs (prev.stdenv.system == "aarch64-darwin") {
-            inherit (final.pkgs-x86)
-              idris2;
-          }))
-          # (final: _: {
-          #   # TODO: Remove when `stack` builds again on `nixpkgs-unstable`
-          #   inherit (final.pkgs-master) stack;
-          # })
         ];
       };
 
@@ -128,8 +119,6 @@
 
       };
 
-      # Non-system outputs --------------------------------------------------------------------- {{{
-
       overlays = {
         # Overlays to add different versions `nixpkgs` into package set
         pkgs-master = _: prev: {
@@ -166,29 +155,21 @@
         alonzo-core = import ./darwin/core.nix;
         alonzo-homebrew = import ./darwin/brew.nix;
 
-        # Modules I've created
-        # programs-nix-index = import ./modules/darwin/programs/nix-index.nix;
-        # security-pam = import ./modules/darwin/security/pam.nix;
         users-primaryUser = import ./modules/darwin/users.nix;
       };
 
       homeManagerModules = {
         # My configurations
-        alonzo-config = import ./hm;
-        # malo-config-files = import ./home/config-files.nix;
-        # malo-fish = import ./home/fish.nix;
-        # malo-git = import ./home/git.nix;
-        # malo-git-aliases = import ./home/git-aliases.nix;
-        # malo-gh-aliases = import ./home/gh-aliases.nix;
-        # malo-kitty = import ./home/kitty.nix;
-        # malo-neovim = import ./home/neovim.nix;
-        # malo-packages = import ./home/packages.nix;
-        # malo-starship = import ./home/starship.nix;
-        # malo-starship-symbols = import ./home/starship-symbols.nix;
+        alonzo-dotfiles = import ./hm/dotfiles;
+        alonzo-vscode = import ./hm/vscode.nix;
+        alonzo-editors = import ./hm/editors.nix;
+        alonzo-git = import ./hm/git.nix;
+        alonzo-kitty = import ./hm/kitty.nix;
+        alonzo-neovim = import ./hm/neovim.nix;
+        alonzo-packages = import ./hm/packages.nix;
+        alonzo-fish = import ./hm/fish.nix;
+        alonzo-programs = import ./hm/programs.nix;
 
-        # # Modules I've created
-        # programs-neovim-extras = import ./modules/home/programs/neovim/extras.nix;
-        # programs-kitty-extras = import ./modules/home/programs/kitty/extras.nix;
         home-user-info = { lib, ... }: {
           options.home.user-info =
             (self.darwinModules.users-primaryUser {
