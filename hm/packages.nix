@@ -42,7 +42,7 @@
       streamlink
       stylua
       tree
-      unison-ucm
+      # unison-ucm
       vault
       watchman
       wget
