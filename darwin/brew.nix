@@ -3,6 +3,10 @@
     enable = true;
     cleanup = "zap";
     autoUpdate = false;
+    global = {
+      brewfile = true;
+      noLock = true;
+    };
     taps = [
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
