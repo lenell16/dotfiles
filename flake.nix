@@ -108,7 +108,7 @@
       # My `nix-darwin` configs
       darwinConfigurations = rec {
         ZoBookPro = darwinSystem {
-          system = "x86_64-darwin";
+          system = "aarch64-darwin";
           modules = nixDarwinCommonModules ++ [
             {
               users.primaryUser = primaryUserInfo;
