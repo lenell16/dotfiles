@@ -1,6 +1,6 @@
 { inputs, config, pkgs, ... }: {
   homebrew = {
-    enable = true;
+    enable = false;
     cleanup = "zap";
     autoUpdate = false;
     global = {
