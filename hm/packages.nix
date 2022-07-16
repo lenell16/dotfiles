@@ -19,7 +19,7 @@
       kubectx
       # lucky-cli
       miller
-      mongodb
+      # mongodb
       ngrok
       nixpkgs-fmt
       nodejs-16_x
