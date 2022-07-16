@@ -8,7 +8,7 @@
   # environment setup
   environment = {
     systemPackages = with pkgs; [
-      pkgs-deprecated-darwin.blender
+      # pkgs-deprecated-darwin.blender
       gitkraken
       iina
       postman
