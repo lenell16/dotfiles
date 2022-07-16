@@ -25,7 +25,6 @@
       # FruityUi (not in brew)
       # hide my bar (not in brew)
       # httpie ui (not in brew)
-      # warp" (not in brew)
       "altserver"
       "appzapper"
       "docker"
@@ -43,6 +42,7 @@
       "streamlink-twitch-gui"
       "tableplus"
       "transmission"
+      "warp"
       "zoom"
       # "brave-browser"
       # "contexts"
@@ -93,6 +93,7 @@
       #   "SnippetsLab" = 1006087419;
       #   "Tweetbot" = 1384080005;
       #   "Twitter" = 1482454543;
+      "Dato" = 1470584107;
       "Xcode" = 497799835;
       "AdGuard for Safari" = 1440147259;
       "1Password 7" = 1333542190;

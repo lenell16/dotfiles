@@ -39,21 +39,23 @@
   # https://github.com/nix-community/home-manager/issues/423
   environment.variables = {
     TERMINFO_DIRS = "${pkgs.pkgs-deprecated-darwin.kitty.terminfo.outPath}/share/terminfo";
+    TERMINAL = "kitty";
+    TERM = "kitty";
   };
 
   # Auto upgrade nix package and the daemon service.
-  services = {
-    skhd = {
-      enable = true;
-      skhdConfig = (builtins.readFile ../hm/dotfiles/skhd/skhdrc);
-    };
-    # yabai = {
-    #   enable = true;
-    #   # package = "/usr/local/bin/yabai";
-    #   enableScriptingAddition = true;
-    #   extraConfig = (builtins.readFile ../hm/dotfiles/yabai/yabairc);
-    # };
-  };
+  # services = {
+  #   skhd = {
+  #     enable = true;
+  #     skhdConfig = (builtins.readFile ../hm/dotfiles/skhd/skhdrc);
+  #   };
+  # yabai = {
+  #   enable = true;
+  #   # package = "/usr/local/bin/yabai";
+  #   enableScriptingAddition = true;
+  #   extraConfig = (builtins.readFile ../hm/dotfiles/yabai/yabairc);
+  # };
+  # };
 
   system = {
     activationScripts.postActivation.text = ''
