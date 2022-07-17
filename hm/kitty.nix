@@ -1,7 +1,7 @@
 { pkgs, inputs, ... }: {
   programs = {
     kitty = {
-      package = pkgs.pkgs-deprecated-darwin.kitty;
+      package = pkgs.kitty;
       enable = true;
       settings = {
         macos_option_as_alt = true;

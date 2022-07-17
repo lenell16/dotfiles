@@ -170,7 +170,7 @@
         alonzo-vscode = import ./hm/vscode.nix;
         alonzo-editors = import ./hm/editors.nix;
         alonzo-git = import ./hm/git.nix;
-        # alonzo-kitty = import ./hm/kitty.nix;
+        alonzo-kitty = import ./hm/kitty.nix;
         alonzo-neovim = import ./hm/neovim.nix;
         alonzo-packages = import ./hm/packages.nix;
         alonzo-fish = import ./hm/fish.nix;
