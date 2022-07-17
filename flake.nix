@@ -53,7 +53,7 @@
         config = {
           allowUnsupportedSystem = true;
           allowUnfree = true;
-          allowBroken = false;
+          allowBroken = true;
           allowInsecure = true;
           input-fonts.acceptLicense = true;
         };
