@@ -44,18 +44,18 @@
   };
 
   # Auto upgrade nix package and the daemon service.
-  # services = {
-  #   skhd = {
-  #     enable = true;
-  #     skhdConfig = (builtins.readFile ../hm/dotfiles/skhd/skhdrc);
-  #   };
-  # yabai = {
-  #   enable = true;
-  #   # package = "/usr/local/bin/yabai";
-  #   enableScriptingAddition = true;
-  #   extraConfig = (builtins.readFile ../hm/dotfiles/yabai/yabairc);
-  # };
-  # };
+  services = {
+    skhd = {
+      enable = true;
+      skhdConfig = (builtins.readFile ../hm/dotfiles/skhd/skhdrc);
+    };
+    # yabai = {
+    #   enable = true;
+    #   # package = "/usr/local/bin/yabai";
+    #   enableScriptingAddition = true;
+    #   extraConfig = (builtins.readFile ../hm/dotfiles/yabai/yabairc);
+    # };
+  };
 
   system = {
     activationScripts.postActivation.text = ''
