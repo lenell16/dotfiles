@@ -39,8 +39,8 @@
   # https://github.com/nix-community/home-manager/issues/423
   environment.variables = {
     TERMINFO_DIRS = "${pkgs.kitty.terminfo.outPath}/share/terminfo";
-    TERMINAL = "kitty";
-    TERM = "kitty";
+    # TERMINAL = "kitty";
+    # TERM = "kitty";
   };
 
   # Auto upgrade nix package and the daemon service.
