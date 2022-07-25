@@ -47,7 +47,7 @@ yc left_padding                 12
 yc right_padding                12
 yc window_gap                   12
 
-yr app='IINA' manage=off layer=above
+# yr app='IINA' manage=off layer=above
 yr app='System Preferences' manage=off layer=above
 yr app='ExpressVPN' manage=off layer=above
 yr app='Finder' manage=off layer=above
