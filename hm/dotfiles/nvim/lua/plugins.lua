@@ -76,16 +76,6 @@ function M.setup()
 			end,
 		})
 
-		-- use {
-		--   "rose-pine/neovim",
-		--   config = function()
-		--     require("config.rose-pine").setup()
-		--   end,
-		-- }
-
-		-- Better Netrw
-		-- use { "tpope/vim-vinegar" }
-
 		use({
 			"lewis6991/gitsigns.nvim",
 			event = "BufReadPre",
@@ -163,14 +153,6 @@ function M.setup()
 				require("config.lualine").setup()
 			end,
 			requires = { "nvim-web-devicons" },
-		})
-		use({
-			"SmiteshP/nvim-gps",
-			requires = "nvim-treesitter/nvim-treesitter",
-			module = "nvim-gps",
-			config = function()
-				require("nvim-gps").setup()
-			end,
 		})
 
 		-- Treesitter
