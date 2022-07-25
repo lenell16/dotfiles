@@ -14,6 +14,7 @@
       fx
       gitflow
       gitkraken
+			gobang
       google-cloud-sdk
       httpie
       kubectx

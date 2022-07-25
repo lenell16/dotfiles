@@ -6,9 +6,11 @@
     taps = [
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
+			"danvergara/tools"
     ];
     brews = [
       # "skhd"
+			"dblab"
       "yabai"
     ];
     casks = [
@@ -65,7 +67,6 @@
       # "nova"
       # "pastebot"
       # "pixelsnap
-      # "postgres"
       # "protopie"
       # "robo-3t"
       # "runjs"
