@@ -10,7 +10,7 @@
     systemPackages = with pkgs; [
       # pkgs-deprecated-darwin.blender
       gitkraken
-      iina
+      # iina
       postman
       kitty
       mpv

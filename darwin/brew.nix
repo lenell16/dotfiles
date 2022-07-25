@@ -34,6 +34,7 @@
       "firefox"
       "google-chrome"
       "hazel"
+			"iina"
       "marta"
       "omnidisksweeper"
       "prisma-studio"
