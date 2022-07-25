@@ -15,7 +15,7 @@
       {
         # Nix related
         drb = "darwin-rebuild build --flake ${config.home.user-info.nixConfigDirectory}";
-        drs = "darwin-rebuild switch --flake ${config.home.user-info.nixConfigDirectory}";
+        drs = "TERM=kitty darwin-rebuild switch --flake ${config.home.user-info.nixConfigDirectory}";
         flakeup = "nix flake update ${config.home.user-info.nixConfigDirectory}";
         nb = "nix build";
         nf = "nix flake";
