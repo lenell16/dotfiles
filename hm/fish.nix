@@ -29,6 +29,7 @@
       };
     shellInit = ''
       any-nix-shell fish --info-right | source
+			source /Users/alonzothomas/.local/share/nvim/site/pack/packer/start/nightfox.nvim/extra/nightfox/nightfox_fish.fish
     '';
     # ${pkgs.atuin}/bin/atuin init fish | source
     interactiveShellInit = ''

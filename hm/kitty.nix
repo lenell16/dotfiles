@@ -5,9 +5,10 @@
       enable = true;
       settings = {
         macos_option_as_alt = true;
+				inactive_text_alpha = "0.5";
       };
       extraConfig = ''
-        include ${inputs.rose-pine-kitty}/dist/rose-pine-moon.conf
+        include /Users/alonzothomas/.local/share/nvim/site/pack/packer/start/nightfox.nvim/extra/nightfox/nightfox_kitty.conf 
       '';
     };
   };
