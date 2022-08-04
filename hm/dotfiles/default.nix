@@ -13,10 +13,10 @@
     #   source = ./xplr;
     #   recursive = true;
     # };
-    nvim = {
-      source = ./nvim;
-      recursive = true;
-    };
+    # nvim = {
+    #   source = ./nvim;
+    #   recursive = true;
+    # };
     "yabai/yabairc" = {
       source = ./yabai/yabairc;
       executable = true;

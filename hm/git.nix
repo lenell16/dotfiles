@@ -17,6 +17,11 @@
           path = "${inputs.gitalias}/gitalias.txt";
         }
       ];
+      extraConfig = {
+        init = {
+          defaultBranch = "main";
+        };
+      };
     };
 
     gitui = {
