@@ -2,6 +2,8 @@
   home = {
     sessionPath = [
       "/Users/alonzothomas/.cargo/bin"
+      "/opt/local/bin"
+      "/opt/local/sbin"
     ];
   };
   programs = {
