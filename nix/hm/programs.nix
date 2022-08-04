@@ -1,4 +1,9 @@
 { pkgs, config, inputs, ... }: {
+  home = {
+    sessionPath = [
+      "/Users/alonzothomas/.cargo/bin"
+    ];
+  };
   programs = {
     # atuin = {
     #   enable = true;

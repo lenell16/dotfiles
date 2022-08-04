@@ -70,7 +70,7 @@
         username = "alonzothomas";
         fullName = "Alonzo Thomas";
         email = "lenell16@gmail.com";
-        nixConfigDirectory = "/Users/alonzothomas/.nixpkgs";
+        nixConfigDirectory = "/Users/alonzothomas/Developer/dotfiles/nix";
       };
 
       # Modules shared by most `nix-darwin` personal configurations.
