@@ -47,6 +47,15 @@ function M.setup()
 	local function plugins(use)
 		use({ "wbthomason/packer.nvim" })
 
+		use({
+			"miversen33/import.nvim",
+			config = function()
+				require("import").config({
+					output_split_type = "vertical",
+					import_enable_better_printing = true,
+				})
+			end,
+		})
 		use({ "nvim-lua/plenary.nvim", module = "plenary" })
 
 		use({
@@ -90,8 +99,8 @@ function M.setup()
 			"folke/which-key.nvim",
 			event = "VimEnter",
 			config = function()
-				require("config.whichkey").setup()
-			end,
+				require("config.which-key").setup()
+			end
 		})
 
 		-- -- IndentLine
@@ -118,6 +127,23 @@ function M.setup()
 			keys = { "gc", "gcc", "gbc" },
 			config = function()
 				require("Comment").setup({})
+			end,
+		})
+
+		use({
+			"norcalli/nvim-colorizer.lua",
+			event = "BufReadPre",
+			config = function()
+				import("colorizer", function(colorizer)
+					colorizer.setup({
+						"css",
+						"scss",
+						"javascript",
+						"javascriptreact",
+						"typescript",
+						"typescriptreact",
+					})
+				end)
 			end,
 		})
 
@@ -182,25 +208,16 @@ function M.setup()
 				"plenary.nvim",
 				"popup.nvim",
 				"telescope-fzf-native.nvim",
-				"telescope-project.nvim",
 				"telescope-repo.nvim",
 				"telescope-file-browser.nvim",
-				"project.nvim",
 				"trouble.nvim",
 			},
 			requires = {
 				"nvim-lua/popup.nvim",
 				"nvim-lua/plenary.nvim",
 				{ "nvim-telescope/telescope-fzf-native.nvim", run = "make" },
-				"nvim-telescope/telescope-project.nvim",
 				"cljoly/telescope-repo.nvim",
 				"nvim-telescope/telescope-file-browser.nvim",
-				{
-					"ahmedkhalf/project.nvim",
-					config = function()
-						require("project_nvim").setup({})
-					end,
-				},
 			},
 		})
 
@@ -319,39 +336,41 @@ function M.setup()
 			event = "InsertEnter",
 		})
 
-		-- use({
-		-- 	"neovim/nvim-lspconfig",
-		-- 	opt = true,
-		-- 	event = "BufReadPre",
-		-- 	wants = {
-		-- 		"nvim-lsp-installer",
-		-- 		"lsp_signature.nvim",
-		-- 		"cmp-nvim-lsp",
-		-- 		"lua-dev.nvim",
-		-- 		"vim-illuminate",
-		-- 		"null-ls.nvim",
-		-- 		"schemastore.nvim",
-		-- 		"nvim-lsp-ts-utils",
-		-- 	},
-		-- 	config = function()
-		-- 		require("config.lsp").setup()
-		-- 	end,
-		-- 	requires = {
-		-- 		"williamboman/nvim-lsp-installer",
-		-- 		"ray-x/lsp_signature.nvim",
-		-- 		"folke/lua-dev.nvim",
-		-- 		"RRethy/vim-illuminate",
-		-- 		"jose-elias-alvarez/null-ls.nvim",
-		-- 		{
-		-- 			"j-hui/fidget.nvim",
-		-- 			config = function()
-		-- 				require("fidget").setup({})
-		-- 			end,
-		-- 		},
-		-- 		"b0o/schemastore.nvim",
-		-- 		"jose-elias-alvarez/nvim-lsp-ts-utils",
-		-- 	},
-		-- })
+		use({
+			"neovim/nvim-lspconfig",
+			opt = true,
+			event = "BufReadPre",
+			wants = {
+				"mason.nvim",
+				"mason-lspconfig.nvim",
+				-- "lsp_signature.nvim",
+				-- "cmp-nvim-lsp",
+				-- "lua-dev.nvim",
+				-- "vim-illuminate",
+				"null-ls.nvim",
+				-- "schemastore.nvim",
+				-- "nvim-lsp-ts-utils",
+			},
+			-- config = function()
+			-- 	require("config.lsp").setup()
+			-- end,
+			requires = {
+				"williamboman/mason.nvim",
+				"williamboman/mason-lspconfig.nvim",
+				-- "ray-x/lsp_signature.nvim",
+				-- "folke/lua-dev.nvim",
+				-- "RRethy/vim-illuminate",
+				"jose-elias-alvarez/null-ls.nvim",
+				{
+					"j-hui/fidget.nvim",
+					config = function()
+						require("fidget").setup({})
+					end,
+				},
+				-- "b0o/schemastore.nvim",
+				-- "jose-elias-alvarez/nvim-lsp-ts-utils",
+			},
+		})
 
 		-- trouble.nvim
 		use({
@@ -366,17 +385,16 @@ function M.setup()
 			end,
 		})
 
-		-- use {
-		-- 	'numToStr/FTerm.nvim',
-		-- 	config = function()
-		-- 		require('config.FTerm').setup()
-		-- 	end,
-		-- }
+		use({
+			"numToStr/FTerm.nvim",
+			config = function()
+				require("config.FTerm").setup()
+			end,
+		})
 
 		-- use { 'nvim-telescope/telescope-packer.nvim' }
 		-- use { 'nvim-telescope/telescope-github.nvim' }
 		-- use 'nvim-telescope/telescope-symbols.nvim'
-		-- use 'jvgrootveld/telescope-zoxide'
 
 		if packer_bootstrap then
 			print("Restart Neovim required after installation!")

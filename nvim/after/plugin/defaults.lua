@@ -1,12 +1,12 @@
-local api = vim.api
 local g = vim.g
 local opt = vim.opt
 
 -- Remap leader and local leader to <Space>
-api.nvim_set_keymap("", "<Space>", "<Nop>", { noremap = true, silent = true })
+vim.keymap.set("", "<Space>", "<Nop>", { silent = true })
 g.mapleader = " "
-g.maplocalleader = " "
-
+g.maplocalleader = ","
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
 	-- opt.undofile = true
 	-- opt.signcolumn = "yes"
 opt.backup = false
