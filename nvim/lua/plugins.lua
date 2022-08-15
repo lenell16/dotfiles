@@ -67,7 +67,6 @@ function M.setup()
 
 		use({ "onsails/lspkind-nvim" })
 
-		-- use 'LionC/nest.nvim'
 		-- use 'mrjones2014/legendary.nvim
 		use({
 			"startup-nvim/startup.nvim",
@@ -100,7 +99,7 @@ function M.setup()
 			event = "VimEnter",
 			config = function()
 				require("config.which-key").setup()
-			end
+			end,
 		})
 
 		-- -- IndentLine
@@ -162,14 +161,6 @@ function M.setup()
 		--   end,
 		-- }
 		--
-		-- -- Easy motion
-		-- use {
-		--   "ggandor/lightspeed.nvim",
-		--   keys = { "s", "S", "f", "F", "t", "T" },
-		--   config = function()
-		--     require("lightspeed").setup {}
-		--   end,
-		-- }
 
 		-- Status line
 		use({
@@ -368,7 +359,6 @@ function M.setup()
 					end,
 				},
 				-- "b0o/schemastore.nvim",
-				-- "jose-elias-alvarez/nvim-lsp-ts-utils",
 			},
 		})
 
@@ -391,10 +381,6 @@ function M.setup()
 				require("config.FTerm").setup()
 			end,
 		})
-
-		-- use { 'nvim-telescope/telescope-packer.nvim' }
-		-- use { 'nvim-telescope/telescope-github.nvim' }
-		-- use 'nvim-telescope/telescope-symbols.nvim'
 
 		if packer_bootstrap then
 			print("Restart Neovim required after installation!")
