@@ -103,14 +103,6 @@ function M.setup()
 		telescope.load_extension("fzf")
 		telescope.load_extension("repo")
 		telescope.load_extension("file_browser")
-		-- require('telescope').load_extension('packer')
-		-- require('telescope').load_extension('gh')
-
-		vim.keymap.set("n", "<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Old Files" })
-		vim.keymap.set("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Live Grep" })
-		vim.keymap.set("n", "<leader>fc", "<cmd>Telescope commands<cr>", { desc = "Commands" })
-		vim.keymap.set("n", "<leader>fr", "<cmd>Telescope file_browser<cr>", { desc = "Browser" })
-		vim.keymap.set("n", "<leader>fw", "<cmd>Telescope current_buffer_fuzzy_find<cr>", { desc = "Current Buffer" })
 	end)
 end
 

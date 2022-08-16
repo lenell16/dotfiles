@@ -67,7 +67,6 @@ function M.setup()
 
 		use({ "onsails/lspkind-nvim" })
 
-		-- use 'mrjones2014/legendary.nvim
 		use({
 			"startup-nvim/startup.nvim",
 			requires = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
@@ -75,12 +74,21 @@ function M.setup()
 				require("config.startup").setup()
 			end,
 		})
-		-- Notification
+
 		use({
 			"rcarriga/nvim-notify",
 			event = "VimEnter",
 			config = function()
 				vim.notify = require("notify")
+			end,
+		})
+
+		use({
+			"numToStr/FTerm.nvim",
+			opt = true,
+			module = "FTerm",
+			config = function()
+				require("config.FTerm").setup()
 			end,
 		})
 
@@ -94,22 +102,18 @@ function M.setup()
 			end,
 		})
 
+		use({ "mrjones2014/legendary.nvim", opt = true })
+
 		use({
 			"folke/which-key.nvim",
 			event = "VimEnter",
+			wants = {
+				"legendary.nvim",
+			},
 			config = function()
 				require("config.which-key").setup()
 			end,
 		})
-
-		-- -- IndentLine
-		-- use {
-		--   "lukas-reineke/indent-blankline.nvim",
-		--   event = "BufReadPre",
-		--   config = function()
-		--     require("config.indentblankline").setup()
-		--   end,
-		-- }
 
 		-- Better icons
 		use({
@@ -146,11 +150,21 @@ function M.setup()
 			end,
 		})
 
+		use({ "chaoren/vim-wordmotion" })
+
+		use({
+			"kylechui/nvim-surround",
+			event = "BufRead",
+			config = function()
+				require("nvim-surround").setup({
+					-- Configuration here, or leave empty to use defaults
+				})
+			end,
+		})
+
 		-- Motions
-		-- use { "andymass/vim-matchup", event = "CursorMoved" }
 		-- use { "wellle/targets.vim", event = "CursorMoved" }
 		-- use { "unblevable/quick-scope", event = "CursorMoved", disable = false }
-		use({ "chaoren/vim-wordmotion" })
 		--
 		-- -- Easy hopping
 		-- use {
@@ -162,6 +176,18 @@ function M.setup()
 		-- }
 		--
 
+		-- -- Buffer line
+		-- use({
+		-- 	"akinsho/bufferline.nvim",
+		-- 	-- event = "BufReadPre",
+		-- 	requires = "nvim-web-devicons",
+		-- 	tag = "*",
+		-- 	config = function()
+		-- 		require("bufferline").setup({})
+		-- 		-- require("config.bufferline").setup()
+		-- 	end,
+		-- })
+
 		-- Status line
 		use({
 			"nvim-lualine/lualine.nvim",
@@ -172,6 +198,49 @@ function M.setup()
 			requires = { "nvim-web-devicons" },
 		})
 
+		--Auto pairs
+		use({
+			"windwp/nvim-autopairs",
+			wants = "nvim-treesitter",
+			module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
+			config = function()
+				require("config.autopairs").setup()
+			end,
+		})
+		use({
+			"andymass/vim-matchup",
+			wants = "nvim-treesitter",
+			event = "InsertEnter",
+		})
+
+		-- Auto tag
+		-- use {
+		--   "windwp/nvim-ts-autotag",
+		--   wants = "nvim-treesitter",
+		--   event = "InsertEnter",
+		--   config = function()
+		--     require("nvim-ts-autotag").setup { enable = true }
+		--   end,
+		-- }
+
+		-- End wise
+		use({
+			"RRethy/nvim-treesitter-endwise",
+			wants = "nvim-treesitter",
+			event = "InsertEnter",
+		})
+
+		use({
+			"axelvc/template-string.nvim",
+			wants = "nvim-treesitter",
+			event = "InsertEnter",
+			config = function()
+				require("template-string").setup({
+					filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact" }, -- filetypes where the plugin is active
+					jsx_brackets = true, -- should add brackets to jsx attributes
+				})
+			end,
+		})
 		-- Treesitter
 		use({
 			"nvim-treesitter/nvim-treesitter",
@@ -182,7 +251,7 @@ function M.setup()
 				require("config.treesitter").setup()
 			end,
 			requires = {
-				{ "nvim-treesitter/nvim-treesitter-textobjects" },
+				"nvim-treesitter/nvim-treesitter-textobjects",
 			},
 		})
 
@@ -194,7 +263,7 @@ function M.setup()
 			end,
 			cmd = { "Telescope" },
 			module = "telescope",
-			keys = { "<leader>f", "<leader>p", "<leader>z" },
+			keys = { "<leader>f" },
 			wants = {
 				"plenary.nvim",
 				"popup.nvim",
@@ -214,6 +283,7 @@ function M.setup()
 
 		use({
 			"nvim-neo-tree/neo-tree.nvim",
+			cmd = "Neotree",
 			branch = "v2.x",
 			requires = {
 				"nvim-lua/plenary.nvim",
@@ -232,7 +302,6 @@ function M.setup()
 								bo = {
 									-- if the file type is one of following, the window will be ignored
 									filetype = { "neo-tree", "neo-tree-popup", "notify", "quickfix" },
-
 									-- if the buffer type is one of following, the window will be ignored
 									buftype = { "terminal" },
 								},
@@ -246,19 +315,6 @@ function M.setup()
 				require("config.neo-tree").setup()
 			end,
 		})
-		--
-		-- -- Buffer line
-		-- use({
-		-- 	"akinsho/bufferline.nvim",
-		-- 	-- event = "BufReadPre",
-		-- 	requires = "nvim-web-devicons",
-		-- 	tag = "*",
-		-- 	config = function()
-		-- 		vim.opt.termguicolors = true
-		-- 		require("bufferline").setup({})
-		-- 		-- require("config.bufferline").setup()
-		-- 	end,
-		-- })
 
 		-- User interface
 		use({
@@ -267,7 +323,7 @@ function M.setup()
 			config = function()
 				require("dressing").setup({
 					select = {
-						backend = { "telescope", "fzf", "builtin" },
+						backend = { "telescope", "builtin" },
 					},
 				})
 			end,
@@ -298,33 +354,6 @@ function M.setup()
 				},
 				"rafamadriz/friendly-snippets",
 			},
-		})
-
-		--Auto pairs
-		use({
-			"windwp/nvim-autopairs",
-			wants = "nvim-treesitter",
-			module = { "nvim-autopairs.completion.cmp", "nvim-autopairs" },
-			config = function()
-				require("config.autopairs").setup()
-			end,
-		})
-
-		-- Auto tag
-		-- use {
-		--   "windwp/nvim-ts-autotag",
-		--   wants = "nvim-treesitter",
-		--   event = "InsertEnter",
-		--   config = function()
-		--     require("nvim-ts-autotag").setup { enable = true }
-		--   end,
-		-- }
-
-		-- End wise
-		use({
-			"RRethy/nvim-treesitter-endwise",
-			wants = "nvim-treesitter",
-			event = "InsertEnter",
 		})
 
 		use({
@@ -375,12 +404,14 @@ function M.setup()
 			end,
 		})
 
-		use({
-			"numToStr/FTerm.nvim",
-			config = function()
-				require("config.FTerm").setup()
-			end,
-		})
+		-- -- IndentLine
+		-- use {
+		--   "lukas-reineke/indent-blankline.nvim",
+		--   event = "BufReadPre",
+		--   config = function()
+		--     require("config.indentblankline").setup()
+		--   end,
+		-- }q
 
 		if packer_bootstrap then
 			print("Restart Neovim required after installation!")

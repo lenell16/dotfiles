@@ -16,9 +16,7 @@ function M.setup()
 		-- autotag = {
 		--   enable = true,
 		-- },
-		-- autopairs = {
-		--   enable = true,
-		-- },
+
 		highlight = {
 			-- `false` will disable the whole extension
 			enable = true,
@@ -42,10 +40,10 @@ function M.setup()
 
 		indent = { enable = true },
 
-		-- -- vim-matchup
-		-- matchup = {
-		--   enable = true,
-		-- },
+		-- vim-matchup
+		matchup = {
+			enable = true,
+		},
 
 		-- nvim-treesitter-textobjects
 		textobjects = {

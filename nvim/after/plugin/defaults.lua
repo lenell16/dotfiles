@@ -1,14 +1,8 @@
 local g = vim.g
 local opt = vim.opt
 
--- Remap leader and local leader to <Space>
-vim.keymap.set("", "<Space>", "<Nop>", { silent = true })
-g.mapleader = " "
-g.maplocalleader = ","
-g.loaded_netrw = 1
-g.loaded_netrwPlugin = 1
-	-- opt.undofile = true
-	-- opt.signcolumn = "yes"
+-- opt.undofile = true
+-- opt.signcolumn = "yes"
 opt.backup = false
 opt.clipboard = "unnamedplus"
 opt.cmdheight = 2
@@ -35,22 +29,21 @@ opt.updatetime = 250
 opt.wrap = false
 opt.writebackup = false
 
-
-opt.shortmess:append "c"
-opt.whichwrap:append "<>[]hl"
-opt.iskeyword:append "-"
+opt.shortmess:append("c")
+opt.whichwrap:append("<>[]hl")
+opt.iskeyword:append("-")
 
 -- Highlight on yank
-vim.cmd [[
+vim.cmd([[
   augroup YankHighlight
     autocmd!
     autocmd TextYankPost * silent! lua vim.highlight.on_yank()
   augroup end
-]]
+]])
 
 -- Treesitter based folding
-vim.cmd [[
+vim.cmd([[
   set foldlevel=20
   set foldmethod=expr
   set foldexpr=nvim_treesitter#foldexpr()
-]]
+]])
