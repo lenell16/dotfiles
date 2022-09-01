@@ -3,10 +3,10 @@
 {
   home.file = {
     ".npmrc".source = ./npmrc;
-    ".ngrok2" = {
-      source = ./ngrok2;
-      recursive = true;
-    };
+    # ".ngrok2" = {
+    #   source = ./ngrok2;
+    #   recursive = true;
+    # };
   };
   xdg.configFile = {
     # xplr = {
