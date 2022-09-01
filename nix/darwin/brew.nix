@@ -28,6 +28,7 @@
       # hide my bar (not in brew)
       # httpie ui (not in brew)
       "altserver"
+			"android-studio"
       "appzapper"
       "docker"
       "dropbox"
@@ -41,6 +42,7 @@
       "omnidisksweeper"
       "prisma-studio"
       "raycast"
+      "slack"
       "soundsource"
       "streamlink-twitch-gui"
       "tableplus"

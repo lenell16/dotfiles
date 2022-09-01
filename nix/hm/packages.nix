@@ -1,6 +1,7 @@
 { pkgs, ... }: {
   home = {
     packages = with pkgs; [
+			ant
       black
       cargo
       cloudflared
@@ -16,9 +17,11 @@
       gitkraken
       gobang
       google-cloud-sdk
+			gradle
       httpie
       kubectx
       # lucky-cli
+			maven
       miller
       # mongodb
       ngrok

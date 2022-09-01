@@ -79,7 +79,7 @@ function M.setup()
 			}),
 		},
 		sources = {
-			-- { name = "nvim_lsp" },
+			{ name = "nvim_lsp" },
 			{ name = "treesitter" },
 			{ name = "buffer" },
 			{ name = "luasnip" },
