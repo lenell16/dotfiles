@@ -1,15 +1,15 @@
 { pkgs, ... }: {
   home = {
     packages = with pkgs; [
-			ant
+      ant
       black
       cargo
       cloudflared
       cloud-sql-proxy
       cocoapods
-      # crystal_1_2
+      crystal
       curl
-      pkgs-stable-darwin.deno
+      deno
       fd
       ffmpeg
       fx
@@ -17,11 +17,11 @@
       gitkraken
       gobang
       google-cloud-sdk
-			gradle
+      gradle
       httpie
       kubectx
-      # lucky-cli
-			maven
+      lucky-cli
+      maven
       miller
       # mongodb
       ngrok
@@ -35,7 +35,7 @@
       nodePackages.zx
       overmind
       pkg-config
-      pkgs-stable-darwin.procs
+      procs
       ripgrep
       rustc
       rustfmt

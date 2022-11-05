@@ -12,13 +12,12 @@
   #   "malo.cachix.org-1:fJL4+lpyMs/1cdZ23nPQXArGj8AS7x9U67O8rMkkMIo="
   # ];
 
-  nix.trustedUsers = [ "@admin" ];
   nix.gc = {
     automatic = true;
     options = "--delete-older-than 14d";
   };
 
-  users.nix.configureBuildUsers = true;
+  nix.configureBuildUsers = true;
 
   # Enable experimental nix command and flakes
   nix.package = pkgs.nixUnstable;

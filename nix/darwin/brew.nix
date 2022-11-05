@@ -1,16 +1,19 @@
 { inputs, config, pkgs, ... }: {
   homebrew = {
     enable = true;
-    cleanup = "zap";
-    autoUpdate = false;
+    onActivation = {
+      autoUpdate = false;
+      cleanup = "zap";
+      upgrade = true;
+    };
     taps = [
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
-			"danvergara/tools"
+      "danvergara/tools"
     ];
     brews = [
       # "skhd"
-			"dblab"
+      "dblab"
       "yabai"
     ];
     casks = [
@@ -28,7 +31,7 @@
       # hide my bar (not in brew)
       # httpie ui (not in brew)
       "altserver"
-			"android-studio"
+      "android-studio"
       "appzapper"
       "docker"
       "dropbox"
@@ -37,7 +40,7 @@
       "firefox"
       "google-chrome"
       "hazel"
-			"iina"
+      "iina"
       "marta"
       "omnidisksweeper"
       "prisma-studio"
