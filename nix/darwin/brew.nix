@@ -10,6 +10,7 @@
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
       "danvergara/tools"
+      "homebrew/cask-versions"
     ];
     brews = [
       # "skhd"
@@ -52,6 +53,7 @@
       "transmission"
       "warp"
       "zoom"
+      "visual-studio-code-insiders"
       # "brave-browser"
       # "contexts"
       # "daisydisk"
@@ -100,10 +102,11 @@
       #   "SnippetsLab" = 1006087419;
       #   "Tweetbot" = 1384080005;
       #   "Twitter" = 1482454543;
-      "Dato" = 1470584107;
       "Xcode" = 497799835;
       "AdGuard for Safari" = 1440147259;
       "1Password 7" = 1333542190;
+      "QuickShade" = 931571202;
+      "Surfshark" = 1437809329;
     };
 
   };
