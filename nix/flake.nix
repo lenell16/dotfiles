@@ -23,7 +23,7 @@
     };
     unison = {
       url = "github:ceedubs/unison-nix";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      inputs.nixpkgs-darwin.follows = "nixpkgs-unstable";
     };
 
     flake-utils.url = "github:numtide/flake-utils";
@@ -193,7 +193,6 @@
       homeManagerModules = {
         # My configurations
         alonzo-dotfiles = import ./hm/dotfiles;
-        alonzo-vscode = import ./hm/vscode.nix;
         alonzo-editors = import ./hm/editors.nix;
         alonzo-git = import ./hm/git.nix;
         alonzo-kitty = import ./hm/kitty.nix;
