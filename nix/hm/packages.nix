@@ -7,7 +7,7 @@
       cloudflared
       cloud-sql-proxy
       cocoapods
-      crystal
+      # crystal
       curl
       deno
       fd
@@ -20,7 +20,7 @@
       gradle
       httpie
       kubectx
-      lucky-cli
+      # lucky-cli
       maven
       miller
       # mongodb
