@@ -344,7 +344,7 @@ function M.setup()
 				"ray-x/cmp-treesitter",
 				"hrsh7th/cmp-cmdline",
 				"saadparwaiz1/cmp_luasnip",
-				-- "hrsh7th/cmp-nvim-lsp",
+				"hrsh7th/cmp-nvim-lsp",
 				{
 					"L3MON4D3/LuaSnip",
 					wants = "friendly-snippets",
@@ -364,23 +364,24 @@ function M.setup()
 				"mason.nvim",
 				"mason-lspconfig.nvim",
 				-- "lsp_signature.nvim",
-				-- "cmp-nvim-lsp",
-				-- "lua-dev.nvim",
-				-- "vim-illuminate",
-				"null-ls.nvim",
+				"cmp-nvim-lsp",
+				"lua-dev.nvim",
+				"vim-illuminate",
+				-- "null-ls.nvim",
 				-- "schemastore.nvim",
-				-- "nvim-lsp-ts-utils",
+				"typescript.nvim",
 			},
-			-- config = function()
-			-- 	require("config.lsp").setup()
-			-- end,
+			config = function()
+				require("config.mason").setup()
+			end,
 			requires = {
 				"williamboman/mason.nvim",
 				"williamboman/mason-lspconfig.nvim",
+				"jose-elias-alvarez/typescript.nvim",
 				-- "ray-x/lsp_signature.nvim",
-				-- "folke/lua-dev.nvim",
-				-- "RRethy/vim-illuminate",
-				"jose-elias-alvarez/null-ls.nvim",
+				"RRethy/vim-illuminate",
+				"folke/lua-dev.nvim",
+				-- "jose-elias-alvarez/null-ls.nvim",
 				{
 					"j-hui/fidget.nvim",
 					config = function()
