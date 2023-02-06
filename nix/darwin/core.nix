@@ -9,12 +9,11 @@
   environment = {
     systemPackages = with pkgs; [
       # pkgs-deprecated-darwin.blender
-      gitkraken
+      # gitkraken
       # iina
-      postman
-      kitty
-      mpv
-      vscode
+      # postman
+      # kitty
+      # mpv
     ];
   };
 
