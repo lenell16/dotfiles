@@ -3,10 +3,6 @@
 # Path to your dotfiles relative to your $HOME directory
 dotfiles_dir = "Developer/dotfiles"
 
-[settings]
-# An array of post install shell commands
-posthooks = [ "nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'" ]
-
 [settings.dots]
 # A dot entry representing a symlink, `source` is relative to `dotfiles_dir`
 # and `target` shall be relative to $HOME directory or absolute.

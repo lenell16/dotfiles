@@ -23,11 +23,11 @@
     "flake-compat": {
       "flake": false,
       "locked": {
-        "lastModified": 1668681692,
-        "narHash": "sha256-Ht91NGdewz8IQLtWZ9LCeNXMSXHUss+9COoqu6JLmXU=",
+        "lastModified": 1673956053,
+        "narHash": "sha256-4gtG9iQuiKITOjNQQeQIpoIB6b16fm+504Ch3sNKLd8=",
         "owner": "edolstra",
         "repo": "flake-compat",
-        "rev": "009399224d5e398d03b22badca40a37ac85412a1",
+        "rev": "35bb57c0c8d8b62bbfd284272c928ceb64ddbde9",
         "type": "github"
       },
       "original": {
@@ -84,11 +84,11 @@
     "gitalias": {
       "flake": false,
       "locked": {
-        "lastModified": 1663944791,
-        "narHash": "sha256-8yZS/HCrpc/MeRBTMfrlyPtMhYZkJkw3Z9CONWcVVCQ=",
+        "lastModified": 1674837048,
+        "narHash": "sha256-6vm+0fuyiNOPmWQz/V9aqzSt+5x8od0AxLMAk0TU+HA=",
         "owner": "GitAlias",
         "repo": "gitalias",
-        "rev": "8e8524550af6ccbbfd4ded73667ef352a9d7fb70",
+        "rev": "59873c560b1a96661064160b62ffcb08620a13d1",
         "type": "github"
       },
       "original": {
@@ -130,11 +130,11 @@
       },
       "locked": {
         "dir": "contrib",
-        "lastModified": 1670121140,
-        "narHash": "sha256-/T6Rpe/0RcLBfX14ClTtBSv8tZnNMBsQoUBPP5GQ86A=",
+        "lastModified": 1675657440,
+        "narHash": "sha256-UkEa4LKXLNglbn5U2o/zee9AePaVVzLkhe06rv6jtDg=",
         "owner": "neovim",
         "repo": "neovim",
-        "rev": "a0dd663c2d321ce107aa07005aa01b9c341c5df2",
+        "rev": "6c39edaa7e5060cedfbbf61e88f4aad20fdff73d",
         "type": "github"
       },
       "original": {
@@ -153,11 +153,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1670141628,
-        "narHash": "sha256-WWpMOgYadTJlcPLSI6xDPOHHFzguq1Rpl4iHFQvbYaI=",
+        "lastModified": 1675671305,
+        "narHash": "sha256-AUcqYR+hZsGz0LCA+FNXejCEToLRceFXia4zMqxh2KE=",
         "owner": "nix-community",
         "repo": "neovim-nightly-overlay",
-        "rev": "f472e68e8ca819ea9f3fd7b4949d6ae7f699097e",
+        "rev": "3660ca973f7f9608855abc497626776745c701e3",
         "type": "github"
       },
       "original": {
@@ -264,11 +264,11 @@
     "rose-pine-kitty": {
       "flake": false,
       "locked": {
-        "lastModified": 1661351382,
-        "narHash": "sha256-idqwpNC6hWIz5KtEGqL5C+KcUcKc9iPCstP5FQcZZ0I=",
+        "lastModified": 1674754890,
+        "narHash": "sha256-C9kDjbIsyIrW47ZPJ8CWcOjk9jwoQrHxsjTRAPo6Bjc=",
         "owner": "rose-pine",
         "repo": "kitty",
-        "rev": "4dd9bbe6f838e61f0ef7e9ab9625adda34e129ef",
+        "rev": "8c52fff43b394a6a7e687bc525ac4dfd2334894a",
         "type": "github"
       },
       "original": {
