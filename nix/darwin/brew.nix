@@ -9,6 +9,7 @@
     taps = [
       "koekeishiya/formulae"
       "homebrew/cask-drivers"
+      "homebrew/services"
       "danvergara/tools"
       "homebrew/cask-versions"
     ];
@@ -82,7 +83,7 @@
       # "sizzy"
       # "soda-player"
       # "spotify"
-      # "steam"
+      "steam"
       # "sublime-merge"
       # "the-unarchiver"
       # "transmit"
