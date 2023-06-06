@@ -16,7 +16,11 @@
       gitflow
       gitkraken
       gobang
-      google-cloud-sdk
+      (
+        google-cloud-sdk.withExtraComponents (
+          [ google-cloud-sdk.components.gke-gcloud-auth-plugin ]
+        )
+      )
       gradle
       httpie
       kubectx
@@ -26,7 +30,7 @@
       # mongodb
       ngrok
       nixpkgs-fmt
-      nodejs-16_x
+      nodejs-18_x
       nodePackages.eslint_d
       nodePackages.fixjson
       nodePackages.pnpm
