@@ -23,6 +23,7 @@
       )
       gradle
       httpie
+      jetbrains.datagrip
       kubectx
       # lucky-cli
       maven
