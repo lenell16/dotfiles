@@ -19,7 +19,6 @@
     # Neovim Nightly
     neovim-overlay = {
       url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     unison = {
       url = "github:ceedubs/unison-nix";
