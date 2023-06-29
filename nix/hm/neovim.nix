@@ -5,8 +5,8 @@
       VISUAL = "nvim";
     };
 
-    packages = with pkgs; [
-      neovim-nightly
-    ];
+    # packages = with pkgs; [
+    #   neovim-nightly
+    # ];
   };
 }

@@ -16,27 +16,19 @@
     brews = [
       # "skhd"
       "dblab"
+      {
+        name = "neovim";
+        args = [ "HEAD" ];
+      }
       "yabai"
     ];
     casks = [
-      "elmedia-player"
-      # "arc" (not in brew)
-      # "lens"
-      # "mailspring"
-      # "quetbrowser"
-      # "replay" (not in brew)
-      # "scriptkit" (not in brew)
-      # "vimac" (not in brew)
-      # "visly" (not in brew)
-      # firefoo (not in brew)
-      # FruityUi (not in brew)
-      # hide my bar (not in brew)
-      # httpie ui (not in brew)
       "altserver"
       "android-studio"
       "appzapper"
       "docker"
       "dropbox"
+      "elmedia-player"
       "expressvpn"
       "fantastical"
       "firefox"
@@ -49,12 +41,14 @@
       "raycast"
       "slack"
       "soundsource"
+      "steam"
       "streamlink-twitch-gui"
       "tableplus"
       "transmission"
+      "visual-studio-code-insiders"
       "warp"
       "zoom"
-      "visual-studio-code-insiders"
+      # "arc" (not in brew)
       # "brave-browser"
       # "contexts"
       # "daisydisk"
@@ -71,25 +65,35 @@
       # "java"
       # "kap"
       # "kindle"
+      # "lens"
       # "loopback"
+      # "mailspring"
       # "nova"
       # "pastebot"
       # "pixelsnap
       # "protopie"
+      # "quetbrowser"
+      # "replay" (not in brew)
       # "robo-3t"
       # "runjs"
       # "screens-connect"
       # "screens"
+      # "scriptkit" (not in brew)
       # "sizzy"
       # "soda-player"
       # "spotify"
-      "steam"
       # "sublime-merge"
       # "the-unarchiver"
       # "transmit"
+      # "vimac" (not in brew)
+      # "visly" (not in brew)
       # "vlc"
       # "webstorm"
       # "wormhole"
+      # firefoo (not in brew)
+      # FruityUi (not in brew)
+      # hide my bar (not in brew)
+      # httpie ui (not in brew)
     ];
     masApps = {
       #   "Black Out" = 1319884285;

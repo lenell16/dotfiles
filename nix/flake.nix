@@ -14,7 +14,7 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
     # Neovim Nightly
-    neovim-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-overlay.url = "github:nix-community/neovim-nightly-overlay";
     # Unison
     unison.url = "github:ceedubs/unison-nix";
     # Utils
@@ -50,12 +50,12 @@
           input-fonts.acceptLicense = true;
         };
         overlays = attrValues self.overlays ++ [
-          inputs.neovim-overlay.overlay
+          # inputs.neovim-overlay.overlay
           inputs.unison.overlay
         ];
       };
 
-      homeManagerStateVersion = "23.05";
+      homeManagerStateVersion = "23.11";
 
       primaryUserInfo = {
         username = "alonzothomas";
