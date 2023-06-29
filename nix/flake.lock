@@ -180,34 +180,18 @@
         "type": "github"
       }
     },
-    "nixpkgs-deprecated-darwin": {
+    "nixpkgs-darwin": {
       "locked": {
-        "lastModified": 1659446231,
-        "narHash": "sha256-hekabNdTdgR/iLsgce5TGWmfIDZ86qjPhxDg/8TlzhE=",
+        "lastModified": 1685573264,
+        "narHash": "sha256-Zffu01pONhs/pqH07cjlF10NnMDLok8ix5Uk4rhOnZQ=",
         "owner": "nixos",
         "repo": "nixpkgs",
-        "rev": "eabc38219184cc3e04a974fe31857d8e0eac098d",
+        "rev": "380be19fbd2d9079f677978361792cb25e8a3635",
         "type": "github"
       },
       "original": {
         "owner": "nixos",
-        "ref": "nixpkgs-21.11-darwin",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-master": {
-      "locked": {
-        "lastModified": 1670187422,
-        "narHash": "sha256-Z3wL4kVobbCEl3+x/DS62PYcXA7iKX4QpLRMEd1FLT0=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "9adcb1e712408ce7ec16441fe15e61e8ed9259c8",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "ref": "master",
+        "ref": "nixpkgs-22.05-darwin",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -224,22 +208,6 @@
       "original": {
         "owner": "nixos",
         "ref": "release-22.05",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "nixpkgs-stable-darwin": {
-      "locked": {
-        "lastModified": 1670110134,
-        "narHash": "sha256-FZH7Kkl1DGUuRszh5UkkX2P2L+z3zjqkfA9bSLF7l1E=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "aac972f178eda84a7a7ec8a698bc7bbf43642be5",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nixos",
-        "ref": "nixpkgs-22.05-darwin",
         "repo": "nixpkgs",
         "type": "github"
       }
@@ -267,9 +235,6 @@
         "gitalias": "gitalias",
         "home-manager": "home-manager",
         "neovim-overlay": "neovim-overlay",
-        "nixpkgs-deprecated-darwin": "nixpkgs-deprecated-darwin",
-        "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-stable-darwin": "nixpkgs-stable-darwin",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "rose-pine-kitty": "rose-pine-kitty",
         "unison": "unison"
@@ -294,9 +259,7 @@
     "unison": {
       "inputs": {
         "flake-utils": "flake-utils_3",
-        "nixpkgs-darwin": [
-          "nixpkgs-unstable"
-        ],
+        "nixpkgs-darwin": "nixpkgs-darwin",
         "nixpkgs-non-darwin": "nixpkgs-non-darwin",
         "unison": "unison_2"
       },

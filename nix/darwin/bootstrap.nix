@@ -22,7 +22,7 @@
   # Enable experimental nix command and flakes
   nix.package = pkgs.nixUnstable;
   nix.extraOptions = ''
-    auto-optimise-store = true
+    auto-optimise-store = false
     experimental-features = nix-command flakes
     keep-outputs = true
     keep-derivations = true

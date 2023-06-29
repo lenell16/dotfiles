@@ -1,9 +1,7 @@
 {
   description = "test";
   inputs = {
-    nixpkgs-deprecated-darwin.url = "github:nixos/nixpkgs/nixpkgs-21.11-darwin";
-    nixpkgs-stable-darwin.url = "github:nixos/nixpkgs/nixpkgs-22.05-darwin";
-    nixpkgs-master.url = "github:NixOS/nixpkgs/master";
+    # Nixpkgs
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     # Nix-Darwin
     darwin = {
@@ -17,14 +15,10 @@
       inputs.utils.follows = "flake-utils";
     };
     # Neovim Nightly
-    neovim-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-    };
-    unison = {
-      url = "github:ceedubs/unison-nix";
-      inputs.nixpkgs-darwin.follows = "nixpkgs-unstable";
-    };
-
+    neovim-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # Unison
+    unison.url = "github:ceedubs/unison-nix";
+    # Utils
     flake-utils.url = "github:numtide/flake-utils";
 
     rose-pine-kitty = {
@@ -62,8 +56,7 @@
         ];
       };
 
-      # homeManagerStateVersion = "22.05";
-      homeManagerStateVersion = "22.11";
+      homeManagerStateVersion = "23.05";
 
       primaryUserInfo = {
         username = "alonzothomas";
@@ -125,26 +118,8 @@
 
       overlays = {
         # Overlays to add different versions `nixpkgs` into package set
-        pkgs-master = _: prev: {
-          pkgs-master = import inputs.nixpkgs-master {
-            inherit (prev.stdenv) system;
-            inherit (nixpkgsConfig) config;
-          };
-        };
-        pkgs-stable-darwin = _: prev: {
-          pkgs-stable-darwin = import inputs.nixpkgs-stable-darwin {
-            inherit (prev.stdenv) system;
-            inherit (nixpkgsConfig) config;
-          };
-        };
         pkgs-unstable = _: prev: {
           pkgs-unstable = import inputs.nixpkgs-unstable {
-            inherit (prev.stdenv) system;
-            inherit (nixpkgsConfig) config;
-          };
-        };
-        pkgs-deprecated-darwin = _: prev: {
-          pkgs-deprecated-darwin = import inputs.nixpkgs-deprecated-darwin {
             inherit (prev.stdenv) system;
             inherit (nixpkgsConfig) config;
           };
@@ -207,18 +182,5 @@
             }).options.users.primaryUser;
         };
       };
-
-      # Add re-export `nixpkgs` packages with overlays.
-      # This is handy in combination with `nix registry add my /Users/malo/.config/nixpkgs`
-    } // flake-utils.lib.eachDefaultSystem (system: {
-      legacyPackages = import inputs.nixpkgs-unstable {
-        inherit system;
-        inherit (nixpkgsConfig) config;
-        overlays = with self.overlays; [
-          pkgs-master
-          pkgs-stable-darwin
-          pkgs-deprecated-darwin
-        ];
-      };
-    });
+    };
 }
