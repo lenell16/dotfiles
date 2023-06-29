@@ -12,7 +12,6 @@
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
-      inputs.utils.follows = "flake-utils";
     };
     # Neovim Nightly
     neovim-overlay.url = "github:nix-community/neovim-nightly-overlay";
