@@ -112,6 +112,18 @@
             }
           ];
         };
+        ZoBookOld = darwinSystem {
+          system = "x86_64-darwin";
+          modules = nixDarwinCommonModules ++ [
+            {
+              users.primaryUser = primaryUserInfo;
+              networking.knownNetworkServices = [
+                "Wi-Fi"
+                "USB 10/100/1000 LAN"
+              ];
+            }
+          ];
+        };
 
       };
 
@@ -123,33 +135,6 @@
             inherit (nixpkgsConfig) config;
           };
         };
-
-        yabai = _: super: {
-          yabai =
-            let
-              replace = {
-                "aarch64-darwin" = "--replace '-arch x86_64' ''";
-                "x86_64-darwin" = "--replace '-arch arm64e' '' --replace '-arch arm64' ''";
-              }.${super.pkgs.stdenv.system};
-            in
-            super.yabai.overrideAttrs (
-              o: rec {
-                version = "4.0.0";
-                src = super.fetchFromGitHub {
-                  owner = "koekeishiya";
-                  repo = "yabai";
-                  rev = "v${version}";
-                  sha256 = "sha256-rllgvj9JxyYar/DTtMn5QNeBTdGkfwqDr7WT3MvHBGI=";
-                };
-                postPatch = ''
-                  substituteInPlace makefile ${replace};
-                '';
-                buildPhase = ''
-                  PATH=/usr/bin:/bin /usr/bin/make install
-                '';
-              }
-            );
-        };
       };
 
       darwinModules = {
@@ -157,7 +142,6 @@
         alonzo-bootstrap = import ./darwin/bootstrap.nix;
         alonzo-preferences = import ./darwin/preferences.nix;
         alonzo-core = import ./darwin/core.nix;
-        alonzo-postgres = import ./darwin/postgres.nix;
         alonzo-homebrew = import ./darwin/brew.nix;
 
         users-primaryUser = import ./modules/darwin/users.nix;
