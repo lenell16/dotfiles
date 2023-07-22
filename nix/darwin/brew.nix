@@ -20,6 +20,7 @@
         name = "neovim";
         args = [ "HEAD" ];
       }
+      "postgresql@14"
       "yabai"
     ];
     casks = [
