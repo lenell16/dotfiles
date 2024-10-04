@@ -2,46 +2,50 @@
 
 {
   home.packages = with pkgs; [
-    # pkgs.devenv
-    # pkgs.ltex-ls
-    # pkgs.marksman
-    # pkgs.nixd
     any-nix-shell
-    bun
+    asdf-vm
     azure-cli
+    azure-functions-core-tools
+    bun
+    curl
+    fd
+    iina
+    infisical
+    nixd
+    nixpkgs-fmt
+    protobuf
     ripgrep
+    turbo
+    uv
+    yt-dlp
+    #     [ google-cloud-sdk.components.gke-gcloud-auth-plugin ]
+    #   )
+    #   google-cloud-sdk.withExtraComponents (
+    # (
+    # )
+    # # crystal
+    # # gobang
     # ant
     # black
     # cargo
     # cloudflared
     # cocoapods
     # corepack_21
-    # # crystal
-    curl
     # deno
-    fd
     # ffmpeg
     # fx
     # gitflow
     # gitkraken
-    # # gobang
-    # (
-    #   google-cloud-sdk.withExtraComponents (
-    #     [ google-cloud-sdk.components.gke-gcloud-auth-plugin ]
-    #   )
-    # )
     # google-cloud-sql-proxy
     # gradle
     # httpie
-    iina
     # jetbrains.datagrip
     # kubectx
     # lucky-cli
     # maven
     # miller
     # mongodb
-    nixpkgs-fmt
-    nodejs_20
+    # nodejs_20
     # nodePackages.eslint_d
     # nodePackages.fixjson
     # nodePackages.pnpm
@@ -50,6 +54,9 @@
     # nodePackages.zx
     # overmind
     # pkg-config
+    # pkgs.devenv
+    # pkgs.ltex-ls
+    # pkgs.marksman
     # procs
     # rustc
     # rustfmt
@@ -62,11 +69,10 @@
     # tree
     # unison-ucm
     # vault
+    # viu
     # watchman
     # wget
-    # viu
     # xplr
     # yarn
-    yt-dlp
   ];
 }

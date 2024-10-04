@@ -1,7 +1,7 @@
 { inputs, config, pkgs, lib, ... }:
 {
 
-  nixpkgs.overlays = [ inputs.neovim-overlay.overlay ];
+  nixpkgs.overlays = [ inputs.neovim-overlay.overlays.default ];
   imports = [
     ./packages.nix
   ];
@@ -203,7 +203,7 @@
     #   };
     neovim = {
         enable = true;
-        package = pkgs.neovim-nightly;
+        package = pkgs.neovim;
     };
   };
 }

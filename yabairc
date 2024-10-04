@@ -1,0 +1,55 @@
+#!/usr/bin/env sh
+
+# the scripting-addition must be loaded manually if
+# you are running yabai on macOS Big Sur. Uncomment
+# the following line to have the injection performed
+# when the config is executed during startup.
+#
+# for this to work you must configure sudo such that
+# it will be able to run the command without password
+#
+# see this wiki page for information:
+#  - https://github.com/koekeishiya/yabai/wiki/Installing-yabai-(latest-release)
+#
+yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
+sudo yabai --load-sa
+
+alias yc='yabai -m config'
+alias yr='yabai -m rule --add'
+
+# global settings
+yc mouse_follows_focus          off
+yc focus_follows_mouse          off
+yc window_placement             second_child
+yc window_topmost               off
+yc window_shadow                off
+yc window_opacity               off
+# yc window_opacity_duration      0.0
+# yc active_window_opacity        1.0
+# yc normal_window_opacity        0.90
+yc window_border                off
+# yc window_border_width          6
+# yc active_window_border_color   0xff775759
+# yc normal_window_border_color   0xff555555
+yc insert_feedback_color        0xffd75f5f
+yc split_ratio                  0.50
+yc auto_balance                 off
+yc mouse_modifier               fn
+yc mouse_action1                move
+yc mouse_action2                resize
+yc mouse_drop_action            swap
+
+# general space settings
+yc layout                       bsp
+yc top_padding                  12
+yc bottom_padding               12
+yc left_padding                 12
+yc right_padding                12
+yc window_gap                   12
+
+# yr app='IINA' manage=off layer=above
+yr app='System Preferences' manage=off layer=above
+yr app='ExpressVPN' manage=off layer=above
+yr app='Finder' manage=off layer=above
+
+echo "yabai configuration loaded.."

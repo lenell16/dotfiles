@@ -18,30 +18,35 @@
     brews = [
       # "skhd"
       # "dblab"
-      # {
-      #   name = "neovim";
-      #   args = [ "HEAD" ];
-      # }
+      "node@18"
+      "openssl@3"
       "pgvector"
       "postgresql@14"
-      "volllly/tap/rotz"
-      # "python@3.10"
-      # "yabai"
+      {
+        name = "yabai";
+        args = [ "HEAD" ];
+      }
     ];
 
     casks = [
-                "arc"
-    "nvidia-geforce-now"
-      "gitkraken"
-      "appzapper"
-      "fantastical"
-      "google-chrome"
-      "pgadmin4"
-      "slack"
       "1password"
+      "appzapper"
+      "arc"
+      "chatgpt"
+      "fantastical"
+      "gitkraken"
+      "google-chrome"
+      "marta"
+      "nvidia-geforce-now"
+      "pgadmin4"
       "raycast"
+      "runjs"
+      "slack"
       "soundsource"
-      "visual-studio-code-insiders"
+      "steam"
+      "visual-studio-code@insiders"
+      "workman"
+      "yaak"
       # "altserver"
       # "android-studio"
       # "docker"

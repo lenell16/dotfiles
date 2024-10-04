@@ -30,6 +30,9 @@
       warp-terminal
       ngrok
       _1password
+      # zed-editor
+      transmission_4
+      teams
       # _1password-gui
     ];
 
@@ -85,8 +88,7 @@
     '';
   };
 
-  fonts.fontDir.enable = true;
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     powerline-fonts
     fira-code
     fira-mono
