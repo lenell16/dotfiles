@@ -1,7 +1,6 @@
 { inputs, config, pkgs, lib, ... }:
 {
 
-  nixpkgs.overlays = [ inputs.neovim-overlay.overlays.default ];
   imports = [
     ./packages.nix
   ];
@@ -9,19 +8,12 @@
   home = {
     stateVersion = "24.05"; # Please read the comment before changing.
 
-    # Home Manager is pretty good at managing dotfiles. The primary way to manage
-    # plain files is through 'home.file'.
-    # file = {
-    #   hammerspoon = lib.mkIf pkgs.stdenvNoCC.isDarwin {
-    #     source = ./../config/hammerspoon;
-    #     target = ".hammerspoon";
-    #     recursive = true;
-    #   };
-    # };
-
     sessionVariables = {
       EDITOR = "nvim";
       VISUAL = "nvim";
+
+      XDG_DATA_DIRS = "${config.home.profileDirectory}/share:${"\${GHOSTTY_SHELL_INTEGRATION_XDG_DIR:+\$GHOSTTY_SHELL_INTEGRATION_XDG_DIR:}"}$XDG_DATA_DIRS";
+
       # PAGER = "bat";
       # LESS = "-R";
       # BAT_THEME = "OneHalfDark";
@@ -31,6 +23,8 @@
       # BAT_DIFF_NUMBERS = "true";
       # BAT_DIFF_FILE_SIZE_THRESHOLD = "1M
     };
+
+    file.".hushlogin".text = "";
   };
 
   programs = {
@@ -120,11 +114,15 @@
       enable = true;
 
       interactiveShellInit = ''
-        set fish_greeting # N/A
+        # Multiple ways to ensure no greeting
+        set -U fish_greeting
+        set -g fish_greeting ""
+        
         eval "$(/opt/homebrew/bin/brew shellenv)"
       '';
 
       functions = {
+        fish_greeting = ""; # This explicitly overrides the greeting function
         mcd = ''
           mkdir -p $argv
           cd $argv
@@ -146,64 +144,23 @@
           g = "${gitAndTools.git}/bin/git";
         };
       shellInit = ''
+        if test -n "$GHOSTTY_SHELL_INTEGRATION_XDG_DIR"
+            source $GHOSTTY_SHELL_INTEGRATION_XDG_DIR/fish/vendor_conf.d/ghostty-shell-integration.fish
+        end
         any-nix-shell fish --info-right | source
       '';
-      # source /Users/alonzothomas/.local/share/nvim/site/pack/packer/start/nightfox.nvim/extra/nightfox/nightfox_fish.fish
-      # ${pkgs.atuin}/bin/atuin init fish | source
     };
 
-    kitty = {
-      package = pkgs.kitty;
-      enable = true;
-      settings = {
-        macos_option_as_alt = true;
-        inactive_text_alpha = "0.5";
-      };
-      keybindings = {
-        # /* "shift+enter" = "send_text all \x1b[13;2u"; */
-      };
-      extraConfig = ''
-        include /Users/alonzothomas/.local/share/nvim/site/pack/packer/start/nightfox.nvim/extra/nightfox/nightfox_kitty.conf
-      '';
-    };
     zoxide = {
       enable = true;
       enableFishIntegration = true;
       # options = [ "--cmd cd" ];
     };
 
-    direnv = {
-      enable = true;
-      nix-direnv.enable = true;
-    };
-
-    #   starship = {
-    #     enable = true;
-
-    #     settings = {
-    #       command_timeout = 100;
-    #       format = "[$all](dimmed white)";
-
-    #       character = {
-    #         success_symbol = "[❯](dimmed green)";
-    #         error_symbol = "[❯](dimmed red)";
-    #       };
-
-    #       git_status = {
-    #         style = "bold yellow";
-    #         format = "([$all_status$ahead_behind]($style) )";
-    #       };
-
-    #       jobs.disabled = true;
-    #     };
-    #   };
-
-    #   jujutsu = {
-    #     enable = true;
-    #   };
     neovim = {
-        enable = true;
-        package = pkgs.neovim;
+      enable = true;
+      package = pkgs.neovim-unwrapped;
+      defaultEditor = true;
     };
   };
 }

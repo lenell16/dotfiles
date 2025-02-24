@@ -21,18 +21,16 @@
     zsh
   ];
 
-  environment.loginShell = pkgs.fish;
-
   users.users.alonzothomas.shell = pkgs.fish;
 
   environment.systemPackages = with pkgs; [
       home-manager
       warp-terminal
       ngrok
-      _1password
+      _1password-cli
       # zed-editor
       transmission_4
-      teams
+      # teams
       # _1password-gui
     ];
 
@@ -55,14 +53,12 @@
   # Auto upgrade nix package and the daemon service.
   services.nix-daemon.enable = true;
   nix = {
-    package = pkgs.nixVersions.nix_2_21;
+    package = pkgs.nixVersions.latest;
     nixPath = { nixpkgs = "${inputs.nixpkgs}"; };
     settings = {
       "extra-experimental-features" = [
         "nix-command"
         "flakes"
-        # "fetch-tree"
-        "repl-flake"
       ];
       cores = 8;
     };
@@ -94,11 +90,7 @@
     fira-mono
     input-fonts
     monaspace
-    (nerdfonts.override {
-      fonts = [
-        "FiraMono"
-        "JetBrainsMono"
-      ];
-    })
+    nerd-fonts.fira-mono
+    nerd-fonts.jetbrains-mono
   ];
 }

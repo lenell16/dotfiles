@@ -9,41 +9,42 @@
     };
 
     taps = [
-      "koekeishiya/formulae"
       "homebrew/services"
       "danvergara/tools"
       "homebrew/cask-versions"
+      "nikitabobko/tap"
+      "supabase/tap"
     ];
 
     brews = [
       # "skhd"
       # "dblab"
-      "node@18"
+      "node@20"
       "openssl@3"
       "pgvector"
       "postgresql@14"
-      {
-        name = "yabai";
-        args = [ "HEAD" ];
-      }
+      "supabase"
     ];
 
     casks = [
       "1password"
+      "aerospace"
       "appzapper"
       "arc"
       "chatgpt"
       "fantastical"
       "gitkraken"
+      "ghostty"
       "google-chrome"
+      "kap"
       "marta"
       "nvidia-geforce-now"
       "pgadmin4"
       "raycast"
-      "runjs"
+      # "runjs"
       "slack"
       "soundsource"
-      "steam"
+      # "steam"
       "visual-studio-code@insiders"
       "workman"
       "yaak"

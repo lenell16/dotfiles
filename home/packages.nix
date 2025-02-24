@@ -3,12 +3,13 @@
 {
   home.packages = with pkgs; [
     any-nix-shell
-    asdf-vm
+    # asdf-vm
     azure-cli
     azure-functions-core-tools
     bun
     curl
     fd
+    # ghostty
     iina
     infisical
     nixd

@@ -1,5 +1,10 @@
 { inputs, config, pkgs, lib, ... }:{
 system.defaults = {
+  loginwindow = {
+    LoginwindowText = "";
+    GuestEnabled = false;
+    DisableConsoleAccess = true;
+  };
   dock = {
     autohide = true;
     orientation = "right";

@@ -24,12 +24,12 @@
     # Utils
     flake-utils.url = "github:numtide/flake-utils";
 
-    rose-pine-kitty = {
-      type = "github";
-      owner = "rose-pine";
-      repo = "kitty";
-      flake = false;
-    };
+    # rose-pine-kitty = {
+    #   type = "github";
+    #   owner = "rose-pine";
+    #   repo = "kitty";
+    #   flake = false;
+    # };
     gitalias = {
       type = "github";
       owner = "GitAlias";
@@ -46,27 +46,34 @@
     , neovim-overlay
     , ...
     } @ inputs:
+    let
+      system = "aarch64-darwin";
+      overlays = [
+        inputs.neovim-overlay.overlays.default
+      ];
+    in
     {
       darwinConfigurations = {
         "ZoBookPro" = nix-darwin.lib.darwinSystem {
-          system = "aarch64-darwin";
+          inherit system;
           modules = [
             ./darwin/darwin.nix
             home-manager.darwinModules.home-manager
             {
+              # nixpkgs.overlays = overlays;
               home-manager = {
                 users.alonzothomas = import ./home/home.nix;
-                extraSpecialArgs = { inherit inputs; };
+                extraSpecialArgs = { inherit inputs system; };
+                useGlobalPkgs = true;
+                useUserPackages = true;
               };
               users.users.alonzothomas.home = "/Users/alonzothomas";
-              nixpkgs = {
-                config = {
-                  allowUnsupportedSystem = true;
-                  allowUnfree = true;
-                  allowBroken = true;
-                  allowInsecure = true;
-                  input-fonts.acceptLicense = true;
-                };
+              nixpkgs.config = {
+                allowUnsupportedSystem = true;
+                allowUnfree = true;
+                allowBroken = true;
+                allowInsecure = true;
+                input-fonts.acceptLicense = true;
               };
             }
           ];
