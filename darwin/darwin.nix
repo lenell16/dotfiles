@@ -41,7 +41,7 @@
     # System tools
     home-manager         # Home manager CLI
     
-    # Terminal & CLI
+    # Terminal & CLIAT63301
     _1password-cli       # 1Password CLI
     
     # Network utilities
