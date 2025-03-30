@@ -52,9 +52,9 @@ in
       nopt = "nix-store --optimize";              # Optimize store by hardlinking identical files
       
       # Nix system management - info and debugging
-      nq = "nix-store --query --requisites /run/current-system | sort | uniq";  # Query system dependencies
+      nqr_sys = "nix-store --query --requisites /run/current-system | sort | uniq";  # Query system dependencies
       nqr = "nix why-depends";                    # Explain why X depends on Y
-      nsh = "nix develop";                        # Enter development shell
+      nd_shell = "nix develop";                   # Enter development shell
       nlk = "nix run nixpkgs#nix-tree";           # Show dependency tree using nix-tree
       nck = "${nixSystemCheck}";                  # Run flake checks
       
@@ -83,7 +83,7 @@ in
       ":q" = "exit";
       
       # Quick edits
-      ne = "$EDITOR";                                # Start editor
+      n = "$EDITOR";                                # Start editor
       config = "cd ${nixConfigDir} && $EDITOR";     # Edit Nix config
       
       # Nix configuration management
@@ -95,7 +95,7 @@ in
       nbrew = "$EDITOR ${nixConfigDir}/darwin/brew.nix";   # Edit brew.nix
       
       # Health check
-      nix-health = "echo 'Running Nix health checks...' && ${nixSystemCheck} && ${darwinRebuild} --check && echo 'All checks passed!'";
+      nix-health = "echo 'Running Nix health checks...' && ${nixSystemCheck} && echo 'All checks passed!'";
     };
     
     # Fish abbreviations (expand when you press space)

@@ -129,11 +129,6 @@
       terminal = "screen-256color";
     };
 
-    # Media player
-    mpv = {
-      enable = true;   # Video player
-    };
-
     # Git configuration
     git = {
       enable = true;
@@ -186,6 +181,9 @@
         # Initialize Homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
         
+        # Add Homebrew Node.js to PATH
+        fish_add_path /opt/homebrew/opt/node@20/bin
+        
         # Set fish colors to match your terminal theme
         set -g fish_color_command blue
         set -g fish_color_param cyan
@@ -197,18 +195,6 @@
       functions = {
         # This explicitly overrides the greeting function
         fish_greeting = ""; 
-        
-        # Create and enter directory in one command
-        mcd = ''
-          mkdir -p $argv
-          cd $argv
-        '';
-        
-        # Easy editing of nix configuration
-        nixconf = ''
-          cd ~/Developer/personal/my-nix
-          $EDITOR
-        '';
         
         # Show system info
         sysinfo = ''

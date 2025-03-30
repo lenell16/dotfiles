@@ -72,7 +72,7 @@
   };
 
   # Nix configuration
-  services.nix-daemon.enable = true;  # Auto upgrade nix package and run daemon
+  # services.nix-daemon.enable = true;  # Auto upgrade nix package and run daemon - REMOVED: now managed by nix-darwin unconditionally
   
   nix = {
     package = pkgs.nixVersions.latest;  # Use the latest Nix version

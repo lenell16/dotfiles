@@ -55,8 +55,8 @@
       # Terminal & Development
       "ghostty"                    # Terminal emulator
       "gitkraken"                  # Git client
-      "pgadmin4"                   # PostgreSQL admin tool
       "visual-studio-code@insiders" # Code editor
+      "warp"                       # Modern terminal emulator
       
       # Browsers & Internet
       "arc"                        # Browser
@@ -70,6 +70,7 @@
       
       # Media & Entertainment
       "nvidia-geforce-now"         # Game streaming
+      "mpv"                        # Video player (added as a replacement for nix version)
       
       # Currently not used but kept for reference
       # "runjs"                    # JavaScript playground
