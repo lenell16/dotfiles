@@ -42,37 +42,14 @@
     home-manager         # Home manager CLI
     
     # Terminal & CLI
-    warp-terminal        # AI terminal
     _1password-cli       # 1Password CLI
     
     # Network utilities
     ngrok                # Tunnel local servers
     transmission_4       # Torrent client
-    
-    # Commented out for reference
-    # zed-editor         # Zed editor
-    # teams              # Microsoft Teams
-    # _1password-gui     # 1Password GUI (using Homebrew cask instead)
   ];
 
-  # Use a custom configuration.nix location.
-  # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
   environment.darwinConfig = "$HOME/Developer/personal/my-nix";
-  services = {
-    # skhd = {
-    #   enable = true;
-    #   skhdConfig = (builtins.readFile ../hm/dotfiles/skhd/skhdrc);
-    # };
-    # yabai = {
-    #   enable = true;
-    #   # package = "/usr/local/bin/yabai";
-    #   enableScriptingAddition = true;
-    #   extraConfig = (builtins.readFile ../hm/dotfiles/yabai/yabairc);
-    # };
-  };
-
-  # Nix configuration
-  # services.nix-daemon.enable = true;  # Auto upgrade nix package and run daemon - REMOVED: now managed by nix-darwin unconditionally
   
   nix = {
     package = pkgs.nixVersions.latest;  # Use the latest Nix version
@@ -99,9 +76,6 @@
       
       # Number of cores to use for building
       cores = 8;
-      
-      # Automatic garbage collection
-      # auto-optimise-store = true;      # Removed as it can corrupt the Nix Store
       
       # Trusted users (can use remote builders and other restricted operations)
       trusted-users = [ "root" "alonzothomas" ];
