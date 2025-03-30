@@ -24,10 +24,9 @@
   networking.computerName = "ZoBookPro"; # Legacy setting
   networking.hostName = "ZoBookPro";     # Legacy setting
   
-  # These are the newer nix-darwin hostname settings that should be used
-  system.defaults.HostName = "ZoBookPro";       # What shows in sharing settings
-  system.defaults.LocalHostName = "ZoBookPro";  # Bonjour hostname (no spaces)
-  system.defaults.ComputerName = "ZoBookPro";   # User-friendly computer name
+  # Note: These newer settings might need to be adjusted based on your nix-darwin version
+  # Using the proper location for hostname settings which may vary by version
+  # For now, we'll rely on the networking.* versions which are known to work
   # Add shells installed by nix to /etc/shells file
   environment.shells = with pkgs; [
     bashInteractive
@@ -81,6 +80,15 @@
     # Set NIX_PATH for legacy tools
     nixPath = { nixpkgs = "${inputs.nixpkgs}"; };
     
+    # Store optimization
+    optimise = {
+      automatic = true;     # Recommended way to optimize the nix store
+      interval = {
+        Hour = 3;           # Run at 3 AM
+        Minute = 0;
+      };
+    };
+    
     # Nix settings
     settings = {
       # Enable useful experimental features
@@ -93,7 +101,7 @@
       cores = 8;
       
       # Automatic garbage collection
-      auto-optimise-store = true;          # Deduplication
+      # auto-optimise-store = true;      # Removed as it can corrupt the Nix Store
       
       # Trusted users (can use remote builders and other restricted operations)
       trusted-users = [ "root" "alonzothomas" ];

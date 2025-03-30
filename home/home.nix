@@ -42,7 +42,7 @@
     # Development environments
     direnv = {
       enable = true;
-      enableFishIntegration = true;
+      # enableFishIntegration is true by default and set in the module
       nix-direnv.enable = true;
     };
     
