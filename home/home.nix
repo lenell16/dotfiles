@@ -3,38 +3,55 @@
 
   imports = [
     ./packages.nix
+    ./aliases.nix
   ];
 
   home = {
     stateVersion = "24.05"; # Please read the comment before changing.
 
+    # Environment variables
     sessionVariables = {
+      # Editor settings
       EDITOR = "nvim";
       VISUAL = "nvim";
-
+      
+      # Pager settings
+      PAGER = "bat";
+      LESS = "-R";
+      
+      # Configure bat (better cat)
+      BAT_THEME = "OneHalfDark";
+      BAT_STYLE = "header,grid";
+      BAT_TABS = "2";
+      BAT_DIFF_CONTEXT = "3";
+      BAT_DIFF_NUMBERS = "true";
+      BAT_DIFF_FILE_SIZE_THRESHOLD = "1M";
+      
+      # XDG data dirs (for shell integration)
       XDG_DATA_DIRS = "${config.home.profileDirectory}/share:${"\${GHOSTTY_SHELL_INTEGRATION_XDG_DIR:+\$GHOSTTY_SHELL_INTEGRATION_XDG_DIR:}"}$XDG_DATA_DIRS";
-
-      # PAGER = "bat";
-      # LESS = "-R";
-      # BAT_THEME = "OneHalfDark";
-      # BAT_STYLE = "header,grid";
-      # BAT_TABS = "2";
-      # BAT_DIFF_CONTEXT = "3";
-      # BAT_DIFF_NUMBERS = "true";
-      # BAT_DIFF_FILE_SIZE_THRESHOLD = "1M
     };
 
-    file.".hushlogin".text = "";
+    # Files to create in home directory
+    file = {
+      # Suppress the login message on macOS terminal
+      ".hushlogin".text = "";
+    };
   };
 
   programs = {
+    # Development environments
+    direnv = {
+      enable = true;
+      enableFishIntegration = true;
+      nix-direnv.enable = true;
+    };
+    
+    # GitHub CLI
     gh = {
       enable = true;
       settings = {
         git_protocol = "ssh";
-
         prompt = "enabled";
-
         aliases = {
           co = "pr checkout";
           pv = "pr view";
@@ -42,125 +59,198 @@
       };
     };
 
-    bat.enable = true;
+    # Terminal utilities
+    bat = {
+      enable = true;
+      config = {
+        theme = "OneHalfDark";
+        style = "header,grid";
+      };
+    };
 
-    bottom.enable = true;
+    bottom = {
+      enable = true;   # System monitor (like htop)
+    };
 
     broot = {
-      enable = true;
+      enable = true;   # Directory navigator
       enableFishIntegration = true;
     };
 
     eza = {
-      enable = true;
+      enable = true;   # Modern replacement for ls
       enableFishIntegration = true;
     };
 
-    jq.enable = true;
+    jq = {
+      enable = true;   # JSON processor
+    };
 
     fzf = {
-      enable = true;
+      enable = true;   # Fuzzy finder
       enableFishIntegration = true;
+      defaultOptions = ["--height 40%" "--layout=reverse" "--border"];
     };
 
+    # Shell enhancements
     starship = {
-      enable = true;
+      enable = true;   # Customizable prompt
       enableFishIntegration = true;
       settings = {
         cmd_duration.disabled = true;
         gcloud.disabled = true;
       };
     };
+    
+    # File managers
+    nnn = {
+      enable = true;   # Terminal file manager
+      bookmarks = {
+        d = "~/Documents";
+        D = "~/Downloads";
+        p = "~/Developer/personal";
+        w = "~/Developer/work";
+      };
+    };
 
+    # Text editors
     helix = {
-      enable = true;
+      enable = true;   # Modern editor
       settings = {
         theme = "tokyonight_storm";
       };
     };
 
-    tmux.enable = true;
+    # Terminal multiplexer
+    tmux = {
+      enable = true;   # Terminal session manager
+      clock24 = true;
+      historyLimit = 10000;
+      terminal = "screen-256color";
+    };
 
-    mpv.enable = true;
+    # Media player
+    mpv = {
+      enable = true;   # Video player
+    };
 
-    nnn.enable = true;
-
+    # Git configuration
     git = {
       enable = true;
       # userName = "lenell16";
       # userEmail = "lenell16@gmail.com";
+      
+      # Include external aliases
       includes = [
         {
           path = "${inputs.gitalias}/gitalias.txt";
         }
       ];
+      
+      # Git configuration
       extraConfig = {
         push = {
-          autoSetupRemote = true;
+          autoSetupRemote = true;  # Auto set upstream on push
         };
         init = {
-          defaultBranch = "main";
+          defaultBranch = "main";  # Default branch name
+        };
+        pull = {
+          rebase = false;         # Merge by default on pull
+        };
+        fetch = {
+          prune = true;           # Remove remote branches that no longer exist
         };
       };
     };
 
+    # Git UI tools
     gitui = {
-      enable = true;
+      enable = true;              # Terminal UI for Git
     };
 
-    lazygit.enable = true;
+    lazygit = {
+      enable = true;              # Interactive Git terminal UI
+    };
 
+    # Fish shell configuration
     fish = {
       enable = true;
 
+      # Commands to run when starting an interactive shell
       interactiveShellInit = ''
         # Multiple ways to ensure no greeting
         set -U fish_greeting
         set -g fish_greeting ""
         
+        # Initialize Homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
+        
+        # Set fish colors to match your terminal theme
+        set -g fish_color_command blue
+        set -g fish_color_param cyan
+        set -g fish_color_error red
+        set -g fish_color_normal normal
       '';
 
+      # Custom fish functions
       functions = {
-        fish_greeting = ""; # This explicitly overrides the greeting function
+        # This explicitly overrides the greeting function
+        fish_greeting = ""; 
+        
+        # Create and enter directory in one command
         mcd = ''
           mkdir -p $argv
           cd $argv
         '';
+        
+        # Easy editing of nix configuration
+        nixconf = ''
+          cd ~/Developer/personal/my-nix
+          $EDITOR
+        '';
+        
+        # Show system info
+        sysinfo = ''
+          echo "System Information"
+          echo "=================="
+          echo "OS: $(uname -srm)"
+          echo "Host: $(hostname)"
+          echo "Uptime: $(uptime | sed 's/.*up \\([^,]*\\), .*/\\1/')"
+          echo "Shell: $SHELL"
+          echo "Terminal: $TERM"
+          echo "Nix Version: $(nix --version)"
+        '';
       };
-      shellAliases = with pkgs;
-        {
-          # Nix related
-          # drs = "darwin-rebuild switch --flake ${config.home.user-info.nixConfigDirectory}";
-          # flakeup = "nix flake update ${config.home.user-info.nixConfigDirectory}";
-          # nb = "nix build";
-          # nf = "nix flake";
-
-          # Other
-          ".." = "cd ..";
-          ":q" = "exit";
-          cat = "${bat}/bin/bat";
-
-          g = "${gitAndTools.git}/bin/git";
-        };
+      
+      # Aliases are now managed in aliases.nix
+      
+      # Commands to run when starting any shell
       shellInit = ''
+        # Ghostty terminal integration
         if test -n "$GHOSTTY_SHELL_INTEGRATION_XDG_DIR"
             source $GHOSTTY_SHELL_INTEGRATION_XDG_DIR/fish/vendor_conf.d/ghostty-shell-integration.fish
         end
+        
+        # Nix shell integration
         any-nix-shell fish --info-right | source
       '';
     };
 
+    # Directory navigation enhancement
     zoxide = {
-      enable = true;
+      enable = true;              # Smart cd command
       enableFishIntegration = true;
-      # options = [ "--cmd cd" ];
+      options = [ "--cmd j" ];    # Use 'j' as the command
     };
 
+    # Text editor
     neovim = {
-      enable = true;
+      enable = true;              # Neovim editor
       package = pkgs.neovim-unwrapped;
       defaultEditor = true;
+      viAlias = true;             # Use 'vi' command for neovim
+      vimAlias = true;            # Use 'vim' command for neovim
     };
   };
 }
