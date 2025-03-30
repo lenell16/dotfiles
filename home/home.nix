@@ -132,15 +132,9 @@
     # Git configuration
     git = {
       enable = true;
-      # userName = "lenell16";
-      # userEmail = "lenell16@gmail.com";
-      
-      # Include external aliases
-      includes = [
-        {
-          path = "${inputs.gitalias}/gitalias.txt";
-        }
-      ];
+      # Global default configuration (work profile)
+      userName = "Alonzo Thomas";
+      userEmail = "alonzo.thomas@tribble.ai";
       
       # Git configuration
       extraConfig = {
@@ -157,6 +151,30 @@
           prune = true;           # Remove remote branches that no longer exist
         };
       };
+      
+      # Git conditional includes for different profiles
+      ignores = [];
+      includes = [
+        { path = "${inputs.gitalias}/gitalias.txt"; }
+        { 
+          condition = "gitdir:~/Developer/personal/";
+          contents = {
+            user = {
+              name = "lenell16";
+              email = "lenell16@gmail.com";
+            };
+          };
+        }
+        { 
+          condition = "gitdir:~/Developer/work/";
+          contents = {
+            user = {
+              name = "Alonzo Thomas";
+              email = "alonzo.thomas@tribble.ai";
+            };
+          };
+        }
+      ];
     };
 
     # Git UI tools
