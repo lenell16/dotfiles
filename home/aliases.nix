@@ -79,7 +79,6 @@ in
       glg = "${git} log --graph --oneline --decorate";
       
       # Utility
-      mcd = "mkdir -p $argv && cd $argv";
       ":q" = "exit";
       
       # Quick edits

@@ -225,6 +225,15 @@
           echo "Terminal: $TERM"
           echo "Nix Version: $(nix --version)"
         '';
+        
+        # Create directory and change to it
+        mcd = ''
+          if test (count $argv) -eq 1
+            mkdir -p $argv[1] && cd $argv[1]
+          else
+            echo "Usage: mcd <directory>"
+          end
+        '';
       };
       
       # Aliases are now managed in aliases.nix
