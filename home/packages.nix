@@ -24,6 +24,7 @@
     curl             # Data transfer tool
     fd               # Alternative to find
     ripgrep          # Fast grep replacement
+    adobe-acrobat-reader # PDF reader
     podman           # Container management tool
     docker-client    # Docker CLI client
     
