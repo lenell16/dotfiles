@@ -55,6 +55,7 @@
       # Terminal & Development
       "ghostty"                    # Terminal emulator
       "gitkraken"                  # Git client
+      "ollama"                     # Local LLM runner
       "visual-studio-code@insiders" # Code editor
       "warp"                       # Modern terminal emulator
       "cursor" 
