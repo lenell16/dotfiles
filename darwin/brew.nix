@@ -9,9 +9,7 @@
     };
 
     taps = [
-      "homebrew/services"
       "danvergara/tools"
-      "homebrew/cask-versions"
       "nikitabobko/tap"
       "supabase/tap"
     ];
@@ -25,7 +23,7 @@
       # Database
       "pgvector"            # Vector extension for PostgreSQL
       "postgresql@14"       # PostgreSQL database
-      "supabase"            # Supabase CLI
+      "supabase/tap/supabase"            # Supabase CLI
       
       # Graphics libraries (required by other tools)
       "giflib"              # GIF image manipulation library
@@ -57,6 +55,7 @@
       "gitkraken"                  # Git client
       "visual-studio-code@insiders" # Code editor
       "warp"                       # Modern terminal emulator
+      "cursor" 
       
       # Browsers & Internet
       "arc"                        # Browser
@@ -70,7 +69,7 @@
       
       # Media & Entertainment
       "nvidia-geforce-now"         # Game streaming
-      "mpv"                        # Video player (added as a replacement for nix version)
+      # "mpv"                        # Video player (added as a replacement for nix version)
       
       # Currently not used but kept for reference
       # "runjs"                    # JavaScript playground

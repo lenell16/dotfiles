@@ -49,59 +49,9 @@
     transmission_4       # Torrent client
   ];
 
-  environment.darwinConfig = "$HOME/Developer/personal/my-nix";
+  environment.darwinConfig = "$HOME/Developer/personal/dotfiles";
   
-  nix = {
-    package = pkgs.nixVersions.latest;  # Use the latest Nix version
-    
-    # Set NIX_PATH for legacy tools
-    nixPath = { nixpkgs = "${inputs.nixpkgs}"; };
-    
-    # Store optimization
-    optimise = {
-      automatic = true;     # Recommended way to optimize the nix store
-      interval = {
-        Hour = 3;           # Run at 3 AM
-        Minute = 0;
-      };
-    };
-    
-    # Nix settings
-    settings = {
-      # Enable useful experimental features
-      "extra-experimental-features" = [
-        "nix-command"
-        "flakes"
-      ];
-      
-      # Number of cores to use for building
-      cores = 8;
-      
-      # Trusted users (can use remote builders and other restricted operations)
-      trusted-users = [ "root" "alonzothomas" ];
-    };
-    
-    # Automatic garbage collection
-    gc = {
-      automatic = true;
-      interval = { 
-        Weekday = 0;                       # Run on Sunday
-        Hour = 2;                          # At 2AM
-        Minute = 0;
-      };
-      options = "--delete-older-than 30d"; # Keep the last 30 days
-    };
-    
-    # Additional options
-    extraOptions = ''
-      # Distributed build support
-      builders = @/etc/nix/machines
-      
-      # Use up to 16GB of RAM for building
-      max-jobs = auto
-      cores = 0
-    '';
-  };
+  nix.enable = false;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
   programs = {

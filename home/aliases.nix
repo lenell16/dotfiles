@@ -10,7 +10,7 @@ let
   fd = "${pkgs.fd}/bin/fd";
 
   # Nix rebuild commands
-  nixConfigDir = "~/Developer/personal/my-nix";
+  nixConfigDir = "~/Developer/personal/dotfiles";
   darwinRebuild = "darwin-rebuild switch --flake ${nixConfigDir}";
   hmSwitch = "home-manager switch --flake ${nixConfigDir}";
   nixFlakeUpdate = "pushd ${nixConfigDir} && nix flake update && popd";

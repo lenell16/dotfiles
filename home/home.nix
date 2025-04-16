@@ -166,7 +166,7 @@
           };
         }
         { 
-          condition = "gitdir:~/Developer/work/";
+          condition = "gitdir:~/Developer/tribble/";
           contents = {
             user = {
               name = "Alonzo Thomas";
