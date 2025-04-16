@@ -65,6 +65,7 @@
       # Productivity
       "chatgpt"                    # AI assistant
       "chatwise"                   # Chat client
+      "claude-code"                # AI coding assistant
       "fantastical"                # Calendar app
       "kap"                        # Screen recorder
       "slack"                      # Team communication
