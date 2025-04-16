@@ -70,6 +70,7 @@
       "adobe-acrobat-reader"       # PDF reader
       "fantastical"                # Calendar app
       "kap"                        # Screen recorder
+      "repo-prompt"                # Git repository prompt utility
       "slack"                      # Team communication
       "zoom"                       # Video conferencing
       
