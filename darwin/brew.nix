@@ -71,6 +71,7 @@
       "fantastical"                # Calendar app
       "kap"                        # Screen recorder
       "slack"                      # Team communication
+      "zoom"                       # Video conferencing
       
       # Media & Entertainment
       "nvidia-geforce-now"         # Game streaming
@@ -92,7 +93,6 @@
       # "streamlink-twitch-gui"    # Twitch client
       # "tableplus"                # Database GUI
       # "transmission"             # Torrent client
-      # "zoom"                     # Video conferencing
       # "bartender"                # Menu bar organizer
       # "brave-browser"            # Browser
       # "firefox"                  # Browser
