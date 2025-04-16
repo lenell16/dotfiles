@@ -75,11 +75,11 @@
       "nvidia-geforce-now"         # Game streaming
       "calibre"                    # E-book management
       "ea"                         # Electronic Arts game launcher
+      "steam"                      # Game platform
       # "mpv"                        # Video player (added as a replacement for nix version)
       
       # Currently not used but kept for reference
       # "runjs"                    # JavaScript playground
-      # "steam"                    # Game platform
       # "altserver"                # iOS sideloading
       # "android-studio"           # Android development
       # "docker"                   # Containerization
