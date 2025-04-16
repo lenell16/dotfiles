@@ -19,6 +19,7 @@
       # "gh"                  # GitHub CLI
       "node@20"             # Node.js 20
       "openssl@3"           # SSL library
+      "mas"                 # Mac App Store CLI
       
       # Database
       "pgvector"            # Vector extension for PostgreSQL

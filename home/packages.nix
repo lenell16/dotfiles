@@ -22,6 +22,8 @@
     curl             # Data transfer tool
     fd               # Alternative to find
     ripgrep          # Fast grep replacement
+    podman           # Container management tool
+    docker-client    # Docker CLI client
     
     # Media
     iina             # Media player

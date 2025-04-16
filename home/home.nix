@@ -27,6 +27,9 @@
       BAT_DIFF_NUMBERS = "true";
       BAT_DIFF_FILE_SIZE_THRESHOLD = "1M";
       
+      # Podman configuration
+      DOCKER_HOST = "unix:///var/folders/zy/gd7_972101sdqv5_625lgdmh0000gn/T/podman/podman-machine-default-api.sock";
+      
       # XDG data dirs (for shell integration)
       XDG_DATA_DIRS = "${config.home.profileDirectory}/share:${"\${GHOSTTY_SHELL_INTEGRATION_XDG_DIR:+\$GHOSTTY_SHELL_INTEGRATION_XDG_DIR:}"}$XDG_DATA_DIRS";
     };
