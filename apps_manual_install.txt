@@ -1,0 +1,11 @@
+# Manually Installed Applications
+# List of applications installed outside of Nix and Homebrew package managers
+
+# Desktop Applications
+1. Langflow.app
+2. Tempo Launcher - Beta.app
+
+# iOS/iPadOS Apps (installed from App Store)
+1. Peglin.app
+2. Sword of Convallaria.app
+3. Wildfrost.app
