@@ -73,6 +73,7 @@
       # Media & Entertainment
       "nvidia-geforce-now"         # Game streaming
       "calibre"                    # E-book management
+      "ea"                         # Electronic Arts game launcher
       # "mpv"                        # Video player (added as a replacement for nix version)
       
       # Currently not used but kept for reference
