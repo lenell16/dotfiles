@@ -137,32 +137,28 @@
       enable = true;
       settings = {
         shell = "fish";
-        font = {
-          family = "JetBrainsMono Nerd Font";
-          size = 12;
-        };
-        colors = {
-          background = "#1e1e2e";
-          foreground = "#cdd6f4";
-          cursor = "#f5e0dc";
-          selection = "#585b70";
-          black = "#45475a";
-          red = "#f38ba8";
-          green = "#a6e3a1";
-          yellow = "#f9e2af";
-          blue = "#89b4fa";
-          magenta = "#f5c2e7";
-          cyan = "#94e2d5";
-          white = "#bac2de";
-          bright-black = "#585b70";
-          bright-red = "#f38ba8";
-          bright-green = "#a6e3a1";
-          bright-yellow = "#f9e2af";
-          bright-blue = "#89b4fa";
-          bright-magenta = "#f5c2e7";
-          bright-cyan = "#94e2d5";
-          bright-white = "#a6adc8";
-        };
+        font-family = "JetBrainsMono Nerd Font";
+        font-size = 12;
+        background = "#1e1e2e";
+        foreground = "#cdd6f4";
+        cursor = "#f5e0dc";
+        selection = "#585b70";
+        color0 = "#45475a"; # black
+        color1 = "#f38ba8"; # red
+        color2 = "#a6e3a1"; # green
+        color3 = "#f9e2af"; # yellow
+        color4 = "#89b4fa"; # blue
+        color5 = "#f5c2e7"; # magenta
+        color6 = "#94e2d5"; # cyan
+        color7 = "#bac2de"; # white
+        color8 = "#585b70"; # bright black
+        color9 = "#f38ba8"; # bright red
+        color10 = "#a6e3a1"; # bright green
+        color11 = "#f9e2af"; # bright yellow
+        color12 = "#89b4fa"; # bright blue
+        color13 = "#f5c2e7"; # bright magenta
+        color14 = "#94e2d5"; # bright cyan
+        color15 = "#a6adc8"; # bright white
       };
     };
 
