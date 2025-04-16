@@ -45,6 +45,7 @@
       
       # System Utilities
       "appzapper"                  # App uninstaller
+      "balenaetcher"               # USB image writer
       "block-goose"                # Ad blocker
       "marta"                      # File manager
       "raycast"                    # App launcher
