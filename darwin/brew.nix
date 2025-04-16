@@ -48,7 +48,6 @@
       "balenaetcher"               # USB image writer
       "block-goose"                # Ad blocker
       "marta"                      # File manager
-      "raycast"                    # App launcher
       "soundsource"                # Audio control
       "workman"                    # Keyboard layout
       "yaak"                       # Terminal

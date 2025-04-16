@@ -25,6 +25,7 @@
     fd               # Alternative to find
     ripgrep          # Fast grep replacement
     adobe-acrobat-reader # PDF reader
+    raycast          # App launcher
     podman           # Container management tool
     docker-client    # Docker CLI client
     
