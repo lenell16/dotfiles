@@ -66,6 +66,7 @@
       "chatgpt"                    # AI assistant
       "chatwise"                   # Chat client
       "claude"                     # AI assistant
+      "adobe-acrobat-reader"       # PDF reader
       "fantastical"                # Calendar app
       "kap"                        # Screen recorder
       "slack"                      # Team communication
