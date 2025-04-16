@@ -134,32 +134,32 @@
 
     # Terminal emulator
     ghostty = {
-      enable = true;
-      settings = {
-        shell = "fish";
-        font-family = "JetBrainsMono Nerd Font";
-        font-size = 12;
-        background = "#1e1e2e";
-        foreground = "#cdd6f4";
-        cursor = "#f5e0dc";
-        selection = "#585b70";
-        color0 = "#45475a"; # black
-        color1 = "#f38ba8"; # red
-        color2 = "#a6e3a1"; # green
-        color3 = "#f9e2af"; # yellow
-        color4 = "#89b4fa"; # blue
-        color5 = "#f5c2e7"; # magenta
-        color6 = "#94e2d5"; # cyan
-        color7 = "#bac2de"; # white
-        color8 = "#585b70"; # bright black
-        color9 = "#f38ba8"; # bright red
-        color10 = "#a6e3a1"; # bright green
-        color11 = "#f9e2af"; # bright yellow
-        color12 = "#89b4fa"; # bright blue
-        color13 = "#f5c2e7"; # bright magenta
-        color14 = "#94e2d5"; # bright cyan
-        color15 = "#a6adc8"; # bright white
-      };
+      enable = false;  # Disabled due to build issues - using Homebrew version instead
+      # settings = {
+      #   shell = "fish";
+      #   font-family = "JetBrainsMono Nerd Font";
+      #   font-size = 12;
+      #   background = "#1e1e2e";
+      #   foreground = "#cdd6f4";
+      #   cursor = "#f5e0dc";
+      #   selection = "#585b70";
+      #   color0 = "#45475a"; # black
+      #   color1 = "#f38ba8"; # red
+      #   color2 = "#a6e3a1"; # green
+      #   color3 = "#f9e2af"; # yellow
+      #   color4 = "#89b4fa"; # blue
+      #   color5 = "#f5c2e7"; # magenta
+      #   color6 = "#94e2d5"; # cyan
+      #   color7 = "#bac2de"; # white
+      #   color8 = "#585b70"; # bright black
+      #   color9 = "#f38ba8"; # bright red
+      #   color10 = "#a6e3a1"; # bright green
+      #   color11 = "#f9e2af"; # bright yellow
+      #   color12 = "#89b4fa"; # bright blue
+      #   color13 = "#f5c2e7"; # bright magenta
+      #   color14 = "#94e2d5"; # bright cyan
+      #   color15 = "#a6adc8"; # bright white
+      # };
     };
 
     # Git configuration

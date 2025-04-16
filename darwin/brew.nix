@@ -53,6 +53,7 @@
       "yaak"                       # Terminal
       
       # Terminal & Development
+      "ghostty"                    # Terminal emulator
       "gitkraken"                  # Git client
       "visual-studio-code@insiders" # Code editor
       "warp"                       # Modern terminal emulator
