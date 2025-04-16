@@ -21,8 +21,8 @@
   };
   
   # Set system hostname (using both legacy and modern settings)
-  networking.computerName = "ZoBookPro-2"; # Legacy setting
-  networking.hostName = "ZoBookPro-2";     # Legacy setting
+  networking.computerName = "ZoBookPro"; # Legacy setting
+  networking.hostName = "ZoBookPro";     # Legacy setting
   
   # Note: These newer settings might need to be adjusted based on your nix-darwin version
   # Using the proper location for hostname settings which may vary by version
