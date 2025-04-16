@@ -17,6 +17,7 @@
     protobuf         # Protocol buffers
     turbo            # Monorepo tool
     uv               # Python package installer
+    jetbrains.datagrip # Database IDE
     
     # System utilities
     curl             # Data transfer tool
@@ -53,7 +54,6 @@
     # google-cloud-sql-proxy # GCP SQL proxy
     # gradle          # Build tool
     # httpie          # HTTP client
-    # jetbrains.datagrip # Database IDE
     # kubectx         # Kubernetes context switcher
     # lucky-cli       # Crystal web framework
     # maven           # Build tool
