@@ -16,6 +16,7 @@
 
     brews = [
       # CLI tools
+      "azure-cli"            # Azure CLI
       # "gh"                  # GitHub CLI
       "node@20"             # Node.js 20
       "openssl@3"           # SSL library
