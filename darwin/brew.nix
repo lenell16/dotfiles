@@ -12,6 +12,7 @@
       "danvergara/tools"
       "nikitabobko/tap"
       "supabase/tap"
+      "opencode-ai/tap"
     ];
 
     brews = [
@@ -21,6 +22,7 @@
       "node@20"             # Node.js 20
       "openssl@3"           # SSL library
       "mas"                 # Mac App Store CLI
+      "opencode" # OpenCode AI
       
       # Database
       "pgvector"            # Vector extension for PostgreSQL
