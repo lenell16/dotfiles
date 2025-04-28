@@ -267,6 +267,101 @@
             echo "Usage: mcd <directory>"
           end
         '';
+
+        # Load API keys from 1Password with caching
+        load_op_key = ''
+          # Usage: load_op_key <env_var_name> <op_path> [--force]
+          # Example: load_op_key ANTHROPIC_API_KEY "op://your-vault/Anthropic/api-key"
+          # Add --force as third argument to force refresh from 1Password
+          
+          if test (count $argv) -lt 2
+            echo "Usage: load_op_key <env_var_name> <op_path> [--force]"
+            return 1
+          end
+          
+          set -l env_var $argv[1]
+          set -l op_path $argv[2]
+          set -l force_refresh false
+          
+          if test (count $argv) -ge 3; and test "$argv[3]" = "--force"
+            set force_refresh true
+          end
+          
+          # Create cache directory if it doesn't exist
+          set -l cache_dir "$HOME/.cache/op_keys"
+          mkdir -p $cache_dir 2>/dev/null
+          
+          # Use a hash of the op_path as the cache filename for security
+          set -l cache_file "$cache_dir/"(echo -n $op_path | shasum | cut -d ' ' -f 1)
+          
+          # Check if we need to refresh the key (if file doesn't exist, is older than 24 hours, or force refresh is requested)
+          set -l refresh false
+          
+          if test "$force_refresh" = "true"
+            set refresh true
+          else if not test -f $cache_file
+            set refresh true
+          else
+            # Check file age (24 hour expiration)
+            set -l file_age (math (date +%s) - (stat -f %m $cache_file))
+            if test $file_age -gt 86400
+              set refresh true
+            end
+          end
+          
+          # Refresh from 1Password if needed
+          if test "$refresh" = "true"
+            # Try to read the key, sign in if needed
+            set -l key (op read $op_path 2>/dev/null)
+            
+            if test $status -ne 0
+              eval (op signin 2>/dev/null)
+              set key (op read $op_path 2>/dev/null)
+              
+              if test $status -ne 0
+                echo "Error: Failed to authenticate with 1Password for $env_var" >&2
+                return 1
+              end
+            end
+            
+            # Save to cache if successful
+            if test -n "$key"
+              echo -n $key > $cache_file
+              chmod 600 $cache_file 2>/dev/null
+            else
+              echo "Error: Failed to load $env_var from 1Password" >&2
+              return 1
+            end
+          end
+          
+          # Read from cache and set environment variable
+          if test -f $cache_file
+            set -gx $env_var (cat $cache_file)
+            return 0
+          else
+            echo "Error: Cache file for $env_var not found" >&2
+            return 1
+          end
+        '';
+
+        # Force refresh all API keys
+        refresh_api_keys = ''
+          load_api_keys --force
+        '';
+
+        # Load all API keys
+        load_api_keys = ''
+          # Define your API keys here
+          # Pass '--force' as an argument to force refresh all keys
+          set -l force_arg ""
+          if test (count $argv) -gt 0; and test "$argv[1]" = "--force"
+            set force_arg "--force"
+          end
+          
+          load_op_key ANTHROPIC_API_KEY "op://Personal/Anthropic API Key/api key" $force_arg
+          load_op_key OPENAI_API_KEY "op://Personal/sadrtemi4z73i4jcyi27owmi54/api key" $force_arg
+          # Add more keys as needed
+        '';
       };
       
       # Aliases are now managed in aliases.nix
@@ -280,6 +375,12 @@
         
         # Nix shell integration
         any-nix-shell fish --info-right | source
+
+        # Load all API keys from 1Password
+        load_api_keys
+
+        # 1Password CLI plugin integration
+        source /Users/alonzothomas/.config/op/plugins.sh
       '';
     };
 
