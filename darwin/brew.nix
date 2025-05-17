@@ -22,7 +22,7 @@
       "node@20"             # Node.js 20
       "openssl@3"           # SSL library
       "mas"                 # Mac App Store CLI
-      "opencode" # OpenCode AI
+      # "opencode" # OpenCode AI
       
       # Database
       "pgvector"            # Vector extension for PostgreSQL
@@ -61,7 +61,10 @@
       "ollama"                     # Local LLM runner
       "visual-studio-code@insiders" # Code editor
       "warp"                       # Modern terminal emulator
-      "cursor" 
+      "cursor"                     # AI-powered code editor
+      "zed"                        # Modern code editor
+      "windsurf"                   # Wind surfing app
+      "trae"                       # Trae app
       
       # Browsers & Internet
       "arc"                        # Browser

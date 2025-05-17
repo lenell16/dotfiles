@@ -359,7 +359,7 @@
           end
           
           load_op_key ANTHROPIC_API_KEY "op://Personal/Anthropic API Key/api key" $force_arg
-          load_op_key OPENAI_API_KEY "op://Personal/sadrtemi4z73i4jcyi27owmi54/api key" $force_arg
+          # load_op_key OPENAI_API_KEY "op://Personal/sadrtemi4z73i4jcyi27owmi54/api key" $force_arg
           # Add more keys as needed
         '';
       };
