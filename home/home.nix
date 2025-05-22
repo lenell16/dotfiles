@@ -381,6 +381,8 @@
 
         # 1Password CLI plugin integration
         source /Users/alonzothomas/.config/op/plugins.sh
+
+        fish_add_path ~/.npm-global/bin
       '';
     };
 
