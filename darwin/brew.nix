@@ -13,6 +13,7 @@
       "nikitabobko/tap"
       "supabase/tap"
       "opencode-ai/tap"
+      "HeadstartAI/taps"
     ];
 
     brews = [
@@ -23,6 +24,7 @@
       "openssl@3"           # SSL library
       "mas"                 # Mac App Store CLI
       # "opencode" # OpenCode AI
+      "HeadstartAI/taps/friday"  # Friday AI assistant
       
       # Database
       "pgvector"            # Vector extension for PostgreSQL

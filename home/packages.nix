@@ -14,7 +14,6 @@
     
     # Development tools
     bun              # JavaScript runtime
-    claude-code      # AI coding assistant
     protobuf         # Protocol buffers
     pyright          # Python type checker
     turbo            # Monorepo tool
