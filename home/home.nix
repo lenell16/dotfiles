@@ -30,6 +30,9 @@
       # Podman configuration
       DOCKER_HOST = "unix:///var/folders/zy/gd7_972101sdqv5_625lgdmh0000gn/T/podman/podman-machine-default-api.sock";
       
+      # JIRA CLI configuration - set token via: op item get "Jira API Token" --fields password
+      # JIRA_API_TOKEN = ""; # Set this via 1Password or environment
+      
       # XDG data dirs (for shell integration)
       XDG_DATA_DIRS = "${config.home.profileDirectory}/share:${"\${GHOSTTY_SHELL_INTEGRATION_XDG_DIR:+\$GHOSTTY_SHELL_INTEGRATION_XDG_DIR:}"}$XDG_DATA_DIRS";
     };
@@ -232,11 +235,12 @@
         # Initialize Homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
         
-        # Add Homebrew Node.js to PATH
-        fish_add_path /opt/homebrew/opt/node@20/bin
         
         # Set fish colors to match your terminal theme
         set -g fish_color_command blue
+
+        # Initialize FNM (Fast Node Manager)
+        fnm env --use-on-cd --shell fish | source
         set -g fish_color_param cyan
         set -g fish_color_error red
         set -g fish_color_normal normal

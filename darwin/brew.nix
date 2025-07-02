@@ -9,6 +9,7 @@
     };
 
     taps = [
+      "ankitpokhrel/jira-cli"
       "danvergara/tools"
       "nikitabobko/tap"
       "supabase/tap"
@@ -20,7 +21,8 @@
       # CLI tools
       "azure-cli"            # Azure CLI
       # "gh"                  # GitHub CLI
-      "node@20"             # Node.js 20
+      "ankitpokhrel/jira-cli/jira-cli"  # Jira CLI
+      "fnm"                 # Fast Node Manager
       "openssl@3"           # SSL library
       "mas"                 # Mac App Store CLI
       # "opencode" # OpenCode AI
