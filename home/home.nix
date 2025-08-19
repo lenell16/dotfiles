@@ -35,6 +35,9 @@
       
       # XDG data dirs (for shell integration)
       XDG_DATA_DIRS = "${config.home.profileDirectory}/share:${"\${GHOSTTY_SHELL_INTEGRATION_XDG_DIR:+\$GHOSTTY_SHELL_INTEGRATION_XDG_DIR:}"}$XDG_DATA_DIRS";
+
+      # Make Nix-provided pkg-config files visible to builds (e.g., node-canvas)
+      PKG_CONFIG_PATH = "${config.home.profileDirectory}/lib/pkgconfig:${config.home.profileDirectory}/share/pkgconfig";
     };
 
     # Files to create in home directory
@@ -189,7 +192,44 @@
       };
       
       # Git conditional includes for different profiles
-      ignores = [];
+      ignores = [
+        # Ignore any folder named "Scratch" (case-insensitive)
+        "[Ss]cratch/"
+        "[Ss]cratch"
+        
+        # macOS files
+        ".DS_Store"
+        ".AppleDouble"
+        ".LSOverride"
+        "Icon\r\r"  # Icon must end with two \r
+        "._*"        # Thumbnails
+        
+        # macOS volume files
+        ".DocumentRevisions-V100"
+        ".fseventsd"
+        ".Spotlight-V100"
+        ".TemporaryItems"
+        ".Trashes"
+        ".VolumeIcon.icns"
+        ".com.apple.timemachine.donotpresent"
+        
+        # Network files
+        ".AppleDB"
+        ".AppleDesktop"
+        "Network Trash Folder"
+        "Temporary Items"
+        ".apdisk"
+        
+        # Editor files
+        "*~"
+        "*.swp"
+        "*.swo"
+        
+        # Windows files
+        "Thumbs.db"
+        "ehthumbs.db"
+        "Desktop.ini"
+      ];
       includes = [
         { path = "${inputs.gitalias}/gitalias.txt"; }
         { 
@@ -232,6 +272,19 @@
         set -U fish_greeting
         set -g fish_greeting ""
         
+        # Disable FNM if it's somehow being loaded
+        set -e FNM_MULTISHELL_PATH
+        set -e FNM_DIR
+        set -e FNM_NODE_DIST_MIRROR
+        set -e FNM_ARCH
+        set -e FNM_COREPACK_ENABLED
+        set -e FNM_VERSION_FILE_STRATEGY
+        set -e FNM_RESOLVE_ENGINES
+        set -e FNM_LOGLEVEL
+        
+        # Remove fnm from PATH
+        set -gx PATH (string match -v "*fnm_multishells*" $PATH)
+        
         # Initialize Homebrew
         eval "$(/opt/homebrew/bin/brew shellenv)"
         
@@ -239,8 +292,7 @@
         # Set fish colors to match your terminal theme
         set -g fish_color_command blue
 
-        # Initialize FNM (Fast Node Manager)
-        fnm env --use-on-cd --shell fish | source
+
         set -g fish_color_param cyan
         set -g fish_color_error red
         set -g fish_color_normal normal

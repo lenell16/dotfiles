@@ -14,7 +14,6 @@
       "nikitabobko/tap"
       "supabase/tap"
       "opencode-ai/tap"
-      "HeadstartAI/taps"
     ];
 
     brews = [
@@ -22,21 +21,24 @@
       "azure-cli"            # Azure CLI
       # "gh"                  # GitHub CLI
       "ankitpokhrel/jira-cli/jira-cli"  # Jira CLI
-      "fnm"                 # Fast Node Manager
+      # "node@20"             # Node.js version 20 (now managed via Nix)
       "openssl@3"           # SSL library
       "mas"                 # Mac App Store CLI
       # "opencode" # OpenCode AI
-      "HeadstartAI/taps/friday"  # Friday AI assistant
       
       # Database
       "pgvector"            # Vector extension for PostgreSQL
       "postgresql@14"       # PostgreSQL database
       "supabase/tap/supabase"            # Supabase CLI
       
-      # Graphics libraries (required by other tools)
+      # Graphics libraries (required by other tools and node-canvas)
+      "cairo"               # 2D graphics library (for node-canvas)
+      "freetype"            # Font rendering library (for node-canvas)
       "giflib"              # GIF image manipulation library
       "jpeg"                # JPEG image manipulation library
       "librsvg"             # SVG rendering library
+      "pango"               # Text layout and rendering library (for node-canvas)
+      "pixman"              # Pixel manipulation library (for node-canvas)
       "pkgconf"             # Package compiler and linker metadata toolkit
       "poppler"             # PDF rendering library
       
@@ -62,8 +64,10 @@
       # Terminal & Development
       "ghostty"                    # Terminal emulator
       "gitkraken"                  # Git client
+      "lm-studio"                  # Local LLM development platform
       "ollama"                     # Local LLM runner
-      "visual-studio-code@insiders" # Code editor
+      # "visual-studio-code@insiders" # Code editor
+      "visual-studio-code"
       "warp"                       # Modern terminal emulator
       "cursor"                     # AI-powered code editor
       "zed"                        # Modern code editor

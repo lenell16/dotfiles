@@ -49,6 +49,12 @@
     transmission_4       # Torrent client
   ];
 
+  # Global environment variables for all processes (including scripts)
+  environment.variables = {
+    PKG_CONFIG_PATH = "/opt/homebrew/lib/pkgconfig:/opt/homebrew/share/pkgconfig";
+    PATH = "/etc/profiles/per-user/alonzothomas/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin";
+  };
+
   environment.darwinConfig = "$HOME/Developer/personal/dotfiles";
   
   nix.enable = false;

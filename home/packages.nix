@@ -48,7 +48,7 @@
     # cloudflared     # Cloudflare tunnels
     # cocoapods       # iOS dependency manager
     # corepack_21     # JavaScript package manager tool
-    # deno            # JavaScript runtime
+    deno            # JavaScript runtime
     # ffmpeg          # Media processing
     # fx              # JSON processor
     # gitflow         # Git workflow
@@ -64,12 +64,22 @@
     # nodejs_20       # Node.js (managed via Homebrew)
     # nodePackages.eslint_d      # Fast ESLint
     # nodePackages.fixjson       # JSON fixer
-    # nodePackages.pnpm          # Package manager
+    nodePackages.pnpm          # Package manager
+    nodejs_20                  # Node.js v20 LTS with npm
     # nodePackages.prettier      # Code formatter
     # nodePackages.typescript    # TypeScript
     # nodePackages.zx            # JavaScript shell scripts
     # overmind        # Process manager
-    # pkg-config      # Package compiler tool
+    pkg-config       # Build tooling for native addons
+    cairo            # Graphics library required by node-canvas
+    pango            # Text layout library
+    pixman           # Pixel manipulation library
+    libpng           # PNG support
+    freetype         # Font rendering
+    glib             # GNOME base library (pango dep)
+    fontconfig       # Font configuration discovery
+    libjpeg          # JPEG support
+    giflib           # GIF support
     # devenv          # Development environments
     # ltex-ls         # Grammar checker
     # marksman        # Markdown language server

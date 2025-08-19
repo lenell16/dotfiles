@@ -66,6 +66,7 @@
                 extraSpecialArgs = { inherit inputs system; };
                 useGlobalPkgs = true;
                 useUserPackages = true;
+                backupFileExtension = "backup";
               };
               users.users.alonzothomas.home = "/Users/alonzothomas";
               nixpkgs.config = {
