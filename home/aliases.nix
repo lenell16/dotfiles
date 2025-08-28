@@ -5,7 +5,6 @@ let
   # Commands wrapped with common flags
   exa = "${pkgs.eza}/bin/eza";
   git = "${pkgs.gitAndTools.git}/bin/git";
-  bat = "${pkgs.bat}/bin/bat";
   rg = "${pkgs.ripgrep}/bin/rg";
   fd = "${pkgs.fd}/bin/fd";
 
@@ -29,7 +28,6 @@ in
       "....." = "cd ../../../..";
       
       # Common commands
-      cat = "${bat}";
       ls = "${exa}";
       ll = "${exa} -l";
       la = "${exa} -la";

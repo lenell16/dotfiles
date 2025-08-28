@@ -16,16 +16,7 @@
       VISUAL = "nvim";
       
       # Pager settings
-      PAGER = "bat";
       LESS = "-R";
-      
-      # Configure bat (better cat)
-      BAT_THEME = "OneHalfDark";
-      BAT_STYLE = "header,grid";
-      BAT_TABS = "2";
-      BAT_DIFF_CONTEXT = "3";
-      BAT_DIFF_NUMBERS = "true";
-      BAT_DIFF_FILE_SIZE_THRESHOLD = "1M";
       
       # Podman configuration
       DOCKER_HOST = "unix:///var/folders/zy/gd7_972101sdqv5_625lgdmh0000gn/T/podman/podman-machine-default-api.sock";
@@ -69,13 +60,6 @@
     };
 
     # Terminal utilities
-    bat = {
-      enable = true;
-      config = {
-        theme = "OneHalfDark";
-        style = "header,grid";
-      };
-    };
 
     bottom = {
       enable = true;   # System monitor (like htop)
@@ -439,6 +423,7 @@
         source /Users/alonzothomas/.config/op/plugins.sh
 
         fish_add_path ~/.npm-global/bin
+        fish_add_path ~/.local/bin
       '';
     };
 
