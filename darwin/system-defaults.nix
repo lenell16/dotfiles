@@ -69,9 +69,10 @@
   };
   
   # Enable firewall
-  system.defaults.alf = {
-    globalstate = 1;                           # Enable firewall
-    allowsignedenabled = 1;                    # Allow signed apps
-    allowdownloadsignedenabled = 1;            # Allow downloaded signed apps
+  networking.applicationFirewall = {
+    enable = true;
+    blockAllIncoming = false;
+    allowSigned = true;
+    allowSignedApp = true;
   };
 }
