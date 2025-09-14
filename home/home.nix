@@ -209,6 +209,15 @@
         "*.swp"
         "*.swo"
         
+        # Cursor AI editor files
+        ".cursor/rules/personal"
+        ".cursor/research"
+        ".cursor/plan"
+        ".cursor/commands/task-*"
+
+        # AI files
+        ".ai"
+        
         # Windows files
         "Thumbs.db"
         "ehthumbs.db"
