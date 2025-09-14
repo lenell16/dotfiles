@@ -124,20 +124,20 @@
     ];
 
     masApps = {
-      # Currently installed apps
-      "1Password for Safari" = 1569813296;
-      "Balatro" = 6502451661;
-      "Cornsweeper" = 1600387153;
-      "Duplicate File Finder" = 1032755628;
-      "Elmedia Video Player" = 1044549675;
-      "Gemini 2" = 1090488118;
-      "Grindstone" = 1476307705;
-      "LocalSend" = 1661733229;
-      "Prime Video" = 545519333;
-      "RCT Classic+" = 6702028686;
-      "Steam Link" = 1246969117;
-      "Surfshark" = 1437809329;
-      "TestFlight" = 899247664;
+      # Currently installed apps (all commented out)
+      # "1Password for Safari" = 1569813296;
+      # "Balatro" = 6502451661;
+      # "Cornsweeper" = 1600387153;
+      # "Duplicate File Finder" = 1032755628;
+      # "Elmedia Video Player" = 1044549675;
+      # "Gemini 2" = 1090488118;
+      # "Grindstone" = 1476307705;
+      # "LocalSend" = 1661733229;
+      # "Prime Video" = 545519333;
+      # "RCT Classic+" = 6702028686;
+      # "Steam Link" = 1246969117;
+      # "Surfshark" = 1437809329;
+      # "TestFlight" = 899247664;
 
       # Currently all App Store apps are commented out
       # Uncomment any app you want to install via nix-darwin
