@@ -5,8 +5,6 @@ let
   # Commands wrapped with common flags
   exa = "${pkgs.eza}/bin/eza";
   git = "${pkgs.gitAndTools.git}/bin/git";
-  rg = "${pkgs.ripgrep}/bin/rg";
-  fd = "${pkgs.fd}/bin/fd";
 
   # Nix rebuild commands
   nixConfigDir = "~/Developer/personal/dotfiles";
@@ -31,9 +29,7 @@ in
       ls = "${exa}";
       ll = "${exa} -l";
       la = "${exa} -la";
-      find = "${fd}";
-      grep = "${rg}";
-      
+
       # Nix system management - rebuild commands
       drs = "${darwinRebuild}";                   # Darwin rebuild switch
       hmrs = "${hmSwitch}";                       # Home-manager rebuild switch
