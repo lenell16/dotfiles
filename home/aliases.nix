@@ -8,7 +8,7 @@ let
 
   # Nix rebuild commands
   nixConfigDir = "~/Developer/personal/dotfiles";
-  darwinRebuild = "darwin-rebuild switch --flake ${nixConfigDir}";
+  darwinRebuild = "sudo darwin-rebuild switch --flake ${nixConfigDir}";
   hmSwitch = "home-manager switch --flake ${nixConfigDir}";
   nixFlakeUpdate = "pushd ${nixConfigDir} && nix flake update && popd";
   nixSystemCheck = "nix flake check ${nixConfigDir}";

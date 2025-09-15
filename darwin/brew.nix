@@ -25,12 +25,12 @@
       "openssl@3"           # SSL library
       "mas"                 # Mac App Store CLI
       # "opencode" # OpenCode AI
-      
+
       # Database
       "pgvector"            # Vector extension for PostgreSQL
       "postgresql@14"       # PostgreSQL database
       "supabase/tap/supabase"            # Supabase CLI
-      
+
       # Graphics libraries (required by other tools and node-canvas)
       "cairo"               # 2D graphics library (for node-canvas)
       "freetype"            # Font rendering library (for node-canvas)
@@ -41,7 +41,7 @@
       "pixman"              # Pixel manipulation library (for node-canvas)
       "pkgconf"             # Package compiler and linker metadata toolkit
       "poppler"             # PDF rendering library
-      
+
       # Currently not used but commented for reference
       # "skhd"              # Simple hotkey daemon
       # "dblab"             # Database client
@@ -51,7 +51,7 @@
       # Security & Password Management
       "1password"                  # Password manager
       "1kc-razer"                  # Razer keyboard configuration
-      
+
       # System Utilities
       "appzapper"                  # App uninstaller
       "balenaetcher"               # USB image writer
@@ -60,24 +60,24 @@
       "soundsource"                # Audio control
       "workman"                    # Keyboard layout
       "yaak"                       # Terminal
-      
+
       # Terminal & Development
       "ghostty"                    # Terminal emulator
       "gitkraken"                  # Git client
       "lm-studio"                  # Local LLM development platform
-      "ollama"                     # Local LLM runner
+      # "ollama"                     # Local LLM runner
       # "visual-studio-code@insiders" # Code editor
       "visual-studio-code"
       "warp"                       # Modern terminal emulator
-      "cursor"                     # AI-powered code editor
+      # "cursor"                     # AI-powered code editor
       "zed"                        # Modern code editor
       "windsurf"                   # Wind surfing app
       "trae"                       # Trae app
-      
+
       # Browsers & Internet
       "arc"                        # Browser
       "google-chrome"              # Browser
-      
+
       # Productivity
       "chatgpt"                    # AI assistant
       "chatwise"                   # Chat client
@@ -88,14 +88,14 @@
       "repo-prompt"                # Git repository prompt utility
       "slack"                      # Team communication
       "zoom"                       # Video conferencing
-      
+
       # Media & Entertainment
       "nvidia-geforce-now"         # Game streaming
       "calibre"                    # E-book management
       "ea"                         # Electronic Arts game launcher
       "steam"                      # Game platform
       # "mpv"                        # Video player (added as a replacement for nix version)
-      
+
       # Currently not used but kept for reference
       # "runjs"                    # JavaScript playground
       # "altserver"                # iOS sideloading
@@ -141,23 +141,23 @@
 
       # Currently all App Store apps are commented out
       # Uncomment any app you want to install via nix-darwin
-      
+
       # Development
       # "Xcode" = 497799835;
-      
+
       # Productivity
       # "Dashlane" = 517914548;            # Password manager
       # "Pastory" = 1560463189;            # Clipboard manager
       # "Pocket" = 568494494;              # Read-it-later app
       # "SnippetsLab" = 1006087419;        # Code snippets manager
-      
+
       # Utilities
       # "AdGuard for Safari" = 1440147259; # Ad blocker
       # "Black Out" = 1319884285;          # Screen dimmer
       # "ColorSlurp" = 1287239339;         # Color picker
       # "FireStream" = 1005325119;         # Network testing
       # "QuickShade" = 931571202;          # Screen dimmer
-      
+
       # Media & Social
       # "Reeder" = 1529448980;             # RSS reader
       # "Shazam" = 897118787;              # Music recognition
