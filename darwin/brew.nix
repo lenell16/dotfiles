@@ -18,7 +18,7 @@
 
     brews = [
       # CLI tools
-      "azure-cli"            # Azure CLI
+      # "azure-cli"            # Azure CLI
       # "gh"                  # GitHub CLI
       "ankitpokhrel/jira-cli/jira-cli"  # Jira CLI
       # "node@20"             # Node.js version 20 (now managed via Nix)
@@ -55,7 +55,7 @@
       # System Utilities
       "appzapper"                  # App uninstaller
       "balenaetcher"               # USB image writer
-      "block-goose"                # Ad blocker
+      # "block-goose"                # Ad blocker
       "marta"                      # File manager
       "soundsource"                # Audio control
       "workman"                    # Keyboard layout
