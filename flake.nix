@@ -51,6 +51,18 @@
       overlays = [
         inputs.neovim-overlay.overlays.default
       ];
+      username = "alonzothomas";
+      homeDirectory = "/Users/alonzothomas";
+      pkgsForHome = import inputs.nixpkgs {
+        inherit system overlays;
+        config = {
+          allowUnsupportedSystem = true;
+          allowUnfree = true;
+          allowBroken = true;
+          allowInsecure = true;
+          input-fonts.acceptLicense = true;
+        };
+      };
     in
     {
       darwinConfigurations = {
@@ -79,6 +91,20 @@
             }
           ];
           specialArgs = { inherit inputs; };
+        };
+      };
+      homeConfigurations = {
+        "${username}" = home-manager.lib.homeManagerConfiguration {
+          pkgs = pkgsForHome;
+          modules = [
+            ./home/home.nix
+            {
+              home = {
+                inherit username homeDirectory;
+              };
+            }
+          ];
+          extraSpecialArgs = { inherit inputs system; };
         };
       };
     };
