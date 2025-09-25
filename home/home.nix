@@ -358,8 +358,8 @@
           compression = true;
           serverAliveInterval = 60;
           serverAliveCountMax = 10;
+          identityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
           extraOptions = {
-            IdentityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
             AddKeysToAgent = "yes";
             UseKeychain = "yes";
           };
