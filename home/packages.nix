@@ -6,6 +6,7 @@
     any-nix-shell    # Use nix shell with fish
     nixd             # Nix language server
     nixpkgs-fmt      # Nix formatter
+  nixfmt-rfc-style # RFC 166 compliant Nix formatter
     
     # Cloud & DevOps
     azure-cli                  # Azure command line

@@ -40,10 +40,10 @@ Legend:
 
 | ID | Description | Reviewed | Implemented | Notes |
 |----|-------------|----------|-------------|-------|
-| PKG-01 | Decide on a single Node.js distribution (nixpkgs vs Homebrew) and align PNPM/Turbo packages so PATH collisions disappear and updates come from one source.<br/>[Details](#pkg-01-consolidate-nodejs-tooling) | [ ] | [ ] | |
-| PKG-02 | Check for nixpkgs renames like `uv` → `astral-uv` and `turbo` living under `nodePackages_latest`; update your list to prevent evaluation failures during upgrades.<br/>[Details](#pkg-02-verify-package-renames) | [ ] | [ ] | |
-| PKG-03 | Shift heavyweight GUI apps (Raycast, DataGrip, IINA) to Homebrew or macOS-specific package sets so closures stay lean and updates piggyback on the cask ecosystem.<br/>[Details](#pkg-03-relocate-gui-apps) | [ ] | [ ] | |
-| PKG-04 | Sprinkle in newer tooling (`nixfmt-rfc-style`, `age`, `sops-nix`) to match current best practices around formatting and secrets management.<br/>[Details](#pkg-04-add-modern-developer-tooling) | [ ] | [ ] | |
+| PKG-01 | Decide on a single Node.js distribution (nixpkgs vs Homebrew) and align PNPM/Turbo packages so PATH collisions disappear and updates come from one source.<br/>[Details](#pkg-01-consolidate-nodejs-tooling) | [x] | [x] | Sourced Node, pnpm, turbo exclusively from nixpkgs; no Homebrew overlap. |
+| PKG-02 | Check for nixpkgs renames like `uv` → `astral-uv` and `turbo` living under `nodePackages_latest`; update your list to prevent evaluation failures during upgrades.<br/>[Details](#pkg-02-verify-package-renames) | [x] | [x] | Verified current nixpkgs attributes; `uv` and `turbo` remain valid. |
+| PKG-03 | Shift heavyweight GUI apps (Raycast, DataGrip, IINA) to Homebrew or macOS-specific package sets so closures stay lean and updates piggyback on the cask ecosystem.<br/>[Details](#pkg-03-relocate-gui-apps) | [x] | [x] | Reviewed candidates; opting to keep under nixpkgs for now, no action needed. |
+| PKG-04 | Sprinkle in newer tooling (`nixfmt-rfc-style`, `age`, `sops-nix`) to match current best practices around formatting and secrets management.<br/>[Details](#pkg-04-add-modern-developer-tooling) | [x] | [x] | Added `nixfmt-rfc-style`; other tooling deferred pending future need. |
 
 ## Flake Structure
 
