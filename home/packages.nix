@@ -39,6 +39,7 @@
     raycast # App launcher
     podman # Container management tool
     docker-client # Docker CLI client
+  starship # Cross-shell prompt (used by fish integration)
 
     # Media
     iina # Media player

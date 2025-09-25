@@ -569,6 +569,11 @@
 
       # Commands to run when starting any shell
       shellInit = ''
+        set -l starship_bin "${lib.getBin config.programs.starship.package}/bin"
+        if not contains $starship_bin $PATH
+          set -gx PATH $starship_bin $PATH
+        end
+
         # Ghostty terminal integration
         if test -n "$GHOSTTY_SHELL_INTEGRATION_XDG_DIR"
             source $GHOSTTY_SHELL_INTEGRATION_XDG_DIR/fish/vendor_conf.d/ghostty-shell-integration.fish
