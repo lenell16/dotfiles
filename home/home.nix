@@ -58,6 +58,10 @@
     fi
   '';
 
+  home.activation.installMissingApps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    ${pkgs.bash}/bin/bash ${config.home.homeDirectory}/Developer/personal/dotfiles/scripts/install-missing-apps.sh
+  '';
+
   home.activation.bunGlobals = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     # Install bun globals if they don't exist
     PATH="${pkgs.bun}/bin:$PATH"
