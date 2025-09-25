@@ -1,4 +1,10 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   imports = [
@@ -51,7 +57,7 @@
     # System tools
     home-manager # Home manager CLI
 
-  # Terminal & CLI tools (1Password provided via programs._1password)
+    # Terminal & CLI tools (1Password provided via programs._1password)
 
     # Network utilities
     ngrok # Tunnel local servers
@@ -97,7 +103,12 @@
   launchd.user.agents.podman-machine = {
     serviceConfig = {
       Label = "local.podman.machine.autostart";
-      ProgramArguments = [ "${pkgs.podman}/bin/podman" "machine" "start" "podman-machine-default" ];
+      ProgramArguments = [
+        "${pkgs.podman}/bin/podman"
+        "machine"
+        "start"
+        "podman-machine-default"
+      ];
       RunAtLoad = true;
       StandardOutPath = "/Users/alonzothomas/Library/Logs/podman-machine.log";
       StandardErrorPath = "/Users/alonzothomas/Library/Logs/podman-machine.err";

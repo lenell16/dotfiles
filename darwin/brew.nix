@@ -20,79 +20,79 @@
       # CLI tools
       # "azure-cli"            # Azure CLI
       # "gh"                  # GitHub CLI
-      "ankitpokhrel/jira-cli/jira-cli"  # Jira CLI
+      "ankitpokhrel/jira-cli/jira-cli" # Jira CLI
       # "node@20"             # Node.js version 20 (now managed via Nix)
-      "openssl@3"           # SSL library
-      "mas"                 # Mac App Store CLI
+      "openssl@3" # SSL library
+      "mas" # Mac App Store CLI
       # "opencode" # OpenCode AI
 
       # Database
-      "pgvector"            # Vector extension for PostgreSQL
-      "postgresql@14"       # PostgreSQL database
-      "supabase/tap/supabase"            # Supabase CLI
+      "pgvector" # Vector extension for PostgreSQL
+      "postgresql@14" # PostgreSQL database
+      "supabase/tap/supabase" # Supabase CLI
 
       # Graphics libraries (required by other tools and node-canvas)
-      "cairo"               # 2D graphics library (for node-canvas)
-      "freetype"            # Font rendering library (for node-canvas)
-      "giflib"              # GIF image manipulation library
-      "jpeg"                # JPEG image manipulation library
-      "librsvg"             # SVG rendering library
-      "pango"               # Text layout and rendering library (for node-canvas)
-      "pixman"              # Pixel manipulation library (for node-canvas)
-      "pkgconf"             # Package compiler and linker metadata toolkit
-      "poppler"             # PDF rendering library
+      "cairo" # 2D graphics library (for node-canvas)
+      "freetype" # Font rendering library (for node-canvas)
+      "giflib" # GIF image manipulation library
+      "jpeg" # JPEG image manipulation library
+      "librsvg" # SVG rendering library
+      "pango" # Text layout and rendering library (for node-canvas)
+      "pixman" # Pixel manipulation library (for node-canvas)
+      "pkgconf" # Package compiler and linker metadata toolkit
+      "poppler" # PDF rendering library
 
-  # Currently not used but commented for reference
-  # "dblab"             # Database client
+      # Currently not used but commented for reference
+      # "dblab"             # Database client
     ];
 
     casks = [
       # Security & Password Management
       # "1password"                  # Password manager
-      "1kc-razer"                  # Razer keyboard configuration
+      "1kc-razer" # Razer keyboard configuration
 
       # System Utilities
-      "appzapper"                  # App uninstaller
-      "balenaetcher"               # USB image writer
+      "appzapper" # App uninstaller
+      "balenaetcher" # USB image writer
       # "block-goose"                # Ad blocker
-      "marta"                      # File manager
-      "soundsource"                # Audio control
-      "workman"                    # Keyboard layout
-      "yaak"                       # Terminal
+      "marta" # File manager
+      "soundsource" # Audio control
+      "workman" # Keyboard layout
+      "yaak" # Terminal
 
       # Terminal & Development
-      "ghostty"                    # Terminal emulator
-      "gitkraken"                  # Git client
-      "lm-studio"                  # Local LLM development platform
+      "ghostty" # Terminal emulator
+      "gitkraken" # Git client
+      "lm-studio" # Local LLM development platform
       # "ollama"                     # Local LLM runner
       # "visual-studio-code@insiders" # Code editor
       "visual-studio-code"
-      "warp"                       # Modern terminal emulator
+      "warp" # Modern terminal emulator
       # "cursor"                     # AI-powered code editor
-      "zed"                        # Modern code editor
-      "windsurf"                   # Wind surfing app
-      "trae"                       # Trae app
+      "zed" # Modern code editor
+      "windsurf" # Wind surfing app
+      "trae" # Trae app
 
       # Browsers & Internet
-      "arc"                        # Browser
-      "google-chrome"              # Browser
+      "arc" # Browser
+      "google-chrome" # Browser
 
       # Productivity
-      "chatgpt"                    # AI assistant
-      "chatwise"                   # Chat client
-      "claude"                     # AI assistant
-      "adobe-acrobat-reader"       # PDF reader
-      "fantastical"                # Calendar app
-      "kap"                        # Screen recorder
-      "repo-prompt"                # Git repository prompt utility
-      "slack"                      # Team communication
-      "zoom"                       # Video conferencing
+      "chatgpt" # AI assistant
+      "chatwise" # Chat client
+      "claude" # AI assistant
+      "adobe-acrobat-reader" # PDF reader
+      "fantastical" # Calendar app
+      "kap" # Screen recorder
+      "repo-prompt" # Git repository prompt utility
+      "slack" # Team communication
+      "zoom" # Video conferencing
 
       # Media & Entertainment
-      "nvidia-geforce-now"         # Game streaming
-      "calibre"                    # E-book management
-      "ea"                         # Electronic Arts game launcher
-      "steam"                      # Game platform
+      "nvidia-geforce-now" # Game streaming
+      "calibre" # E-book management
+      "ea" # Electronic Arts game launcher
+      "steam" # Game platform
       # "mpv"                        # Video player (added as a replacement for nix version)
 
       # Currently not used but kept for reference

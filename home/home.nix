@@ -1,4 +1,10 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 {
 
   imports = [
@@ -57,7 +63,7 @@
     _1password-shell-plugins = {
       enable = true;
       plugins = with pkgs; [
-        ngrok  # You already have this configured manually
+        ngrok # You already have this configured manually
         # Add other CLI tools you want to use with 1Password shell plugins
         # gh     # GitHub CLI (already enabled above)
         # awscli2
@@ -108,7 +114,11 @@
     fzf = {
       enable = true; # Fuzzy finder
       enableFishIntegration = true;
-      defaultOptions = [ "--height 40%" "--layout=reverse" "--border" ];
+      defaultOptions = [
+        "--height 40%"
+        "--layout=reverse"
+        "--border"
+      ];
     };
 
     # Shell enhancements
@@ -303,7 +313,7 @@
         if not contains "/run/current-system/sw/bin" $PATH
           set -gx PATH "/run/current-system/sw/bin" $PATH
         end
-        
+
         # Disable FNM if it's somehow being loaded
         set -e FNM_MULTISHELL_PATH
         set -e FNM_DIR
@@ -313,11 +323,11 @@
         set -e FNM_VERSION_FILE_STRATEGY
         set -e FNM_RESOLVE_ENGINES
         set -e FNM_LOGLEVEL
-        
+
         # Remove fnm from PATH
         set -gx PATH (string match -v "*fnm_multishells*" $PATH)
-        
-        
+
+
         # Set fish colors to match your terminal theme
         set -g fish_color_command blue
 
@@ -383,30 +393,30 @@
           # Usage: load_op_key <env_var_name> <op_path> [--force]
           # Example: load_op_key ANTHROPIC_API_KEY "op://your-vault/Anthropic/api-key"
           # Add --force as third argument to force refresh from 1Password
-          
+
           if test (count $argv) -lt 2
             echo "Usage: load_op_key <env_var_name> <op_path> [--force]"
             return 1
           end
-          
+
           set -l env_var $argv[1]
           set -l op_path $argv[2]
           set -l force_refresh false
-          
+
           if test (count $argv) -ge 3; and test "$argv[3]" = "--force"
             set force_refresh true
           end
-          
+
           # Create cache directory if it doesn't exist
           set -l cache_dir "$HOME/.cache/op_keys"
           mkdir -p $cache_dir 2>/dev/null
-          
+
           # Use a hash of the op_path as the cache filename for security
           set -l cache_file "$cache_dir/"(echo -n $op_path | shasum | cut -d ' ' -f 1)
-          
+
           # Check if we need to refresh the key (if file doesn't exist, is older than 24 hours, or force refresh is requested)
           set -l refresh false
-          
+
           if test "$force_refresh" = "true"
             set refresh true
           else if not test -f $cache_file
@@ -418,7 +428,7 @@
               set refresh true
             end
           end
-          
+
           # Refresh from 1Password if needed
           if test "$refresh" = "true"
             # Try to read the key, sign in if needed
@@ -443,7 +453,7 @@
               return 1
             end
           end
-          
+
           # Read from cache and set environment variable
           if test -f $cache_file
             set -gx $env_var (cat $cache_file)
@@ -467,7 +477,7 @@
           if test (count $argv) -gt 0; and test "$argv[1]" = "--force"
             set force_arg "--force"
           end
-          
+
           # load_op_key ANTHROPIC_API_KEY "op://Personal/Anthropic API Key/api key" $force_arg
           # load_op_key OPENAI_API_KEY "op://Personal/sadrtemi4z73i4jcyi27owmi54/api key" $force_arg
           # Add more keys as needed
@@ -488,7 +498,7 @@
         if test -n "$GHOSTTY_SHELL_INTEGRATION_XDG_DIR"
             source $GHOSTTY_SHELL_INTEGRATION_XDG_DIR/fish/vendor_conf.d/ghostty-shell-integration.fish
         end
-        
+
         # Nix shell integration
         any-nix-shell fish --info-right | source
 
@@ -598,21 +608,47 @@
             "alt-shift-semicolon" = "mode service";
           };
           service.binding = {
-            esc = [ "reload-config" "mode main" ];
-            r = [ "flatten-workspace-tree" "mode main" ];
-            f = [ "layout floating tiling" "mode main" ];
-            backspace = [ "close-all-windows-but-current" "mode main" ];
-            "alt-shift-left" = [ "join-with left" "mode main" ];
-            "alt-shift-down" = [ "join-with down" "mode main" ];
-            "alt-shift-up" = [ "join-with up" "mode main" ];
-            "alt-shift-right" = [ "join-with right" "mode main" ];
+            esc = [
+              "reload-config"
+              "mode main"
+            ];
+            r = [
+              "flatten-workspace-tree"
+              "mode main"
+            ];
+            f = [
+              "layout floating tiling"
+              "mode main"
+            ];
+            backspace = [
+              "close-all-windows-but-current"
+              "mode main"
+            ];
+            "alt-shift-left" = [
+              "join-with left"
+              "mode main"
+            ];
+            "alt-shift-down" = [
+              "join-with down"
+              "mode main"
+            ];
+            "alt-shift-up" = [
+              "join-with up"
+              "mode main"
+            ];
+            "alt-shift-right" = [
+              "join-with right"
+              "mode main"
+            ];
           };
         };
 
         # Window detection rules
         on-window-detected = [
           {
-            "if" = { app-id = "com.mitchellh.ghostty"; };
+            "if" = {
+              app-id = "com.mitchellh.ghostty";
+            };
             run = [ "layout floating" ];
           }
         ];

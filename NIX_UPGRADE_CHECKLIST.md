@@ -49,7 +49,7 @@ Legend:
 
 | ID | Description | Reviewed | Implemented | Notes |
 |----|-------------|----------|-------------|-------|
-| FLK-01 | Publish a `formatter.${system}` (e.g., `nixfmt-rfc-style`) and `devShells.${system}.default` so `nix fmt` and `nix develop` work out-of-the-box on any checkout.<br/>[Details](#flk-01-provide-formatter-and-devshell-outputs) | [ ] | [ ] | |
+| FLK-01 | Publish a `formatter.${system}` (e.g., `nixfmt-rfc-style`) and `devShells.${system}.default` so `nix fmt` and `nix develop` work out-of-the-box on any checkout.<br/>[Details](#flk-01-provide-formatter-and-devshell-outputs) | [x] | [x] | Added formatter with nixfmt-rfc-style and default devShell with dev tools |
 | FLK-02 | Use the flake-level `nixConfig` attr to declare substituters, trusted keys, and experimental features instead of relying on manual `/etc/nix/nix.conf` edits.<br/>[Details](#flk-02-declare-nix-config-in-the-flake) | [ ] | [ ] | |
 | FLK-03 | Switch from a hand-rolled `system` let-binding to `flake-utils.lib.eachDefaultSystem` (or the new `perSystem`) so adding Linux builds/devShells is trivial.<br/>[Details](#flk-03-use-flake-utils-to-scale-systems) | [ ] | [ ] | |
 | FLK-04 | Centralize `nixpkgs.config` and overlays so darwin/home-manager share one definition, reducing divergence between host/user builds.<br/>[Details](#flk-04-deduplicate-nixpkgs-configuration) | [ ] | [ ] | |

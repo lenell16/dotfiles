@@ -1,42 +1,48 @@
-{ inputs, config, pkgs, lib, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
     # Nix tools
-    any-nix-shell    # Use nix shell with fish
-    nixd             # Nix language server
-    nixpkgs-fmt      # Nix formatter
-  nixfmt-rfc-style # RFC 166 compliant Nix formatter
-    
+    any-nix-shell # Use nix shell with fish
+    nixd # Nix language server
+    nixpkgs-fmt # Nix formatter
+    nixfmt-rfc-style # RFC 166 compliant Nix formatter
+
     # Cloud & DevOps
-    azure-cli                  # Azure command line
+    azure-cli # Azure command line
     azure-functions-core-tools # Azure Functions development
-    infisical                  # Secrets management
-    
+    infisical # Secrets management
+
     # Development tools
-    bun              # JavaScript runtime
-    protobuf         # Protocol buffers
-    pyright          # Python type checker
-    turbo            # Monorepo tool
-    uv               # Python package installer
+    bun # JavaScript runtime
+    protobuf # Protocol buffers
+    pyright # Python type checker
+    turbo # Monorepo tool
+    uv # Python package installer
     jetbrains.datagrip # Database IDE
-    
+
     # System utilities
-    curl             # Data transfer tool
-    fd               # Alternative to find
-    ripgrep          # Fast grep replacement
-    raycast          # App launcher
-    podman           # Container management tool
-    docker-client    # Docker CLI client
-    
+    curl # Data transfer tool
+    fd # Alternative to find
+    ripgrep # Fast grep replacement
+    raycast # App launcher
+    podman # Container management tool
+    docker-client # Docker CLI client
+
     # Media
-    iina             # Media player
-    yt-dlp           # YouTube downloader
-    
+    iina # Media player
+    yt-dlp # YouTube downloader
+
     # Commented out packages (kept for reference)
     # asdf-vm
     # ghostty
-    
+
     # Other commented packages below are alternatives or tools you might want in the future
     # google-cloud-sdk.withExtraComponents ([
     #   google-cloud-sdk.components.gke-gcloud-auth-plugin
@@ -49,7 +55,7 @@
     # cloudflared     # Cloudflare tunnels
     # cocoapods       # iOS dependency manager
     # corepack_21     # JavaScript package manager tool
-    deno            # JavaScript runtime
+    deno # JavaScript runtime
     # ffmpeg          # Media processing
     # fx              # JSON processor
     # gitflow         # Git workflow
@@ -65,22 +71,22 @@
     # nodejs_20       # Node.js (managed via Homebrew)
     # nodePackages.eslint_d      # Fast ESLint
     # nodePackages.fixjson       # JSON fixer
-    nodePackages.pnpm          # Package manager
-    nodejs_20                  # Node.js v20 LTS with npm
+    nodePackages.pnpm # Package manager
+    nodejs_20 # Node.js v20 LTS with npm
     # nodePackages.prettier      # Code formatter
     # nodePackages.typescript    # TypeScript
     # nodePackages.zx            # JavaScript shell scripts
     # overmind        # Process manager
-    pkg-config       # Build tooling for native addons
-    cairo            # Graphics library required by node-canvas
-    pango            # Text layout library
-    pixman           # Pixel manipulation library
-    libpng           # PNG support
-    freetype         # Font rendering
-    glib             # GNOME base library (pango dep)
-    fontconfig       # Font configuration discovery
-    libjpeg          # JPEG support
-    giflib           # GIF support
+    pkg-config # Build tooling for native addons
+    cairo # Graphics library required by node-canvas
+    pango # Text layout library
+    pixman # Pixel manipulation library
+    libpng # PNG support
+    freetype # Font rendering
+    glib # GNOME base library (pango dep)
+    fontconfig # Font configuration discovery
+    libjpeg # JPEG support
+    giflib # GIF support
     # devenv          # Development environments
     # ltex-ls         # Grammar checker
     # marksman        # Markdown language server

@@ -41,13 +41,14 @@
   };
 
   outputs =
-    { self
-    , nix-darwin
-    , flake-utils
-    , home-manager
-    , neovim-overlay
-    , ...
-    } @ inputs:
+    {
+      self,
+      nix-darwin,
+      flake-utils,
+      home-manager,
+      neovim-overlay,
+      ...
+    }@inputs:
     let
       system = "aarch64-darwin";
       overlays = [
@@ -65,8 +66,50 @@
           input-fonts.acceptLicense = true;
         };
       };
+      # Helper for system-specific outputs (2025 best practice)
+      forAllSystems =
+        f:
+        inputs.nixpkgs.lib.genAttrs [ system ] (
+          system:
+          f {
+            pkgs = import inputs.nixpkgs {
+              inherit system overlays;
+              config = {
+                allowUnsupportedSystem = true;
+                allowUnfree = true;
+                allowBroken = true;
+                allowInsecure = true;
+                input-fonts.acceptLicense = true;
+              };
+            };
+          }
+        );
     in
     {
+      # Formatter output for `nix fmt`
+      formatter = forAllSystems ({ pkgs }: pkgs.nixfmt-rfc-style);
+
+      # Development shell for `nix develop`
+      devShells = forAllSystems (
+        { pkgs }:
+        {
+          default = pkgs.mkShell {
+            nativeBuildInputs = with pkgs; [
+              nixfmt-rfc-style
+              nix-tree
+              nix-info
+            ];
+            shellHook = ''
+              echo "🚀 Dotfiles development environment"
+              echo "Available commands:"
+              echo "  nix fmt     - Format all Nix files"
+              echo "  nix-tree    - Explore dependency tree"
+              echo "  nix-info -m - System info"
+            '';
+          };
+        }
+      );
+
       darwinConfigurations = {
         "ZoBookPro" = nix-darwin.lib.darwinSystem {
           inherit system;
