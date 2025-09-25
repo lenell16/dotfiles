@@ -93,6 +93,17 @@
     # Extend here with additional services (e.g., `login`) if we want biometric auth elsewhere.
   };
 
+  # Launch agents for background services
+  launchd.user.agents.podman-machine = {
+    serviceConfig = {
+      Label = "local.podman.machine.autostart";
+      ProgramArguments = [ "${pkgs.podman}/bin/podman" "machine" "start" "podman-machine-default" ];
+      RunAtLoad = true;
+      StandardOutPath = "/Users/alonzothomas/Library/Logs/podman-machine.log";
+      StandardErrorPath = "/Users/alonzothomas/Library/Logs/podman-machine.err";
+    };
+  };
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
