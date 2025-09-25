@@ -20,8 +20,13 @@
     infisical # Secrets management
 
     # Development tools
+    amp-cli # Sourcegraph Amp CLI
     bun # JavaScript runtime
-    protobuf # Protocol buffers
+    claude-code # Anthropic Claude Code CLI
+    codex # OpenAI Codex CLI
+    grpc-tools # gRPC Node.js tools (includes protoc + plugins)
+    node-pre-gyp # Binary deployment tool for C++ addons
+    pm2 # Node.js process manager
     pyright # Python type checker
     turbo # Monorepo tool
     uv # Python package installer

@@ -58,6 +58,31 @@
     fi
   '';
 
+  home.activation.bunGlobals = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    # Install bun globals if they don't exist
+    PATH="${pkgs.bun}/bin:$PATH"
+    
+    if ! bun pm ls -g | grep -q "@google/gemini-cli"; then
+      echo "Installing missing bun global: @google/gemini-cli"
+      $DRY_RUN_CMD bun install -g @google/gemini-cli@latest
+    fi
+    
+    if ! bun pm ls -g | grep -q "opencode-ai"; then
+      echo "Installing missing bun global: opencode-ai"
+      $DRY_RUN_CMD bun install -g opencode-ai@latest
+    fi
+    
+    if ! bun pm ls -g | grep -q "@dataramen/cli"; then
+      echo "Installing missing bun global: @dataramen/cli"
+      $DRY_RUN_CMD bun install -g @dataramen/cli@latest
+    fi
+    
+    if ! bun pm ls -g | grep -q "protoc-gen-grpc"; then
+      echo "Installing missing bun global: protoc-gen-grpc"
+      $DRY_RUN_CMD bun install -g protoc-gen-grpc@latest
+    fi
+  '';
+
   programs = {
     # 1Password Shell Plugins
     _1password-shell-plugins = {
@@ -262,20 +287,30 @@
       includes = [
         { path = "${inputs.gitalias}/gitalias.txt"; }
         {
-          condition = "gitdir:~/Developer/personal/";
+          condition = "gitdir:~/Developer/personal/**";
           contents = {
             user = {
               name = "lenell16";
               email = "lenell16@gmail.com";
             };
+            url = {
+              "git@github-personal:" = {
+                insteadOf = "git@github.com:";
+              };
+            };
           };
         }
         {
-          condition = "gitdir:~/Developer/tribble/";
+          condition = "gitdir:~/Developer/tribble/**";
           contents = {
             user = {
               name = "Alonzo Thomas";
               email = "alonzo.thomas@tribble.ai";
+            };
+            url = {
+              "git@github-work:" = {
+                insteadOf = "git@github.com:";
+              };
             };
           };
         }
@@ -285,6 +320,47 @@
     # Git UI tools
     gitui = {
       enable = true; # Terminal UI for Git
+    };
+
+    # SSH configuration with 1Password integration
+    ssh = {
+      enable = true;
+      enableDefaultConfig = false;
+      matchBlocks = {
+        # Personal GitHub (automatically uses personal SSH key)
+        "github-personal" = {
+          hostname = "github.com";
+          user = "git";
+          identitiesOnly = true;
+          identityFile = "SHA256:JZbEO/SC4Uhlp6sEaR6f5HV2sraJdKU8AIG3fHrfqf4";
+          extraOptions = {
+            IdentityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+          };
+        };
+        
+        # Work GitHub (automatically uses work SSH key)
+        "github-work" = {
+          hostname = "github.com";
+          user = "git";
+          identitiesOnly = true;
+          identityFile = "SHA256:T2BG/6BtzJuEolkQRAb9th44mRoOV/ZZwXax76DQf1A";
+          extraOptions = {
+            IdentityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+          };
+        };
+        
+        # Default for all other hosts
+        "*" = {
+          compression = true;
+          serverAliveInterval = 60;
+          serverAliveCountMax = 10;
+          extraOptions = {
+            IdentityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+            AddKeysToAgent = "yes";
+            UseKeychain = "yes";
+          };
+        };
+      };
     };
 
     lazygit = {
@@ -314,23 +390,11 @@
           set -gx PATH "/run/current-system/sw/bin" $PATH
         end
 
-        # Disable FNM if it's somehow being loaded
-        set -e FNM_MULTISHELL_PATH
-        set -e FNM_DIR
-        set -e FNM_NODE_DIST_MIRROR
-        set -e FNM_ARCH
-        set -e FNM_COREPACK_ENABLED
-        set -e FNM_VERSION_FILE_STRATEGY
-        set -e FNM_RESOLVE_ENGINES
-        set -e FNM_LOGLEVEL
-
-        # Remove fnm from PATH
-        set -gx PATH (string match -v "*fnm_multishells*" $PATH)
-
+        # Set 1Password SSH agent socket
+        set -gx SSH_AUTH_SOCK "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
         # Set fish colors to match your terminal theme
         set -g fish_color_command blue
-
 
         set -g fish_color_param cyan
         set -g fish_color_error red
@@ -481,6 +545,20 @@
           # load_op_key ANTHROPIC_API_KEY "op://Personal/Anthropic API Key/api key" $force_arg
           # load_op_key OPENAI_API_KEY "op://Personal/sadrtemi4z73i4jcyi27owmi54/api key" $force_arg
           # Add more keys as needed
+        '';
+
+        # Auto-switch GitHub CLI account based on directory (manual function)
+        gh-switch-account = ''
+          set -l current_dir (pwd)
+          if string match -q "*/Developer/personal/*" $current_dir
+            gh auth switch --user lenell16 >/dev/null 2>&1
+            echo "Switched to personal GitHub account (lenell16)"
+          else if string match -q "*/Developer/tribble/*" $current_dir
+            gh auth switch --user alonzotribble >/dev/null 2>&1
+            echo "Switched to work GitHub account (alonzotribble)"
+          else
+            echo "Not in a recognized project directory"
+          end
         '';
       };
 

@@ -27,8 +27,8 @@
       # "opencode" # OpenCode AI
 
       # Database
-      "pgvector" # Vector extension for PostgreSQL
-      "postgresql@14" # PostgreSQL database
+      # "pgvector" # Vector extension for PostgreSQL
+      # "postgresql@14" # PostgreSQL database
       "supabase/tap/supabase" # Supabase CLI
 
       # Graphics libraries (required by other tools and node-canvas)
@@ -70,8 +70,6 @@
       "warp" # Modern terminal emulator
       # "cursor"                     # AI-powered code editor
       "zed" # Modern code editor
-      "windsurf" # Wind surfing app
-      "trae" # Trae app
 
       # Browsers & Internet
       "arc" # Browser

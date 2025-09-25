@@ -17,7 +17,7 @@ Legend:
 | D-05 | Re-evaluate Dock & Finder defaults against Ventura/Sonoma changes—hot-corner keys now cover Stage Manager/Quick Note, and `static-only` changed semantics.<br/>[Details](#d-05-refresh-dock-and-finder-defaults-for-modern-macos) | [ ] | [ ] | |
 | D-06 | Layer in fresh `NSGlobalDomain` toggles (press-and-hold, menu bar visibility, expanded save panels, auto-capitalization) introduced since Monterey.<br/>[Details](#d-06-add-newer-nsglobaldomain-toggles) | [ ] | [ ] | |
 | D-07 | Expand `screencapture`, `dock`, and menu extras defaults with Sonoma-era options (autohide delay, clock customizations, stage manager toggles) for finer UX control.<br/>[Details](#d-07-extend-defaults-with-sonoma-era-options) | [ ] | [ ] | |
-| D-08 | Update firewall config to include logging, stealth mode, and signed-app behaviour that newer nix-darwin exposes.<br/>[Details](#d-08-expand-firewall-configuration) | [ ] | [ ] | |
+| D-08 | Update firewall config to include logging, stealth mode, and signed-app behaviour that newer nix-darwin exposes.<br/>[Details](#d-08-expand-firewall-configuration) | [x] | [ ] | Skipped - logging not available in nix-darwin, defaults are fine for workflow |
 | D-09 | Switch font provisioning to the new nerdfonts overrides / aggregated packages to avoid attr renames and slim the closure.<br/>[Details](#d-09-modernize-font-packages) | [x] | [x] | Already using modern individual nerd-fonts packages; checklist advice was outdated |
 | D-10 | Break out host-specific modules under `darwin/modules/` so multiple Macs can share logic without copy/paste.<br/>[Details](#d-10-split-host-specific-modules) | [ ] | [ ] | |
 
@@ -32,8 +32,8 @@ Legend:
 | HM-05 | Turn on `services.lorri` or the newer `services.direnv` module so dev shells rebuild automatically without manual `direnv allow` juggling.<br/>[Details](#hm-05-adopt-dev-shell-services) | [ ] | [ ] | |
 | HM-06 | Manage Ghostty config declaratively via HM (either enabling `programs.ghostty` if the package builds, or syncing config through `xdg.configFile`).<br/>[Details](#hm-06-manage-ghostty-configuration-declaratively) | [ ] | [ ] | |
 | HM-07 | Audit language/runtime packages (`uv`, `turbo`, etc.) against current nixpkgs naming (e.g., `astral-uv`, `nodePackages_latest.turbo`) to avoid evaluation failures.<br/>[Details](#hm-07-audit-runtime-packages-for-renames) | [ ] | [ ] | |
-| HM-08 | Use HM’s conditional include support (`programs.git.includes = [{ condition = "gitdir:..."; path = ...; }];`) to separate work/personal Git identities cleanly.<br/>[Details](#hm-08-modernize-git-conditional-includes) | [ ] | [ ] | |
-| HM-09 | Replace complex inline `$PATH` manipulation with `home.sessionPath`, `home.sessionVariables`, and `lib.mkForce` to compose env vars predictably.<br/>[Details](#hm-09-modernize-session-variable-management) | [ ] | [ ] | |
+| HM-08 | Use HM’s conditional include support (`programs.git.includes = [{ condition = "gitdir:..."; path = ...; }];`) to separate work/personal Git identities cleanly.<br/>[Details](#hm-08-modernize-git-conditional-includes) | [x] | [x] | Implemented with `contents` + automatic SSH key switching |
+| HM-09 | Replace complex inline `$PATH` manipulation with `home.sessionPath`, `home.sessionVariables`, and `lib.mkForce` to compose env vars predictably.<br/>[Details](#hm-09-modernize-session-variable-management) | [x] | [x] | Already using modern approaches; Fish-specific PATH management is intentional and necessary |
 | HM-10 | Use `home.activation` hooks or `xdg.portal` modules for macOS integration tasks (e.g., clearing caches, portal support for sandboxed apps).<br/>[Details](#hm-10-use-home-activation-and-portal-modules) | [ ] | [ ] | |
 
 ## Home Packages (`home/packages.nix`)
