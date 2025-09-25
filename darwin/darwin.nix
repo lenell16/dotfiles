@@ -34,7 +34,17 @@
     zsh
   ];
 
-  users.users.alonzothomas.shell = pkgs.fish;
+  users = {
+    knownUsers = [
+      "alonzothomas"
+    ];
+
+    users.alonzothomas = {
+      uid = 501;
+      home = "/Users/alonzothomas";
+      shell = pkgs.fish;
+    };
+  };
 
   # System packages (available to all users)
   environment.systemPackages = with pkgs; [
@@ -82,13 +92,6 @@
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
   system.primaryUser = "alonzothomas";
-
-  system = {
-    activationScripts.postActivation.text = ''
-      # Set the default shell as fish for the user. MacOS doesn't do this like nixOS does
-      sudo chsh -s ${lib.getBin pkgs.fish}/bin/fish alonzothomas
-    '';
-  };
 
   # System-wide fonts
   fonts.packages = with pkgs; [

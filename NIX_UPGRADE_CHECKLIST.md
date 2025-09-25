@@ -13,7 +13,7 @@ Legend:
 | D-01 | Re-enable nix-darwin’s built-in Nix management (`nix.enable = true;`) and move daemon tuning into `nix.settings`, replacing the legacy manual `/etc/nix/nix.conf` workflow now that `services.nix-daemon.enable` has been removed upstream.<br/>[Details](#d-01-let-nix-darwin-manage-the-nix-daemon) | [x] | [ ] | Blocked while Determinate Nix manages the daemon
 | D-02 | Remove the giant manually-crafted PATH export in `environment.variables` and instead rely on declarative path assembly (`environment.profiles`, `environment.systemPackages`, `programs.fish`, shell init modules) so new packages land automatically.<br/>[Details](#d-02-declarative-path-management-instead-of-hard-coded-strings) | [x] | [x] | PATH now composed via `environment.profiles` + `home.sessionPath`
 | D-03 | Adopt the newer PAM helpers in nix-darwin (e.g., `security.pam.enableSudoTouchIdAuth = true;`, login service tweaks) to keep Touch ID sudo and similar niceties declarative and upgrade-safe.<br/>[Details](#d-03-enable-modern-macos-security-helpers) | [x] | [x] | Touch ID handled via `security.pam.services.sudo_local`
-| D-04 | Drop the `activationScripts.postActivation` `chsh` workaround and rely on nix-darwin’s shell registration (`users.users.<name>.shell` + `/etc/shells` management).<br/>[Details](#d-04-remove-postactivation-chsh-hook) | [ ] | [ ] | |
+| D-04 | Drop the `activationScripts.postActivation` `chsh` workaround and rely on nix-darwin’s shell registration (`users.users.<name>.shell` + `/etc/shells` management).<br/>[Details](#d-04-remove-postactivation-chsh-hook) | [x] | [x] | Declarative shell via `users.users` & `environment.shells`; postActivation hook removed |
 | D-05 | Re-evaluate Dock & Finder defaults against Ventura/Sonoma changes—hot-corner keys now cover Stage Manager/Quick Note, and `static-only` changed semantics.<br/>[Details](#d-05-refresh-dock-and-finder-defaults-for-modern-macos) | [ ] | [ ] | |
 | D-06 | Layer in fresh `NSGlobalDomain` toggles (press-and-hold, menu bar visibility, expanded save panels, auto-capitalization) introduced since Monterey.<br/>[Details](#d-06-add-newer-nsglobaldomain-toggles) | [ ] | [ ] | |
 | D-07 | Expand `screencapture`, `dock`, and menu extras defaults with Sonoma-era options (autohide delay, clock customizations, stage manager toggles) for finer UX control.<br/>[Details](#d-07-extend-defaults-with-sonoma-era-options) | [ ] | [ ] | |
@@ -59,9 +59,9 @@ Legend:
 
 | ID | Description | Reviewed | Implemented | Notes |
 |----|-------------|----------|-------------|-------|
-| HB-01 | Confirm the current meaning of `homebrew.onActivation.cleanup` (`"none"`, `"rm"`, `"zap"`, `"uninstall"`) and ensure `autoUpdate` aligns with how often you rebuild to avoid surprise upgrades.<br/>[Details](#hb-01-refresh-homebrew-activation-options) | [ ] | [ ] | |
-| HB-02 | Flip on `homebrew.brewFile.enable = true;` so nix-darwin writes a Brewfile—handy for manual recovery or sharing with non-nix users.<br/>[Details](#hb-02-enable-brewfile-generation) | [ ] | [ ] | |
-| HB-03 | Revisit custom taps to confirm they’re still maintained (e.g., `danvergara/tools`) or retire them to trim `brew update` noise.<br/>[Details](#hb-03-audit-homebrew-taps) | [ ] | [ ] | |
+| HB-01 | Confirm the current meaning of `homebrew.onActivation.cleanup` (`"none"`, `"rm"`, `"zap"`, `"uninstall"`) and ensure `autoUpdate` aligns with how often you rebuild to avoid surprise upgrades.<br/>[Details](#hb-01-refresh-homebrew-activation-options) | [x] | [x] | Using `cleanup = "zap"`, `autoUpdate = false`, `upgrade = true`; cadence documented. |
+| HB-02 | Flip on `homebrew.brewFile.enable = true;` so nix-darwin writes a Brewfile—handy for manual recovery or sharing with non-nix users.<br/>[Details](#hb-02-enable-brewfile-generation) | [x] | [x] | Reviewed; decided to keep Brewfile generation disabled for now. |
+| HB-03 | Revisit custom taps to confirm they’re still maintained (e.g., `danvergara/tools`) or retire them to trim `brew update` noise.<br/>[Details](#hb-03-audit-homebrew-taps) | [x] | [x] | All current taps audited; no changes needed. |
 
 ## Shell Aliases & Functions
 
