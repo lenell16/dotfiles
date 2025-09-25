@@ -522,6 +522,7 @@
     # Window Manager
     aerospace = {
       enable = true;
+      launchd.enable = true;
       userSettings = {
         # General settings
         start-at-login = false;
