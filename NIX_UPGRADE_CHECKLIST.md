@@ -18,7 +18,7 @@ Legend:
 | D-06 | Layer in fresh `NSGlobalDomain` toggles (press-and-hold, menu bar visibility, expanded save panels, auto-capitalization) introduced since Monterey.<br/>[Details](#d-06-add-newer-nsglobaldomain-toggles) | [ ] | [ ] | |
 | D-07 | Expand `screencapture`, `dock`, and menu extras defaults with Sonoma-era options (autohide delay, clock customizations, stage manager toggles) for finer UX control.<br/>[Details](#d-07-extend-defaults-with-sonoma-era-options) | [ ] | [ ] | |
 | D-08 | Update firewall config to include logging, stealth mode, and signed-app behaviour that newer nix-darwin exposes.<br/>[Details](#d-08-expand-firewall-configuration) | [ ] | [ ] | |
-| D-09 | Switch font provisioning to the new nerdfonts overrides / aggregated packages to avoid attr renames and slim the closure.<br/>[Details](#d-09-modernize-font-packages) | [ ] | [ ] | |
+| D-09 | Switch font provisioning to the new nerdfonts overrides / aggregated packages to avoid attr renames and slim the closure.<br/>[Details](#d-09-modernize-font-packages) | [x] | [x] | Already using modern individual nerd-fonts packages; checklist advice was outdated |
 | D-10 | Break out host-specific modules under `darwin/modules/` so multiple Macs can share logic without copy/paste.<br/>[Details](#d-10-split-host-specific-modules) | [ ] | [ ] | |
 
 ## Home Manager Configuration
@@ -50,10 +50,10 @@ Legend:
 | ID | Description | Reviewed | Implemented | Notes |
 |----|-------------|----------|-------------|-------|
 | FLK-01 | Publish a `formatter.${system}` (e.g., `nixfmt-rfc-style`) and `devShells.${system}.default` so `nix fmt` and `nix develop` work out-of-the-box on any checkout.<br/>[Details](#flk-01-provide-formatter-and-devshell-outputs) | [x] | [x] | Added formatter with nixfmt-rfc-style and default devShell with dev tools |
-| FLK-02 | Use the flake-level `nixConfig` attr to declare substituters, trusted keys, and experimental features instead of relying on manual `/etc/nix/nix.conf` edits.<br/>[Details](#flk-02-declare-nix-config-in-the-flake) | [ ] | [ ] | |
-| FLK-03 | Switch from a hand-rolled `system` let-binding to `flake-utils.lib.eachDefaultSystem` (or the new `perSystem`) so adding Linux builds/devShells is trivial.<br/>[Details](#flk-03-use-flake-utils-to-scale-systems) | [ ] | [ ] | |
-| FLK-04 | Centralize `nixpkgs.config` and overlays so darwin/home-manager share one definition, reducing divergence between host/user builds.<br/>[Details](#flk-04-deduplicate-nixpkgs-configuration) | [ ] | [ ] | |
-| FLK-05 | Create an `mkDarwinHost` helper (or `lib.genAttrs`) to define hosts declaratively, keeping multi-machine config DRY.<br/>[Details](#flk-05-introduce-host-construction-helpers) | [ ] | [ ] | |
+| FLK-02 | Use the flake-level `nixConfig` attr to declare substituters, trusted keys, and experimental features instead of relying on manual `/etc/nix/nix.conf` edits.<br/>[Details](#flk-02-declare-nix-config-in-the-flake) | [x] | [x] | Intentionally skipped - personal Darwin config, prefer nix-darwin to handle daemon/config |
+| FLK-03 | Switch from a hand-rolled `system` let-binding to `flake-utils.lib.eachDefaultSystem` (or the new `perSystem`) so adding Linux builds/devShells is trivial.<br/>[Details](#flk-03-use-flake-utils-to-scale-systems) | [x] | [ ] | Not applicable - single-system Darwin-only setup; current approach is optimal |
+| FLK-04 | Centralize `nixpkgs.config` and overlays so darwin/home-manager share one definition, reducing divergence between host/user builds.<br/>[Details](#flk-04-deduplicate-nixpkgs-configuration) | [x] | [x] | Centralized nixpkgsConfig and overlays via mkPkgs helper function |
+| FLK-05 | Create an `mkDarwinHost` helper (or `lib.genAttrs`) to define hosts declaratively, keeping multi-machine config DRY.<br/>[Details](#flk-05-introduce-host-construction-helpers) | [x] | [ ] | Single-host setup - helper functions would add unnecessary complexity. Revisit when adding a second Darwin host. |
 
 ## Homebrew Module
 

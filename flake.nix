@@ -51,37 +51,36 @@
     }@inputs:
     let
       system = "aarch64-darwin";
+      username = "alonzothomas";
+      homeDirectory = "/Users/alonzothomas";
+      
+      # CENTRALIZED: Define nixpkgs config once
+      nixpkgsConfig = {
+        allowUnsupportedSystem = true;
+        allowUnfree = true;
+        allowBroken = true;
+        allowInsecure = true;
+        input-fonts.acceptLicense = true;
+      };
+      
+      # CENTRALIZED: Define overlays once
       overlays = [
         inputs.neovim-overlay.overlays.default
       ];
-      username = "alonzothomas";
-      homeDirectory = "/Users/alonzothomas";
-      pkgsForHome = import inputs.nixpkgs {
+      
+      # Helper to create nixpkgs with consistent config
+      mkPkgs = system: import inputs.nixpkgs {
         inherit system overlays;
-        config = {
-          allowUnsupportedSystem = true;
-          allowUnfree = true;
-          allowBroken = true;
-          allowInsecure = true;
-          input-fonts.acceptLicense = true;
-        };
+        config = nixpkgsConfig;
       };
+      
       # Helper for system-specific outputs (2025 best practice)
       forAllSystems =
         f:
         inputs.nixpkgs.lib.genAttrs [ system ] (
           system:
           f {
-            pkgs = import inputs.nixpkgs {
-              inherit system overlays;
-              config = {
-                allowUnsupportedSystem = true;
-                allowUnfree = true;
-                allowBroken = true;
-                allowInsecure = true;
-                input-fonts.acceptLicense = true;
-              };
-            };
+            pkgs = mkPkgs system;
           }
         );
     in
@@ -113,26 +112,26 @@
       darwinConfigurations = {
         "ZoBookPro" = nix-darwin.lib.darwinSystem {
           inherit system;
+          # Use centralized nixpkgs
+          pkgs = mkPkgs system;
           modules = [
             ./darwin/darwin.nix
             home-manager.darwinModules.home-manager
             {
-              # nixpkgs.overlays = overlays;
+              # Use centralized config
+              nixpkgs = {
+                inherit overlays;
+                config = nixpkgsConfig;
+              };
+              
               home-manager = {
                 users.alonzothomas = import ./home/home.nix;
                 extraSpecialArgs = { inherit inputs system; };
-                useGlobalPkgs = true;
+                useGlobalPkgs = true;  # This ensures HM uses the same pkgs
                 useUserPackages = true;
                 backupFileExtension = "backup";
               };
               users.users.alonzothomas.home = "/Users/alonzothomas";
-              nixpkgs.config = {
-                allowUnsupportedSystem = true;
-                allowUnfree = true;
-                allowBroken = true;
-                allowInsecure = true;
-                input-fonts.acceptLicense = true;
-              };
             }
           ];
           specialArgs = { inherit inputs; };
@@ -140,7 +139,8 @@
       };
       homeConfigurations = {
         "${username}" = home-manager.lib.homeManagerConfiguration {
-          pkgs = pkgsForHome;
+          # Use the same centralized nixpkgs
+          pkgs = mkPkgs system;
           modules = [
             ./home/home.nix
             {
