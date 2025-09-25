@@ -58,6 +58,13 @@
     fi
   '';
 
+  # Create symlink to 1Password SSH agent socket without spaces in path
+  home.activation.create1PasswordSSHSymlink = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    mkdir -p "${config.home.homeDirectory}/.ssh/1password"
+    ln -sf "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" \
+           "${config.home.homeDirectory}/.ssh/1password/agent.sock"
+  '';
+
   home.activation.installMissingApps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     ${pkgs.bash}/bin/bash ${config.home.homeDirectory}/Developer/personal/dotfiles/scripts/install-missing-apps.sh
   '';
@@ -297,11 +304,7 @@
               name = "lenell16";
               email = "lenell16@gmail.com";
             };
-            url = {
-              "git@github-personal:" = {
-                insteadOf = "git@github.com:";
-              };
-            };
+
           };
         }
         {
@@ -311,11 +314,7 @@
               name = "Alonzo Thomas";
               email = "alonzo.thomas@tribble.ai";
             };
-            url = {
-              "git@github-work:" = {
-                insteadOf = "git@github.com:";
-              };
-            };
+
           };
         }
       ];
@@ -336,10 +335,7 @@
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityFile = "SHA256:JZbEO/SC4Uhlp6sEaR6f5HV2sraJdKU8AIG3fHrfqf4";
-          extraOptions = {
-            IdentityAgent = "\"${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
-          };
+          identityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
         };
         
         # Work GitHub (automatically uses work SSH key)
@@ -347,10 +343,7 @@
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityFile = "SHA256:T2BG/6BtzJuEolkQRAb9th44mRoOV/ZZwXax76DQf1A";
-          extraOptions = {
-            IdentityAgent = "\"${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
-          };
+          identityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
         };
         
         # Default for all other hosts
@@ -358,7 +351,7 @@
           compression = true;
           serverAliveInterval = 60;
           serverAliveCountMax = 10;
-          identityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+          identityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
           extraOptions = {
             AddKeysToAgent = "yes";
             UseKeychain = "yes";
@@ -395,7 +388,7 @@
         end
 
         # Set 1Password SSH agent socket
-        set -gx SSH_AUTH_SOCK "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+        set -gx SSH_AUTH_SOCK "${config.home.homeDirectory}/.ssh/1password/agent.sock"
 
         # Set fish colors to match your terminal theme
         set -g fish_color_command blue
