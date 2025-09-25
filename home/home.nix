@@ -338,7 +338,7 @@
           identitiesOnly = true;
           identityFile = "SHA256:JZbEO/SC4Uhlp6sEaR6f5HV2sraJdKU8AIG3fHrfqf4";
           extraOptions = {
-            IdentityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+            IdentityAgent = "\"${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
           };
         };
         
@@ -349,7 +349,7 @@
           identitiesOnly = true;
           identityFile = "SHA256:T2BG/6BtzJuEolkQRAb9th44mRoOV/ZZwXax76DQf1A";
           extraOptions = {
-            IdentityAgent = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+            IdentityAgent = "\"${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock\"";
           };
         };
         
