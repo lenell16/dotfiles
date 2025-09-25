@@ -71,6 +71,13 @@
     fish.enable = true;
   };
 
+  security.pam.services.sudo_local = {
+    enable = true;
+    touchIdAuth = true;
+    reattach = true;
+    # Extend here with additional services (e.g., `login`) if we want biometric auth elsewhere.
+  };
+
   # Used for backwards compatibility, please read the changelog before changing.
   # $ darwin-rebuild changelog
   system.stateVersion = 4;
