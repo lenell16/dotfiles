@@ -14,22 +14,27 @@
       # Editor settings
       EDITOR = "nvim";
       VISUAL = "nvim";
-      
+
       # Pager settings
       LESS = "-R";
-      
+
       # Podman configuration
       DOCKER_HOST = "unix:///var/folders/zy/gd7_972101sdqv5_625lgdmh0000gn/T/podman/podman-machine-default-api.sock";
-      
+
       # JIRA CLI configuration - set token via: op item get "Jira API Token" --fields password
       # JIRA_API_TOKEN = ""; # Set this via 1Password or environment
-      
+
       # XDG data dirs (for shell integration)
       XDG_DATA_DIRS = "${config.home.profileDirectory}/share:${"\${GHOSTTY_SHELL_INTEGRATION_XDG_DIR:+\$GHOSTTY_SHELL_INTEGRATION_XDG_DIR:}"}$XDG_DATA_DIRS";
 
       # Make Nix-provided pkg-config files visible to builds (e.g., node-canvas)
       PKG_CONFIG_PATH = "${config.home.profileDirectory}/lib/pkgconfig:${config.home.profileDirectory}/share/pkgconfig";
     };
+
+    sessionPath = lib.mkAfter [
+      "/opt/homebrew/bin"
+      "/opt/homebrew/sbin"
+    ];
 
     # Files to create in home directory
     file = {
@@ -45,7 +50,7 @@
       # enableFishIntegration is true by default and set in the module
       nix-direnv.enable = true;
     };
-    
+
     # GitHub CLI
     gh = {
       enable = true;
@@ -62,42 +67,42 @@
     # Terminal utilities
 
     bottom = {
-      enable = true;   # System monitor (like htop)
+      enable = true; # System monitor (like htop)
     };
 
     broot = {
-      enable = true;   # Directory navigator
+      enable = true; # Directory navigator
       enableFishIntegration = true;
     };
 
     eza = {
-      enable = true;   # Modern replacement for ls
+      enable = true; # Modern replacement for ls
       enableFishIntegration = true;
     };
 
     jq = {
-      enable = true;   # JSON processor
+      enable = true; # JSON processor
     };
 
     fzf = {
-      enable = true;   # Fuzzy finder
+      enable = true; # Fuzzy finder
       enableFishIntegration = true;
-      defaultOptions = ["--height 40%" "--layout=reverse" "--border"];
+      defaultOptions = [ "--height 40%" "--layout=reverse" "--border" ];
     };
 
     # Shell enhancements
     starship = {
-      enable = true;   # Customizable prompt
+      enable = true; # Customizable prompt
       enableFishIntegration = true;
       settings = {
         cmd_duration.disabled = true;
         gcloud.disabled = true;
       };
     };
-    
+
     # File managers
     nnn = {
-      enable = true;   # Terminal file manager
+      enable = true; # Terminal file manager
       bookmarks = {
         d = "~/Documents";
         D = "~/Downloads";
@@ -108,7 +113,7 @@
 
     # Text editors
     helix = {
-      enable = true;   # Modern editor
+      enable = true; # Modern editor
       settings = {
         theme = "tokyonight_storm";
       };
@@ -116,7 +121,7 @@
 
     # Terminal multiplexer
     tmux = {
-      enable = true;   # Terminal session manager
+      enable = true; # Terminal session manager
       clock24 = true;
       historyLimit = 10000;
       terminal = "screen-256color";
@@ -124,7 +129,7 @@
 
     # Terminal emulator
     ghostty = {
-      enable = false;  # Disabled due to build issues - using Homebrew version instead
+      enable = false; # Disabled due to build issues - using Homebrew version instead
       # settings = {
       #   shell = "fish";
       #   font-family = "JetBrainsMono Nerd Font";
@@ -158,36 +163,36 @@
       # Global default configuration (work profile)
       userName = "Alonzo Thomas";
       userEmail = "alonzo.thomas@tribble.ai";
-      
+
       # Git configuration
       extraConfig = {
         push = {
-          autoSetupRemote = true;  # Auto set upstream on push
+          autoSetupRemote = true; # Auto set upstream on push
         };
         init = {
-          defaultBranch = "main";  # Default branch name
+          defaultBranch = "main"; # Default branch name
         };
         pull = {
-          rebase = false;         # Merge by default on pull
+          rebase = false; # Merge by default on pull
         };
         fetch = {
-          prune = true;           # Remove remote branches that no longer exist
+          prune = true; # Remove remote branches that no longer exist
         };
       };
-      
+
       # Git conditional includes for different profiles
       ignores = [
         # Ignore any folder named "Scratch" (case-insensitive)
         "[Ss]cratch/"
         "[Ss]cratch"
-        
+
         # macOS files
         ".DS_Store"
         ".AppleDouble"
         ".LSOverride"
-        "Icon\r\r"  # Icon must end with two \r
-        "._*"        # Thumbnails
-        
+        "Icon\r\r" # Icon must end with two \r
+        "._*" # Thumbnails
+
         # macOS volume files
         ".DocumentRevisions-V100"
         ".fseventsd"
@@ -196,19 +201,19 @@
         ".Trashes"
         ".VolumeIcon.icns"
         ".com.apple.timemachine.donotpresent"
-        
+
         # Network files
         ".AppleDB"
         ".AppleDesktop"
         "Network Trash Folder"
         "Temporary Items"
         ".apdisk"
-        
+
         # Editor files
         "*~"
         "*.swp"
         "*.swo"
-        
+
         # Cursor AI editor files
         ".cursor/rules/personal"
         ".cursor/research"
@@ -217,7 +222,7 @@
 
         # AI files
         ".ai"
-        
+
         # Windows files
         "Thumbs.db"
         "ehthumbs.db"
@@ -225,7 +230,7 @@
       ];
       includes = [
         { path = "${inputs.gitalias}/gitalias.txt"; }
-        { 
+        {
           condition = "gitdir:~/Developer/personal/";
           contents = {
             user = {
@@ -234,7 +239,7 @@
             };
           };
         }
-        { 
+        {
           condition = "gitdir:~/Developer/tribble/";
           contents = {
             user = {
@@ -248,11 +253,11 @@
 
     # Git UI tools
     gitui = {
-      enable = true;              # Terminal UI for Git
+      enable = true; # Terminal UI for Git
     };
 
     lazygit = {
-      enable = true;              # Interactive Git terminal UI
+      enable = true; # Interactive Git terminal UI
     };
 
     # Fish shell configuration
@@ -294,8 +299,8 @@
       # Custom fish functions
       functions = {
         # This explicitly overrides the greeting function
-        fish_greeting = ""; 
-        
+        fish_greeting = "";
+
         # Show system info
         sysinfo = ''
           echo "System Information"
@@ -307,7 +312,7 @@
           echo "Terminal: $TERM"
           echo "Nix Version: $(nix --version)"
         '';
-        
+
         # Create directory and change to it
         mcd = ''
           if test (count $argv) -eq 1
@@ -412,9 +417,9 @@
           # Add more keys as needed
         '';
       };
-      
+
       # Aliases are now managed in aliases.nix
-      
+
       # Commands to run when starting any shell
       shellInit = ''
         # Ghostty terminal integration
@@ -438,18 +443,18 @@
 
     # Directory navigation enhancement
     zoxide = {
-      enable = true;              # Smart cd command
+      enable = true; # Smart cd command
       enableFishIntegration = true;
-      options = [ "--cmd j" ];    # Use 'j' as the command
+      options = [ "--cmd j" ]; # Use 'j' as the command
     };
 
     # Text editor
     neovim = {
-      enable = true;              # Neovim editor
+      enable = true; # Neovim editor
       package = pkgs.neovim-unwrapped;
       defaultEditor = true;
-      viAlias = true;             # Use 'vi' command for neovim
-      vimAlias = true;            # Use 'vim' command for neovim
+      viAlias = true; # Use 'vi' command for neovim
+      vimAlias = true; # Use 'vim' command for neovim
     };
 
     # Window Manager
@@ -458,8 +463,8 @@
       userSettings = {
         # General settings
         start-at-login = false;
-        after-login-command = [];
-        after-startup-command = [];
+        after-login-command = [ ];
+        after-startup-command = [ ];
 
         # Normalizations
         enable-normalization-flatten-containers = true;

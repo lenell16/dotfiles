@@ -5,7 +5,7 @@
     ./brew.nix
     ./system-defaults.nix
   ];
-  
+
   # Network configuration
   networking = {
     # DNS servers (Cloudflare and Google)
@@ -13,17 +13,17 @@
       "1.1.1.1"
       "8.8.8.8"
     ];
-    
+
     # Network service names that should be in the list of known network services
     knownNetworkServices = [
       "Wi-Fi"
     ];
   };
-  
+
   # Set system hostname (using both legacy and modern settings)
   networking.computerName = "ZoBookPro"; # Legacy setting
-  networking.hostName = "ZoBookPro";     # Legacy setting
-  
+  networking.hostName = "ZoBookPro"; # Legacy setting
+
   # Note: These newer settings might need to be adjusted based on your nix-darwin version
   # Using the proper location for hostname settings which may vary by version
   # For now, we'll rely on the networking.* versions which are known to work
@@ -39,24 +39,30 @@
   # System packages (available to all users)
   environment.systemPackages = with pkgs; [
     # System tools
-    home-manager         # Home manager CLI
-    
+    home-manager # Home manager CLI
+
     # Terminal & CLIAT63301
-    _1password-cli       # 1Password CLI
-    
+    _1password-cli # 1Password CLI
+
     # Network utilities
-    ngrok                # Tunnel local servers
-    transmission_4       # Torrent client
+    ngrok # Tunnel local servers
+    transmission_4 # Torrent client
   ];
 
-  # Global environment variables for all processes (including scripts)
+  # Global environment variables and profile configuration
+  environment.profiles = lib.mkAfter [
+    "/opt/homebrew"
+  ];
+
   environment.variables = {
-    PKG_CONFIG_PATH = "/opt/homebrew/lib/pkgconfig:/opt/homebrew/share/pkgconfig";
-    PATH = "/etc/profiles/per-user/alonzothomas/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/run/current-system/sw/bin:/nix/var/nix/profiles/default/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin";
+    PKG_CONFIG_PATH = [
+      "/opt/homebrew/lib/pkgconfig"
+      "/opt/homebrew/share/pkgconfig"
+    ];
   };
 
   environment.darwinConfig = "$HOME/Developer/personal/dotfiles";
-  
+
   nix.enable = false;
 
   # Create /etc/zshrc that loads the nix-darwin environment.
@@ -80,16 +86,16 @@
   # System-wide fonts
   fonts.packages = with pkgs; [
     # Monospace/coding fonts
-    fira-code                  # Popular coding font with ligatures
-    fira-mono                  # Monospace version of Fira
-    input-fonts                # Highly customizable coding font
-    monaspace                  # GitHub's modern monospace font family
-    
+    fira-code # Popular coding font with ligatures
+    fira-mono # Monospace version of Fira
+    input-fonts # Highly customizable coding font
+    monaspace # GitHub's modern monospace font family
+
     # Nerd fonts (with icons)
-    nerd-fonts.fira-mono       # Fira Mono with Nerd Font icons
-    nerd-fonts.jetbrains-mono  # JetBrains Mono with Nerd Font icons
-    
+    nerd-fonts.fira-mono # Fira Mono with Nerd Font icons
+    nerd-fonts.jetbrains-mono # JetBrains Mono with Nerd Font icons
+
     # Special purpose fonts
-    powerline-fonts            # Terminal fonts with powerline symbols
+    powerline-fonts # Terminal fonts with powerline symbols
   ];
 }
