@@ -77,7 +77,6 @@ Legend:
 |----|-------------|----------|-------------|-------|
 | INT-01 | Wire 1Password CLI usage into HM (`programs.op` or custom activation scripts) so secrets load declaratively and you can toggle caching policies per environment.<br/>[Details](#int-01-integrate-secrets-handling) | [x] | [x] | Enabled nix-darwin `programs._1password*`, HM fish helpers, and activation hook |
 | INT-02 | Shift Aerospace settings into the latest HM module (`programs.aerospace.userSettings`, `settingsFile`) for version-aware schema validation.<br/>[Details](#int-02-manage-aerospace-via-home-manager) | [x] | [x] | Home Manager now owns config + launchd agent |
-| INT-03 | Evaluate `services.skhd` / `services.yabai` as future window manager options to pre-plan any migration away from Aerospace.<br/>[Details](#int-03-plan-for-window-manager-alternatives) | [ ] | [ ] | |
 | INT-04 | Keep terminal configs (WezTerm, Alacritty, Ghostty) in HM-managed files so theme/font tweaks propagate instantly across machines.<br/>[Details](#int-04-manage-terminal-configs) | [ ] | [ ] | |
 | INT-05 | Use nix-darwin `launchd.daemons`/`launchd.agents` for background tasks (e.g., auto-starting Podman machine) instead of ad-hoc shell scripts.<br/>[Details](#int-05-use-launchd-modules-for-background-jobs) | [ ] | [ ] | |
 | INT-06 | Adopt `home.persistence` / impermanence modules to declaratively persist or wipe directories, useful for scratch vs. long-lived data separation.<br/>[Details](#int-06-adopt-impermanence-patterns) | [ ] | [ ] | |
@@ -305,12 +304,6 @@ Legend:
 - **What changed:** `programs.aerospace` exposes `userSettings`, `settingsFile`, and package selection.
 - **Why it matters:** centralizes your tiling WM config and validates schema on rebuild.
 - **Impact:** easier to tweak keybindings and sync across machines.
-
-### INT-03 — Plan for window manager alternatives
-
-- **What changed:** nix-darwin/Home Manager now ship modules for `skhd`, `yabai`, and others.
-- **Why it matters:** if you ever switch, having modules ready makes experimentation painless.
-- **Impact:** future-proofing your window manager stack.
 
 ### INT-04 — Manage terminal configs
 

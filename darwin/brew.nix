@@ -42,9 +42,8 @@
       "pkgconf"             # Package compiler and linker metadata toolkit
       "poppler"             # PDF rendering library
 
-      # Currently not used but commented for reference
-      # "skhd"              # Simple hotkey daemon
-      # "dblab"             # Database client
+  # Currently not used but commented for reference
+  # "dblab"             # Database client
     ];
 
     casks = [
