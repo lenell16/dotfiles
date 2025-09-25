@@ -59,6 +59,7 @@
       "soundsource" # Audio control
       "workman" # Keyboard layout
       "yaak" # Terminal
+      "conductor" # System management tool
 
       # Terminal & Development
       "ghostty" # Terminal emulator

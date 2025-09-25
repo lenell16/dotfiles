@@ -44,6 +44,8 @@
     iina # Media player
     yt-dlp # YouTube downloader
 
+
+
     # Commented out packages (kept for reference)
     # asdf-vm
     # ghostty
@@ -59,7 +61,6 @@
     # cargo           # Rust package manager
     # cloudflared     # Cloudflare tunnels
     # cocoapods       # iOS dependency manager
-    # corepack_21     # JavaScript package manager tool
     deno # JavaScript runtime
     # ffmpeg          # Media processing
     # fx              # JSON processor
@@ -70,17 +71,10 @@
     # httpie          # HTTP client
     # kubectx         # Kubernetes context switcher
     # lucky-cli       # Crystal web framework
-    # maven           # Build tool
     # miller          # CSV processor
     # mongodb         # NoSQL database
-    # nodejs_20       # Node.js (managed via Homebrew)
-    # nodePackages.eslint_d      # Fast ESLint
-    # nodePackages.fixjson       # JSON fixer
     nodePackages.pnpm # Package manager
     nodejs_20 # Node.js v20 LTS with npm
-    # nodePackages.prettier      # Code formatter
-    # nodePackages.typescript    # TypeScript
-    # nodePackages.zx            # JavaScript shell scripts
     # overmind        # Process manager
     pkg-config # Build tooling for native addons
     cairo # Graphics library required by node-canvas
@@ -111,6 +105,5 @@
     # watchman        # File watcher
     # wget            # Network downloader
     # xplr            # File explorer
-    # yarn            # Package manager
   ];
 }
