@@ -87,8 +87,18 @@ in
       npackages = "$EDITOR ${nixConfigDir}/home/packages.nix"; # Edit packages.nix
       nbrew = "$EDITOR ${nixConfigDir}/darwin/brew.nix";   # Edit brew.nix
       
-      # Health check
-      nix-health = "echo 'Running Nix health checks...' && ${nixSystemCheck} && echo 'All checks passed!'";
+    };
+
+    # Fish functions for more complex helpers
+    functions = {
+      nix-health = {
+        description = "Run Nix flake health checks";
+        body = ''
+          echo 'Running Nix health checks...'
+          ${nixSystemCheck}
+          echo 'All checks passed!'
+        '';
+      };
     };
     
     # Fish abbreviations (expand when you press space)
