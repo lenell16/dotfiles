@@ -23,6 +23,8 @@
     # unison.url = "github:ceedubs/unison-nix";
     # Utils
     flake-utils.url = "github:numtide/flake-utils";
+    # 1Password Shell Plugins
+    onepassword-shell-plugins.url = "github:1Password/shell-plugins";
 
     # rose-pine-kitty = {
     #   type = "github";

@@ -49,7 +49,7 @@
 
     casks = [
       # Security & Password Management
-      "1password"                  # Password manager
+      # "1password"                  # Password manager
       "1kc-razer"                  # Razer keyboard configuration
 
       # System Utilities

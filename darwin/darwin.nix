@@ -51,8 +51,7 @@
     # System tools
     home-manager # Home manager CLI
 
-    # Terminal & CLIAT63301
-    _1password-cli # 1Password CLI
+  # Terminal & CLI tools (1Password provided via programs._1password)
 
     # Network utilities
     ngrok # Tunnel local servers
@@ -79,6 +78,12 @@
   programs = {
     zsh.enable = true; # default shell on catalina
     fish.enable = true;
+    _1password = {
+      enable = true;
+    };
+    "_1password-gui" = {
+      enable = true;
+    };
   };
 
   security.pam.services.sudo_local = {

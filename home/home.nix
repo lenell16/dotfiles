@@ -4,6 +4,7 @@
   imports = [
     ./packages.nix
     ./aliases.nix
+    inputs.onepassword-shell-plugins.hmModules.default
   ];
 
   home = {
@@ -45,7 +46,25 @@
     };
   };
 
+  home.activation.refreshOpSession = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ -f "${config.home.homeDirectory}/.config/op/auto-signin.fish" ]; then
+      ${lib.getBin pkgs.fish}/bin/fish "${config.home.homeDirectory}/.config/op/auto-signin.fish"
+    fi
+  '';
+
   programs = {
+    # 1Password Shell Plugins
+    _1password-shell-plugins = {
+      enable = true;
+      plugins = with pkgs; [
+        ngrok  # You already have this configured manually
+        # Add other CLI tools you want to use with 1Password shell plugins
+        # gh     # GitHub CLI (already enabled above)
+        # awscli2
+        # docker
+      ];
+    };
+
     # Development environments
     direnv = {
       enable = true;
@@ -279,6 +298,11 @@
         # Multiple ways to ensure no greeting
         set -U fish_greeting
         set -g fish_greeting ""
+
+        # Ensure nix-darwin's system profile binaries are available
+        if not contains "/run/current-system/sw/bin" $PATH
+          set -gx PATH "/run/current-system/sw/bin" $PATH
+        end
         
         # Disable FNM if it's somehow being loaded
         set -e FNM_MULTISHELL_PATH
@@ -307,6 +331,31 @@
       functions = {
         # This explicitly overrides the greeting function
         fish_greeting = "";
+
+        # Refresh 1Password CLI session and cache it locally
+        op-relogin = ''
+          if not set -q OP_ACCOUNT
+            echo "Set OP_ACCOUNT to your 1Password account shorthand (e.g., my.1password.com)" >&2
+            return 1
+          end
+
+          set -l session (op signin $OP_ACCOUNT --raw 2>/dev/null)
+          if test $status -ne 0
+            echo "Failed to refresh 1Password session" >&2
+            return 1
+          end
+          if test -z "$session"
+            echo "Failed to refresh 1Password session" >&2
+            return 1
+          end
+
+          set -gx OP_SESSION $session
+          set -l cache_file "$HOME/.cache/op/session"
+          mkdir -p (dirname $cache_file)
+          echo -n $session > $cache_file
+          chmod 600 $cache_file
+          echo "1Password session refreshed."
+        '';
 
         # Show system info
         sysinfo = ''
@@ -425,6 +474,12 @@
         '';
       };
 
+      # Handy abbreviations for 1Password CLI tasks
+      shellAbbrs = {
+        ops = "op signin --raw";
+        opc = "op account list";
+      };
+
       # Aliases are now managed in aliases.nix
 
       # Commands to run when starting any shell
@@ -441,7 +496,10 @@
         load_api_keys
 
         # 1Password CLI plugin integration
-        source /Users/alonzothomas/.config/op/plugins.sh
+        set -l op_plugin "${config.home.homeDirectory}/.config/op/plugins.sh"
+        if test -f $op_plugin
+          source $op_plugin
+        end
       '';
     };
 
