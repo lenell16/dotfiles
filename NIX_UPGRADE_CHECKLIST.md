@@ -26,7 +26,7 @@ Legend:
 | ID | Description | Reviewed | Implemented | Notes |
 |----|-------------|----------|-------------|-------|
 | HM-01 | Rewrite Fish functions using the structured HM API (`programs.fish.functions.NAME = { description = ...; body = '' ... ''; };`) to gain metadata, autoloading, and cleaner diffs.<br/>[Details](#hm-01-structured-fish-functions) | [ ] | [ ] | |
-| HM-02 | Move brew shellenv and other login-only commands into `programs.fish.loginShellInit` so subshells don’t re-run heavy init logic, matching Ventura’s login shell semantics.<br/>[Details](#hm-02-use-loginshellinit-for-login-only-commands) | [ ] | [ ] | |
+| HM-02 | Move brew shellenv and other login-only commands into `programs.fish.loginShellInit` so subshells don’t re-run heavy init logic, matching Ventura’s login shell semantics.<br/>[Details](#hm-02-use-loginshellinit-for-login-only-commands) | [x] | [x] | Homebrew shellenv now runs via `loginShellInit`
 | HM-03 | Upgrade Starship config with per-module tweaks (disabling unused modules, `add_newline = false`, command duration gating) introduced since HM 23.x.<br/>[Details](#hm-03-refresh-starship-configuration) | [ ] | [ ] | |
 | HM-04 | Enable supporting tooling such as `programs.nix-index`, `programs.command-not-found`, or `programs.nix-index-database` for instant package lookup from the shell.<br/>[Details](#hm-04-enable-package-discovery-toolkits) | [ ] | [ ] | |
 | HM-05 | Turn on `services.lorri` or the newer `services.direnv` module so dev shells rebuild automatically without manual `direnv allow` juggling.<br/>[Details](#hm-05-adopt-dev-shell-services) | [ ] | [ ] | |

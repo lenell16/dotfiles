@@ -34,6 +34,8 @@
     sessionPath = lib.mkAfter [
       "/opt/homebrew/bin"
       "/opt/homebrew/sbin"
+      "${config.home.homeDirectory}/.npm-global/bin"
+      "${config.home.homeDirectory}/.local/bin"
     ];
 
     # Files to create in home directory
@@ -264,6 +266,14 @@
     fish = {
       enable = true;
 
+      # Commands to run when starting a login shell
+      loginShellInit = ''
+        # Initialize Homebrew once per login session
+        if test -x /opt/homebrew/bin/brew
+          eval "$(/opt/homebrew/bin/brew shellenv)"
+        end
+      '';
+
       # Commands to run when starting an interactive shell
       interactiveShellInit = ''
         # Multiple ways to ensure no greeting
@@ -282,9 +292,6 @@
         
         # Remove fnm from PATH
         set -gx PATH (string match -v "*fnm_multishells*" $PATH)
-        
-        # Initialize Homebrew
-        eval "$(/opt/homebrew/bin/brew shellenv)"
         
         
         # Set fish colors to match your terminal theme
@@ -435,9 +442,6 @@
 
         # 1Password CLI plugin integration
         source /Users/alonzothomas/.config/op/plugins.sh
-
-        fish_add_path ~/.npm-global/bin
-        fish_add_path ~/.local/bin
       '';
     };
 
