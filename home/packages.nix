@@ -20,7 +20,6 @@
     infisical # Secrets management
 
     # Development tools
-    amp-cli # Sourcegraph Amp CLI
     bun # JavaScript runtime
     claude-code # Anthropic Claude Code CLI
     codex # OpenAI Codex CLI
@@ -34,6 +33,7 @@
 
     # System utilities
     curl # Data transfer tool
+    difftastic # Syntax-aware diff tool
     fd # Alternative to find
     ripgrep # Fast grep replacement
     raycast # App launcher

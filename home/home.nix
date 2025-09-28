@@ -92,20 +92,25 @@
       echo "Installing missing bun global: protoc-gen-grpc"
       $DRY_RUN_CMD bun install -g protoc-gen-grpc@latest
     fi
+    
+    if ! bun pm ls -g | grep -q "@sourcegraph/amp"; then
+      echo "Installing missing bun global: @sourcegraph/amp"
+      $DRY_RUN_CMD bun install -g @sourcegraph/amp@latest
+    fi
   '';
 
   programs = {
-    # 1Password Shell Plugins
-    _1password-shell-plugins = {
-      enable = true;
-      plugins = with pkgs; [
-        ngrok # You already have this configured manually
-        # Add other CLI tools you want to use with 1Password shell plugins
-        # gh     # GitHub CLI (already enabled above)
-        # awscli2
-        # docker
-      ];
-    };
+    # # 1Password Shell Plugins
+    # _1password-shell-plugins = {
+    #   enable = true;
+    #   plugins = with pkgs; [
+    #     ngrok # You already have this configured manually
+    #     # Add other CLI tools you want to use with 1Password shell plugins
+    #     # gh     # GitHub CLI (already enabled above)
+    #     # awscli2
+    #     # docker
+    #   ];
+    # };
 
     # Development environments
     direnv = {
@@ -231,6 +236,15 @@
       userName = "Alonzo Thomas";
       userEmail = "alonzo.thomas@tribble.ai";
 
+      # Enable difftastic as difftool (not default diff)
+      difftastic = {
+        enable = false;              # Don't replace git diff
+        enableAsDifftool = true;     # Enable as git difftool
+        background = "dark";
+        color = "always";
+        display = "inline";          # Try inline instead of side-by-side
+      };
+
       # Git configuration
       extraConfig = {
         push = {
@@ -244,6 +258,15 @@
         };
         fetch = {
           prune = true; # Remove remote branches that no longer exist
+        };
+        difftool = {
+          prompt = false; # Don't ask "Launch difftastic?"
+        };
+        alias = {
+          # Difftastic aliases for quick access to syntax-aware diffs
+          dlog = "-c diff.external=difft log --ext-diff";
+          dshow = "-c diff.external=difft show --ext-diff";
+          ddiff = "-c diff.external=difft diff";
         };
       };
 
