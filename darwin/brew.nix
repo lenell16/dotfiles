@@ -14,6 +14,7 @@
       "nikitabobko/tap"
       "supabase/tap"
       "opencode-ai/tap"
+      "FelixKratz/formulae"
     ];
 
     brews = [
@@ -30,6 +31,9 @@
       # "pgvector" # Vector extension for PostgreSQL
       # "postgresql@14" # PostgreSQL database
       "supabase/tap/supabase" # Supabase CLI
+
+      # Window Management
+      "FelixKratz/formulae/borders" # JankyBorders - window borders for tiling WM
 
       # Graphics libraries (required by other tools and node-canvas)
       "cairo" # 2D graphics library (for node-canvas)

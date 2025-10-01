@@ -72,30 +72,35 @@
   home.activation.bunGlobals = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     # Install bun globals if they don't exist
     PATH="${pkgs.bun}/bin:$PATH"
-    
+
     if ! bun pm ls -g | grep -q "@google/gemini-cli"; then
       echo "Installing missing bun global: @google/gemini-cli"
       $DRY_RUN_CMD bun install -g @google/gemini-cli@latest
     fi
-    
+
     if ! bun pm ls -g | grep -q "opencode-ai"; then
       echo "Installing missing bun global: opencode-ai"
       $DRY_RUN_CMD bun install -g opencode-ai@latest
     fi
-    
+
     if ! bun pm ls -g | grep -q "@dataramen/cli"; then
       echo "Installing missing bun global: @dataramen/cli"
       $DRY_RUN_CMD bun install -g @dataramen/cli@latest
     fi
-    
+
     if ! bun pm ls -g | grep -q "protoc-gen-grpc"; then
       echo "Installing missing bun global: protoc-gen-grpc"
       $DRY_RUN_CMD bun install -g protoc-gen-grpc@latest
     fi
-    
+
     if ! bun pm ls -g | grep -q "@sourcegraph/amp"; then
       echo "Installing missing bun global: @sourcegraph/amp"
       $DRY_RUN_CMD bun install -g @sourcegraph/amp@latest
+    fi
+
+    if ! bun pm ls -g | grep -q "@anthropic-ai/claude-code"; then
+      echo "Installing missing bun global: @anthropic-ai/claude-code"
+      $DRY_RUN_CMD bun install -g @anthropic-ai/claude-code@latest
     fi
   '';
 
@@ -640,7 +645,9 @@
         # General settings
         start-at-login = false;
         after-login-command = [ ];
-        after-startup-command = [ ];
+        after-startup-command = [
+          "layout tiles horizontal vertical"
+        ];
 
         # Normalizations
         enable-normalization-flatten-containers = true;
@@ -649,7 +656,7 @@
         # Layouts
         accordion-padding = 30;
         default-root-container-layout = "tiles";
-        default-root-container-orientation = "auto";
+        default-root-container-orientation = "horizontal";
 
         # Callbacks
         on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
@@ -672,89 +679,67 @@
           };
         };
 
+        # Monitor assignments
+        # Ensure workspace 1 is on the main monitor and workspace 2 is on the secondary monitor when present.
+        # When only one monitor is connected, both workspaces remain available on the single monitor.
+        workspace-to-monitor-force-assignment = {
+          "1" = "main";
+          "2" = "secondary";
+        };
+
         # Modes and Bindings
         mode = {
           main.binding = {
             "alt-slash" = "layout tiles horizontal vertical";
             "alt-comma" = "layout accordion horizontal vertical";
-            "cmd-alt-left" = "focus left";
-            "cmd-alt-down" = "focus down";
-            "cmd-alt-up" = "focus up";
-            "cmd-alt-right" = "focus right";
-            "cmd-alt-shift-left" = "move left";
-            "cmd-alt-shift-down" = "move down";
-            "cmd-alt-shift-up" = "move up";
-            "cmd-alt-shift-right" = "move right";
+          
+  
             "alt-shift-minus" = "resize smart -50";
             "alt-shift-equal" = "resize smart +50";
             "alt-1" = "workspace 1";
             "alt-2" = "workspace 2";
-            "alt-3" = "workspace 3";
-            "alt-4" = "workspace 4";
-            "alt-5" = "workspace 5";
-            "alt-6" = "workspace 6";
-            "alt-7" = "workspace 7";
-            "alt-8" = "workspace 8";
-            "alt-9" = "workspace 9";
-            "alt-0" = "workspace 10";
             "alt-shift-1" = "move-node-to-workspace 1";
             "alt-shift-2" = "move-node-to-workspace 2";
-            "alt-shift-3" = "move-node-to-workspace 3";
-            "alt-shift-4" = "move-node-to-workspace 4";
-            "alt-shift-5" = "move-node-to-workspace 5";
-            "alt-shift-6" = "move-node-to-workspace 6";
-            "alt-shift-7" = "move-node-to-workspace 7";
-            "alt-shift-8" = "move-node-to-workspace 8";
-            "alt-shift-9" = "move-node-to-workspace 9";
             "alt-tab" = "workspace-back-and-forth";
             "alt-shift-tab" = "move-workspace-to-monitor --wrap-around next";
-            "alt-shift-semicolon" = "mode service";
+            "alt-shift-semicolon" = [
+              "mode service"
+              "exec-and-forget /opt/homebrew/opt/borders/bin/borders active_color=0xffff6600 inactive_color=0x00000000 width=5"
+            ];
           };
           service.binding = {
             esc = [
+              "exec-and-forget pkill -f borders"
               "reload-config"
               "mode main"
             ];
             r = [
+              "exec-and-forget pkill -f borders"
               "flatten-workspace-tree"
               "mode main"
             ];
-            f = [
-              "layout floating tiling"
-              "mode main"
-            ];
-            backspace = [
-              "close-all-windows-but-current"
-              "mode main"
-            ];
-            "alt-shift-left" = [
+            "n" = "focus --ignore-floating left";
+            "e" = "focus --ignore-floating down";
+            "o" = "focus --ignore-floating up";
+            "i" = "focus --ignore-floating right";
+            "alt-n" = "move left";
+            "alt-e" = "move down";
+            "alt-o" = "move up";
+            "alt-i" = "move right";
+            "cmd-alt-n" = [
               "join-with left"
-              "mode main"
             ];
-            "alt-shift-down" = [
-              "join-with down"
-              "mode main"
+            "cmd-alt-e" = [
+              "layout accordion vertical"
             ];
-            "alt-shift-up" = [
-              "join-with up"
-              "mode main"
+            "cmd-alt-o" = [
+              "layout accordion vertical"
             ];
-            "alt-shift-right" = [
+            "cmd-alt-i" = [
               "join-with right"
-              "mode main"
             ];
           };
         };
-
-        # Window detection rules
-        on-window-detected = [
-          {
-            "if" = {
-              app-id = "com.mitchellh.ghostty";
-            };
-            run = [ "layout floating" ];
-          }
-        ];
       };
     };
   };

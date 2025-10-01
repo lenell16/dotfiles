@@ -21,7 +21,6 @@
 
     # Development tools
     bun # JavaScript runtime
-    claude-code # Anthropic Claude Code CLI
     codex # OpenAI Codex CLI
     grpc-tools # gRPC Node.js tools (includes protoc + plugins)
     node-pre-gyp # Binary deployment tool for C++ addons
@@ -39,7 +38,7 @@
     raycast # App launcher
     podman # Container management tool
     docker-client # Docker CLI client
-  starship # Cross-shell prompt (used by fish integration)
+    starship # Cross-shell prompt (used by fish integration)
 
     # Media
     iina # Media player
