@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__plugin_exa-mcp-server_exa__get_code_context_exa",
+      "mcp__plugin_exa-mcp-server_exa__web_search_exa"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

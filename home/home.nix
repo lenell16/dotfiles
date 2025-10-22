@@ -245,9 +245,11 @@
       difftastic = {
         enable = false;              # Don't replace git diff
         enableAsDifftool = true;     # Enable as git difftool
-        background = "dark";
-        color = "always";
-        display = "inline";          # Try inline instead of side-by-side
+        options = {
+          background = "dark";
+          color = "always";
+          display = "inline";        # Try inline instead of side-by-side
+        };
       };
 
       # Git configuration
@@ -349,9 +351,9 @@
     };
 
     # Git UI tools
-    gitui = {
-      enable = true; # Terminal UI for Git
-    };
+    # gitui = {
+    #   enable = true; # Terminal UI for Git
+    # };
 
     # SSH configuration with 1Password integration
     ssh = {
@@ -569,6 +571,7 @@
 
           # load_op_key ANTHROPIC_API_KEY "op://Personal/Anthropic API Key/api key" $force_arg
           # load_op_key OPENAI_API_KEY "op://Personal/sadrtemi4z73i4jcyi27owmi54/api key" $force_arg
+          load_op_key EXA_API_KEY "op://Personal/Exa/add more/API Key" $force_arg
           # Add more keys as needed
         '';
 
@@ -647,6 +650,14 @@
         after-login-command = [ ];
         after-startup-command = [
           "layout tiles horizontal vertical"
+        ];
+
+        # Ghostty tab workaround: treat tabs as a single window instead of separate windows
+        on-window-detected = [
+          {
+            "if".app-id = "com.mitchellh.ghostty";
+            run = [ "layout tiling" ];
+          }
         ];
 
         # Normalizations

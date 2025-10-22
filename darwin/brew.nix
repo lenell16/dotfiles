@@ -22,6 +22,7 @@
       # "azure-cli"            # Azure CLI
       # "gh"                  # GitHub CLI
       "ankitpokhrel/jira-cli/jira-cli" # Jira CLI
+      "gitui"                # Git terminal UI (workaround for Nix build issue)
       # "node@20"             # Node.js version 20 (now managed via Nix)
       "openssl@3" # SSL library
       "mas" # Mac App Store CLI
@@ -66,8 +67,10 @@
       "conductor" # System management tool
 
       # Terminal & Development
+      "devtunnel" # Microsoft DevTunnel for secure tunneling
       "ghostty" # Terminal emulator
       "gitkraken" # Git client
+      "localcan" # Local development with public URLs and .local domains
       "lm-studio" # Local LLM development platform
       # "ollama"                     # Local LLM runner
       # "visual-studio-code@insiders" # Code editor

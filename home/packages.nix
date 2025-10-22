@@ -15,7 +15,9 @@
     nixfmt-rfc-style # RFC 166 compliant Nix formatter
 
     # Cloud & DevOps
-    azure-cli # Azure command line
+    (azure-cli.withExtensions [
+      azure-cli-extensions.application-insights
+    ]) # Azure command line
     azure-functions-core-tools # Azure Functions development
     infisical # Secrets management
 
