@@ -82,6 +82,7 @@
       # Browsers & Internet
       "arc" # Browser
       "google-chrome" # Browser
+      "zen" # Browser
 
       # Productivity
       "chatgpt" # AI assistant
