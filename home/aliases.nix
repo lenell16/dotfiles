@@ -9,7 +9,7 @@
 let
   # Commands wrapped with common flags
   exa = "${pkgs.eza}/bin/eza";
-  git = "${pkgs.gitAndTools.git}/bin/git";
+  git = "${pkgs.git}/bin/git";
 
   # Nix rebuild commands
   nixConfigDir = "~/Developer/personal/dotfiles";
