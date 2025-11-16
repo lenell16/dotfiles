@@ -130,9 +130,9 @@ in
     _1password = {
       enable = true;
     };
-    "_1password-gui" = {
-      enable = true;
-    };
+    # "_1password-gui" = {
+    #   enable = true;
+    # };
   };
 
   security.pam.services.sudo_local = {
