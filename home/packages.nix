@@ -25,12 +25,14 @@
     bun # JavaScript runtime
     codex # OpenAI Codex CLI
     grpc-tools # gRPC Node.js tools (includes protoc + plugins)
+    jdk21 # OpenJDK 21
     node-pre-gyp # Binary deployment tool for C++ addons
     pm2 # Node.js process manager
     pyright # Python type checker
     turbo # Monorepo tool
     uv # Python package installer
     jetbrains.datagrip # Database IDE
+    postgresql_14 # PostgreSQL client tools (psql, pg_dump, etc.)
 
     # System utilities
     curl # Data transfer tool
@@ -83,7 +85,6 @@
     pango # Text layout library
     pixman # Pixel manipulation library
     libpng # PNG support
-    freetype # Font rendering
     glib # GNOME base library (pango dep)
     fontconfig # Font configuration discovery
     libjpeg # JPEG support
