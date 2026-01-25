@@ -6,6 +6,15 @@
   ...
 }:
 let
+  # Pinned nixpkgs for packages with cache issues
+  pkgs-pinned = import inputs.nixpkgs-pinned {
+    inherit (pkgs) system;
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
+
   podmanMachineName = "podman-machine-default";
 
   containersToAutostart = [
@@ -104,7 +113,7 @@ in
 
     # Network utilities
     ngrok # Tunnel local servers
-    transmission_4 # Torrent client
+    pkgs-pinned.transmission_4 # Torrent client (pinned for cache hit)
   ];
 
   # Global environment variables and profile configuration

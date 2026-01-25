@@ -78,11 +78,6 @@
       $DRY_RUN_CMD bun install -g @google/gemini-cli@latest
     fi
 
-    if ! bun pm ls -g | grep -q "opencode-ai"; then
-      echo "Installing missing bun global: opencode-ai"
-      $DRY_RUN_CMD bun install -g opencode-ai@latest
-    fi
-
     if ! bun pm ls -g | grep -q "@dataramen/cli"; then
       echo "Installing missing bun global: @dataramen/cli"
       $DRY_RUN_CMD bun install -g @dataramen/cli@latest
@@ -91,16 +86,6 @@
     if ! bun pm ls -g | grep -q "protoc-gen-grpc"; then
       echo "Installing missing bun global: protoc-gen-grpc"
       $DRY_RUN_CMD bun install -g protoc-gen-grpc@latest
-    fi
-
-    if ! bun pm ls -g | grep -q "@sourcegraph/amp"; then
-      echo "Installing missing bun global: @sourcegraph/amp"
-      $DRY_RUN_CMD bun install -g @sourcegraph/amp@latest
-    fi
-
-    if ! bun pm ls -g | grep -q "@anthropic-ai/claude-code"; then
-      echo "Installing missing bun global: @anthropic-ai/claude-code"
-      $DRY_RUN_CMD bun install -g @anthropic-ai/claude-code@latest
     fi
   '';
 
@@ -232,6 +217,11 @@
       #   color14 = "#94e2d5"; # bright cyan
       #   color15 = "#a6adc8"; # bright white
       # };
+    };
+
+    # Git UI
+    gitui = {
+      enable = true;
     };
 
     # Git configuration
@@ -644,7 +634,7 @@
     aerospace = {
       enable = true;
       launchd.enable = true;
-      userSettings = {
+      settings = {
         # General settings
         start-at-login = false;
         after-login-command = [ ];

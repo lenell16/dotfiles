@@ -4,6 +4,9 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
+    # Pinned nixpkgs for packages with cache issues (azure-functions-core-tools)
+    # Remove once Hydra catches up with unstable builds
+    nixpkgs-pinned.url = "github:nixos/nixpkgs/8fb5010d08ad6ab155ac5c4c050e3db13dd78b3e";
     # Nix-Darwin
     nix-darwin = {
       url = "github:lnl7/nix-darwin";
@@ -65,7 +68,7 @@
       
       # CENTRALIZED: Define overlays once
       overlays = [
-        inputs.neovim-overlay.overlays.default
+        # inputs.neovim-overlay.overlays.default  # Temporarily disabled - incompatible with nixpkgs tree-sitter changes
       ];
       
       # Helper to create nixpkgs with consistent config

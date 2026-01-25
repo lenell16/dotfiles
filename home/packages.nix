@@ -6,6 +6,16 @@
   ...
 }:
 
+let
+  # Pinned nixpkgs for packages with cache issues
+  pkgs-pinned = import inputs.nixpkgs-pinned {
+    inherit (pkgs) system;
+    config = {
+      allowUnfree = true;
+      allowBroken = true;
+    };
+  };
+in
 {
   home.packages = with pkgs; [
     # Nix tools
@@ -15,16 +25,17 @@
     nixfmt-rfc-style # RFC 166 compliant Nix formatter
 
     # Cloud & DevOps
+    atlas # Database schema migration tool
     (azure-cli.withExtensions [
       azure-cli-extensions.application-insights
     ]) # Azure command line
-    azure-functions-core-tools # Azure Functions development
+    pkgs-pinned.azure-functions-core-tools # Azure Functions development (pinned for cache hit)
     infisical # Secrets management
 
     # Development tools
     bun # JavaScript runtime
-    codex # OpenAI Codex CLI
     grpc-tools # gRPC Node.js tools (includes protoc + plugins)
+    jira-cli-go # Jira CLI
     jdk21 # OpenJDK 21
     node-pre-gyp # Binary deployment tool for C++ addons
     pm2 # Node.js process manager
