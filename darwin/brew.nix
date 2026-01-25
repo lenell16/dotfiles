@@ -57,6 +57,7 @@
       "gitkraken-cli" # Git CLI client
       "localcan" # Local development with public URLs and .local domains
       "lm-studio" # Local LLM development platform
+      "opencode-desktop" # OpenCode desktop application
       # "ollama"                     # Local LLM runner
       # "visual-studio-code@insiders" # Code editor
       "visual-studio-code"

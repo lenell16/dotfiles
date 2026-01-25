@@ -23,6 +23,11 @@ in
   # Aliases are organized by category for better maintainability
 
   programs.fish = {
+    # Add opencode to PATH
+    shellInit = ''
+      fish_add_path ~/.opencode/bin
+    '';
+
     shellAliases = {
       # Navigation
       ".." = "cd ..";

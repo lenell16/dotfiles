@@ -227,9 +227,6 @@
     # Git configuration
     git = {
       enable = true;
-      # Global default configuration (work profile)
-      userName = "Alonzo Thomas";
-      userEmail = "alonzo.thomas@tribble.ai";
 
       # Enable difftastic as difftool (not default diff)
       difftastic = {
@@ -242,8 +239,12 @@
         };
       };
 
-      # Git configuration
-      extraConfig = {
+      # Git settings (new API - replaces userName, userEmail, and extraConfig)
+      settings = {
+        user = {
+          name = "Alonzo Thomas";
+          email = "alonzo.thomas@tribble.ai";
+        };
         push = {
           autoSetupRemote = true; # Auto set upstream on push
         };
