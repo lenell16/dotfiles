@@ -325,7 +325,11 @@
               name = "lenell16";
               email = "lenell16@gmail.com";
             };
-
+            url = {
+              "git@github.com-personal:" = {
+                insteadOf = "git@github.com:";
+              };
+            };
           };
         }
         {
@@ -335,7 +339,11 @@
               name = "Alonzo Thomas";
               email = "alonzo.thomas@tribble.ai";
             };
-
+            url = {
+              "git@github.com-work:" = {
+                insteadOf = "git@github.com:";
+              };
+            };
           };
         }
       ];
@@ -351,20 +359,26 @@
       enable = true;
       enableDefaultConfig = false;
       matchBlocks = {
-        # Personal GitHub (automatically uses personal SSH key)
-        "github-personal" = {
+        # Personal GitHub (lenell16)
+        "github.com-personal" = {
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
+          identityFile = ["~/.ssh/Github.pub"];
+          extraOptions = {
+            IdentityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
+          };
         };
         
-        # Work GitHub (automatically uses work SSH key)
-        "github-work" = {
+        # Work GitHub (alonzotribble)
+        "github.com-work" = {
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
+          identityFile = ["~/.ssh/tribble-github.pub"];
+          extraOptions = {
+            IdentityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
+          };
         };
         
         # Default for all other hosts
@@ -372,10 +386,9 @@
           compression = true;
           serverAliveInterval = 60;
           serverAliveCountMax = 10;
-          identityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
           extraOptions = {
             AddKeysToAgent = "yes";
-            UseKeychain = "yes";
+            IdentityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
           };
         };
       };
