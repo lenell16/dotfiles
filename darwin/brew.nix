@@ -9,6 +9,7 @@
     };
 
     taps = [
+      "atlassian/homebrew-acli"
       "danvergara/tools"
       "nikitabobko/tap"
       "supabase/tap"
@@ -17,6 +18,7 @@
 
     brews = [
       # CLI tools
+      "atlassian/homebrew-acli/acli"  # Atlassian CLI
       "mole"                 # Mac cleaning and optimization tool
       # "node@20"             # Node.js version 20 (now managed via Nix)
       "openssl@3" # SSL library
