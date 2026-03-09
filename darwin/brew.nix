@@ -103,18 +103,18 @@
       # "obsidian"                 # Note-taking
     ];
 
-    masApps = {
-      # Currently installed apps
-      "1Password for Safari" = 1569813296;
-      "Duplicate File Finder" = 1032755628;
-      "Elmedia Video Player" = 1044549675;
-      "Gemini 2" = 1090488118;
-      "Hidden Bar" = 1452453066;
-      "Is This Seat Taken" = 6747814605;
-      "Reeder" = 6475002485;
-      "Steam Link" = 1246969117;
-      "Surfshark" = 1437809329;
-      "TestFlight" = 899247664;
-    };
+    # masApps = {
+    #   # Currently installed apps
+    #   "1Password for Safari" = 1569813296;
+    #   "Duplicate File Finder" = 1032755628;
+    #   "Elmedia Video Player" = 1044549675;
+    #   "Gemini 2" = 1090488118;
+    #   "Hidden Bar" = 1452453066;
+    #   "Is This Seat Taken" = 6747814605;
+    #   "Reeder" = 6475002485;
+    #   "Steam Link" = 1246969117;
+    #   "Surfshark" = 1437809329;
+    #   "TestFlight" = 899247664;
+    # };
   };
 }
