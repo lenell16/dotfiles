@@ -57,7 +57,7 @@
       NSAutomaticQuoteSubstitutionEnabled = false; # Disable quote substitution
       NSAutomaticSpellingCorrectionEnabled = false; # Disable spelling correction
 
-      # Uncomment to hide menu bar (works with Aerospace)
+      # Uncomment to hide menu bar
       # _HIHideMenuBar = true;
     };
 
