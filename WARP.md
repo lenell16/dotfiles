@@ -88,7 +88,7 @@ nhlg  # List home-manager generations
 - **Shell**: Fish with extensive aliases and functions organized in `aliases.nix`
 - **Editor**: Neovim set as default editor with vi/vim aliases
 - **Terminal**: Ghostty (via Homebrew due to build issues in Nix)
-- **Window Manager**: AeroSpace with custom keybindings
+<!-- - **Window Manager**: AeroSpace with custom keybindings -->
 - **Package Management**: Mix of Nix packages and Homebrew for GUI applications
 
 ### System Integration
