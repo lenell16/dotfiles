@@ -18,8 +18,8 @@
 
     brews = [
       # CLI tools
-      "atlassian/homebrew-acli/acli"  # Atlassian CLI
-      "mole"                 # Mac cleaning and optimization tool
+      "atlassian/homebrew-acli/acli" # Atlassian CLI
+      "mole" # Mac cleaning and optimization tool
       # "node@20"             # Node.js version 20 (now managed via Nix)
       "openssl@3" # SSL library
       "mas" # Mac App Store CLI
@@ -55,7 +55,7 @@
       # Terminal & Development
       "devtunnel" # Microsoft DevTunnel for secure tunneling
       "ghostty" # Terminal emulator
-      "gitkraken" # Git client 
+      "gitkraken" # Git client
       "gitkraken-cli" # Git CLI client
       "localcan" # Local development with public URLs and .local domains
       "lm-studio" # Local LLM development platform
@@ -69,8 +69,9 @@
 
       # Browsers & Internet
       "arc" # Browser
+      "firefox" # Browser
       "google-chrome" # Browser
-      
+
       "zen" # Browser
 
       # Productivity
