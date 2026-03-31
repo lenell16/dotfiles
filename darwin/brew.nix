@@ -9,7 +9,12 @@
     };
 
     taps = [
+      "ahmedelgabri/git-wt"
       "atlassian/homebrew-acli"
+      {
+        name = "chmouel/lazyworktree";
+        clone_target = "https://github.com/chmouel/lazyworktree";
+      }
       "danvergara/tools"
       "nikitabobko/tap"
       "supabase/tap"
@@ -18,6 +23,7 @@
 
     brews = [
       # CLI tools
+      "ahmedelgabri/git-wt/git-wt" # Git worktree CLI
       "atlassian/homebrew-acli/acli" # Atlassian CLI
       "mole" # Mac cleaning and optimization tool
       # "node@20"             # Node.js version 20 (now managed via Nix)
@@ -37,6 +43,7 @@
       "pkgconf" # Package compiler and linker metadata toolkit
       "poppler" # PDF rendering library
 
+      "worktrunk" # Git worktree manager
     ];
 
     casks = [
@@ -54,6 +61,7 @@
 
       # Terminal & Development
       "devtunnel" # Microsoft DevTunnel for secure tunneling
+      "chmouel/lazyworktree/lazyworktree" # TUI for managing Git worktrees
       "ghostty" # Terminal emulator
       "gitkraken" # Git client
       "gitkraken-cli" # Git CLI client

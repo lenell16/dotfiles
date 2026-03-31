@@ -83,10 +83,6 @@
       $DRY_RUN_CMD bun install -g @dataramen/cli@latest
     fi
 
-    if ! bun pm ls -g | grep -q "protoc-gen-grpc"; then
-      echo "Installing missing bun global: protoc-gen-grpc"
-      $DRY_RUN_CMD bun install -g protoc-gen-grpc@latest
-    fi
   '';
 
   programs = {
