@@ -28,6 +28,7 @@ in
     atlas # Database schema migration tool
     (azure-cli.withExtensions [
       azure-cli-extensions.application-insights
+      azure-cli-extensions.azure-devops
     ]) # Azure command line
     pkgs-pinned.azure-functions-core-tools # Azure Functions development (pinned for cache hit)
     infisical # Secrets management
