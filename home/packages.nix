@@ -9,7 +9,7 @@
 let
   # Pinned nixpkgs for packages with cache issues
   pkgs-pinned = import inputs.nixpkgs-pinned {
-    inherit (pkgs) system;
+    system = pkgs.stdenv.hostPlatform.system;
     config = {
       allowUnfree = true;
       allowBroken = true;
@@ -48,12 +48,9 @@ in
 
     # System utilities
     curl # Data transfer tool
-    difftastic # Syntax-aware diff tool
     fd # Alternative to find
     ripgrep # Fast grep replacement
     raycast # App launcher
-    podman # Container management tool
-    docker-client # Docker CLI client
     starship # Cross-shell prompt (used by fish integration)
 
     # Media
@@ -89,7 +86,7 @@ in
     # lucky-cli       # Crystal web framework
     # miller          # CSV processor
     # mongodb         # NoSQL database
-    nodePackages.pnpm # Package manager
+    pnpm # Package manager (nodePackages.* removed from nixpkgs)
     nodejs_20 # Node.js v20 LTS with npm
     # overmind        # Process manager
     pkg-config # Build tooling for native addons

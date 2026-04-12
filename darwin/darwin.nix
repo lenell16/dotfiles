@@ -8,54 +8,13 @@
 let
   # Pinned nixpkgs for packages with cache issues
   pkgs-pinned = import inputs.nixpkgs-pinned {
-    inherit (pkgs) system;
+    system = pkgs.stdenv.hostPlatform.system;
     config = {
       allowUnfree = true;
       allowBroken = true;
     };
   };
 
-  podmanMachineName = "podman-machine-default";
-
-  containersToAutostart = [
-    "ds9-postgres"
-  ];
-
-  podmanAutostartScript = pkgs.writeShellScript "podman-machine-autostart" ''
-    set -euo pipefail
-
-    machine_name="${podmanMachineName}"
-
-    echo "Ensuring Podman machine ''${machine_name} is running..."
-
-    if ! ${pkgs.podman}/bin/podman machine inspect "''${machine_name}" >/dev/null 2>&1; then
-      echo "Podman machine ''${machine_name} not found; skipping container autostart."
-      exit 0
-    fi
-
-    ${pkgs.podman}/bin/podman machine start "''${machine_name}" >/dev/null 2>&1 || true
-
-    attempt=0
-    until ${pkgs.podman}/bin/podman info >/dev/null 2>&1; do
-      attempt=$((attempt + 1))
-      if [ "''${attempt}" -ge 15 ]; then
-        echo "Timed out waiting for Podman machine ''${machine_name} to become ready; skipping container autostart."
-        exit 0
-      fi
-      ${pkgs.coreutils}/bin/sleep 2
-    done
-
-    echo "Podman machine ''${machine_name} is ready; checking containers to start."
-
-    ${lib.concatStringsSep "\n\n    " (map (container: ''
-    if ${pkgs.podman}/bin/podman container exists "${container}"; then
-      echo "Starting container ${container}"
-      ${pkgs.podman}/bin/podman start "${container}"
-    else
-      echo "Container ${container} not found; skipping."
-    fi
-    '') containersToAutostart)}
-  '';
 in
 
 {
@@ -149,17 +108,6 @@ in
     touchIdAuth = true;
     reattach = true;
     # Extend here with additional services (e.g., `login`) if we want biometric auth elsewhere.
-  };
-
-  # Launch agents for background services
-  launchd.user.agents.podman-machine = {
-    serviceConfig = {
-      Label = "local.podman.machine.autostart";
-      ProgramArguments = [ "${podmanAutostartScript}" ];
-      RunAtLoad = true;
-      StandardOutPath = "/Users/alonzothomas/Library/Logs/podman-machine.log";
-      StandardErrorPath = "/Users/alonzothomas/Library/Logs/podman-machine.err";
-    };
   };
 
   # Used for backwards compatibility, please read the changelog before changing.

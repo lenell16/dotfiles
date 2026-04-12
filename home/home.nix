@@ -25,9 +25,6 @@
       # Pager settings
       LESS = "-R";
 
-      # Podman configuration
-      DOCKER_HOST = "unix:///var/folders/zy/gd7_972101sdqv5_625lgdmh0000gn/T/podman/podman-machine-default-api.sock";
-
       # JIRA CLI configuration - set token via: op item get "Jira API Token" --fields password
       # JIRA_API_TOKEN = ""; # Set this via 1Password or environment
 
@@ -220,20 +217,23 @@
       enable = true;
     };
 
+    # Syntax-aware diff (home-manager: was programs.git.difftastic)
+    difftastic = {
+      enable = true;
+      git = {
+        enable = true;
+        diffToolMode = true;
+      };
+      options = {
+        background = "dark";
+        color = "always";
+        display = "inline";
+      };
+    };
+
     # Git configuration
     git = {
       enable = true;
-
-      # Enable difftastic as difftool (not default diff)
-      difftastic = {
-        enable = false;              # Don't replace git diff
-        enableAsDifftool = true;     # Enable as git difftool
-        options = {
-          background = "dark";
-          color = "always";
-          display = "inline";        # Try inline instead of side-by-side
-        };
-      };
 
       # Git settings (new API - replaces userName, userEmail, and extraConfig)
       settings = {
@@ -638,6 +638,9 @@
       defaultEditor = true;
       viAlias = true; # Use 'vi' command for neovim
       vimAlias = true; # Use 'vim' command for neovim
+      # Explicit until home.stateVersion >= 26.05 (defaults changed in HM)
+      withRuby = true;
+      withPython3 = true;
     };
 
     # Window Manager

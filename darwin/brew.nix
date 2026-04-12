@@ -63,6 +63,7 @@
       "devtunnel" # Microsoft DevTunnel for secure tunneling
       "chmouel/lazyworktree/lazyworktree" # TUI for managing Git worktrees
       "ghostty" # Terminal emulator
+      "orbstack" # Docker & Linux VM runtime
       "gitkraken" # Git client
       "gitkraken-cli" # Git CLI client
       "localcan" # Local development with public URLs and .local domains
