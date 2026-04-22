@@ -44,6 +44,7 @@
       "poppler" # PDF rendering library
 
       "worktrunk" # Git worktree manager
+      "rtk" # CLI proxy to minimize LLM token consumption
     ];
 
     casks = [

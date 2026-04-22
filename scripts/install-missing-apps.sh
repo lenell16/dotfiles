@@ -5,6 +5,9 @@
 
 set -euo pipefail
 
+# Home Manager activation runs with minimal PATH; macOS curl lives in /usr/bin.
+export PATH="/usr/bin:/bin:/usr/sbin:/sbin${PATH:+:$PATH}"
+
 DOWNLOADS_DIR="$HOME/Downloads"
 
 # Function to check if app exists
@@ -34,10 +37,10 @@ download_dmg() {
 echo "🔍 Checking for missing applications..."
 
 # Wispr Flow
-download_dmg "Wispr Flow.app" "https://dl.wisprflow.ai/mac-apple/latest" "WisprFlow.dmg"
+# download_dmg "Wispr Flow.app" "https://dl.wisprflow.ai/mac-apple/latest" "WisprFlow.dmg"
 
 # Conar
-download_dmg "Conar.app" "https://github.com/wannabespace/conar/releases/download/v0.17.4/Conar-Mac-arm64-0.17.4-Installer.dmg" "Conar-Mac-arm64-0.17.4-Installer.dmg"
+# download_dmg "Conar.app" "https://github.com/wannabespace/conar/releases/download/v0.17.4/Conar-Mac-arm64-0.17.4-Installer.dmg" "Conar-Mac-arm64-0.17.4-Installer.dmg"
 
 # Add more apps here as needed
 # download_dmg "SomeApp.app" "https://example.com/app.dmg" "SomeApp.dmg"
