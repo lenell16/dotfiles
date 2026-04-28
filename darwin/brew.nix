@@ -78,20 +78,20 @@
       "zed" # Modern code editor
 
       # Browsers & Internet
-      "arc" # Browser
-      "firefox" # Browser
+      # "arc" # Browser
+      # "firefox" # Browser
       "google-chrome" # Browser
 
-      "zen" # Browser
+      # "zen" # Browser
 
       # Productivity
       "chatgpt" # AI assistant
       "chatwise" # Chat client
       # "claude" # AI assistant
       "adobe-acrobat-reader" # PDF reader
-      "fantastical" # Calendar app
-      "kap" # Screen recorder
-      "repo-prompt" # Git repository prompt utility
+      # "fantastical" # Calendar app
+      # "kap" # Screen recorder
+      # "repo-prompt" # Git repository prompt utility
       "slack" # Team communication
       "zoom" # Video conferencing
 
