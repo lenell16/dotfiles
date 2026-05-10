@@ -82,6 +82,14 @@ in
       gb = "${git} branch";
       glg = "${git} log --graph --oneline --decorate";
 
+      # Airbyte tunnels
+      airbyte-prod-up = "ssh -fN airbyte-prod && portless alias airbyte-prod 8100 && portless alias airbyte-prod-proxy 8101";
+      airbyte-prod-down = "pkill -f 'ssh -fN airbyte-prod' && portless alias --remove airbyte-prod && portless alias --remove airbyte-prod-proxy";
+      airbyte-test-up = "ssh -fN airbyte-test && portless alias airbyte-test 8200 && portless alias airbyte-test-proxy 8201";
+      airbyte-test-down = "pkill -f 'ssh -fN airbyte-test' && portless alias --remove airbyte-test && portless alias --remove airbyte-test-proxy";
+      airbyte-staging-up = "ssh -fN airbyte-staging && portless alias airbyte-staging 8300 && portless alias airbyte-staging-proxy 8301";
+      airbyte-staging-down = "pkill -f 'ssh -fN airbyte-staging' && portless alias --remove airbyte-staging && portless alias --remove airbyte-staging-proxy";
+
       # Utility
       ":q" = "exit";
 

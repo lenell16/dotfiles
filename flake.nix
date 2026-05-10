@@ -1,6 +1,13 @@
 {
   description = "Alonzo's darwin system";
 
+  nixConfig = {
+    extra-substituters = [ "https://yazi.cachix.org" ];
+    extra-trusted-public-keys = [
+      "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
+    ];
+  };
+
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
@@ -28,6 +35,12 @@
     flake-utils.url = "github:numtide/flake-utils";
     # 1Password Shell Plugins
     onepassword-shell-plugins.url = "github:1Password/shell-plugins";
+
+    # Yazi (upstream flake; replaces nixpkgs yazi via overlay)
+    yazi = {
+      url = "github:sxyazi/yazi";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     # rose-pine-kitty = {
     #   type = "github";
@@ -68,6 +81,7 @@
       
       # CENTRALIZED: Define overlays once
       overlays = [
+        inputs.yazi.overlays.default
         # inputs.neovim-overlay.overlays.default  # Temporarily disabled - incompatible with nixpkgs tree-sitter changes
       ];
       
