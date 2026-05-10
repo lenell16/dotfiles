@@ -2,7 +2,13 @@
   "permissions": {
     "allow": [
       "mcp__plugin_exa-mcp-server_exa__get_code_context_exa",
-      "mcp__plugin_exa-mcp-server_exa__web_search_exa"
+      "mcp__plugin_exa-mcp-server_exa__web_search_exa",
+      "Bash(portless list *)",
+      "Bash(portless status *)",
+      "WebSearch",
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:medium.com)",
+      "WebFetch(domain:deepwiki.com)"
     ],
     "deny": [],
     "ask": []
