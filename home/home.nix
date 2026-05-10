@@ -11,6 +11,7 @@
     ./packages.nix
     ./aliases.nix
     inputs.onepassword-shell-plugins.hmModules.default
+    ./fish-path-dedupe.nix
   ];
 
   home = {
@@ -33,6 +34,7 @@
 
       # Make Nix-provided pkg-config files visible to builds (e.g., node-canvas)
       PKG_CONFIG_PATH = "${config.home.profileDirectory}/lib/pkgconfig:${config.home.profileDirectory}/share/pkgconfig";
+
     };
 
     sessionPath = lib.mkAfter [
@@ -46,6 +48,10 @@
     file = {
       # Suppress the login message on macOS terminal
       ".hushlogin".text = "";
+
+      ".config/op/env.fish.tpl".text = ''
+        set -gx AI_GATEWAY_API_KEY "{{ op://Personal/AI_GATEWAY_API_KEY/credential }}"
+      '';
     };
   };
 
@@ -53,13 +59,6 @@
     if [ -f "${config.home.homeDirectory}/.config/op/auto-signin.fish" ]; then
       ${lib.getBin pkgs.fish}/bin/fish "${config.home.homeDirectory}/.config/op/auto-signin.fish"
     fi
-  '';
-
-  # Create symlink to 1Password SSH agent socket without spaces in path
-  home.activation.create1PasswordSSHSymlink = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    mkdir -p "${config.home.homeDirectory}/.ssh/1password"
-    ln -sf "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" \
-           "${config.home.homeDirectory}/.ssh/1password/agent.sock"
   '';
 
   home.activation.installMissingApps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -360,23 +359,74 @@
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityFile = ["~/.ssh/Github.pub"];
-          extraOptions = {
-            IdentityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
-          };
+          identityFile = [ "~/.ssh/Github" ];
         };
-        
+
         # Work GitHub (alonzotribble)
         "github.com-work" = {
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityFile = ["~/.ssh/tribble-github.pub"];
-          extraOptions = {
-            IdentityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
-          };
+          identityFile = [ "~/.ssh/tribble-github" ];
         };
-        
+
+        # Airbyte prod VM tunnel
+        "airbyte-prod" = {
+          hostname = "4.236.179.205";
+          user = "tribbleprod-airbyte-vm";
+          identityFile = [ "~/Developer/tribble/tunnel-keys/vm-prod-airbyte_key.pem" ];
+          localForwards = [
+            {
+              bind.port = 8100;
+              host.address = "localhost";
+              host.port = 8000;
+            }
+            {
+              bind.port = 8101;
+              host.address = "localhost";
+              host.port = 8006;
+            }
+          ];
+        };
+
+        # Airbyte test VM tunnel
+        "airbyte-test" = {
+          hostname = "172.191.111.255";
+          user = "tribbletest-airbyte-vm";
+          identityFile = [ "~/Developer/tribble/tunnel-keys/vm-test-airbyte_key.pem" ];
+          localForwards = [
+            {
+              bind.port = 8200;
+              host.address = "localhost";
+              host.port = 8000;
+            }
+            {
+              bind.port = 8201;
+              host.address = "localhost";
+              host.port = 8006;
+            }
+          ];
+        };
+
+        # Airbyte staging VM tunnel
+        "airbyte-staging" = {
+          hostname = "20.42.57.107";
+          user = "tribblestaging-airbyte-vm";
+          identityFile = [ "~/Developer/tribble/tunnel-keys/vm-staging-airbyte_key.pem" ];
+          localForwards = [
+            {
+              bind.port = 8300;
+              host.address = "localhost";
+              host.port = 8000;
+            }
+            {
+              bind.port = 8301;
+              host.address = "localhost";
+              host.port = 8006;
+            }
+          ];
+        };
+
         # Default for all other hosts
         "*" = {
           compression = true;
@@ -384,7 +434,6 @@
           serverAliveCountMax = 10;
           extraOptions = {
             AddKeysToAgent = "yes";
-            IdentityAgent = "${config.home.homeDirectory}/.ssh/1password/agent.sock";
           };
         };
       };
@@ -392,6 +441,14 @@
 
     lazygit = {
       enable = true; # Interactive Git terminal UI
+    };
+
+    # Terminal file manager (package from github:sxyazi/yazi flake via overlay)
+    yazi = {
+      enable = true;
+      enableFishIntegration = true;
+      shellWrapperName = "y";
+      package = pkgs.yazi.override { _7zz = pkgs._7zz-rar; };
     };
 
     # Fish shell configuration
@@ -417,9 +474,6 @@
           set -gx PATH "/run/current-system/sw/bin" $PATH
         end
 
-        # Set 1Password SSH agent socket
-        set -gx SSH_AUTH_SOCK "${config.home.homeDirectory}/.ssh/1password/agent.sock"
-
         # Set fish colors to match your terminal theme
         set -g fish_color_command blue
 
@@ -432,31 +486,6 @@
       functions = {
         # This explicitly overrides the greeting function
         fish_greeting = "";
-
-        # Refresh 1Password CLI session and cache it locally
-        op-relogin = ''
-          if not set -q OP_ACCOUNT
-            echo "Set OP_ACCOUNT to your 1Password account shorthand (e.g., my.1password.com)" >&2
-            return 1
-          end
-
-          set -l session (op signin $OP_ACCOUNT --raw 2>/dev/null)
-          if test $status -ne 0
-            echo "Failed to refresh 1Password session" >&2
-            return 1
-          end
-          if test -z "$session"
-            echo "Failed to refresh 1Password session" >&2
-            return 1
-          end
-
-          set -gx OP_SESSION $session
-          set -l cache_file "$HOME/.cache/op/session"
-          mkdir -p (dirname $cache_file)
-          echo -n $session > $cache_file
-          chmod 600 $cache_file
-          echo "1Password session refreshed."
-        '';
 
         # Show system info
         sysinfo = ''
@@ -562,17 +591,11 @@
 
         # Load all API keys
         load_api_keys = ''
-          # Define your API keys here
-          # Pass '--force' as an argument to force refresh all keys
-          set -l force_arg ""
-          if test (count $argv) -gt 0; and test "$argv[1]" = "--force"
-            set force_arg "--force"
-          end
+          set -l op_env_template "${config.home.homeDirectory}/.config/op/env.fish.tpl"
 
-          # load_op_key ANTHROPIC_API_KEY "op://Personal/Anthropic API Key/api key" $force_arg
-          # load_op_key OPENAI_API_KEY "op://Personal/sadrtemi4z73i4jcyi27owmi54/api key" $force_arg
-          load_op_key EXA_API_KEY "op://Personal/Exa/add more/API Key" $force_arg
-          # Add more keys as needed
+          if test -f $op_env_template
+            op inject --in-file $op_env_template 2>/dev/null | source
+          end
         '';
 
         # Auto-switch GitHub CLI account based on directory (manual function)
@@ -706,8 +729,7 @@
           main.binding = {
             "alt-slash" = "layout tiles horizontal vertical";
             "alt-comma" = "layout accordion horizontal vertical";
-          
-  
+
             "alt-shift-minus" = "resize smart -50";
             "alt-shift-equal" = "resize smart +50";
             "alt-1" = "workspace 1";

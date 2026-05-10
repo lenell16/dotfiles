@@ -17,6 +17,7 @@
       }
       "danvergara/tools"
       "nikitabobko/tap"
+      "satococoa/tap"
       "supabase/tap"
       "FelixKratz/formulae"
     ];
@@ -24,6 +25,7 @@
     brews = [
       # CLI tools
       "ahmedelgabri/git-wt/git-wt" # Git worktree CLI
+      "satococoa/tap/git-worktreeinclude" # Include shared attributes across worktrees
       "atlassian/homebrew-acli/acli" # Atlassian CLI
       "mole" # Mac cleaning and optimization tool
       # "node@20"             # Node.js version 20 (now managed via Nix)
@@ -49,6 +51,7 @@
 
     casks = [
       # Security & Password Management
+      "1password-cli" # Official op binary (/opt/homebrew/bin/op); integrates with the desktop app
       "1kc-razer" # Razer keyboard configuration
 
       # System Utilities
