@@ -5,6 +5,39 @@
   lib,
   ...
 }:
+let
+  # Git picks the SSH key per repo via core.sshCommand (see hasconfig work includes + default settings).
+  sshKeyLenell16 = "${config.home.homeDirectory}/.ssh/Github";
+  sshKeyAlonzotribble = "${config.home.homeDirectory}/.ssh/tribble-github";
+  gitSshLenell16 = "ssh -o IdentitiesOnly=yes -i ${sshKeyLenell16}";
+  gitSshAlonzotribble = "ssh -o IdentitiesOnly=yes -i ${sshKeyAlonzotribble}";
+
+  # Default Git identity is personal (lenell16). Work identity + work SSH key when any remote is
+  # under the work GitHub user or org (same hasconfig patterns for user.email and core.sshCommand).
+  gitWorkProfile = {
+    user = {
+      name = "Alonzo Thomas";
+      email = "alonzo.thomas@tribble.ai";
+    };
+    core = {
+      sshCommand = gitSshAlonzotribble;
+    };
+  };
+  gitWorkRemoteIncludes =
+    map
+      (condition: {
+        inherit condition;
+        contents = gitWorkProfile;
+      })
+      [
+        "hasconfig:remote.*.url:https://github.com/alonzotribble/**"
+        "hasconfig:remote.*.url:git@github.com:alonzotribble/**"
+        "hasconfig:remote.*.url:ssh://git@github.com/alonzotribble/**"
+        "hasconfig:remote.*.url:https://github.com/tribble-ai/**"
+        "hasconfig:remote.*.url:git@github.com:tribble-ai/**"
+        "hasconfig:remote.*.url:ssh://git@github.com/tribble-ai/**"
+      ];
+in
 {
 
   imports = [
@@ -237,8 +270,11 @@
       # Git settings (new API - replaces userName, userEmail, and extraConfig)
       settings = {
         user = {
-          name = "Alonzo Thomas";
-          email = "alonzo.thomas@tribble.ai";
+          name = "lenell16";
+          email = "lenell16@gmail.com";
+        };
+        core = {
+          sshCommand = gitSshLenell16;
         };
         push = {
           autoSetupRemote = true; # Auto set upstream on push
@@ -313,35 +349,8 @@
       ];
       includes = [
         { path = "${inputs.gitalias}/gitalias.txt"; }
-        {
-          condition = "gitdir:~/Developer/personal/**";
-          contents = {
-            user = {
-              name = "lenell16";
-              email = "lenell16@gmail.com";
-            };
-            url = {
-              "git@github.com-personal:" = {
-                insteadOf = "git@github.com:";
-              };
-            };
-          };
-        }
-        {
-          condition = "gitdir:~/Developer/tribble/**";
-          contents = {
-            user = {
-              name = "Alonzo Thomas";
-              email = "alonzo.thomas@tribble.ai";
-            };
-            url = {
-              "git@github.com-work:" = {
-                insteadOf = "git@github.com:";
-              };
-            };
-          };
-        }
-      ];
+      ]
+      ++ gitWorkRemoteIncludes;
     };
 
     # Git UI tools
@@ -354,20 +363,25 @@
       enable = true;
       enableDefaultConfig = false;
       matchBlocks = {
-        # Personal GitHub (lenell16)
+        # github.com: default key for ssh(1); Git uses core.sshCommand per repo. Legacy hostnames
+        # keep a single key each so old remotes still work.
+        "github.com" = {
+          hostname = "github.com";
+          user = "git";
+          identitiesOnly = true;
+          identityFile = [ sshKeyLenell16 ];
+        };
         "github.com-personal" = {
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityFile = [ "~/.ssh/Github" ];
+          identityFile = [ sshKeyLenell16 ];
         };
-
-        # Work GitHub (alonzotribble)
         "github.com-work" = {
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityFile = [ "~/.ssh/tribble-github" ];
+          identityFile = [ sshKeyAlonzotribble ];
         };
 
         # Airbyte prod VM tunnel
@@ -598,18 +612,10 @@
           end
         '';
 
-        # Auto-switch GitHub CLI account based on directory (manual function)
-        gh-switch-account = ''
-          set -l current_dir (pwd)
-          if string match -q "*/Developer/personal/*" $current_dir
-            gh auth switch --user lenell16 >/dev/null 2>&1
-            echo "Switched to personal GitHub account (lenell16)"
-          else if string match -q "*/Developer/tribble/*" $current_dir
-            gh auth switch --user alonzotribble >/dev/null 2>&1
-            echo "Switched to work GitHub account (alonzotribble)"
-          else
-            echo "Not in a recognized project directory"
-          end
+        # Re-detect GitHub CLI user from current repo (see shellInit __dotfiles_gh_autoswitch)
+        gh-resync-account = ''
+          set -e __dotfiles_gh_git_top
+          __dotfiles_gh_autoswitch
         '';
       };
 
@@ -644,6 +650,40 @@
         if test -f $op_plugin
           source $op_plugin
         end
+
+        # GitHub CLI: default lenell16; work account if any remote is tribble-ai or alonzotribble
+        function __dotfiles_gh_autoswitch_apply
+          set -l top $argv[1]
+          if test -z "$top"
+            gh auth switch --user lenell16 >/dev/null 2>&1
+            return
+          end
+          for remote in (git -C $top remote 2>/dev/null)
+            set -l url (git -C $top remote get-url $remote 2>/dev/null)
+            test -z "$url"
+            and continue
+            if string match -qr 'github\.com[:/](alonzotribble|tribble-ai)/' $url
+              gh auth switch --user alonzotribble >/dev/null 2>&1
+              return
+            end
+          end
+          gh auth switch --user lenell16 >/dev/null 2>&1
+        end
+
+        function __dotfiles_gh_autoswitch
+          set -l top (git rev-parse --show-toplevel 2>/dev/null)
+          if test "$top" = "$__dotfiles_gh_git_top"
+            return
+          end
+          set -g __dotfiles_gh_git_top $top
+          __dotfiles_gh_autoswitch_apply $top
+        end
+
+        function __dotfiles_gh_on_pwd --on-variable PWD
+          __dotfiles_gh_autoswitch
+        end
+
+        __dotfiles_gh_autoswitch
       '';
     };
 
