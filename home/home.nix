@@ -37,13 +37,15 @@ let
         "hasconfig:remote.*.url:git@github.com:tribble-ai/**"
         "hasconfig:remote.*.url:ssh://git@github.com/tribble-ai/**"
       ];
+
+  opEnvFishTpl = "${config.home.homeDirectory}/.config/op/env.fish.tpl";
+  opEnvFish = "${config.home.homeDirectory}/.config/op/env.fish";
 in
 {
 
   imports = [
     ./packages.nix
     ./aliases.nix
-    inputs.onepassword-shell-plugins.hmModules.default
     ./fish-path-dedupe.nix
   ];
 
@@ -88,10 +90,41 @@ in
     };
   };
 
-  home.activation.refreshOpSession = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    if [ -f "${config.home.homeDirectory}/.config/op/auto-signin.fish" ]; then
-      ${lib.getBin pkgs.fish}/bin/fish "${config.home.homeDirectory}/.config/op/auto-signin.fish"
+  # Resolve op:// placeholders into ~/.config/op/env.fish (no `op` on every shell — only hm switch).
+  home.activation.injectOpEnvFish = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    HOME_DIR="${config.home.homeDirectory}"
+    TPL="${opEnvFishTpl}"
+    OUT="${opEnvFish}"
+    OP_BIN=""
+    for _op in /opt/homebrew/bin/op /usr/local/bin/op; do
+      if [ -x "$_op" ]; then
+        OP_BIN="$_op"
+        break
+      fi
+    done
+
+    if [ ! -f "$TPL" ]; then
+      exit 0
     fi
+
+    if [ -z "$OP_BIN" ]; then
+      echo "home-manager: injectOpEnvFish: op not found; skipping $OUT" >&2
+      exit 0
+    fi
+
+    if [ -n "$DRY_RUN_CMD" ]; then
+      echo "home-manager: injectOpEnvFish: [dry-run] would op inject $TPL -> $OUT"
+      exit 0
+    fi
+
+    tmp=$(mktemp "$HOME_DIR/.config/op/env.fish.tmp.XXXXXX")
+    if ! "$OP_BIN" inject --in-file "$TPL" --out-file "$tmp" 2>/dev/null; then
+      echo "home-manager: injectOpEnvFish: op inject failed; leaving any existing $OUT unchanged" >&2
+      rm -f "$tmp"
+      exit 0
+    fi
+    chmod 600 "$tmp"
+    mv -f "$tmp" "$OUT"
   '';
 
   home.activation.installMissingApps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
@@ -115,18 +148,6 @@ in
   '';
 
   programs = {
-    # # 1Password Shell Plugins
-    # _1password-shell-plugins = {
-    #   enable = true;
-    #   plugins = with pkgs; [
-    #     ngrok # You already have this configured manually
-    #     # Add other CLI tools you want to use with 1Password shell plugins
-    #     # gh     # GitHub CLI (already enabled above)
-    #     # awscli2
-    #     # docker
-    #   ];
-    # };
-
     # Development environments
     direnv = {
       enable = true;
@@ -598,17 +619,40 @@ in
           end
         '';
 
-        # Force refresh all API keys
+        # Regenerate ~/.config/op/env.fish from the template (runs `op inject`; use after vault changes)
         refresh_api_keys = ''
-          load_api_keys --force
+          set -l tpl "${opEnvFishTpl}"
+          set -l out "${opEnvFish}"
+          set -l op_bin
+          for candidate in /opt/homebrew/bin/op /usr/local/bin/op
+            if test -x $candidate
+              set op_bin $candidate
+              break
+            end
+          end
+          if test -z "$op_bin"
+            echo "refresh_api_keys: op not found (install 1password-cli)" >&2
+            return 1
+          end
+          if not test -f $tpl
+            echo "refresh_api_keys: missing $tpl" >&2
+            return 1
+          end
+          set -l tmp (mktemp -t op_env_fish.XXXXXX)
+          if not $op_bin inject --in-file $tpl --out-file $tmp 2>/dev/null
+            rm -f $tmp
+            echo "refresh_api_keys: op inject failed (unlock 1Password?)" >&2
+            return 1
+          end
+          chmod 600 $tmp
+          mv -f $tmp $out
+          source $out
         '';
 
-        # Load all API keys
+        # Load API keys produced by home-manager activation (injectOpEnvFish) or refresh_api_keys
         load_api_keys = ''
-          set -l op_env_template "${config.home.homeDirectory}/.config/op/env.fish.tpl"
-
-          if test -f $op_env_template
-            op inject --in-file $op_env_template 2>/dev/null | source
+          if test -f "${opEnvFish}"
+            source "${opEnvFish}"
           end
         '';
 
@@ -642,14 +686,8 @@ in
         # Nix shell integration
         any-nix-shell fish --info-right | source
 
-        # Load all API keys from 1Password
+        # API keys: source ~/.config/op/env.fish (refreshed by home-manager switch or refresh_api_keys)
         load_api_keys
-
-        # 1Password CLI plugin integration
-        set -l op_plugin "${config.home.homeDirectory}/.config/op/plugins.sh"
-        if test -f $op_plugin
-          source $op_plugin
-        end
 
         # GitHub CLI: default lenell16; work account if any remote is tribble-ai or alonzotribble
         function __dotfiles_gh_autoswitch_apply
