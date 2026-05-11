@@ -390,7 +390,6 @@ in
           hostname = "github.com";
           user = "git";
           identitiesOnly = true;
-          identityFile = [ sshKeyLenell16 ];
         };
         "github.com-personal" = {
           hostname = "github.com";
