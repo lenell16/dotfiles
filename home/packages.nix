@@ -50,7 +50,7 @@ in
     curl # Data transfer tool
     fd # Alternative to find
     ripgrep # Fast grep replacement
-    raycast # App launcher
+    # raycast # App launcher
     starship # Cross-shell prompt (used by fish integration)
 
     # Media
