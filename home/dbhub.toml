@@ -1,0 +1,186 @@
+# Global DBHub configuration for Tribble PostgreSQL.
+# Deployed to ~/.config/dbhub/dbhub.toml via home-manager.
+#
+# Wire any agent (Cursor, Claude Code, etc.):
+#   npx @bytebase/dbhub@latest --transport stdio --config ~/.config/dbhub/dbhub.toml
+#
+# Passwords / URLs: TRIBBLE_* and PRESENTON_* from ~/.config/op/env.fish (1Password via home-manager).
+# SSH: Tribble prod/staging use ~/.ssh/config (tribble-prod-pg, tribble-staging-pg).
+# Presenton Azure Postgres: direct (no SSH). Presenton local: docker compose on localhost:5433.
+
+[[sources]]
+id = "tribble-prod"
+description = "Tribble prod"
+type = "postgres"
+host = "tribble.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribble"
+password = "${TRIBBLE_PROD_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+ssh_host = "tribble-prod-pg"
+
+[[sources]]
+id = "tribble-staging"
+description = "Tribble staging"
+type = "postgres"
+host = "tribble-staging.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribblestaging"
+password = "${TRIBBLE_STAGING_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+ssh_host = "tribble-staging-pg"
+
+[[sources]]
+id = "tribble-test"
+description = "Tribble test"
+type = "postgres"
+host = "tribble-test.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribbledev"
+password = "${TRIBBLE_TEST_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "tribble-local"
+description = "Tribble local"
+type = "postgres"
+host = "localhost"
+port = 5432
+database = "postgres"
+user = "tribbledev"
+password = "${TRIBBLE_LOCAL_DB_PASSWORD}"
+sslmode = "disable"
+lazy = true
+connection_timeout = 10
+query_timeout = 30
+
+# Remote: read-only, like tribble-psql. Local: read/write for dev.
+[[tools]]
+name = "execute_sql"
+source = "tribble-prod"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "tribble-prod"
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-staging"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "tribble-staging"
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-test"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "tribble-test"
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-local"
+readonly = false
+max_rows = 5000
+
+[[tools]]
+name = "search_objects"
+source = "tribble-local"
+
+[[sources]]
+id = "presenton-prod"
+description = "Presenton prod"
+dsn = "${PRESENTON_PROD_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-staging"
+description = "Presenton staging"
+dsn = "${PRESENTON_STAGING_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-test"
+description = "Presenton test"
+dsn = "${PRESENTON_TEST_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-local"
+description = "Presenton local (docker compose)"
+type = "postgres"
+host = "localhost"
+port = 5433
+database = "presenton"
+user = "presenton"
+password = "presenton"
+sslmode = "disable"
+lazy = true
+connection_timeout = 10
+query_timeout = 30
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-prod"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "presenton-prod"
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-staging"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "presenton-staging"
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-test"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "presenton-test"
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-local"
+readonly = false
+max_rows = 5000
+
+[[tools]]
+name = "search_objects"
+source = "presenton-local"

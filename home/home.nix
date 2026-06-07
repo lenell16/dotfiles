@@ -40,6 +40,22 @@ let
 
   opEnvFishTpl = "${config.home.homeDirectory}/.config/op/env.fish.tpl";
   opEnvFish = "${config.home.homeDirectory}/.config/op/env.fish";
+  cursorMcpJson = {
+    mcpServers = {
+      dbhub-tribble = {
+        type = "stdio";
+        command = "npx";
+        args = [
+          "-y"
+          "@bytebase/dbhub@latest"
+          "--transport"
+          "stdio"
+          "--config"
+          "${config.home.homeDirectory}/.config/dbhub/dbhub.toml"
+        ];
+      };
+    };
+  };
 in
 {
 
@@ -86,7 +102,20 @@ in
 
       ".config/op/env.fish.tpl".text = ''
         set -gx AI_GATEWAY_API_KEY "{{ op://Personal/AI_GATEWAY_API_KEY/credential }}"
+        set -gx TRIBBLE_PROD_DB_PASSWORD "{{ op://Personal/Tribble DB Prod/password }}"
+        set -gx TRIBBLE_STAGING_DB_PASSWORD "{{ op://Personal/Tribble DB Staging/password }}"
+        set -gx TRIBBLE_TEST_DB_PASSWORD "{{ op://Personal/Tribble DB Test/password }}"
+        set -gx TRIBBLE_LOCAL_DB_PASSWORD "{{ op://Personal/Tribble DB Local/password }}"
+        set -gx PRESENTON_PROD_DATABASE_URL "{{ op://Personal/Presenton DB Prod/credential }}"
+        set -gx PRESENTON_STAGING_DATABASE_URL "{{ op://Personal/Presenton DB Staging/credential }}"
+        set -gx PRESENTON_TEST_DATABASE_URL "{{ op://Personal/Presenton DB Test/credential }}"
       '';
+
+      # Global DBHub config — point any MCP client at: --config ~/.config/dbhub/dbhub.toml
+      ".config/dbhub/dbhub.toml".source = ./dbhub.toml;
+
+      # Cursor global MCP (Settings → MCP, or ~/.cursor/mcp.json)
+      ".cursor/mcp.json".text = builtins.toJSON cursorMcpJson + "\n";
     };
   };
 
@@ -459,6 +488,19 @@ in
               host.port = 8006;
             }
           ];
+        };
+
+        # Tribble PostgreSQL bastions (pg-tunnel / DBHub SSH tunnels)
+        "tribble-prod-pg" = {
+          hostname = "20.231.68.152";
+          user = "tribbleprod";
+          identityFile = [ "~/Developer/tribble/tunnel-keys/vm-prod-pg-tunnel_key.pem" ];
+        };
+
+        "tribble-staging-pg" = {
+          hostname = "52.146.36.99";
+          user = "tribble-staging-vm";
+          identityFile = [ "~/Developer/tribble/tunnel-keys/vm-staging-pg-tunnel_key.pem" ];
         };
 
         # Default for all other hosts
