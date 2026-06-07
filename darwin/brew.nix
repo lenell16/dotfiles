@@ -62,7 +62,7 @@
       "workman" # Keyboard layout
       "yaak" # Terminal
       "conductor" # System management tool
-      "thaw" # Smart mouse/trackpad for iPad to Mac
+      "thaw" # Menu bar manager (Thaw)
 
       # Terminal & Development
       "devtunnel" # Microsoft DevTunnel for secure tunneling
