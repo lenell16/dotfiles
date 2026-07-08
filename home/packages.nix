@@ -39,7 +39,6 @@ in
     jira-cli-go # Jira CLI
     jdk21 # OpenJDK 21
     node-pre-gyp # Binary deployment tool for C++ addons
-    pm2 # Node.js process manager
     pyright # Python type checker
     turbo # Monorepo tool
     uv # Python package installer

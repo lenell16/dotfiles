@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ lib, config, ... }:
 {
   homebrew = {
     enable = true;
@@ -6,10 +6,11 @@
       autoUpdate = false;
       cleanup = "zap";
       upgrade = true;
+      extraFlags = [ "--force-cleanup" ];
     };
 
     taps = [
-      "ahmedelgabri/git-wt"
+      "ahmedelgabri/tap"
       "atlassian/homebrew-acli"
       {
         name = "chmouel/lazyworktree";
@@ -22,10 +23,24 @@
       "FelixKratz/formulae"
     ];
 
+    # Homebrew 6+ requires explicit trust for third-party taps (see docs.brew.sh/Tap-Trust).
+    # nix-darwin does not yet expose `trusted` on tap/brew/cask entries; extraConfig appends to the Brewfile.
+    extraConfig = ''
+      tap "ahmedelgabri/tap", trusted: true
+      tap "atlassian/homebrew-acli", trusted: true
+      tap "chmouel/lazyworktree", trusted: true
+      tap "danvergara/tools", trusted: true
+      tap "nikitabobko/tap", trusted: true
+      tap "satococoa/tap", trusted: true
+      tap "supabase/tap", trusted: true
+      tap "FelixKratz/formulae", trusted: true
+      brew "ahmedelgabri/tap/git-wt", trusted: true
+    '';
+
     brews = [
       # CLI tools
-      "ahmedelgabri/git-wt/git-wt" # Git worktree CLI
-      "satococoa/tap/git-worktreeinclude" # Include shared attributes across worktrees
+      # "ahmedelgabri/tap/git-wt" # Git worktree CLI
+      # "satococoa/tap/git-worktreeinclude" # Include shared attributes across worktrees
       "atlassian/homebrew-acli/acli" # Atlassian CLI
       "mole" # Mac cleaning and optimization tool
       # "node@20"             # Node.js version 20 (now managed via Nix)
@@ -45,8 +60,8 @@
       "pkgconf" # Package compiler and linker metadata toolkit
       "poppler" # PDF rendering library
 
-      "worktrunk" # Git worktree manager
-      "rtk" # CLI proxy to minimize LLM token consumption
+      # "worktrunk" # Git worktree manager
+      # "rtk" # CLI proxy to minimize LLM token consumption
     ];
 
     casks = [
@@ -72,8 +87,7 @@
       "gitkraken" # Git client
       "gitkraken-cli" # Git CLI client
       "localcan" # Local development with public URLs and .local domains
-      "lm-studio" # Local LLM development platform
-      "opencode-desktop" # OpenCode desktop application
+      # "opencode-desktop" # OpenCode desktop application
       # "ollama"                     # Local LLM runner
       # "visual-studio-code@insiders" # Code editor
       "visual-studio-code"
@@ -131,4 +145,17 @@
     #   "TestFlight" = 899247664;
     # };
   };
+
+  # git-wt moved from tap ahmedelgabri/git-wt to ahmedelgabri/tap; a leftover tap or lock breaks upgrades.
+  system.activationScripts.extraActivation.text = lib.mkAfter ''
+    hb_prefix="${config.homebrew.prefix}"
+    hb_user="${config.homebrew.user}"
+    if [ -x "$hb_prefix/bin/brew" ]; then
+      if sudo --user="$hb_user" --set-home "$hb_prefix/bin/brew" tap 2>/dev/null | grep -qx 'ahmedelgabri/git-wt'; then
+        echo "Removing stale Homebrew tap ahmedelgabri/git-wt (migrated to ahmedelgabri/tap)..."
+        sudo --user="$hb_user" --set-home "$hb_prefix/bin/brew" untap ahmedelgabri/git-wt || true
+      fi
+      rm -f "$hb_prefix/var/homebrew/locks/git-wt.formula.lock" 2>/dev/null || true
+    fi
+  '';
 }

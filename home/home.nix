@@ -40,22 +40,6 @@ let
 
   opEnvFishTpl = "${config.home.homeDirectory}/.config/op/env.fish.tpl";
   opEnvFish = "${config.home.homeDirectory}/.config/op/env.fish";
-  cursorMcpJson = {
-    mcpServers = {
-      dbhub-tribble = {
-        type = "stdio";
-        command = "npx";
-        args = [
-          "-y"
-          "@bytebase/dbhub@latest"
-          "--transport"
-          "stdio"
-          "--config"
-          "${config.home.homeDirectory}/.config/dbhub/dbhub.toml"
-        ];
-      };
-    };
-  };
 in
 {
 
@@ -101,7 +85,9 @@ in
       ".hushlogin".text = "";
 
       ".config/op/env.fish.tpl".text = ''
+        set -gx GHCR_PAT "{{ op://Personal/GHCR_PAT/credential }}"
         set -gx AI_GATEWAY_API_KEY "{{ op://Personal/AI_GATEWAY_API_KEY/credential }}"
+        set -gx CURSOR_API_KEY "{{ op://Personal/CURSOR_API_KEY/credential }}"
         set -gx TRIBBLE_PROD_DB_PASSWORD "{{ op://Personal/Tribble DB Prod/password }}"
         set -gx TRIBBLE_STAGING_DB_PASSWORD "{{ op://Personal/Tribble DB Staging/password }}"
         set -gx TRIBBLE_TEST_DB_PASSWORD "{{ op://Personal/Tribble DB Test/password }}"
@@ -113,9 +99,6 @@ in
 
       # Global DBHub config — point any MCP client at: --config ~/.config/dbhub/dbhub.toml
       ".config/dbhub/dbhub.toml".source = ./dbhub.toml;
-
-      # Cursor global MCP (Settings → MCP, or ~/.cursor/mcp.json)
-      ".cursor/mcp.json".text = builtins.toJSON cursorMcpJson + "\n";
     };
   };
 
@@ -158,22 +141,6 @@ in
 
   home.activation.installMissingApps = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
     ${pkgs.bash}/bin/bash ${config.home.homeDirectory}/Developer/personal/dotfiles/scripts/install-missing-apps.sh
-  '';
-
-  home.activation.bunGlobals = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
-    # Install bun globals if they don't exist
-    PATH="${pkgs.bun}/bin:$PATH"
-
-    if ! bun pm ls -g | grep -q "@google/gemini-cli"; then
-      echo "Installing missing bun global: @google/gemini-cli"
-      $DRY_RUN_CMD bun install -g @google/gemini-cli@latest
-    fi
-
-    if ! bun pm ls -g | grep -q "@dataramen/cli"; then
-      echo "Installing missing bun global: @dataramen/cli"
-      $DRY_RUN_CMD bun install -g @dataramen/cli@latest
-    fi
-
   '';
 
   programs = {

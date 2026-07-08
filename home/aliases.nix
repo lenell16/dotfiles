@@ -24,9 +24,9 @@ in
 
   programs.fish = {
     # Add opencode to PATH
-    shellInit = ''
-      fish_add_path ~/.opencode/bin
-    '';
+    # shellInit = ''
+    #   fish_add_path ~/.opencode/bin
+    # '';
 
     shellAliases = {
       # Navigation
