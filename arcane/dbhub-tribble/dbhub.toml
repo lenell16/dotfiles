@@ -1,0 +1,248 @@
+# DBHub Tribble — Arcane / Umbrel deployment.
+# MCP (tailnet): https://dbhub-tribble.<tailnet>.ts.net/mcp
+# Workbench:      https://dbhub-tribble.<tailnet>.ts.net/
+#
+# Env vars: TRIBBLE_* and PRESENTON_* (Arcane project Environment).
+# SSH keys: /secrets/*.pem (mount from secrets/ — not in git).
+#
+# Local-only sources (tribble-local, presenton-local) omitted — no localhost DBs on Umbrel.
+
+[[sources]]
+id = "tribble-prod"
+description = "Tribble prod"
+type = "postgres"
+host = "tribble.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribble"
+password = "${TRIBBLE_PROD_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+ssh_host = "20.231.68.152"
+ssh_user = "tribbleprod"
+ssh_key = "/secrets/vm-prod-pg-tunnel_key.pem"
+
+[[sources]]
+id = "tribble-prod-write"
+description = "Tribble prod (write)"
+type = "postgres"
+host = "tribble.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribble"
+password = "${TRIBBLE_PROD_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+ssh_host = "20.231.68.152"
+ssh_user = "tribbleprod"
+ssh_key = "/secrets/vm-prod-pg-tunnel_key.pem"
+
+[[sources]]
+id = "tribble-staging"
+description = "Tribble staging"
+type = "postgres"
+host = "tribble-staging.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribblestaging"
+password = "${TRIBBLE_STAGING_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+ssh_host = "52.146.36.99"
+ssh_user = "tribble-staging-vm"
+ssh_key = "/secrets/vm-staging-pg-tunnel_key.pem"
+
+[[sources]]
+id = "tribble-staging-write"
+description = "Tribble staging (write)"
+type = "postgres"
+host = "tribble-staging.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribblestaging"
+password = "${TRIBBLE_STAGING_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+ssh_host = "52.146.36.99"
+ssh_user = "tribble-staging-vm"
+ssh_key = "/secrets/vm-staging-pg-tunnel_key.pem"
+
+[[sources]]
+id = "tribble-test"
+description = "Tribble test"
+type = "postgres"
+host = "tribble-test.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribbledev"
+password = "${TRIBBLE_TEST_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "tribble-test-write"
+description = "Tribble test (write)"
+type = "postgres"
+host = "tribble-test.postgres.database.azure.com"
+port = 5432
+database = "postgres"
+user = "tribbledev"
+password = "${TRIBBLE_TEST_DB_PASSWORD}"
+sslmode = "require"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-prod"
+description = "Presenton prod"
+dsn = "${PRESENTON_PROD_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-prod-write"
+description = "Presenton prod (write)"
+dsn = "${PRESENTON_PROD_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-staging"
+description = "Presenton staging"
+dsn = "${PRESENTON_STAGING_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-staging-write"
+description = "Presenton staging (write)"
+dsn = "${PRESENTON_STAGING_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-test"
+description = "Presenton test"
+dsn = "${PRESENTON_TEST_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[sources]]
+id = "presenton-test-write"
+description = "Presenton test (write)"
+dsn = "${PRESENTON_TEST_DATABASE_URL}"
+lazy = true
+connection_timeout = 60
+query_timeout = 30
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-prod"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "tribble-prod"
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-prod-write"
+readonly = false
+max_rows = 1000
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-staging"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "tribble-staging"
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-staging-write"
+readonly = false
+max_rows = 1000
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-test"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "tribble-test"
+
+[[tools]]
+name = "execute_sql"
+source = "tribble-test-write"
+readonly = false
+max_rows = 1000
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-prod"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "presenton-prod"
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-prod-write"
+readonly = false
+max_rows = 1000
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-staging"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "presenton-staging"
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-staging-write"
+readonly = false
+max_rows = 1000
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-test"
+readonly = true
+max_rows = 1000
+
+[[tools]]
+name = "search_objects"
+source = "presenton-test"
+
+[[tools]]
+name = "execute_sql"
+source = "presenton-test-write"
+readonly = false
+max_rows = 1000
