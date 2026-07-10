@@ -1,3 +1,0 @@
-.env
-.deploy-payload.b64
-secrets/*.pem
