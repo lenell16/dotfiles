@@ -1,20 +1,14 @@
-# Global DBHub configuration.
-# Deployed to ~/.config/dbhub/dbhub.toml via home-manager.
+# Docker-specific DBHub configuration for the local Tribble database.
 #
-# Wire any agent (Cursor, Claude Code, etc.):
-#   npx @bytebase/dbhub@latest --transport stdio --config ~/.config/dbhub/dbhub.toml
-#
-# Passwords: TRIBBLE_LOCAL_* from ~/.config/op/env.fish (1Password via home-manager).
-#
-# Read vs write: DBHub allows one execute_sql per source, so write access uses duplicate
-# sources with a -write suffix.
-# Grant them separately in Cursor Agent permissions.
+# OrbStack containers reach host-published services through
+# host.docker.internal. The password is injected by Docker Compose from the
+# existing 1Password-backed shell environment.
 
 [[sources]]
 id = "tribble-local"
 description = "Tribble local"
 type = "postgres"
-host = "localhost"
+host = "host.docker.internal"
 port = 5432
 database = "postgres"
 user = "tribbledev"
@@ -28,7 +22,7 @@ query_timeout = 30
 id = "tribble-local-write"
 description = "Tribble local (write)"
 type = "postgres"
-host = "localhost"
+host = "host.docker.internal"
 port = 5432
 database = "postgres"
 user = "tribbledev"

@@ -34,6 +34,40 @@ home/aliases.nix     # fish aliases, abbreviations, quick-edit shortcuts
 scripts/             # one-off scripts (e.g. 1Password URL sync)
 ```
 
+## Local DBHub
+
+OrbStack runs the local DBHub HTTP service from the files beside
+`home/dbhub.toml`. It connects to the host-published `ds9-postgres` database
+through `host.docker.internal:5432` and listens only on the Mac loopback
+interface.
+
+Load the 1Password-backed shell environment, then start or update it:
+
+```sh
+docker compose -f home/dbhub-compose.yaml up -d
+```
+
+Endpoints:
+
+- MCP: `http://127.0.0.1:18081/mcp`
+- Workbench: `http://127.0.0.1:18081/`
+- Health: `http://127.0.0.1:18081/healthz`
+
+Useful operations:
+
+```sh
+docker compose -f home/dbhub-compose.yaml ps
+docker compose -f home/dbhub-compose.yaml logs --tail 100
+docker compose -f home/dbhub-compose.yaml pull
+docker compose -f home/dbhub-compose.yaml up -d
+docker compose -f home/dbhub-compose.yaml down
+```
+
+The Compose project does not own the PostgreSQL container or its data volume.
+Stopping or removing DBHub therefore does not modify the local database.
+`tribble-local` is read-only at the tool layer; mutations require deliberately
+selecting `tribble-local-write`.
+
 ## Key principles
 
 - **Homebrew is declarative.** `cleanup = "zap"` removes anything undeclared.

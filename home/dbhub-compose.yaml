@@ -1,0 +1,48 @@
+name: dbhub-local
+
+services:
+  dbhub:
+    image: bytebase/dbhub@sha256:4b0ce44aa1af41753e50b505068a65402fd4b850b7b81fd9b13af1ef1dc0a9d5
+    container_name: dbhub-local
+    init: true
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:18081:8080"
+    command:
+      - --transport
+      - http
+      - --host
+      - 0.0.0.0
+      - --port
+      - "8080"
+      - --config
+      - /etc/dbhub/dbhub.toml
+      - --allowed-hosts
+      - localhost,127.0.0.1
+    environment:
+      DBHUB_LOG_LEVEL: info
+      TRIBBLE_LOCAL_DB_PASSWORD: ${TRIBBLE_LOCAL_DB_PASSWORD:?Load the 1Password-backed local database password}
+    volumes:
+      - ./dbhub-docker.toml:/etc/dbhub/dbhub.toml:ro
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=64m
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    healthcheck:
+      test:
+        - CMD
+        - node
+        - -e
+        - "fetch('http://127.0.0.1:8080/healthz').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
