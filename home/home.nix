@@ -9,6 +9,7 @@ let
   # Git picks the SSH key per repo via core.sshCommand (see hasconfig work includes + default settings).
   sshKeyLenell16 = "${config.home.homeDirectory}/.ssh/Github";
   sshKeyAlonzotribble = "${config.home.homeDirectory}/.ssh/tribble-github";
+  sshKeyForgejo = "${config.home.homeDirectory}/.ssh/forgejo";
   gitSshLenell16 = "ssh -o IdentitiesOnly=yes -i ${sshKeyLenell16}";
   gitSshAlonzotribble = "ssh -o IdentitiesOnly=yes -i ${sshKeyAlonzotribble}";
 
@@ -398,6 +399,14 @@ in
           user = "git";
           identitiesOnly = true;
           identityFile = [ sshKeyAlonzotribble ];
+        };
+        # Forgejo remotes should use the managed host alias: git@forgejo:owner/repo.git.
+        "forgejo" = {
+          hostname = "umbrel.local";
+          port = 2223;
+          user = "git";
+          identitiesOnly = true;
+          identityFile = [ sshKeyForgejo ];
         };
 
         # Airbyte prod VM tunnel

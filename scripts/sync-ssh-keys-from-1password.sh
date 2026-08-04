@@ -13,7 +13,7 @@
 #   ./scripts/sync-ssh-keys-from-1password.sh
 #
 # Optional overrides (no file edits):
-#   REF_GITHUB="op://..." REF_TRIBBLE_GITHUB="op://..." ./scripts/sync-ssh-keys-from-1password.sh
+#   REF_GITHUB="op://..." REF_TRIBBLE_GITHUB="op://..." REF_FORGEJO="op://..." ./scripts/sync-ssh-keys-from-1password.sh
 
 set -euo pipefail
 
@@ -25,10 +25,12 @@ set -euo pipefail
 # The script tries ?ssh-format=openssh automatically if you omit it.
 : "${REF_GITHUB:=}"
 : "${REF_TRIBBLE_GITHUB:=}"
+: "${REF_FORGEJO:=op://Personal/Forgejo SSH Key/private key}"
 
 SSH_DIR="${SSH_DIR:-$HOME/.ssh}"
 OUT_GITHUB="${OUT_GITHUB:-$SSH_DIR/Github}"
 OUT_TRIBBLE="${OUT_TRIBBLE:-$SSH_DIR/tribble-github}"
+OUT_FORGEJO="${OUT_FORGEJO:-$SSH_DIR/forgejo}"
 
 export OP_BIOMETRIC_UNLOCK_ENABLED="${OP_BIOMETRIC_UNLOCK_ENABLED:-true}"
 
@@ -106,8 +108,8 @@ sync_one() {
 }
 
 main() {
-    if [[ -z "$REF_GITHUB" && -z "$REF_TRIBBLE_GITHUB" ]]; then
-        echo "sync-ssh-keys-from-1password: set REF_GITHUB / REF_TRIBBLE_GITHUB in this script (or export them)." >&2
+    if [[ -z "$REF_GITHUB" && -z "$REF_TRIBBLE_GITHUB" && -z "$REF_FORGEJO" ]]; then
+        echo "sync-ssh-keys-from-1password: set REF_GITHUB / REF_TRIBBLE_GITHUB / REF_FORGEJO in this script (or export them)." >&2
         exit 1
     fi
 
@@ -127,6 +129,9 @@ main() {
     fi
     if [[ -n "$REF_TRIBBLE_GITHUB" ]]; then
         sync_one "$OUT_TRIBBLE" "$REF_TRIBBLE_GITHUB" "tribble-github (work)" || ok=1
+    fi
+    if [[ -n "$REF_FORGEJO" ]]; then
+        sync_one "$OUT_FORGEJO" "$REF_FORGEJO" "forgejo" || ok=1
     fi
 
     exit "$ok"
