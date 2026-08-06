@@ -764,9 +764,8 @@ in
     # Window Manager
     aerospace = {
       enable = true;
-      launchd.enable = true;
+      launchd.enable = false;
       settings = {
-        # General settings
         start-at-login = false;
         after-login-command = [ ];
         after-startup-command = [
@@ -781,23 +780,14 @@ in
           }
         ];
 
-        # Normalizations
         enable-normalization-flatten-containers = true;
         enable-normalization-opposite-orientation-for-nested-containers = true;
-
-        # Layouts
         accordion-padding = 30;
         default-root-container-layout = "tiles";
         default-root-container-orientation = "horizontal";
-
-        # Callbacks
         on-focused-monitor-changed = [ "move-mouse monitor-lazy-center" ];
-        # automatically-unhide-macos-hidden-apps = false; # Option not found in module schema
-
-        # Key Mapping Preset
         key-mapping.preset = "qwerty";
 
-        # Gaps
         gaps = {
           inner = {
             horizontal = 10;
@@ -811,20 +801,15 @@ in
           };
         };
 
-        # Monitor assignments
-        # Ensure workspace 1 is on the main monitor and workspace 2 is on the secondary monitor when present.
-        # When only one monitor is connected, both workspaces remain available on the single monitor.
         workspace-to-monitor-force-assignment = {
           "1" = "main";
           "2" = "secondary";
         };
 
-        # Modes and Bindings
         mode = {
           main.binding = {
             "alt-slash" = "layout tiles horizontal vertical";
             "alt-comma" = "layout accordion horizontal vertical";
-
             "alt-shift-minus" = "resize smart -50";
             "alt-shift-equal" = "resize smart +50";
             "alt-1" = "workspace 1";
@@ -857,21 +842,14 @@ in
             "alt-e" = "move down";
             "alt-o" = "move up";
             "alt-i" = "move right";
-            "cmd-alt-n" = [
-              "join-with left"
-            ];
-            "cmd-alt-e" = [
-              "layout accordion vertical"
-            ];
-            "cmd-alt-o" = [
-              "layout accordion vertical"
-            ];
-            "cmd-alt-i" = [
-              "join-with right"
-            ];
+            "cmd-alt-n" = [ "join-with left" ];
+            "cmd-alt-e" = [ "layout accordion vertical" ];
+            "cmd-alt-o" = [ "layout accordion vertical" ];
+            "cmd-alt-i" = [ "join-with right" ];
           };
         };
       };
     };
+
   };
 }

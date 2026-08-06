@@ -17,6 +17,7 @@
         clone_target = "https://github.com/chmouel/lazyworktree";
       }
       "danvergara/tools"
+      "guria/tap"
       "nikitabobko/tap"
       "satococoa/tap"
       "supabase/tap"
@@ -30,6 +31,7 @@
       tap "atlassian/homebrew-acli", trusted: true
       tap "chmouel/lazyworktree", trusted: true
       tap "danvergara/tools", trusted: true
+      tap "guria/tap", trusted: true
       tap "nikitabobko/tap", trusted: true
       tap "satococoa/tap", trusted: true
       tap "supabase/tap", trusted: true
@@ -78,6 +80,7 @@
       "yaak" # Terminal
       "conductor" # System management tool
       "thaw" # Menu bar manager (Thaw)
+      "guria/tap/nehir" # Nehir
 
       # Terminal & Development
       "devtunnel" # Microsoft DevTunnel for secure tunneling

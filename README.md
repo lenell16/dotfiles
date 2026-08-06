@@ -28,7 +28,7 @@ flake.nix            # root flake: inputs, darwinConfigurations, homeConfigurati
 darwin/darwin.nix    # system-level config: hostname, DNS, shells, launchd agents
 darwin/brew.nix      # Homebrew taps, brews, casks
 darwin/system-defaults.nix  # macOS preference knobs
-home/home.nix        # user environment: programs, shell, git, SSH, aerospace
+home/home.nix        # user environment: programs, shell, git, SSH
 home/packages.nix    # home.packages list
 home/aliases.nix     # fish aliases, abbreviations, quick-edit shortcuts
 scripts/             # one-off scripts (e.g. 1Password URL sync)

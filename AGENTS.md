@@ -35,7 +35,7 @@ nix develop
 - `darwin/darwin.nix` — system-level config: hostname, DNS, shells, launchd agents, fonts, sudo Touch ID
 - `darwin/brew.nix` — all Homebrew taps/brews/casks (declarative; `cleanup = "zap"` removes anything undeclared)
 - `darwin/system-defaults.nix` — macOS preference knobs (Dock, Finder, trackpad, screenshots, etc.)
-- `home/home.nix` — user environment: programs, shell, git, SSH, aerospace WM, activation hooks
+- `home/home.nix` — user environment: programs, shell, git, SSH, activation hooks
 - `home/packages.nix` — `home.packages` list (Nix-managed CLI/dev tools)
 - `home/aliases.nix` — fish shell aliases, abbreviations, and quick-edit shortcuts (`nhome`, `ndarwin`, etc.)
 
@@ -55,8 +55,6 @@ nix develop
 SSH routing uses host aliases `github.com-personal` and `github.com-work`.
 
 **Ghostty is split.** Installed via Homebrew cask (works); `programs.ghostty` in home-manager is disabled due to build issues. Configure Ghostty settings through the cask, not home-manager.
-
-**Aerospace uses Colemak navigation.** In service mode, window focus/move uses `n/e/o/i` (left/down/up/right), not `h/j/k/l`. JankyBorders (`FelixKratz/formulae/borders`) provides the orange active-window highlight.
 
 ## Adding Packages
 
