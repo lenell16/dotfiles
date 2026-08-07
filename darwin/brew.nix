@@ -18,6 +18,7 @@
       }
       "danvergara/tools"
       "guria/tap"
+      "mikker/tap"
       "nikitabobko/tap"
       "satococoa/tap"
       "supabase/tap"
@@ -32,6 +33,7 @@
       tap "chmouel/lazyworktree", trusted: true
       tap "danvergara/tools", trusted: true
       tap "guria/tap", trusted: true
+      tap "mikker/tap", trusted: true
       tap "nikitabobko/tap", trusted: true
       tap "satococoa/tap", trusted: true
       tap "supabase/tap", trusted: true
@@ -44,6 +46,7 @@
       # "ahmedelgabri/tap/git-wt" # Git worktree CLI
       # "satococoa/tap/git-worktreeinclude" # Include shared attributes across worktrees
       "atlassian/homebrew-acli/acli" # Atlassian CLI
+      "mikker/tap/fut" # FIFA Ultimate Team CLI
       "mole" # Mac cleaning and optimization tool
       # "node@20"             # Node.js version 20 (now managed via Nix)
       "openssl@3" # SSL library
